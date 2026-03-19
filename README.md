@@ -64,3 +64,58 @@
 * пользователям сайта;
 * редакторам контента;
 * команде разработки.
+
+
+## Локальный запуск
+
+### Backend
+
+Перейти в папку backend:
+
+```bash
+cd apps/api
+```
+Применить миграции:
+```bash
+python manage.py migrate
+```
+Запустить Django server:
+```bash
+python manage.py runserver
+```
+Backend будет доступен по адресу:
+```bash
+http://127.0.0.1:8000/
+```
+
+### Frontend
+
+Перейти в папку frontend:
+
+```bash
+cd apps/web
+```
+Запустить Next.js:
+```bash
+npm run dev
+```
+Frontend будет доступен по адресу:
+```bash
+http://localhost:3000/
+```
+
+### Полезные ссылки
+Django Admin:
+```bash
+http://127.0.0.1:8000/admin/
+```
+
+Swagger docs: 
+```bash
+http://127.0.0.1:8000/api/docs/
+```
+
+API health check: 
+```bash
+http://127.0.0.1:8000/api/v1/health/
+```

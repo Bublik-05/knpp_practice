@@ -1,4 +1,4 @@
-# KNPP News Portal
+# KNPP News Portal (NOT FINAL DOCUMENTATION)
 
 Современный мультиязычный корпоративный портал на **Django + Next.js** с headless-архитектурой.
 
