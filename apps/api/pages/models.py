@@ -9,15 +9,25 @@ class Page(models.Model):
         ARCHIVED = "archived", "Archived"
 
     class PageType(models.TextChoices):
+        MAIN = "main", "Main"
         ABOUT = "about", "About"
+        NEWS = "news", "News"
+        PROCUREMENT = "procurement", "Procurement"
+        VACANCIES = "vacancies", "Vacancies"
+        CONTACTS = "contacts", "Contacts"
+
+        # Подразделы "О компании/ABOUT"
+        ABOUT_KAES_LLP = "about_kaes_llp", "About KAES LLP"
+        TYPES_OF_ACTIVITIES = "types_of_activities", "Types of Activities"
+        ADDITIONAL_INFO = "additional_info", "Additional Info"
+        GALLERY = "gallery", "Gallery"
+
         MANAGEMENT = "management", "Management"
         SAFETY = "safety", "Safety"
         COMPLIANCE = "compliance", "Compliance"
         NPA = "npa", "NPA"
         DEVELOPMENT_PLAN = "development_plan", "Development Plan"
-        ADDITIONAL_INFO = "additional_info", "Additional Info"
-        GALLERY = "gallery", "Gallery"
-        CONTACTS = "contacts", "Contacts"
+        
         OTHER = "other", "Other"
 
     class Language(models.TextChoices):

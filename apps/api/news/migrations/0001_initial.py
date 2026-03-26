@@ -1,0 +1,34 @@
+from django.db import migrations, models
+
+
+class Migration(migrations.Migration):
+
+    initial = True
+
+    dependencies = [
+    ]
+
+    operations = [
+        migrations.CreateModel(
+            name='News',
+            fields=[
+                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('title', models.CharField(max_length=255)),
+                ('slug', models.SlugField(blank=True, max_length=255, unique=True)),
+                ('summary', models.TextField(blank=True)),
+                ('body', models.TextField()),
+                ('content_type', models.CharField(choices=[('news', 'News'), ('press_release', 'Press Release'), ('event', 'Event')], default='news', max_length=30)),
+                ('status', models.CharField(choices=[('draft', 'Draft'), ('review', 'Review'), ('published', 'Published'), ('archived', 'Archived')], default='draft', max_length=20)),
+                ('language', models.CharField(choices=[('ru', 'Russian'), ('kk', 'Kazakh'), ('en', 'English')], default='ru', max_length=2)),
+                ('is_featured', models.BooleanField(default=False)),
+                ('published_at', models.DateTimeField(blank=True, null=True)),
+                ('created_at', models.DateTimeField(auto_now_add=True)),
+                ('updated_at', models.DateTimeField(auto_now=True)),
+            ],
+            options={
+                'verbose_name': 'News',
+                'verbose_name_plural': 'News',
+                'ordering': ['-published_at', '-created_at'],
+            },
+        ),
+    ]

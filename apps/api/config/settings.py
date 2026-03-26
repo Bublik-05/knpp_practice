@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     # local apps
     "core",
     "pages",
+    "news",
 ]
 
 REST_FRAMEWORK = {
