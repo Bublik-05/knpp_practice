@@ -2,6 +2,7 @@
 
 ## Что это за проект
 
+Это корпоративный сайт компании с CMS, где есть как имиджевые и информационные страницы, так и новостной блок, вакансии и другие публичные разделы.
 Проект разрабатывается как современная версия корпоративного сайта с:
 
 * информационными страницами о компании;
@@ -75,10 +76,7 @@
 ```bash
 cd apps/api
 ```
-Применить миграции:
-```bash
-python manage.py migrate
-```
+
 Запустить Django server:
 ```bash
 python manage.py runserver
@@ -86,6 +84,13 @@ python manage.py runserver
 Backend будет доступен по адресу:
 ```bash
 http://127.0.0.1:8000/
+```
+
+(Дополнительно) Применить миграции:
+
+```bash
+python manage.py makemigrations smtg
+python manage.py migrate
 ```
 
 ### Frontend
@@ -109,6 +114,9 @@ Django Admin:
 ```bash
 http://127.0.0.1:8000/admin/
 ```
+
+superuser: admin 
+password: admin
 
 Swagger docs: 
 ```bash
