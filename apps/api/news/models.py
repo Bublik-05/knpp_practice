@@ -19,6 +19,9 @@ class News(models.Model):
         KK = "kk", "Kazakh"
         EN = "en", "English"
 
+    cover_image = models.ImageField(upload_to="news/covers/", blank=True, null=True)
+    seo_title = models.CharField(max_length=255, blank=True)
+    seo_description = models.TextField(blank=True)
     title = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255, unique=True, blank=True)
     summary = models.TextField(blank=True)

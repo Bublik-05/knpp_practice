@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     "core",
     "pages",
     "news",
+    "vacancies",
 ]
 
 REST_FRAMEWORK = {

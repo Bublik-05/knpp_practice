@@ -27,4 +27,5 @@ urlpatterns = [
     
     path("api/v1/pages/", include("pages.urls")),
     path("api/v1/news/", include("news.urls")),
+    path("api/v1/vacancies/", include("vacancies.urls")),
 ]
