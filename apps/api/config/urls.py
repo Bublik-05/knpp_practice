@@ -16,6 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView, SpectacularRedocView
 
 urlpatterns = [
@@ -28,4 +30,6 @@ urlpatterns = [
     path("api/v1/pages/", include("pages.urls")),
     path("api/v1/news/", include("news.urls")),
     path("api/v1/vacancies/", include("vacancies.urls")),
-]
+
+    path("editorjs/", include("django_editorjs_fields.urls")),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

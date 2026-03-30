@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.text import slugify
+from django_editorjs_fields import EditorJsJSONField
 
 
 class News(models.Model):
@@ -22,10 +23,13 @@ class News(models.Model):
     cover_image = models.ImageField(upload_to="news/covers/", blank=True, null=True)
     seo_title = models.CharField(max_length=255, blank=True)
     seo_description = models.TextField(blank=True)
+
     title = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255, unique=True, blank=True)
     summary = models.TextField(blank=True)
-    body = models.TextField()
+
+    content = EditorJsJSONField(blank=True, null=True)
+    body = EditorJsJSONField(blank=True, null=True)
     content_type = models.CharField(
         max_length=30,
         choices=ContentType.choices,

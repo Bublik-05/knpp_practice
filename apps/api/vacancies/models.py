@@ -1,5 +1,5 @@
 from django.db import models
-
+from django_editorjs_fields import EditorJsJSONField
 
 class Vacancy(models.Model):
     class Status(models.TextChoices):
@@ -27,7 +27,7 @@ class Vacancy(models.Model):
         choices=EmploymentType.choices,
         default=EmploymentType.FULL_TIME,
     )
-    description = models.TextField()
+    description = EditorJsJSONField(blank=True, null=True)
     status = models.CharField(
         max_length=20,
         choices=Status.choices,
