@@ -39,7 +39,7 @@ const newsItems = [
 const CARD_W   = 520;
 const IMG_H    = 300;
 const TEXT_H   = 130;
-const SIDE_W   = 380;
+const SIDE_W   = 430;
 const X_STEP   = 500;  // px between card centres
 const SCALE    = 0.82; // scale of side cards
 
@@ -51,7 +51,6 @@ export default function News() {
     setActive((prev) => (prev + dir + n) % n);
   };
 
-  /** position relative to active: …-2, -1, 0, 1, 2… */
   const getPos = (i: number): number => {
     let p = i - active;
     while (p >  Math.floor(n / 2)) p -= n;
@@ -60,7 +59,7 @@ export default function News() {
   };
 
   return (
-    <section className="py-16 w-full font-[family-name:var(--font-tt-firs)]">
+    <section className="py-16 w-full">
 
       {/* ── Carousel track ── */}
       <div
@@ -77,7 +76,6 @@ export default function News() {
           const opacity = visible ? 1 : 0;
           const zIndex  = isActive ? 3 : visible ? 2 : 0;
 
-          /* width switches between active and side card */
           const width = isActive ? CARD_W : SIDE_W;
 
           return (
@@ -89,7 +87,7 @@ export default function News() {
                 left: "50%",
                 width,
                 transform: `translateX(calc(-50% + ${xOffset}px)) scale(${scale})`,
-                transformOrigin: "top center",
+                transformOrigin: "bottom center",
                 transition: "transform 0.5s cubic-bezier(0.4,0,0.2,1), opacity 0.4s ease, width 0.5s cubic-bezier(0.4,0,0.2,1)",
                 opacity,
                 zIndex,
@@ -101,7 +99,7 @@ export default function News() {
                 className="relative overflow-hidden"
                 style={{
                   height: IMG_H,
-                  borderRadius: isActive ? "16px 16px 0 0" : 16,
+                  borderRadius: isActive ? "10px 10px 0 0" : 10,
                   transition: "border-radius 0.4s ease",
                 }}
               >
@@ -117,17 +115,17 @@ export default function News() {
               <div
                 className="bg-white overflow-hidden"
                 style={{
-                  borderRadius: "0 0 16px 16px",
+                  borderRadius: "0 0 10px 10px",
                   maxHeight: isActive ? TEXT_H : 0,
                   opacity:    isActive ? 1 : 0,
                   padding:    isActive ? "18px 24px" : "0 24px",
                   transition: "max-height 0.45s cubic-bezier(0.4,0,0.2,1), opacity 0.3s ease, padding 0.4s ease",
                 }}
               >
-                <h3 className="text-[13px] font-bold uppercase tracking-wide text-gray-900 leading-snug mb-2">
+                <h3 className="font-medium uppercase tracking-wide text-gray-900 leading-snug mb-2">
                   {item.title}
                 </h3>
-                <p className="text-[13px] font-light text-gray-400">{item.date}</p>
+                <p className="font-light text-gray-500">{item.date}</p>
               </div>
             </div>
           );

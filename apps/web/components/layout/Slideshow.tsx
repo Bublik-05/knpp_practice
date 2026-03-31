@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 
 const slides = [
@@ -39,8 +40,22 @@ const slides = [
   },
 ];
 
+function getIndexFromPath(path: string) {
+  const idx = slides.findIndex((s) => s.href === path);
+  return idx === -1 ? 0 : idx;
+}
+
 export default function Slideshow() {
-  const [active, setActive] = useState(0);
+  const pathname = usePathname();
+  const router = useRouter();
+
+  // Initialise from current path so SSR and first paint match
+  const [active, setActive] = useState(() => getIndexFromPath(pathname));
+
+  // Sync when the URL changes — component stays mounted → CSS transition fires
+  useEffect(() => {
+    setActive(getIndexFromPath(pathname));
+  }, [pathname]);
 
   return (
     <div className="flex w-full overflow-hidden" style={{ height: 600 }}>
@@ -50,7 +65,7 @@ export default function Slideshow() {
         return (
           <div
             key={slide.id}
-            onClick={() => !isActive && setActive(i)}
+            onClick={() => !isActive && router.push(slide.href)}
             className={`
               relative overflow-hidden
               transition-all duration-500 ease-in-out
@@ -91,7 +106,7 @@ export default function Slideshow() {
                 )}
                 <Link
                   href={slide.href}
-                  className="mt-8 w-fit text-[16x] font-light text-white border border-white/60 px-5 py-2 rounded-full hover:bg-white hover:text-[#1E4080] transition-colors duration-200"
+                  className="mt-8 w-fit text-[16px] font-light text-white border border-white/60 px-5 py-2 rounded-full hover:bg-white hover:text-[#1E4080] transition-colors duration-200"
                   onClick={(e) => e.stopPropagation()}
                 >
                   Подробнее
