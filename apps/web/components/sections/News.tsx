@@ -42,8 +42,13 @@ export default function News({ items }: Props) {
   };
 
   return (
-    <section className="p-10 w-full flex flex-col">
-
+    <section className=" w-full flex flex-col gap-10">
+      <div className=" px-30 flex flex-col gap-2">
+          <h2
+            className="font-bold leading-tight text-3xl md:text-4xl lg:text-5xl">
+              Новости ТОО «КАЭС»
+          </h2>
+        </div>
       {/* ── Carousel track ── */}
       <div
         className="relative w-full overflow-hidden"
@@ -120,14 +125,18 @@ export default function News({ items }: Props) {
           aria-label="Назад"
           className="w-11 h-11 rounded-full bg-[#1E4080] flex items-center justify-center text-white text-2xl hover:bg-[#2a5299] transition-colors"
         >
-          ‹
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+          </svg>
         </button>
         <button
           onClick={() => navigate(1)}
           aria-label="Вперёд"
           className="w-11 h-11 rounded-full bg-[#1E4080] flex items-center justify-center text-white text-2xl hover:bg-[#2a5299] transition-colors"
         >
-          ›
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
         </button>
       </div>
     </section>

@@ -1,6 +1,7 @@
 import News from "@/components/sections/News";
 import About from "@/components/sections/About";
 import Activities from "@/components/sections/Activities";
+import HotLine from "@/components/sections/HotLine";
 import { getFeaturedNews } from "@/lib/news";
 
 export default async function Home() {
@@ -11,6 +12,7 @@ export default async function Home() {
       <About />
       <Activities/>
       <News items={featuredNews} />
+      <HotLine/>
     </>
   );
 }

@@ -7,31 +7,31 @@ const activities = [
   {
     id: 1,
     text: "Передача электроэнергии.",
-    icon: "/icons/activities/disket.png",
+    icon: "/images/activities/disket.png",
   },
   {
     id: 2,
     text: "Обеспечение готовности электроэнергетики к работе с нагрузкой, регулирование и резервирование электроэнергии;",
-    icon: "/icons/activities/bashnya.svg",
+    icon: "/images/activities/bashnya.svg",
   },
   {
     id: 3,
     text: "Исследования и экспериментальные разработки в области мирного использования атомной энергии;",
-    icon: "/icons/activities/ball.svg",
+    icon: "/images/activities/ball.svg",
   },
   {
     id: 4,
     text: "Деятельность в области архитектуры для атомной промышленности и объектов атомной энергетики;",
-    icon: "/icons/activities/disket.png",
+    icon: "/images/activities/disket.png",
   },
   {
     id: 5,
     text: "Деятельность в области инженерных изысканий и предоставление технических консультаций в этой области для атомной промышленности и объектов атомной энергетики;",
-    icon: "/icons/activities/bashnya.svg",
+    icon: "/images/activities/bashnya.svg",
   },
 ];
 
-const GAP = 20;  
+const GAP = 30;  
 const VISIBLE = 3;
 
 export default function Activities() {
@@ -58,8 +58,16 @@ export default function Activities() {
   const step = cardW + GAP;
 
   return (
-    <section className="p-30 ">
-
+    <section className="p-30 flex flex-col gap-10">
+      <div className="flex flex-col gap-2">
+        <h2
+          className="font-bold leading-tight text-3xl md:text-4xl lg:text-5xl">
+          Виды деятельности
+        </h2>
+        <p className=" font-medium text-xl leading-relaxed max-w-xl">
+          Наша деятельность
+        </p>
+      </div>
       {/* ── Карусель ── */}
       <div ref={containerRef} className="overflow-hidden w-full">
         <div
@@ -72,14 +80,20 @@ export default function Activities() {
           {activities.map((activity) => (
             <div
               key={activity.id}
-              className="relative flex-shrink-0 bg-white rounded-lg overflow-hidden"
+              className="
+                relative flex-shrink-0 bg-white rounded-lg overflow-hidden
+                px-7 pt-7 pb-5
+                flex flex-col justify-start
+                shadow-md hover:shadow-xl
+                transition-shadow duration-500
+              "
               style={{
                 width: cardW > 0 ? cardW : `calc((100% - ${(VISIBLE - 1) * GAP}px) / ${VISIBLE})`,
                 height: 420,
               }}
             >
               {/* Текст активности */}
-              <p className="relative z-10 p-8 text-gray-800 text-lg font-light leading-relaxed max-w-[65%]">
+              <p className="relative z-10 text-gray-800 text-lg font-light leading-relaxed max-w-[65%]">
                 {activity.text}
               </p>
 

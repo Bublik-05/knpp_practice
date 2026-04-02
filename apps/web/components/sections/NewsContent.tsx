@@ -27,10 +27,10 @@ export default function NewsContent({ items }: Props) {
   );
 
   return (
-    <div className="flex flex-1 w-full pt-5">
+    <div className="flex flex-1 w-full pt-3">
       <NewsFilter active={filter} onChange={setFilter} counts={counts} />
 
-      <div className="flex-1 px-10 py-10">
+      <div className="flex-1 p-10">
         <div className="mb-8">
           <h1 className="text-[32px] font-bold text-gray-900 ">
             {filter}

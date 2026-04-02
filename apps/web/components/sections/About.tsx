@@ -23,7 +23,7 @@ export default function About() {
       <div className="flex flex-col justify-between flex-[1.4] py-14">
         <div className="flex flex-col gap-6">
           <h2
-            className="font-medium leading-tight text-3xl md:text-4xl lg:text-5xl">
+            className="font-bold leading-tight text-3xl md:text-4xl lg:text-5xl">
             О ТОО «КАЭС»
           </h2>
           <p className=" font-light leading-relaxed max-w-xl">
