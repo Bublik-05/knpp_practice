@@ -42,8 +42,8 @@ interface PickerProps {
 }
 
 function MonthYearPicker({ value, onChange, placeholder, alignRight }: PickerProps) {
-  const [open, setOpen]           = useState(false);
-  const [viewYear, setViewYear]   = useState(value?.year ?? new Date().getFullYear());
+  const [open, setOpen] = useState(false);
+  const [viewYear, setViewYear] = useState(value?.year ?? new Date().getFullYear());
   const [yearDraft, setYearDraft] = useState(String(value?.year ?? new Date().getFullYear()));
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -101,9 +101,8 @@ function MonthYearPicker({ value, onChange, placeholder, alignRight }: PickerPro
       {/* Дропдаун */}
       {open && (
         <div
-          className={`absolute top-full z-50 mt-2 bg-white rounded-2xl shadow-2xl p-4 w-[220px] ${
-            alignRight ? "right-0" : "left-0"
-          }`}
+          className={`absolute top-full z-50 mt-2 bg-white rounded-2xl shadow-2xl p-4 w-[220px] ${alignRight ? "right-0" : "left-0"
+            }`}
         >
           {/* Навигация по году */}
           <div className="flex items-center justify-between mb-3">
@@ -141,11 +140,10 @@ function MonthYearPicker({ value, onChange, placeholder, alignRight }: PickerPro
                   key={m}
                   onMouseDown={(e) => e.preventDefault()}
                   onClick={() => pickMonth(i + 1)}
-                  className={`py-2 rounded-lg text-[13px] font-medium transition-colors duration-100 ${
-                    isActive
+                  className={`py-2 rounded-lg text-[13px] font-medium transition-colors duration-100 ${isActive
                       ? "bg-[#1E4080] text-white"
                       : "text-gray-600 hover:bg-gray-100"
-                  }`}
+                    }`}
                 >
                   {m}
                 </button>
@@ -171,10 +169,10 @@ function MonthYearPicker({ value, onChange, placeholder, alignRight }: PickerPro
 
 /* ── Основной компонент фильтра ───────────────────────── */
 export default function NewsFilter({ active, onChange }: Props) {
-  const [keyword,   setKeyword]   = useState("");
-  const [dateFrom,  setDateFrom]  = useState<{ year: number; month: number } | null>(null);
-  const [dateTo,    setDateTo]    = useState<{ year: number; month: number } | null>(null);
-  const [category,  setCategory]  = useState("");
+  const [keyword, setKeyword] = useState("");
+  const [dateFrom, setDateFrom] = useState<{ year: number; month: number } | null>(null);
+  const [dateTo, setDateTo] = useState<{ year: number; month: number } | null>(null);
+  const [category, setCategory] = useState("");
   const [direction, setDirection] = useState("");
 
   function handleApply() {

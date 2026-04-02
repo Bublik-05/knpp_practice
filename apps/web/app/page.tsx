@@ -1,13 +1,16 @@
 import News from "@/components/sections/News";
 import About from "@/components/sections/About";
 import Activities from "@/components/sections/Activities";
+import { getFeaturedNews } from "@/lib/news";
 
-export default function Home() {
+export default async function Home() {
+  const featuredNews = await getFeaturedNews();
+
   return (
     <>
       <About />
-      <Activities />
-      <News />
+      <Activities/>
+      <News items={featuredNews} />
     </>
   );
 }
