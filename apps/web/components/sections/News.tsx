@@ -1,51 +1,34 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import Image from "next/image";
+import type { NewsItem } from "@/lib/news";
 
-const newsItems = [
-  {
-    id: 1,
-    title: "КООРДИНАЦИОННЫЕ ВСТРЕЧИ С МАГАТЭ В РАМКАХ ПОДГОТОВКИ К МИССИИ INIR",
-    date: "09.02.2026",
-    image: "/images/news1-img.jpg",
-  },
-  {
-    id: 2,
-    title: "РАЗВИТИЕ ЯДЕРНОЙ ЭНЕРГЕТИКИ В КАЗАХСТАНЕ",
-    date: "15.01.2026",
-    image: "/images/news2-img.jpg",
-  },
-  {
-    id: 3,
-    title: "ПОДПИСАНИЕ МЕМОРАНДУМА О СОТРУДНИЧЕСТВЕ С МЕЖДУНАРОДНЫМИ ПАРТНЁРАМИ",
-    date: "22.12.2025",
-    image: "/images/news3-img.jpg",
-  },
-  {
-    id: 4,
-    title: "МЕЖДУНАРОДНАЯ КОНФЕРЕНЦИЯ ПО ЯДЕРНОЙ БЕЗОПАСНОСТИ",
-    date: "05.11.2025",
-    image: "/images/news4-img.jpg",
-  },
-  {
-    id: 5,
-    title: "ВИЗИТ ДЕЛЕГАЦИИ МАГАТЭ НА ПРОИЗВОДСТВЕННЫЕ ОБЪЕКТЫ КАЭС",
-    date: "18.10.2025",
-    image: "/images/news5-img.jpg",
-  },
-];
+const CARD_W = 520;
+const IMG_H = 300;
+const TEXT_H = 130;
+const SIDE_W = 430;
+const X_STEP = 500;
+const SCALE = 0.82;
 
-const CARD_W   = 520;
-const IMG_H    = 300;
-const TEXT_H   = 130;
-const SIDE_W   = 430;
-const X_STEP   = 500;  // px between card centres
-const SCALE    = 0.82; // scale of side cards
+interface Props {
+  items: NewsItem[];
+}
 
-export default function News() {
+export default function News({ items }: Props) {
+  const newsItems = useMemo(() => items.slice(0, 5), [items]);
   const [active, setActive] = useState(0);
   const n = newsItems.length;
+
+  if (n === 0) {
+    return (
+      <section className="py-16 w-full">
+        <div className="max-w-5xl mx-auto px-6 text-center text-gray-500">
+          В админке пока нет опубликованных избранных новостей.
+        </div>
+      </section>
+    );
+  }
 
   const navigate = (dir: number) => {
     setActive((prev) => (prev + dir + n) % n);
@@ -53,29 +36,26 @@ export default function News() {
 
   const getPos = (i: number): number => {
     let p = i - active;
-    while (p >  Math.floor(n / 2)) p -= n;
+    while (p > Math.floor(n / 2)) p -= n;
     while (p < -Math.floor(n / 2)) p += n;
     return p;
   };
 
   return (
     <section className="py-16 w-full">
-
-      {/* ── Carousel track ── */}
       <div
         className="relative w-full overflow-hidden"
         style={{ height: IMG_H + TEXT_H + 16 }}
       >
         {newsItems.map((item, i) => {
-          const pos      = getPos(i);
+          const pos = getPos(i);
           const isActive = pos === 0;
-          const visible  = Math.abs(pos) <= 1;
+          const visible = Math.abs(pos) <= 1;
 
-          const scale   = isActive ? 1 : SCALE;
+          const scale = isActive ? 1 : SCALE;
           const xOffset = pos * X_STEP;
           const opacity = visible ? 1 : 0;
-          const zIndex  = isActive ? 3 : visible ? 2 : 0;
-
+          const zIndex = isActive ? 3 : visible ? 2 : 0;
           const width = isActive ? CARD_W : SIDE_W;
 
           return (
@@ -88,13 +68,13 @@ export default function News() {
                 width,
                 transform: `translateX(calc(-50% + ${xOffset}px)) scale(${scale})`,
                 transformOrigin: "bottom center",
-                transition: "transform 0.5s cubic-bezier(0.4,0,0.2,1), opacity 0.4s ease, width 0.5s cubic-bezier(0.4,0,0.2,1)",
+                transition:
+                  "transform 0.5s cubic-bezier(0.4,0,0.2,1), opacity 0.4s ease, width 0.5s cubic-bezier(0.4,0,0.2,1)",
                 opacity,
                 zIndex,
                 cursor: isActive ? "default" : "pointer",
               }}
             >
-              {/* Image */}
               <div
                 className="relative overflow-hidden"
                 style={{
@@ -111,18 +91,18 @@ export default function News() {
                 />
               </div>
 
-              {/* Text box — grows open on active, collapses on others */}
               <div
                 className="bg-white overflow-hidden"
                 style={{
                   borderRadius: "0 0 10px 10px",
                   maxHeight: isActive ? TEXT_H : 0,
-                  opacity:    isActive ? 1 : 0,
-                  padding:    isActive ? "18px 24px" : "0 24px",
-                  transition: "max-height 0.45s cubic-bezier(0.4,0,0.2,1), opacity 0.3s ease, padding 0.4s ease",
+                  opacity: isActive ? 1 : 0,
+                  padding: isActive ? "18px 24px" : "0 24px",
+                  transition:
+                    "max-height 0.45s cubic-bezier(0.4,0,0.2,1), opacity 0.3s ease, padding 0.4s ease",
                 }}
               >
-                <h3 className="font-medium uppercase tracking-wide text-gray-900 leading-snug mb-2">
+                <h3 className="font-medium uppercase tracking-wide text-gray-900 leading-snug mb-2 line-clamp-3">
                   {item.title}
                 </h3>
                 <p className="font-light text-gray-500">{item.date}</p>
@@ -132,7 +112,6 @@ export default function News() {
         })}
       </div>
 
-      {/* ── Navigation arrows ── */}
       <div className="flex justify-center gap-4 mt-8">
         <button
           onClick={() => navigate(-1)}
