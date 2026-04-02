@@ -93,7 +93,7 @@ export default function NewsContent() {
       <NewsFilter active={filter} onChange={setFilter} counts={counts} />
 
       {/* Контент справа */}
-      <div className="flex-1 px-10 py-10">
+      <div className="flex-1 pr-8 py-10">
         {/* Заголовок раздела */}
         <div className="mb-8">
           <h1 className="text-[32px] font-bold text-gray-900 ">
