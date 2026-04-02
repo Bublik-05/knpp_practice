@@ -59,7 +59,7 @@ export default function News() {
   };
 
   return (
-    <section className="py-16 w-full">
+    <section className="p-10 w-full flex flex-col">
 
       {/* ── Carousel track ── */}
       <div
