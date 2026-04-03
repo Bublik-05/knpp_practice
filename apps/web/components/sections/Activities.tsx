@@ -7,7 +7,7 @@ const activities = [
   {
     id: 1,
     text: "Передача электроэнергии.",
-    icon: "/images/activities/disket.png",
+    icon: "/images/activities/atomic_energy.svg",
   },
   {
     id: 2,
@@ -17,12 +17,12 @@ const activities = [
   {
     id: 3,
     text: "Исследования и экспериментальные разработки в области мирного использования атомной энергии;",
-    icon: "/images/activities/ball.svg",
+    icon: "/images/activities/fluent_clipboard-settings.svg",
   },
   {
     id: 4,
     text: "Деятельность в области архитектуры для атомной промышленности и объектов атомной энергетики;",
-    icon: "/images/activities/disket.png",
+    icon: "/images/activities/atomic_energy.svg",
   },
   {
     id: 5,
@@ -99,15 +99,15 @@ export default function Activities() {
 
               {/* Иконка — большая, в правом нижнем углу, частично обрезана */}
               <div
-                className="absolute bottom-[-20px] right-[-10px]"
-                style={{ width: 230, height: 230 }}
+                className="absolute bottom-[-80px] right-[-100px]"
+                style={{ width: 400, height: 400 }}
               >
                 <Image
                   src={activity.icon}
                   alt=""
                   fill
                   style={{ objectFit: "contain" }}
-                  className="opacity-60"
+                  className="opacity-50"
                 />
               </div>
             </div>

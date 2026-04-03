@@ -67,48 +67,48 @@ export default function AboutContent() {
   }, []);
 
   return (
-    <div className="flex flex-1 w-full pt-10 pb-20">
+    <div className="flex flex-1 w-full pt-40 pb-20">
 
       {/* ── Навигация ── */}
       <AboutNav active={active} onSelect={handleSelect} />
 
       {/* ── Контент ── */}
-      <div className="flex-1 px-20 flex flex-col gap-0">
+      <div className="flex-1 min-w-0 px-20 flex flex-col gap-0">
 
         {/* О компании — группа из 4 секций */}
         <div className="flex flex-col gap-7 pb-14">
-          <h1 className="text-4xl font-bold text-gray-900">О Компании</h1>
+          <h1 className="text-5xl font-bold text-gray-900">О Компании</h1>
           <CompanySection />
-          <hr className="border-gray-100" />
+          <hr className="border-gray-300" />
           <ActivitiesSection />
-          <hr className="border-gray-100" />
+          <hr className="border-gray-300" />
           <AdditionalSection />
-          <hr className="border-gray-100" />
+          <hr className="border-gray-300" />
           <GallerySection />
         </div>
 
         {/* Руководство */}
-        <div className="flex flex-col gap-6 border-t border-gray-200 py-14">
+        <div className="flex flex-col gap-6 border-t border-gray-300 py-14">
           <LeadershipSection />
         </div>
 
         {/* Безопасность */}
-        <div className="flex flex-col gap-6 border-t border-gray-200 py-14">
+        <div className="flex flex-col gap-6 border-t border-gray-300 py-14">
           <SafetySection />
         </div>
 
         {/* Комплаенс */}
-        <div className="flex flex-col gap-6 border-t border-gray-200 py-14">
+        <div className="flex flex-col gap-6 border-t border-gray-300 py-14">
           <ComplianceSection />
         </div>
 
         {/* НПА */}
-        <div className="flex flex-col gap-6 border-t border-gray-200 py-14">
+        <div className="flex flex-col gap-6 border-t border-gray-300  py-14">
           <NpaSection />
         </div>
 
         {/* План развития */}
-        <div className="flex flex-col gap-6 border-t border-gray-200 py-14">
+        <div className="flex flex-col gap-6 border-t border-gray-300 py-14">
           <DevelopmentSection />
         </div>
 

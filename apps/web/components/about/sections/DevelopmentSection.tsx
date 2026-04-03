@@ -25,25 +25,25 @@ function ReadIcon() {
 
 export default function DevelopmentSection() {
   return (
-    <section id="section-development" className="flex flex-col gap-6 scroll-mt-24">
+    <section id="section-development" className="flex flex-col gap-4 scroll-mt-24">
       <h2 className="text-4xl font-bold text-gray-900">План развития</h2>
 
       <div className="flex flex-col gap-4">
         {docs.map((doc, i) => (
-          <div key={i} className="flex flex-col gap-3 bg-gray-50 rounded-xl p-5 border border-gray-100">
-            <p className="text-gray-400 text-[13px] font-light">{doc.date}</p>
-            <p className="font-semibold text-gray-900 text-[16px]">{doc.title}</p>
+          <div key={i} className="flex flex-col gap-3 bg-gray-50 rounded-lg p-7 border border-gray-100">
+            <p className="text-gray-700 font-light">{doc.date}</p>
+            <p className="font-bold text-gray-900 text-lg">{doc.title}</p>
             <div className="flex gap-3">
               <a
                 href={doc.downloadUrl}
-                className="inline-flex items-center gap-2 bg-[#1E4080] text-white px-4 py-2 rounded-lg text-[13px] font-medium hover:bg-[#163366] transition-colors"
+                className="inline-flex items-center gap-2 px-7 py-2 bg-[#1E4080] text-white font-light rounded-full border border-transparent hover:bg-white hover:border-[#1E4080] hover:text-black transition-colors whitespace-nowrap"
               >
                 <DownloadIcon />
                 скачать документ
               </a>
               <a
                 href={doc.readUrl}
-                className="inline-flex items-center gap-2 border border-gray-300 text-gray-700 px-4 py-2 rounded-lg text-[13px] font-medium hover:bg-gray-100 transition-colors"
+                className="inline-flex items-center gap-2 border border-gray-300 text-gray-700 px-5 py-2 rounded-full font-medium hover:border-[#1E4080] hover:bg-gray-100 transition-colors"
               >
                 <ReadIcon />
                 читать онлайн

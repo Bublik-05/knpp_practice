@@ -81,8 +81,8 @@ export default function Slideshow() {
             <div
               className={`absolute inset-0 transition-all duration-500 ${
                 isActive
-                  ? "bg-gradient-to-r from-black/55 via-black/20 to-transparent"
-                  : "bg-black/50"
+                  ? "bg-gradient-to-r from-black/75 via-black/45 to-black/15"
+                  : "bg-black/60"
               }`}
             />
 
