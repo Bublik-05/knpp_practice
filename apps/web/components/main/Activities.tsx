@@ -7,27 +7,57 @@ const activities = [
   {
     id: 1,
     text: "Передача электроэнергии.",
-    icon: "/images/activities/atomic_energy.svg",
+    icon: "/images/activities/atom.svg",
+    iconStyle: {
+      bottom: "-120px",
+      right: "-100px",
+      width: "400px",
+      height: "400px",
+    },
   },
   {
     id: 2,
     text: "Обеспечение готовности электроэнергетики к работе с нагрузкой, регулирование и резервирование электроэнергии;",
     icon: "/images/activities/bashnya.svg",
+    iconStyle: {
+      bottom: "-60px",
+      right: "-80px",
+      width: "360px",
+      height: "360px",
+    },
   },
   {
     id: 3,
     text: "Исследования и экспериментальные разработки в области мирного использования атомной энергии;",
-    icon: "/images/activities/fluent_clipboard-settings.svg",
+    icon: "/images/activities/atom_energy.svg",
+    iconStyle: {
+      bottom: "-140px",
+      right: "-110px",
+      width: "420px",
+      height: "420px",
+    },
   },
   {
     id: 4,
     text: "Деятельность в области архитектуры для атомной промышленности и объектов атомной энергетики;",
-    icon: "/images/activities/atomic_energy.svg",
+    icon: "/images/activities/atom.svg",
+    iconStyle: {
+      bottom: "-120px",
+      right: "-100px",
+      width: "400px",
+      height: "400px",
+    },
   },
   {
     id: 5,
     text: "Деятельность в области инженерных изысканий и предоставление технических консультаций в этой области для атомной промышленности и объектов атомной энергетики;",
     icon: "/images/activities/bashnya.svg",
+    iconStyle: {
+      bottom: "-65px",
+      right: "-85px",
+      width: "370px",
+      height: "370px",
+    },
   },
 ];
 
@@ -99,8 +129,13 @@ export default function Activities() {
 
               {/* Иконка — большая, в правом нижнем углу, частично обрезана */}
               <div
-                className="absolute bottom-[-80px] right-[-100px]"
-                style={{ width: 400, height: 400 }}
+                className="absolute"
+                style={{
+                  bottom: activity.iconStyle.bottom,
+                  right: activity.iconStyle.right,
+                  width: activity.iconStyle.width,
+                  height: activity.iconStyle.height,
+                }}
               >
                 <Image
                   src={activity.icon}

@@ -1,117 +1,165 @@
 "use client";
 
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import AboutNav, { type SectionId } from "./AboutNav";
 
-import CompanySection    from "./sections/CompanySection";
+import CompanySection from "./sections/CompanySection";
 import ActivitiesSection from "./sections/ActivitiesSection";
 import AdditionalSection from "./sections/AdditionalSection";
-import GallerySection    from "./sections/GallerySection";
 import LeadershipSection from "./sections/LeadershipSection";
-import SafetySection     from "./sections/SafetySection";
+import SafetySection from "./sections/SafetySection";
 import ComplianceSection from "./sections/ComplianceSection";
-import NpaSection        from "./sections/NpaSection";
+import NpaSection from "./sections/NpaSection";
 import DevelopmentSection from "./sections/DevelopmentSection";
 
-const SECTION_ORDER: SectionId[] = [
-  "about", "activities", "additional", "gallery",
-  "leadership", "safety", "compliance", "npa", "development",
+import GallerySection from "./gallery/GallerySection";
+import GalleryDetail from "./gallery/GalleryDetail";
+
+const validSections: SectionId[] = [
+  "about",
+  "activities",
+  "additional",
+  "gallery",
+  "leadership",
+  "safety",
+  "compliance",
+  "npa",
+  "development",
 ];
 
-/* Группы — для большого заголовка секции */
-const GROUP_LABELS: Partial<Record<SectionId, string>> = {
-  about:       "О Компании",
-  leadership:  "Руководство",
-  safety:      "Безопасность",
-  compliance:  "Комплаенс",
-  npa:         "НПА",
-  development: "План развития",
-};
-
 export default function AboutContent() {
+  const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
   const [active, setActive] = useState<SectionId>("about");
-  const scrollingRef = useRef(false);
+  const [selectedGallerySlug, setSelectedGallerySlug] = useState<string | null>(null);
 
-  /* ── Scroll to section when nav clicked ── */
-  const handleSelect = useCallback((id: SectionId) => {
-    setActive(id);
-    scrollingRef.current = true;
-    const el = document.getElementById(`section-${id}`);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
-      setTimeout(() => { scrollingRef.current = false; }, 800);
-    }
-  }, []);
-
-  /* ── IntersectionObserver — track active section ── */
   useEffect(() => {
-    const observers: IntersectionObserver[] = [];
+    const section = searchParams.get("section");
 
-    SECTION_ORDER.forEach((id) => {
-      const el = document.getElementById(`section-${id}`);
-      if (!el) return;
+    if (section && validSections.includes(section as SectionId)) {
+      setActive(section as SectionId);
+    } else {
+      setActive("about");
+    }
+  }, [searchParams]);
 
-      const obs = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting && !scrollingRef.current) {
-            setActive(id);
-          }
-        },
-        { rootMargin: "-30% 0px -60% 0px", threshold: 0 },
-      );
-      obs.observe(el);
-      observers.push(obs);
-    });
+  const handleSelect = useCallback(
+    (id: SectionId) => {
+      setActive(id);
 
-    return () => observers.forEach((o) => o.disconnect());
+      if (id !== "gallery") {
+        setSelectedGallerySlug(null);
+      }
+
+      router.push(`${pathname}?section=${id}`);
+    },
+    [router, pathname]
+  );
+
+  const handleOpenGallery = useCallback((slug: string) => {
+    setActive("gallery");
+    setSelectedGallerySlug(slug);
   }, []);
+
+  const handleBackToGalleryList = useCallback(() => {
+    setSelectedGallerySlug(null);
+  }, []);
+
+  const renderContent = () => {
+    switch (active) {
+      case "about":
+        return (
+          <>
+            <h1 className="text-5xl font-bold text-gray-900 mb-8">О компании</h1>
+            <CompanySection />
+          </>
+        );
+
+      case "activities":
+        return (
+          <>
+            <h1 className="text-5xl font-bold text-gray-900 mb-8">Виды деятельности ТОО «КАЭС»:</h1>
+            <ActivitiesSection />
+          </>
+        );
+
+      case "additional":
+        return (
+          <>
+            <h1 className="text-5xl font-bold text-gray-900 mb-8">Дополнительная информация</h1>
+            <AdditionalSection />
+          </>
+        );
+
+      case "gallery":
+        return selectedGallerySlug ? (
+          <>
+            <h1 className="text-5xl font-bold text-gray-900 mb-8">Галерея</h1>
+            <GalleryDetail
+              slug={selectedGallerySlug}
+              onBack={handleBackToGalleryList}
+            />
+          </>
+        ) : (
+          <GallerySection onOpenGallery={handleOpenGallery} />
+        );
+
+      case "leadership":
+        return (
+          <>
+            <h1 className="text-5xl font-bold text-gray-900 mb-8">Руководство</h1>
+            <LeadershipSection />
+          </>
+        );
+
+      case "safety":
+        return (
+          <>
+            <h1 className="text-5xl font-bold text-gray-900 mb-8">Безопасность</h1>
+            <SafetySection />
+          </>
+        );
+
+      case "compliance":
+        return (
+          <>
+            <h1 className="text-5xl font-bold text-gray-900 mb-8">Комплаенс</h1>
+            <ComplianceSection />
+          </>
+        );
+
+      case "npa":
+        return (
+          <>
+            <h1 className="text-5xl font-bold text-gray-900 mb-8">НПА</h1>
+            <NpaSection />
+          </>
+        );
+
+      case "development":
+        return (
+          <>
+            <h1 className="text-5xl font-bold text-gray-900 mb-8">План развития</h1>
+            <DevelopmentSection />
+          </>
+        );
+
+      default:
+        return null;
+    }
+  };
 
   return (
     <div className="flex flex-1 w-full pt-40 pb-20">
-
-      {/* ── Навигация ── */}
       <AboutNav active={active} onSelect={handleSelect} />
 
-      {/* ── Контент ── */}
-      <div className="flex-1 min-w-0 px-20 flex flex-col gap-0">
-
-        {/* О компании — группа из 4 секций */}
-        <div className="flex flex-col gap-7 pb-14">
-          <h1 className="text-5xl font-bold text-gray-900">О Компании</h1>
-          <CompanySection />
-          <hr className="border-gray-300" />
-          <ActivitiesSection />
-          <hr className="border-gray-300" />
-          <AdditionalSection />
-          <hr className="border-gray-300" />
-          <GallerySection />
+      <div className="flex-1 min-w-0 px-20">
+        <div className="flex flex-col">
+          {renderContent()}
         </div>
-
-        {/* Руководство */}
-        <div className="flex flex-col gap-6 border-t border-gray-300 py-14">
-          <LeadershipSection />
-        </div>
-
-        {/* Безопасность */}
-        <div className="flex flex-col gap-6 border-t border-gray-300 py-14">
-          <SafetySection />
-        </div>
-
-        {/* Комплаенс */}
-        <div className="flex flex-col gap-6 border-t border-gray-300 py-14">
-          <ComplianceSection />
-        </div>
-
-        {/* НПА */}
-        <div className="flex flex-col gap-6 border-t border-gray-300  py-14">
-          <NpaSection />
-        </div>
-
-        {/* План развития */}
-        <div className="flex flex-col gap-6 border-t border-gray-300 py-14">
-          <DevelopmentSection />
-        </div>
-
       </div>
     </div>
   );

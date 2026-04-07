@@ -41,8 +41,12 @@ const slides = [
 ];
 
 function getIndexFromPath(path: string) {
-  const idx = slides.findIndex((s) => s.href === path);
-  return idx === -1 ? 0 : idx;
+  if (path === "/") return slides.findIndex((s) => s.href === "/");
+  if (path.startsWith("/about")) return slides.findIndex((s) => s.href === "/about");
+  if (path.startsWith("/news")) return slides.findIndex((s) => s.href === "/news");
+  if (path.startsWith("/procurement")) return slides.findIndex((s) => s.href === "/procurement");
+
+  return 0;
 }
 
 export default function Slideshow() {
@@ -104,13 +108,6 @@ export default function Slideshow() {
                     {slide.subtitle}
                   </p>
                 )}
-                <Link
-                  href={slide.href}
-                  className="mt-8 w-fit text-[16px] font-light text-white border border-white/60 px-5 py-2 rounded-full hover:bg-white hover:text-[#1E4080] transition-colors duration-200"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  Подробнее
-                </Link>
               </div>
             )}
 

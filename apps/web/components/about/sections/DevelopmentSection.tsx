@@ -26,11 +26,10 @@ function ReadIcon() {
 export default function DevelopmentSection() {
   return (
     <section id="section-development" className="flex flex-col gap-4 scroll-mt-24">
-      <h2 className="text-4xl font-bold text-gray-900">План развития</h2>
 
       <div className="flex flex-col gap-4">
         {docs.map((doc, i) => (
-          <div key={i} className="flex flex-col gap-3 bg-gray-50 rounded-lg p-7 border border-gray-100">
+          <div key={i} className="flex flex-col gap-3 bg-gray-50 rounded-lg p-7 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300">
             <p className="text-gray-700 font-light">{doc.date}</p>
             <p className="font-bold text-gray-900 text-lg">{doc.title}</p>
             <div className="flex gap-3">

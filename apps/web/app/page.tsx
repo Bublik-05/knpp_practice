@@ -1,7 +1,7 @@
-import News from "@/components/sections/News";
-import About from "@/components/sections/About";
-import Activities from "@/components/sections/Activities";
-import HotLine from "@/components/sections/HotLine";
+import News from "@/components/main/News";
+import About from "@/components/main/About";
+import Activities from "@/components/main/Activities";
+import HotLine from "@/components/main/HotLine";
 import { getFeaturedNews } from "@/lib/news";
 
 export default async function Home() {

@@ -1,11 +1,10 @@
 export default function SafetySection() {
   return (
     <section id="section-safety" className="flex flex-col gap-4 scroll-mt-24">
-      <h2 className="text-4xl font-bold text-gray-900">Безопасность</h2>
-      <h3 className="text-2xl font-medium text-gray-700">Безопасность АЭС</h3>
-      <p className="font-light text-md">Про безопасность современных атомных реакторов:</p>
+      <h3 className="text-3xl font-medium text-gray-700">Безопасность АЭС</h3>
+      <p className="font-light text-xl">Про безопасность современных атомных реакторов:</p>
 
-      <div className="flex flex-col gap-4 font-light text-[15px] leading-relaxed">
+      <div className="flex flex-col gap-4 font-light text-xl leading-relaxed">
         <p>
           В современных проектах реакторных установок используется глубокоэшелонированная защита для предотвращения выхода радиоактивных материалов в окружающую среду. 
 

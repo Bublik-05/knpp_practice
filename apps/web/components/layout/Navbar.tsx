@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { useState, useRef } from "react";
 import Image from "next/image";
 
@@ -25,18 +25,18 @@ const navLinks: NavLink[] = [
     href: "/about",
     megaMenu: {
       topLinks: [
-        { label: "О компании", href: "/about" },
-        { label: "Руководство", href: "/about/management" },
-        { label: "Безопасность", href: "/about/safety" },
-        { label: "Комплаенс", href: "/about/compliance" },
-        { label: "НПА", href: "/about/npa" },
-        { label: "План развития", href: "/about/development" },
+        { label: "О компании", href: "/about?section=about" },
+        { label: "Руководство", href: "/about?section=leadership" },
+        { label: "Безопасность", href: "/about?section=safety" },
+        { label: "Комплаенс", href: "/about?section=compliance" },
+        { label: "НПА", href: "/about?section=npa" },
+        { label: "План развития", href: "/about?section=development" },
       ],
       sideLinks: [
-        { label: 'О ТОО "КАЭС"', href: "/about/company" },
-        { label: "Виды деятельности ТОО «КАЭС»:", href: "/about/activities" },
-        { label: "Дополнительная информация", href: "/about/info" },
-        { label: "Галерея", href: "/about/gallery" },
+        { label: 'О ТОО "КАЭС"', href: "/about?section=about" },
+        { label: "Виды деятельности ТОО «КАЭС»", href: "/about?section=activities" },
+        { label: "Дополнительная информация", href: "/about?section=additional" },
+        { label: "Галерея", href: "/about?section=gallery" },
       ],
     },
   },
@@ -46,8 +46,18 @@ const navLinks: NavLink[] = [
   { label: "Контакты", href: "/contacts" },
 ];
 
+function isLinkActive(pathname: string, href: string) {
+  if (href === "/") {
+    return pathname === "/";
+  }
+
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
+
 export default function Navbar() {
   const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const currentSection = searchParams.get("section");
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [searchHovered, setSearchHovered] = useState(false);
