@@ -33,7 +33,7 @@ const slides = [
   {
     id: "procurement",
     label: "Закупки",
-    href: "/procurement",
+    href: "/procurements",
     image: "/images/procurement-img.jpg",
     title: "Закупки",
     subtitle: "Тендеры и закупочная деятельность",
@@ -44,7 +44,7 @@ function getIndexFromPath(path: string) {
   if (path === "/") return slides.findIndex((s) => s.href === "/");
   if (path.startsWith("/about")) return slides.findIndex((s) => s.href === "/about");
   if (path.startsWith("/news")) return slides.findIndex((s) => s.href === "/news");
-  if (path.startsWith("/procurement")) return slides.findIndex((s) => s.href === "/procurement");
+  if (path.startsWith("/procurements")) return slides.findIndex((s) => s.href === "/procurements");
 
   return 0;
 }

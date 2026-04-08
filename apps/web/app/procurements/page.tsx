@@ -1,8 +1,5 @@
+import AnnouncementList from "@/components/procurements/AnnouncementList";
 
 export default function Procurements() {
-  return (
-    <main className="">
-        
-      </main>
-  );
+  return <AnnouncementList />;
 }

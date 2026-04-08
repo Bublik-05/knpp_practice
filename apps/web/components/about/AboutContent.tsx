@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import AboutNav, { type SectionId } from "./AboutNav";
 
@@ -36,15 +36,45 @@ export default function AboutContent() {
   const [active, setActive] = useState<SectionId>("about");
   const [selectedGallerySlug, setSelectedGallerySlug] = useState<string | null>(null);
 
+  const contentTopRef = useRef<HTMLDivElement | null>(null);
+  const scrollToContentTop = useCallback(() => {
+  if (!contentTopRef.current) return;
+
+    const y = contentTopRef.current.getBoundingClientRect().top + window.scrollY - 140;
+
+    window.scrollTo({
+      top: y,
+      behavior: "auto",
+    });
+  }, []);
+
   useEffect(() => {
     const section = searchParams.get("section");
-
+    
     if (section && validSections.includes(section as SectionId)) {
       setActive(section as SectionId);
+      setSelectedGallerySlug(null);
+    
+      const timeout = setTimeout(() => {
+        scrollToContentTop();
+      }, 0);
+    
+      return () => clearTimeout(timeout);
     } else {
       setActive("about");
+      setSelectedGallerySlug(null);
     }
-  }, [searchParams]);
+  }, [searchParams, scrollToContentTop]);
+
+  useEffect(() => {
+    if (active !== "gallery") return;
+
+    const timeout = setTimeout(() => {
+      scrollToContentTop();
+    }, 0);
+
+    return () => clearTimeout(timeout);
+  }, [selectedGallerySlug, active, scrollToContentTop]);
 
   const handleSelect = useCallback(
     (id: SectionId) => {
@@ -73,7 +103,7 @@ export default function AboutContent() {
       case "about":
         return (
           <>
-            <h1 className="text-5xl font-bold text-gray-900 mb-8">О компании</h1>
+            <h1    className="text-5xl font-bold text-gray-900 mb-8  ">О компании</h1>
             <CompanySection />
           </>
         );
@@ -81,7 +111,7 @@ export default function AboutContent() {
       case "activities":
         return (
           <>
-            <h1 className="text-5xl font-bold text-gray-900 mb-8">Виды деятельности ТОО «КАЭС»:</h1>
+            <h1    className="text-5xl font-bold text-gray-900 mb-8  ">Виды деятельности ТОО «КАЭС»:</h1>
             <ActivitiesSection />
           </>
         );
@@ -89,7 +119,7 @@ export default function AboutContent() {
       case "additional":
         return (
           <>
-            <h1 className="text-5xl font-bold text-gray-900 mb-8">Дополнительная информация</h1>
+            <h1    className="text-5xl font-bold text-gray-900 mb-8  ">Дополнительная информация</h1>
             <AdditionalSection />
           </>
         );
@@ -97,20 +127,22 @@ export default function AboutContent() {
       case "gallery":
         return selectedGallerySlug ? (
           <>
-            <h1 className="text-5xl font-bold text-gray-900 mb-8">Галерея</h1>
+            <h1 className="text-5xl font-bold text-gray-900 mb-8">
+              Галерея
+            </h1>
             <GalleryDetail
               slug={selectedGallerySlug}
               onBack={handleBackToGalleryList}
             />
           </>
         ) : (
-          <GallerySection onOpenGallery={handleOpenGallery} />
+          <GallerySection onOpenGallery={handleOpenGallery}/>
         );
 
       case "leadership":
         return (
           <>
-            <h1 className="text-5xl font-bold text-gray-900 mb-8">Руководство</h1>
+            <h1    className="text-5xl font-bold text-gray-900 mb-8  ">Руководство</h1>
             <LeadershipSection />
           </>
         );
@@ -118,7 +150,7 @@ export default function AboutContent() {
       case "safety":
         return (
           <>
-            <h1 className="text-5xl font-bold text-gray-900 mb-8">Безопасность</h1>
+            <h1    className="text-5xl font-bold text-gray-900 mb-8  ">Безопасность</h1>
             <SafetySection />
           </>
         );
@@ -126,7 +158,7 @@ export default function AboutContent() {
       case "compliance":
         return (
           <>
-            <h1 className="text-5xl font-bold text-gray-900 mb-8">Комплаенс</h1>
+            <h1    className="text-5xl font-bold text-gray-900 mb-8  ">Комплаенс</h1>
             <ComplianceSection />
           </>
         );
@@ -134,7 +166,7 @@ export default function AboutContent() {
       case "npa":
         return (
           <>
-            <h1 className="text-5xl font-bold text-gray-900 mb-8">НПА</h1>
+            <h1 className="text-5xl font-bold text-gray-900 mb-8  ">НПА</h1>
             <NpaSection />
           </>
         );
@@ -142,7 +174,7 @@ export default function AboutContent() {
       case "development":
         return (
           <>
-            <h1 className="text-5xl font-bold text-gray-900 mb-8">План развития</h1>
+            <h1 className="text-5xl font-bold text-gray-900 mb-8  ">План развития</h1>
             <DevelopmentSection />
           </>
         );
@@ -156,7 +188,7 @@ export default function AboutContent() {
     <div className="flex flex-1 w-full pt-40 pb-20">
       <AboutNav active={active} onSelect={handleSelect} />
 
-      <div className="flex-1 min-w-0 px-20">
+      <div ref={contentTopRef} className="flex-1 min-w-0 px-20">
         <div className="flex flex-col">
           {renderContent()}
         </div>

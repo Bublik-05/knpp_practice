@@ -6,7 +6,7 @@ const cards = [
     title: "НПА",
     description: "Ознакомится со списком нормативно-правовых актов.",
     icon: "/icons/basil_document-outline.svg",
-    href: "/npa",
+    href: "/about?section=npa",
   },
   {
     title: "ЗАКУПКИ",
