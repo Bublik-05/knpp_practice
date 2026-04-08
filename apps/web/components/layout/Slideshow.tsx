@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import Link from "next/link";
 
 const slides = [
   {
@@ -19,8 +18,7 @@ const slides = [
     href: "/about",
     image: "/images/about-img.jpg",
     title: "О компании",
-    subtitle:
-      "ТОО «Казахстанские атомные электрические станции» (ТОО «КАЭС») создано в 2014 году",
+    subtitle: "ТОО «Казахстанские атомные электрические станции» (ТОО «КАЭС») создано в 2014 году",
   },
   {
     id: "news",
@@ -40,26 +38,31 @@ const slides = [
   },
 ];
 
+// Страницы где показывается слайдшоу
+const SLIDESHOW_ROUTES = ["/", "/about", "/news", "/procurements"];
+
 function getIndexFromPath(path: string) {
   if (path === "/") return slides.findIndex((s) => s.href === "/");
   if (path.startsWith("/about")) return slides.findIndex((s) => s.href === "/about");
   if (path.startsWith("/news")) return slides.findIndex((s) => s.href === "/news");
   if (path.startsWith("/procurements")) return slides.findIndex((s) => s.href === "/procurements");
-
   return 0;
 }
 
 export default function Slideshow() {
   const pathname = usePathname();
   const router = useRouter();
-
-  // Initialise from current path so SSR and first paint match
   const [active, setActive] = useState(() => getIndexFromPath(pathname));
 
-  // Sync when the URL changes — component stays mounted → CSS transition fires
   useEffect(() => {
     setActive(getIndexFromPath(pathname));
   }, [pathname]);
+
+  // Скрываем на страницах вакансий, контактов и других внутренних
+  const show = SLIDESHOW_ROUTES.some(
+    (r) => pathname === r || pathname.startsWith(r + "/")
+  );
+  if (!show) return null;
 
   return (
     <div className="flex w-full overflow-hidden" style={{ height: 600 }}>
@@ -90,7 +93,7 @@ export default function Slideshow() {
               }`}
             />
 
-            {/* Active slide — title + subtitle + link */}
+            {/* Active slide — title + subtitle */}
             {isActive && (
               <div className="absolute inset-0 flex flex-col justify-center px-12">
                 <h2

@@ -41,7 +41,7 @@ const navLinks: NavLink[] = [
     },
   },
   { label: "Новости", href: "/news" },
-  { label: "Закупки", href: "/procurement" },
+  { label: "Закупки", href: "/procurements" },
   { label: "Вакансии", href: "/vacancies" },
   { label: "Контакты", href: "/contacts" },
 ];

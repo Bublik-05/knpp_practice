@@ -25,7 +25,7 @@ export default async function NewsDetailPage({ params }: Props) {
 
   return (
     <main className="px-6 md:px-10 lg:px-20 py-16">
-      <div className="max-w-5xl mx-auto flex flex-col gap-8">
+      <div className="max-w-7xl mx-auto flex flex-col gap-8">
         <div className="flex justify-start">
           <Link
             href="/news"
@@ -72,7 +72,7 @@ export default async function NewsDetailPage({ params }: Props) {
           />
         </div>
 
-        <div className="max-w-3xl text-gray-700 text-lg leading-8">
+        <div className="max-w-7xl text-gray-700 text-lg leading-8">
           <p>{item.summary ?? "Полный текст публикации пока недоступен."}</p>
         </div>
       </div>
