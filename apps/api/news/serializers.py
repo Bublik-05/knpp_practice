@@ -58,6 +58,7 @@ class NewsSerializer(BaseNewsSerializer):
             "cover_image",
             "category",
             "body",
+            "content",
             "content_type",
             "status",
             "language",

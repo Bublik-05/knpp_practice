@@ -42,6 +42,21 @@ const navLinks: NavLink[] = [
   },
   { label: "Новости", href: "/news" },
   { label: "Закупки", href: "/procurements" },
+  {
+    label: "Об Атоме",
+    href: "/atom",
+    megaMenu: {
+      topLinks: [
+        { label: "История", href: "/atom?section=history" },
+        { label: "Как работает атомный реактор", href: "/atom?section=operation" },
+        { label: "Типы реакторов", href: "/atom?section=types" },
+        { label: "Безопасность", href: "/atom?section=safety" },
+        { label: "Атомная энергия и экология", href: "/atom?section=environment" },
+        { label: "Мифы и факты об АЭС", href: "/atom?section=myths" },
+      ],
+      sideLinks: [],
+    },
+  },
   { label: "Вакансии", href: "/vacancies" },
   { label: "Контакты", href: "/contacts" },
 ];
@@ -108,11 +123,10 @@ export default function Navbar() {
               >
                 <Link
                   href={link.href}
-                  className={`px-3 py-1.5 text-[15px] whitespace-nowrap rounded transition-colors flex items-center ${
-                    isActive || isMenuOpen
-                      ? "font-medium text-[#1E4080]"
-                      : "font-light text-gray-600 hover:text-[#1E4080]"
-                  }`}
+                  className={`px-3 py-1.5 text-[15px] whitespace-nowrap rounded transition-colors flex items-center ${isActive || isMenuOpen
+                    ? "font-medium text-[#1E4080]"
+                    : "font-light text-gray-600 hover:text-[#1E4080]"
+                    }`}
                 >
                   {link.label}
                 </Link>
@@ -173,9 +187,8 @@ export default function Navbar() {
           >
             {/* input: absolute, grows left from icon */}
             <div
-              className={`absolute right-full mr-1 overflow-hidden transition-all duration-300 ease-in-out ${
-                searchVisible ? "w-44 opacity-100" : "w-0 opacity-0"
-              }`}
+              className={`absolute right-full mr-1 overflow-hidden transition-all duration-300 ease-in-out ${searchVisible ? "w-44 opacity-100" : "w-0 opacity-0"
+                }`}
             >
               <input
                 type="text"
@@ -269,11 +282,10 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setMenuOpen(false)}
-                    className={`block px-6 py-3 text-[14px] border-b border-gray-50 ${
-                      isActive
-                        ? "font-semibold text-[#1B2A4A] bg-gray-50"
-                        : "text-gray-600 hover:bg-gray-50"
-                    }`}
+                    className={`block px-6 py-3 text-[14px] border-b border-gray-50 ${isActive
+                      ? "font-semibold text-[#1B2A4A] bg-gray-50"
+                      : "text-gray-600 hover:bg-gray-50"
+                      }`}
                   >
                     {link.label}
                   </Link>

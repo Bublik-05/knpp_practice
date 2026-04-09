@@ -3,6 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getNewsBySlug } from "@/lib/news";
 
+import ClientContentRenderer from "./ClientContentRenderer";
+
 type Props = {
   params: Promise<{
     slug: string;
@@ -45,7 +47,7 @@ export default async function NewsDetailPage({ params }: Props) {
                 d="M9 5l7 7-7 7"
               />
             </svg>
-            Назад к новостям 
+            Назад к новостям
           </Link>
         </div>
 
@@ -74,6 +76,11 @@ export default async function NewsDetailPage({ params }: Props) {
 
         <div className="max-w-7xl text-gray-700 text-lg leading-8">
           <p>{item.summary ?? "Полный текст публикации пока недоступен."}</p>
+          {item.content ? (
+            <ClientContentRenderer content={item.content} />
+          ) : (
+            <p>Полный текст публикации пока недоступен.</p>
+          )}
         </div>
       </div>
     </main>

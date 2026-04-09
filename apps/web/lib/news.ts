@@ -1,6 +1,7 @@
 export type NewsCategory = "Новости" | "События" | "Пресс-релизы";
 
 export interface NewsItem {
+  content: string;
   id: number;
   slug: string;
   category: NewsCategory;
@@ -15,6 +16,8 @@ interface ApiNewsItem {
   slug: string;
   title: string;
   summary: string;
+  content: any; // JSON structure from API
+  body: any;
   cover_image: string | null;
   category: NewsCategory;
   published_date: string | null;
@@ -50,6 +53,8 @@ function mapNewsItem(item: ApiNewsItem): NewsItem {
     date: item.published_date ?? "Без даты",
     image: item.cover_image ?? "/images/news1-img.jpg",
     summary: item.summary,
+    content: item.content ?? "Полный текст публикации пока недоступен.",
+    body: item.body ?? "Полный текст публикации пока недоступен.",
   };
 }
 
