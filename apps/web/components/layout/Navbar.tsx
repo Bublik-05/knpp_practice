@@ -53,6 +53,7 @@ const navLinks: NavLink[] = [
         { label: "Безопасность", href: "/atom?section=safety" },
         { label: "Атомная энергия и экология", href: "/atom?section=environment" },
         { label: "Мифы и факты об АЭС", href: "/atom?section=myths" },
+        { label: "Интерактив / мультимедиа", href: "/atom?section=multimedia" },
       ],
       sideLinks: [],
     },

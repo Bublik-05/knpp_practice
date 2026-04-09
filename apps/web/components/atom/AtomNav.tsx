@@ -9,6 +9,7 @@ export type SectionId =
   | "safety"
   | "environment"
   | "myths"
+  | "multimedia"
 
 interface Props {
   active: SectionId;
@@ -22,6 +23,7 @@ const topItems: { id: SectionId; label: string }[] = [
   { id: "safety", label: "Безопасность" },
   { id: "environment", label: "Атомная энергия и экология" },
   { id: "myths", label: "Мифы и факты об АЭС" },
+  { id: "multimedia", label: "Интерактив / мультимедиа" }
 ];
 
 export default function AboutNav({ active, onSelect }: Props) {
