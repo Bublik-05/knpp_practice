@@ -33,9 +33,9 @@ export default function MythsSection() {
     ];
 
     return (
-        <section className="py-10">
-            <h2 className="text-3xl font-semibold mb-6">Мифы и факты об АЭС</h2>
-            <p className="text-lg text-gray-700 mb-8">
+        <div className="space-y-8">
+            <h2 className="text-3xl font-medium">Мифы и факты об АЭС</h2>
+            <p className="text-lg text-gray-700 font-light leading-relaxed">
                 Распространённые мифы об атомной энергетике и краткие факты, которые им противостоят.
             </p>
 
@@ -43,17 +43,17 @@ export default function MythsSection() {
                 {myths.map((item, index) => (
                     <div
                         key={index}
-                        className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm"
+                        className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm hover:shadow-lg transition-shadow duration-300"
                     >
-                        <p className="text-xl font-semibold text-red-600 mb-3">
+                        <p className="text-lg font-medium text-[#1E4080] mb-2">
                             Миф: {item.myth}
                         </p>
                         <p className="text-lg text-gray-700 leading-relaxed">
-                            <span className="font-semibold text-green-700">Факт:</span> {item.fact}
+                            <span className="font-semibold text-[#35B56B]">Факт:</span> {item.fact}
                         </p>
                     </div>
                 ))}
             </div>
-        </section>
+        </div>
     );
 }

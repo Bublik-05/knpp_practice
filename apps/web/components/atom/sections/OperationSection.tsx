@@ -2,11 +2,7 @@
 
 export default function OperationSection() {
     return (
-        <div className="space-y-6">
-            <h2 className="text-3xl font-semibold">
-                Как работает атомный реактор
-            </h2>
-
+        <div className="space-y-8">
             <p className="text-lg text-gray-700">
                 Атомный реактор — это установка, где происходит контролируемая цепная реакция деления урана.
             </p>
@@ -14,18 +10,18 @@ export default function OperationSection() {
             {/* Image */}
             <div className="w-full flex justify-center">
                 <img
-                    src="/reactor.jpg" // сюда вставишь свою картинку
+                    src="/reactor.jpg" 
                     alt="Атомный реактор"
                     className="rounded-xl shadow-md max-w-full h-auto"
                 />
             </div>
 
             <div>
-                <h3 className="text-xl font-semibold text-blue-600 mb-2">
+                <h3 className="text-xl font-medium mb-2">
                     Как он работает:
                 </h3>
 
-                <ol className="list-decimal ml-6 text-gray-700 space-y-2">
+                <ol className="list-decimal ml-6 text-lg text-gray-700 font-light space-y-2">
                     <li>Топливо (урановые стержни) делится, выделяя тепло</li>
                     <li>Вода в реакторе нагревается и превращается в пар</li>
                     <li>
@@ -39,7 +35,7 @@ export default function OperationSection() {
                 </ol>
             </div>
 
-            <div className="text-gray-700 space-y-3">
+            <div className="space-y-3 text-lg text-gray-700 font-light leading-relaxed">
                 <p>
                     Безопасность реактора обеспечивают многоуровневые системы защиты,
                     такие как двойная герметичная оболочка, комбинация пассивных и

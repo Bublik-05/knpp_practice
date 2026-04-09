@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import AboutNav, { type SectionId } from "./AtomNav";
+import PageHero from "@/components/vacancies/PageHero";
 
 import SafetySection from "./sections/SafetySection";
 import HistorySection from "./sections/HistorySection";
@@ -27,7 +28,9 @@ export default function AboutContent() {
   const ActiveSection = sections.find((section) => section.id === active)?.Component;
 
   return (
-    <div className="flex flex-1 w-full pt-40 pb-20">
+    <>
+      <PageHero title="Об атоме" />
+    <div className="flex flex-1 w-full pt-10 pb-20">
       <AboutNav active={active} onSelect={setActive} />
 
       <div className="flex-1 min-w-0 px-20">
@@ -43,5 +46,6 @@ export default function AboutContent() {
         )}
       </div>
     </div>
+    </>
   );
 }

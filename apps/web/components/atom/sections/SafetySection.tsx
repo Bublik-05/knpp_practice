@@ -1,13 +1,14 @@
 export default function SafetySection() {
   return (
-    <section id="section-safety" className="flex flex-col gap-4 scroll-mt-24">
-      <h3 className="text-3xl font-medium text-gray-700">Безопасность АЭС</h3>
-      <p className="font-light text-xl">
+    <div className="space-y-8">
+      <h2 className="text-3xl font-medium">Безопасность АЭС</h2>
+
+      <p className="text-lg text-gray-700 font-light leading-relaxed">
         Про безопасность современных атомных реакторов:
       </p>
 
-      <div className="flex flex-col gap-6 font-light text-xl leading-relaxed">
-        <p>
+      <div className="space-y-6">
+        <p className="text-lg text-gray-700 font-light leading-relaxed">
           Современные атомные электростанции представляют собой высокотехнологичные
           объекты, где безопасность является приоритетным принципом проектирования,
           строительства и эксплуатации. Реакторы поколения III и III+ оснащаются
@@ -16,18 +17,16 @@ export default function SafetySection() {
           снижать вероятность тяжёлых аварий и минимизировать возможные последствия.
         </p>
 
-        <p>
+        <p className="text-lg text-gray-700 font-light leading-relaxed">
           Согласно подходу МАГАТЭ, безопасность АЭС строится по принципу
           многоуровневой защиты. Это означает, что даже при отказе одного элемента
           вступают в действие следующие уровни защиты, предотвращающие развитие
           нештатной ситуации.
         </p>
 
-        <div className="flex flex-col gap-3">
-          <h4 className="text-2xl font-medium text-gray-700">
-            Ядерная безопасность
-          </h4>
-          <p>
+        <div className="space-y-3">
+          <h3 className="text-xl font-medium">Ядерная безопасность</h3>
+          <p className="text-lg text-gray-700 font-light leading-relaxed">
             Ядерная безопасность направлена на предотвращение аварий и контроль
             цепной реакции в реакторе. Современные реакторы имеют несколько
             физических барьеров защиты: топливную матрицу, оболочку топлива,
@@ -37,17 +36,15 @@ export default function SafetySection() {
           </p>
         </div>
 
-        <div className="flex flex-col gap-3">
-          <h4 className="text-2xl font-medium text-gray-700">
-            Радиационная безопасность
-          </h4>
-          <p>
+        <div className="space-y-3">
+          <h3 className="text-xl font-medium">Радиационная безопасность</h3>
+          <p className="text-lg text-gray-700 font-light leading-relaxed">
             Радиационная безопасность направлена на защиту персонала, населения и
             окружающей среды от воздействия ионизирующего излучения. На современных
             АЭС применяются дозиметры в реальном времени, системы радиационного
             контроля, автоматизированные барьеры и строгие регламенты эксплуатации.
           </p>
-          <p>
+          <p className="text-lg text-gray-700 font-light leading-relaxed">
             Международные нормы предусматривают годовой предел эффективной дозы
             для персонала на уровне 20 мЗв, а для населения — 1 мЗв сверх
             естественного фона. В штатном режиме воздействие АЭС на население
@@ -55,11 +52,9 @@ export default function SafetySection() {
           </p>
         </div>
 
-        <div className="flex flex-col gap-3">
-          <h4 className="text-2xl font-medium text-gray-700">
-            Физическая ядерная безопасность
-          </h4>
-          <p>
+        <div className="space-y-3">
+          <h3 className="text-xl font-medium">Физическая ядерная безопасность</h3>
+          <p className="text-lg text-gray-700 font-light leading-relaxed">
             Физическая ядерная безопасность охватывает защиту станции от внешних
             угроз: несанкционированного доступа, диверсий, кражи ядерных
             материалов и других злонамеренных действий. Для этого применяются
@@ -68,11 +63,9 @@ export default function SafetySection() {
           </p>
         </div>
 
-        <div className="flex flex-col gap-3">
-          <h4 className="text-2xl font-medium text-gray-700">
-            Устойчивость и международные стандарты
-          </h4>
-          <p>
+        <div className="space-y-3">
+          <h3 className="text-xl font-medium">Устойчивость и международные стандарты</h3>
+          <p className="text-lg text-gray-700 font-light leading-relaxed">
             Современные проекты АЭС разрабатываются с учётом внешних воздействий,
             включая землетрясения, наводнения, потерю электроснабжения и другие
             экстремальные события. Параметры такой защиты определяются для каждой
@@ -81,11 +74,9 @@ export default function SafetySection() {
           </p>
         </div>
 
-        <div className="flex flex-col gap-3">
-          <h4 className="text-2xl font-medium text-gray-700">
-            Перспективы и вывод
-          </h4>
-          <p>
+        <div className="space-y-3">
+          <h3 className="text-xl font-medium">Перспективы и вывод</h3>
+          <p className="text-lg text-gray-700 font-light leading-relaxed">
             Безопасность современных АЭС — это сочетание инженерных решений,
             строгого регулирования, культуры безопасности, подготовки персонала и
             международного контроля. Благодаря многоуровневым системам защиты и
@@ -95,6 +86,6 @@ export default function SafetySection() {
           </p>
         </div>
       </div>
-    </section>
+    </div>
   );
 }

@@ -41,7 +41,7 @@ export default function AboutNav({ active, onSelect }: Props) {
                 key={item.id}
                 onClick={() => onSelect(item.id)}
                 className={`
-                  flex items-center justify-between px-5 py-4 text-[15px] font-medium
+                  flex items-start justify-between text-left gap-3 px-5 py-4 text-[15px] font-medium
                   transition-colors duration-150
                   ${i > 0 ? "border-t border-gray-100" : ""}
                   ${active === item.id

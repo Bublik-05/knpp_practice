@@ -2,17 +2,17 @@
 
 export default function EnvironmentSection() {
     return (
-        <section className="py-10">
-            <h2 className="text-3xl font-semibold mb-6">
+        <div className="space-y-8">
+            <h2 className="text-3xl font-medium">
                 Атомная энергия и экология
             </h2>
 
-            <p className="text-lg text-gray-700 mb-8">
+            <p className="text-lg text-gray-700 font-light leading-relaxed">
                 Атомная энергия — один из самых экологически чистых источников электроэнергии.
             </p>
 
-            <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
-                <ul className="list-disc pl-6 space-y-3">
+            <div className="space-y-6">
+                <ul className="list-disc ml-6 text-lg text-gray-700 font-light space-y-2 leading-relaxed">
                     <li>
                         При выработке 1 кВт⋅ч атомная станция выделяет всего около 12 граммов
                         CO₂, что в десятки раз меньше, чем угольные или газовые станции.
@@ -32,8 +32,8 @@ export default function EnvironmentSection() {
                     </li>
                 </ul>
 
-                <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
-                    <h3 className="text-2xl font-semibold mb-3">
+                <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+                    <h3 className="text-xl font-medium mb-2">
                         Онлайн интерактивный калькулятор выбросов CO₂
                     </h3>
                     <p>
@@ -41,6 +41,6 @@ export default function EnvironmentSection() {
                     </p>
                 </div>
             </div>
-        </section>
+        </div>
     );
 }
