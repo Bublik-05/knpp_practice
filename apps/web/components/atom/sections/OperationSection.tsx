@@ -14,7 +14,7 @@ export default function OperationSection() {
             {/* Image */}
             <div className="w-full flex justify-center">
                 <img
-                    src="/reactor.jpg" // сюда вставишь свою картинку
+                    src="\images\working_atom_reactor.png" // сюда вставишь свою картинку
                     alt="Атомный реактор"
                     className="rounded-xl shadow-md max-w-full h-auto"
                 />
