@@ -1,10 +1,13 @@
 import BalkhashProject from "./BalkhashProject";
 import MainkumProject from "./MainkumProject";
 import ConstructionStages from "./ConstructionStages";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 
 export default function ProjectsContent() {
   return (
     <section className="max-w-7xl mx-auto px-8 py-16 space-y-20">
+
+      <Breadcrumb items={[{ label: "Проекты" }]} />
 
       {/* Intro */}
       <div className="max-w-2xl">

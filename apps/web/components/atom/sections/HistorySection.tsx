@@ -128,7 +128,7 @@ export default function HistorySection() {
     <section className="w-full">
       <div className="flex items-start gap-20">
         {/* LEFT TIMELINE */}
-        <div className="relative shrink-0 w-[260px]">
+        <div className="relative shrink-0 w-[340px]">
           <div
             className="absolute top-0 bottom-0 w-[2px] bg-gray-300"
             style={{ left: 44 }}
@@ -200,17 +200,6 @@ export default function HistorySection() {
                 x: { duration: 0.22 },
               }}
             >
-              <div className="mb-4">
-                <motion.h2
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.22 }}
-                  className="text-[64px] leading-none font-medium tracking-[-0.04em] text-black"
-                >
-                  {active.year}
-                </motion.h2>
-              </div>
-            
               <ul className="space-y-2 max-w-4xl">
                 {active.events.map((event, i) => (
                   <motion.li

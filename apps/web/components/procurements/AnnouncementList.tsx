@@ -1,10 +1,15 @@
 import AnnouncementCard from "./AnnouncementCard";
 import { announcements } from "@/lib/announcements";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 
 export default function AnnouncementList() {
   return (
     <section className="flex w-full p-30 flex-col gap-5">
       <div className="flex flex-col justify-between flex-[1.4] py-14">
+        <Breadcrumb
+          items={[{ label: "Закупки" }]}
+          className="mb-8"
+        />
         <div className="flex flex-col gap-6">
           <h1 className="font-bold leading-tight text-3xl md:text-4xl lg:text-5xl">
             Информация для потенциальных поставщиков

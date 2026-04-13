@@ -3,6 +3,7 @@
 import { useState, useMemo, useEffect } from "react";
 import NewsFilter, { type FilterKey } from "../news/NewsFilter";
 import NewsGrid from "../news/NewsGrid";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 import type { NewsItem } from "@/lib/news";
 
 interface Props {
@@ -46,6 +47,10 @@ export default function NewsContent({ items }: Props) {
       <NewsFilter active={filter} onChange={setFilter} counts={counts} />
 
       <div className="flex-1 p-10">
+        <Breadcrumb
+          items={[{ label: "Новости" }]}
+          className="mb-6"
+        />
         <div className="mb-8">
           <h1 className="text-5xl font-bold text-gray-900">
             {filter}
