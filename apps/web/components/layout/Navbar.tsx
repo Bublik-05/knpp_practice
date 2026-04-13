@@ -141,6 +141,13 @@ const menuColumns: MenuColumn[] = [
       { label: "Связаться с нами", href: "/contacts" },
     ],
   },
+  {
+    label: "Послание президента",
+    href: "/president-message",
+    subLinks: [
+      { label: "Послание президента", href: "/president-message" },
+    ],
+  },
 ];
 
 function isLinkActive(pathname: string, href: string) {

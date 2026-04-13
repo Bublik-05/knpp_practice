@@ -1,6 +1,8 @@
 import News from "@/components/main/News";
 import About from "@/components/main/About";
 import Activities from "@/components/main/Activities";
+import KazakhstanMapSection from "@/components/main/KazakhstanMapSection";
+import DevelopmentSection from "@/components/main/DevelopmentPlan";
 import { getFeaturedNews } from "@/lib/news";
 
 export default async function Home() {
@@ -10,7 +12,9 @@ export default async function Home() {
     <>
       <About />
       <News items={featuredNews} />
-      <Activities/>
+      <Activities />
+      <DevelopmentSection />
+      <KazakhstanMapSection />
     </>
   );
 }
