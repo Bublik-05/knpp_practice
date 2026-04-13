@@ -1,7 +1,7 @@
 export type NewsCategory = "Новости" | "События" | "Пресс-релизы";
 
 export interface NewsItem {
-  content: string;
+  content?: string;
   id: number;
   slug: string;
   category: NewsCategory;
@@ -16,7 +16,7 @@ interface ApiNewsItem {
   slug: string;
   title: string;
   summary: string;
-  content: any; // JSON structure from API
+  content: any;
   body: any;
   cover_image: string | null;
   category: NewsCategory;
@@ -53,8 +53,7 @@ function mapNewsItem(item: ApiNewsItem): NewsItem {
     date: item.published_date ?? "Без даты",
     image: item.cover_image ?? "/images/news1-img.jpg",
     summary: item.summary,
-    content: item.content ?? "Полный текст публикации пока недоступен.",
-    body: item.body ?? "Полный текст публикации пока недоступен.",
+    content: item.content ?? item.body ?? "Полный текст публикации пока недоступен.",
   };
 }
 
@@ -67,6 +66,7 @@ const FALLBACK_NEWS: NewsItem[] = [
     date: "09.02.2026",
     image: "/images/news1-img.jpg",
     summary: "Краткое описание новости для детальной страницы.",
+    content: "Полный текст публикации пока недоступен.",
   },
   {
     id: 2,
@@ -76,6 +76,7 @@ const FALLBACK_NEWS: NewsItem[] = [
     date: "15.01.2026",
     image: "/images/news2-img.jpg",
     summary: "Краткое описание новости для детальной страницы.",
+    content: "Полный текст публикации пока недоступен.",
   },
   {
     id: 3,
@@ -85,6 +86,7 @@ const FALLBACK_NEWS: NewsItem[] = [
     date: "22.12.2025",
     image: "/images/news3-img.jpg",
     summary: "Краткое описание новости для детальной страницы.",
+    content: "Полный текст публикации пока недоступен.",
   },
   {
     id: 4,
@@ -94,6 +96,7 @@ const FALLBACK_NEWS: NewsItem[] = [
     date: "05.11.2025",
     image: "/images/news4-img.jpg",
     summary: "Краткое описание события для детальной страницы.",
+    content: "Полный текст публикации пока недоступен.",
   },
   {
     id: 5,
@@ -103,6 +106,7 @@ const FALLBACK_NEWS: NewsItem[] = [
     date: "18.10.2025",
     image: "/images/news5-img.jpg",
     summary: "Краткое описание события для детальной страницы.",
+    content: "Полный текст публикации пока недоступен.",
   },
   {
     id: 6,
@@ -112,6 +116,7 @@ const FALLBACK_NEWS: NewsItem[] = [
     date: "01.09.2025",
     image: "/images/news1-img.jpg",
     summary: "Краткое описание события для детальной страницы.",
+    content: "Полный текст публикации пока недоступен.",
   },
   {
     id: 7,
@@ -121,6 +126,7 @@ const FALLBACK_NEWS: NewsItem[] = [
     date: "15.08.2025",
     image: "/images/news2-img.jpg",
     summary: "Краткое описание пресс-релиза для детальной страницы.",
+    content: "Полный текст публикации пока недоступен.",
   },
   {
     id: 8,
@@ -130,6 +136,7 @@ const FALLBACK_NEWS: NewsItem[] = [
     date: "30.07.2025",
     image: "/images/news3-img.jpg",
     summary: "Краткое описание пресс-релиза для детальной страницы.",
+    content: "Полный текст публикации пока недоступен.",
   },
   {
     id: 9,
@@ -139,6 +146,7 @@ const FALLBACK_NEWS: NewsItem[] = [
     date: "14.07.2025",
     image: "/images/news4-img.jpg",
     summary: "Краткое описание пресс-релиза для детальной страницы.",
+    content: "Полный текст публикации пока недоступен.",
   },
 ];
 
