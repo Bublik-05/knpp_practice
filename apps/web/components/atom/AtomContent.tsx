@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import AboutNav, { type SectionId } from "./AtomNav";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 
 import SafetySection from "./sections/SafetySection";
 import HistorySection from "./sections/HistorySection";
@@ -13,23 +14,17 @@ import MythsSection from "./sections/MythsSection";
 import MultimediaSection from "./sections/MultimediaSection";
 
 const validSections: SectionId[] = [
-  "history",
-  "operation",
-  "types",
-  "safety",
-  "environment",
-  "myths",
-  "multimedia",
+  "history", "operation", "types", "safety", "environment", "myths", "multimedia",
 ];
 
 const sections: { id: SectionId; label: string; Component: React.FC }[] = [
-  { id: "history",    label: "История",                        Component: HistorySection },
-  { id: "operation",  label: "Как работает атомный реактор",   Component: OperationSection },
-  { id: "types",      label: "Типы реакторов",                 Component: TypesSection },
-  { id: "safety",     label: "Безопасность",                   Component: SafetySection },
-  { id: "environment",label: "Экология",                       Component: EnvironmentSection },
-  { id: "myths",      label: "Мифы и факты",                   Component: MythsSection },
-  { id: "multimedia", label: "Интерактив / мультимедиа",       Component: MultimediaSection },
+  { id: "history",     label: "История",                      Component: HistorySection },
+  { id: "operation",   label: "Как работает атомный реактор", Component: OperationSection },
+  { id: "types",       label: "Типы реакторов",               Component: TypesSection },
+  { id: "safety",      label: "Безопасность",                 Component: SafetySection },
+  { id: "environment", label: "Экология",                     Component: EnvironmentSection },
+  { id: "myths",       label: "Мифы и факты",                 Component: MythsSection },
+  { id: "multimedia",  label: "Интерактив / мультимедиа",     Component: MultimediaSection },
 ];
 
 export default function AtomContent() {
@@ -65,26 +60,34 @@ export default function AtomContent() {
     [router, pathname]
   );
 
-  const ActiveSection = sections.find((s) => s.id === active)?.Component;
+  const activeSection = sections.find((s) => s.id === active);
+  const ActiveSection = activeSection?.Component;
 
   return (
-    <>
-      <div className="flex flex-1 w-full pt-10 pb-20">
-        <AboutNav active={active} onSelect={handleSelect} />
+    <div className="flex flex-1 w-full pt-10 pb-20">
+      <AboutNav active={active} onSelect={handleSelect} />
 
-        <div ref={contentTopRef} className="flex-1 min-w-0 px-20">
-          {ActiveSection ? (
-            <div className="flex flex-col">
-              <h1 className="text-5xl font-bold text-gray-900 mb-8">
-                {sections.find((s) => s.id === active)?.label}
-              </h1>
-              <ActiveSection />
-            </div>
-          ) : (
-            <p className="text-gray-500">Выберите раздел для отображения.</p>
-          )}
-        </div>
+      <div ref={contentTopRef} className="flex-1 min-w-0 px-20">
+        {/* Хлебные крошки */}
+        <Breadcrumb
+          items={[
+            { label: "Об Атоме", href: "/atom" },
+            { label: activeSection?.label ?? "" },
+          ]}
+          className="mb-6"
+        />
+
+        {ActiveSection ? (
+          <div className="flex flex-col">
+            <h1 className="text-5xl font-bold text-gray-900 mb-8">
+              {activeSection?.label}
+            </h1>
+            <ActiveSection />
+          </div>
+        ) : (
+          <p className="text-gray-500">Выберите раздел для отображения.</p>
+        )}
       </div>
-    </>
+    </div>
   );
 }

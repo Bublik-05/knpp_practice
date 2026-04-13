@@ -42,13 +42,23 @@ export default function News({ items }: Props) {
   };
 
   return (
-    <section className=" w-full flex flex-col gap-10">
-      <div className=" px-30 flex flex-col gap-2">
-          <h2
-            className="font-bold leading-tight text-3xl md:text-4xl lg:text-5xl">
-              Новости ТОО «КАЭС»
-          </h2>
-        </div>
+    <section className="relative overflow-hidden w-full flex flex-col gap-10 py-20">
+
+      {/* Атом — слева сверху, лёгкий */}
+      <Image
+        src="/images/atom.png"
+        alt=""
+        width={1000}
+        height={1000}
+        className="pointer-events-none select-none absolute bottom-[-40] left-[-300] rotate-[-20] [transform:scaleX(-1)]"
+        aria-hidden
+      />
+
+      <div className="relative z-10 px-30 flex flex-col gap-2">
+        <h2 className="font-bold leading-tight text-3xl md:text-4xl lg:text-5xl">
+          Новости ТОО «КАЭС»
+        </h2>
+      </div>
       {/* ── Carousel track ── */}
       <div
         className="relative w-full overflow-hidden"
@@ -83,7 +93,7 @@ export default function News({ items }: Props) {
               }}
             >
               <div
-                className="relative overflow-hidden"
+                className="relative overflow-hidden "
                 style={{
                   height: IMG_H,
                   borderRadius: isActive ? "10px 10px 0 0" : 10,
@@ -119,7 +129,7 @@ export default function News({ items }: Props) {
         })}
       </div>
 
-      <div className="flex justify-center gap-4 mt-8">
+      <div className="relative z-10 flex justify-center gap-4 mt-8">
         <button
           onClick={() => navigate(-1)}
           aria-label="Назад"

@@ -7,6 +7,7 @@ import FaqNav, { type FaqSectionId } from "./FaqNav";
 import GeneralSection from "./sections/GeneralSection";
 import ProjectSection from "./sections/ProjectSection";
 import CooperationSection from "./sections/CooperationSection";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 
 const validSections: FaqSectionId[] = ["general", "project", "cooperation"];
 
@@ -57,6 +58,15 @@ export default function FaqContent() {
       <FaqNav active={active} onSelect={handleSelect} />
 
       <div ref={contentTopRef} className="flex-1 min-w-0 px-20">
+        {/* Хлебные крошки */}
+        <Breadcrumb
+          items={[
+            { label: "FAQ", href: "/faq" },
+            { label: activeLabel ?? "" },
+          ]}
+          className="mb-6"
+        />
+
         {ActiveSection && (
           <div className="flex flex-col">
             <h1 className="text-5xl font-bold text-gray-900 mb-8">{activeLabel}</h1>

@@ -1,8 +1,11 @@
-import News from "@/components/main/News";
 import About from "@/components/main/About";
+import MissionSection from "@/components/main/MissionSection";
+import AchievementsSection from "@/components/main/AchievementsSection";
+import ProjectsStages from "@/components/main/ProjectsStages";
 import Activities from "@/components/main/Activities";
 import KazakhstanMapSection from "@/components/main/KazakhstanMapSection";
 import DevelopmentSection from "@/components/main/DevelopmentPlan";
+import News from "@/components/main/News";
 import { getFeaturedNews } from "@/lib/news";
 
 export default async function Home() {
@@ -13,8 +16,12 @@ export default async function Home() {
       <About />
       <News items={featuredNews} />
       <Activities />
+
+      <MissionSection />
+      <AchievementsSection />
       <DevelopmentSection />
       <KazakhstanMapSection />
+      <ProjectsStages />
     </>
   );
 }

@@ -3,6 +3,8 @@
 import { useState, useCallback, useEffect, useRef } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import AboutNav, { type SectionId } from "./AboutNav";
+import Breadcrumb, { type BreadcrumbItem } from "@/components/ui/Breadcrumb";
+import { galleries } from "@/lib/galleries";
 
 import CompanySection from "./sections/CompanySection";
 import ActivitiesSection from "./sections/ActivitiesSection";
@@ -17,16 +19,21 @@ import GallerySection from "./gallery/GallerySection";
 import GalleryDetail from "./gallery/GalleryDetail";
 
 const validSections: SectionId[] = [
-  "about",
-  "activities",
-  "additional",
-  "gallery",
-  "leadership",
-  "safety",
-  "compliance",
-  "npa",
-  "development",
+  "about", "activities", "additional", "gallery",
+  "leadership", "safety", "compliance", "npa", "development",
 ];
+
+const sectionLabels: Record<SectionId, string> = {
+  about:       "О компании",
+  activities:  "Виды деятельности",
+  additional:  "Дополнительная информация",
+  gallery:     "Галерея",
+  leadership:  "Руководство",
+  safety:      "Безопасность",
+  compliance:  "Комплаенс",
+  npa:         "НПА",
+  development: "План развития",
+};
 
 export default function AboutContent() {
   const router = useRouter();
@@ -38,27 +45,17 @@ export default function AboutContent() {
 
   const contentTopRef = useRef<HTMLDivElement | null>(null);
   const scrollToContentTop = useCallback(() => {
-  if (!contentTopRef.current) return;
-
+    if (!contentTopRef.current) return;
     const y = contentTopRef.current.getBoundingClientRect().top + window.scrollY - 140;
-
-    window.scrollTo({
-      top: y,
-      behavior: "auto",
-    });
+    window.scrollTo({ top: y, behavior: "auto" });
   }, []);
 
   useEffect(() => {
     const section = searchParams.get("section");
-    
     if (section && validSections.includes(section as SectionId)) {
       setActive(section as SectionId);
       setSelectedGallerySlug(null);
-    
-      const timeout = setTimeout(() => {
-        scrollToContentTop();
-      }, 0);
-    
+      const timeout = setTimeout(() => scrollToContentTop(), 0);
       return () => clearTimeout(timeout);
     } else {
       setActive("about");
@@ -68,22 +65,14 @@ export default function AboutContent() {
 
   useEffect(() => {
     if (active !== "gallery") return;
-
-    const timeout = setTimeout(() => {
-      scrollToContentTop();
-    }, 0);
-
+    const timeout = setTimeout(() => scrollToContentTop(), 0);
     return () => clearTimeout(timeout);
   }, [selectedGallerySlug, active, scrollToContentTop]);
 
   const handleSelect = useCallback(
     (id: SectionId) => {
       setActive(id);
-
-      if (id !== "gallery") {
-        setSelectedGallerySlug(null);
-      }
-
+      if (id !== "gallery") setSelectedGallerySlug(null);
       router.push(`${pathname}?section=${id}`);
     },
     [router, pathname]
@@ -98,89 +87,39 @@ export default function AboutContent() {
     setSelectedGallerySlug(null);
   }, []);
 
+  // ── Хлебные крошки ──
+  const getBreadcrumbs = (): BreadcrumbItem[] => {
+    if (active === "gallery" && selectedGallerySlug) {
+      const galleryTitle = galleries.find((g) => g.slug === selectedGallerySlug)?.title ?? "Галерея";
+      return [
+        { label: "О компании", href: "/about" },
+        { label: "Галерея",    href: "/about?section=gallery" },
+        { label: galleryTitle },
+      ];
+    }
+    return [
+      { label: "О компании", href: "/about" },
+      { label: sectionLabels[active] },
+    ];
+  };
+
   const renderContent = () => {
     switch (active) {
-      case "about":
-        return (
-          <>
-            <h1 className="text-5xl font-bold text-gray-900 mb-8  ">О компании</h1>
-            <CompanySection />
-          </>
-        );
-
-      case "activities":
-        return (
-          <>
-            <h1 className="text-5xl font-bold text-gray-900 mb-8  ">Виды деятельности ТОО «КАЭС»:</h1>
-            <ActivitiesSection />
-          </>
-        );
-
-      case "additional":
-        return (
-          <>
-            <h1    className="text-5xl font-bold text-gray-900 mb-8  ">Дополнительная информация</h1>
-            <AdditionalSection />
-          </>
-        );
-
+      case "about":       return (<><h1 className="text-5xl font-bold text-gray-900 mb-8">О компании</h1><CompanySection /></>);
+      case "activities":  return (<><h1 className="text-5xl font-bold text-gray-900 mb-8">Виды деятельности ТОО «КАЭС»:</h1><ActivitiesSection /></>);
+      case "additional":  return (<><h1 className="text-5xl font-bold text-gray-900 mb-8">Дополнительная информация</h1><AdditionalSection /></>);
       case "gallery":
         return selectedGallerySlug ? (
-          <>
-            <h1 className="text-5xl font-bold text-gray-900 mb-8">
-              Галерея
-            </h1>
-            <GalleryDetail
-              slug={selectedGallerySlug}
-              onBack={handleBackToGalleryList}
-            />
-          </>
+          <><h1 className="text-5xl font-bold text-gray-900 mb-8">Галерея</h1><GalleryDetail slug={selectedGallerySlug} onBack={handleBackToGalleryList} /></>
         ) : (
-          <GallerySection onOpenGallery={handleOpenGallery}/>
+          <GallerySection onOpenGallery={handleOpenGallery} />
         );
-
-      case "leadership":
-        return (
-          <>
-            <h1    className="text-5xl font-bold text-gray-900 mb-8  ">Руководство</h1>
-            <LeadershipSection />
-          </>
-        );
-
-      case "safety":
-        return (
-          <>
-            <h1    className="text-5xl font-bold text-gray-900 mb-8  ">Безопасность</h1>
-            <SafetySection />
-          </>
-        );
-
-      case "compliance":
-        return (
-          <>
-            <h1    className="text-5xl font-bold text-gray-900 mb-8  ">Комплаенс</h1>
-            <ComplianceSection />
-          </>
-        );
-
-      case "npa":
-        return (
-          <>
-            <h1 className="text-5xl font-bold text-gray-900 mb-8  ">НПА</h1>
-            <NpaSection />
-          </>
-        );
-
-      case "development":
-        return (
-          <>
-            <h1 className="text-5xl font-bold text-gray-900 mb-8  ">План развития</h1>
-            <DevelopmentSection />
-          </>
-        );
-
-      default:
-        return null;
+      case "leadership":  return (<><h1 className="text-5xl font-bold text-gray-900 mb-8">Руководство</h1><LeadershipSection /></>);
+      case "safety":      return (<><h1 className="text-5xl font-bold text-gray-900 mb-8">Безопасность</h1><SafetySection /></>);
+      case "compliance":  return (<><h1 className="text-5xl font-bold text-gray-900 mb-8">Комплаенс</h1><ComplianceSection /></>);
+      case "npa":         return (<><h1 className="text-5xl font-bold text-gray-900 mb-8">НПА</h1><NpaSection /></>);
+      case "development": return (<><h1 className="text-5xl font-bold text-gray-900 mb-8">План развития</h1><DevelopmentSection /></>);
+      default:            return null;
     }
   };
 
@@ -189,6 +128,9 @@ export default function AboutContent() {
       <AboutNav active={active} onSelect={handleSelect} />
 
       <div ref={contentTopRef} className="flex-1 min-w-0 px-20">
+        {/* Хлебные крошки */}
+        <Breadcrumb items={getBreadcrumbs()} className="mb-6" />
+
         <div className="flex flex-col">
           {renderContent()}
         </div>

@@ -88,18 +88,38 @@ export default function Activities() {
   const step = cardW + GAP;
 
   return (
-    <section className="p-30 flex flex-col gap-10">
-      <div className="flex flex-col gap-2">
-        <h2
-          className="font-bold leading-tight text-3xl md:text-4xl lg:text-5xl">
+    <section className="relative overflow-hidden p-30 flex flex-col gap-10">
+
+      {/* Атом — большой, сверху справа, блюр */}
+      <Image
+        src="/images/atom.png"
+        alt=""
+        width={500}
+        height={500}
+        className="pointer-events-none select-none absolute -top-24 -right-16 opacity-[0.06] blur-md"
+        aria-hidden
+      />
+
+      {/* Атом — маленький, снизу по центру */}
+      <Image
+        src="/images/atom.png"
+        alt=""
+        width={200}
+        height={200}
+        className="pointer-events-none select-none absolute bottom-0 left-1/3 opacity-[0.04] blur-sm"
+        aria-hidden
+      />
+
+      <div className="relative z-10 flex flex-col gap-2">
+        <h2 className="font-bold leading-tight text-3xl md:text-4xl lg:text-5xl">
           Виды деятельности
         </h2>
-        <p className=" font-medium text-xl leading-relaxed max-w-xl">
+        <p className="font-medium text-xl leading-relaxed max-w-xl">
           Наша деятельность
         </p>
       </div>
       {/* ── Карусель ── */}
-      <div ref={containerRef} className="overflow-hidden w-full">
+      <div ref={containerRef} className="relative z-10 overflow-hidden w-full">
         <div
           className="flex transition-transform duration-500 ease-in-out"
           style={{
@@ -151,7 +171,7 @@ export default function Activities() {
       </div>
 
       {/* ── Кнопки навигации ── */}
-      <div className="flex justify-center gap-4 mt-10">
+      <div className="relative z-10 flex justify-center gap-4 mt-10">
         <button
           onClick={() => setCurrent((c) => Math.max(0, c - 1))}
           disabled={current === 0}

@@ -1,4 +1,5 @@
 import PageHero from "@/components/vacancies/PageHero";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 import {
   ContactInfo,
   ContactMap,
@@ -26,6 +27,9 @@ export default function ContactsPage() {
   return (
     <>
       <PageHero title="Контакты" />
+      <div className="max-w-7xl mx-auto px-8 pt-8">
+        <Breadcrumb items={[{ label: "Контакты" }]} />
+      </div>
       <ContactInfo contact={contact} />
       <ContactMap
         lat={mapCoordinates.lat}

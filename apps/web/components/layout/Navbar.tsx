@@ -118,6 +118,7 @@ const menuColumns: MenuColumn[] = [
     href: "/vacancies",
     subLinks: [
       { label: "Все вакансии", href: "/vacancies" },
+      { label: "Стажировка", href: "/vacancies/stazhirovka" },
     ],
   },
   {
