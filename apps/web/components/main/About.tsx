@@ -26,7 +26,7 @@ export default function About() {
             className="font-bold leading-tight text-3xl md:text-4xl lg:text-5xl">
             О ТОО «КАЭС»
           </h2>
-          <p className=" font-light leading-relaxed max-w-xl">
+          <p className=" font-light text-lg leading-relaxed max-w-3xl">
             ТОО «Казахстанские атомные электрические станции» (ТОО «КАЭС) создано в 2014 году в соответствии с планом первоочередных мероприятий по строительству АЭС на территории Республики Казахстан (утверждён распоряжением Премьер-Министра РК от 04.05.2014 № 60-р) по обеспечению разработки предпроектной (ТЭО) и проектной (проектно-сметной) документации по строительству АЭС, а также организация работ по строительству АЭС в Республике Казахстан.
 
           </p>
@@ -53,47 +53,6 @@ export default function About() {
             <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
           </svg>
         </Link>
-      </div>
-
-      {/* ── Правая часть: карточки ── */}
-      <div className="flex flex-col flex-[0.6] gap-4 py-10 pr-10">
-        {cards.map((card) => (
-          <Link
-            key={card.title}
-            href={card.href}
-            className="
-              relative flex-1 bg-white rounded-lg overflow-hidden
-              px-7 pt-7 pb-5
-              flex flex-col justify-start
-              shadow-md hover:shadow-lg
-              transition-shadow duration-200
-              group
-            "
-          >
-            {/* Текст */}
-            <div className="relative z-10 max-w-[70%]">
-              <h3 className="text-[20px] font-medium text-gray-900 tracking-wide mb-2">
-                {card.title}
-              </h3>
-              <p className="text-gray-500 font-light leading-snug">
-                {card.description}
-              </p>
-            </div>
-
-            {/* Иконка — большая, в правом нижнем углу, частично обрезается */}
-            <div
-              className="absolute bottom-[-30px] right-[-20px] opacity-50"
-              style={{ width: 180, height: 180 }}
-            >
-              <Image
-                src={card.icon}
-                alt={card.title}
-                fill
-                style={{ objectFit: "contain" }}
-              />
-            </div>
-          </Link>
-        ))}
       </div>
     </section>
   );

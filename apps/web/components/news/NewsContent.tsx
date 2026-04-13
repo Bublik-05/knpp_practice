@@ -42,7 +42,7 @@ export default function NewsContent({ items }: Props) {
   }, [filter]);
 
   return (
-    <div className="flex flex-1 w-full pt-30">
+    <div className="flex flex-1 w-full">
       <NewsFilter active={filter} onChange={setFilter} counts={counts} />
 
       <div className="flex-1 p-10">

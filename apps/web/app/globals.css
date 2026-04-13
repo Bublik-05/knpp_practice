@@ -17,3 +17,45 @@ body {
   color: var(--foreground);
   font-family: var(--font-tt-firs), sans-serif;
 }
+
+.news-calendar {
+  --rdp-accent-color: #1E4080;
+  --rdp-day-height: 40px;
+  --rdp-day-width: 40px;
+  --rdp-day_button-border-radius: 10px;
+  --rdp-nav_button-height: 32px;
+  --rdp-nav_button-width: 32px;
+}
+
+.news-calendar .rdp-month_caption {
+  font-size: 15px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.news-calendar .rdp-weekday {
+  font-size: 12px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.news-calendar .rdp-day_button {
+  font-size: 14px;
+  color: #374151;
+}
+
+.news-calendar .rdp-today-custom .rdp-day_button {
+  border: 1px solid #1E4080;
+}
+
+.news-calendar .rdp-range-start-custom .rdp-day_button,
+.news-calendar .rdp-range-end-custom .rdp-day_button,
+.news-calendar .rdp-selected-custom .rdp-day_button {
+  background-color: #1E4080;
+  color: white;
+}
+
+.news-calendar .rdp-range-middle-custom .rdp-day_button {
+  background-color: rgba(30, 64, 128, 0.12);
+  color: #1E4080;
+}

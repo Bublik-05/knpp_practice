@@ -10,9 +10,9 @@ export default function OperationSection() {
             {/* Image */}
             <div className="w-full flex justify-center">
                 <img
-                    src="/reactor.jpg" 
+                    src="./images/working_atom_reactor.png" 
                     alt="Атомный реактор"
-                    className="rounded-xl shadow-md max-w-full h-auto"
+                    className="rounded-lg shadow-md max-w-full h-auto"
                 />
             </div>
 

@@ -1,25 +1,27 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-const footerLinks = [
-  { label: "Главное", href: "/" },
-  { label: "О компании", href: "/about" },
-  { label: "Новости", href: "/news" },
-  { label: "Закупки", href: "/procurement" },
-  { label: "Об Атоме", href: "/atom" },
-  { label: "Вакансии", href: "/vacancies" },
-  { label: "Контакты", href: "/contacts" },
-];
-
 export default function Footer() {
+  const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
+    setForm({ name: "", email: "", phone: "", message: "" });
+  };
+
   return (
     <footer className="bg-[#7280A0] text-white">
       {/* Main section */}
-      <div className="max-w-7xl mx-auto px-8 py-10">
-        <div className="flex flex-col md:flex-row justify-between gap-10">
+      <div className="max-w-7xl mx-auto px-8 py-12">
+        <div className="flex flex-col lg:flex-row justify-between gap-12">
 
           {/* ── Left: logo + contacts ── */}
-          <div className="flex flex-col gap-6 min-w-[220px]">
+          <div className="flex flex-col gap-6 min-w-[520px]">
             <Link href="/">
               <Image
                 src="/images/KNPP.png"
@@ -63,25 +65,9 @@ export default function Footer() {
               </svg>
               <span>+7 (7172) 24 84 50</span>
             </div>
-          </div>
-
-          {/* ── Right: nav links + map ── */}
-          <div className="flex flex-col gap-5 flex-1 max-w-[540px]">
-            {/* Nav links */}
-            <nav className="flex flex-wrap gap-x-8 gap-y-2">
-              {footerLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-white/90 font-light hover:text-white transition-colors whitespace-nowrap"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
 
             {/* Yandex map embed */}
-            <div className="w-full rounded overflow-hidden" style={{ height: "260px" }}>
+            <div className="w-full rounded overflow-hidden" style={{ height: "200px" }}>
               <iframe
                 src="https://yandex.ru/map-widget/v1/?ll=71.430564%2C51.128207&z=14&pt=71.430564%2C51.128207%2Cpm2rdm&lang=ru_RU"
                 width="100%"
@@ -91,6 +77,77 @@ export default function Footer() {
                 title="Карта"
               />
             </div>
+          </div>
+
+          {/* ── Right: contact form ── */}
+          <div className="flex-1 max-w-[540px]">
+            <h2 className="text-3xl font-bold text-white mb-2 leading-snug">
+              Не нашли то что нужно?
+            </h2>
+            <p className="text-white/80 font-light text-xl mb-6">
+              Свяжитесь с нами
+            </p>
+
+            {submitted ? (
+              <div className="bg-white/10 border border-white/20 rounded-xl px-8 py-10 text-center">
+                <svg className="mx-auto mb-4" width="40" height="40" viewBox="0 0 24 24"
+                  fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+                  <polyline points="22 4 12 14.01 9 11.01" />
+                </svg>
+                <p className="text-white text-lg font-light">
+                  Спасибо! Ваша заявка отправлена.
+                </p>
+                <p className="text-white/70 text-[14px] mt-2 font-light">
+                  Мы свяжемся с вами в ближайшее время.
+                </p>
+                <button
+                  onClick={() => setSubmitted(false)}
+                  className="mt-6 px-6 py-2 border border-white/40 rounded-full text-white/80 text-[14px] font-light hover:bg-white/10 transition-colors"
+                >
+                  Отправить ещё
+                </button>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                <input
+                  type="text"
+                  placeholder="Ваше имя"
+                  required
+                  value={form.name}
+                  onChange={(e) => setForm((f) => ({ ...f, name: e.target.value }))}
+                  className="w-full bg-white/10 border border-white/25 rounded-lg px-4 py-3 text-white placeholder-white/50 text-[15px] font-light outline-none focus:border-white/60 transition-colors"
+                />
+                <input
+                  type="email"
+                  placeholder="Email"
+                  required
+                  value={form.email}
+                  onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
+                  className="w-full bg-white/10 border border-white/25 rounded-lg px-4 py-3 text-white placeholder-white/50 text-[15px] font-light outline-none focus:border-white/60 transition-colors"
+                />
+                <input
+                  type="tel"
+                  placeholder="Номер телефона"
+                  value={form.phone}
+                  onChange={(e) => setForm((f) => ({ ...f, phone: e.target.value }))}
+                  className="w-full bg-white/10 border border-white/25 rounded-lg px-4 py-3 text-white placeholder-white/50 text-[15px] font-light outline-none focus:border-white/60 transition-colors"
+                />
+                <textarea
+                  placeholder="Ваше сообщение"
+                  rows={4}
+                  value={form.message}
+                  onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))}
+                  className="w-full bg-white/10 border border-white/25 rounded-lg px-4 py-3 text-white placeholder-white/50 text-[15px] font-light outline-none focus:border-white/60 transition-colors resize-none"
+                />
+                <button
+                  type="submit"
+                  className="self-start px-8 py-3 bg-white text-[#1E4080] text-[15px] font-medium rounded-full hover:bg-[#0D1E3E] hover:text-white transition-colors"
+                >
+                  Отправить заявку
+                </button>
+              </form>
+            )}
           </div>
         </div>
       </div>

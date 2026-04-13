@@ -45,7 +45,7 @@ export default function MythsSection() {
                         key={index}
                         className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm hover:shadow-lg transition-shadow duration-300"
                     >
-                        <p className="text-lg font-medium text-[#1E4080] mb-2">
+                        <p className="text-lg font-medium text-[#f74130] mb-2">
                             Миф: {item.myth}
                         </p>
                         <p className="text-lg text-gray-700 leading-relaxed">

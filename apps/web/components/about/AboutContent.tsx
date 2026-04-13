@@ -103,7 +103,7 @@ export default function AboutContent() {
       case "about":
         return (
           <>
-            <h1    className="text-5xl font-bold text-gray-900 mb-8  ">О компании</h1>
+            <h1 className="text-5xl font-bold text-gray-900 mb-8  ">О компании</h1>
             <CompanySection />
           </>
         );
@@ -111,7 +111,7 @@ export default function AboutContent() {
       case "activities":
         return (
           <>
-            <h1    className="text-5xl font-bold text-gray-900 mb-8  ">Виды деятельности ТОО «КАЭС»:</h1>
+            <h1 className="text-5xl font-bold text-gray-900 mb-8  ">Виды деятельности ТОО «КАЭС»:</h1>
             <ActivitiesSection />
           </>
         );
@@ -185,7 +185,7 @@ export default function AboutContent() {
   };
 
   return (
-    <div className="flex flex-1 w-full pt-40 pb-20">
+    <div className="flex flex-1 w-full pt-10 pb-20">
       <AboutNav active={active} onSelect={handleSelect} />
 
       <div ref={contentTopRef} className="flex-1 min-w-0 px-20">

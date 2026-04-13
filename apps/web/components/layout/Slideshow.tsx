@@ -29,23 +29,23 @@ const slides = [
     subtitle: "Новости и события КАЭС",
   },
   {
-    id: "procurement",
-    label: "Закупки",
-    href: "/procurements",
+    id: "atom",
+    label: "Об атоме",
+    href: "/atom",
     image: "/images/procurement-img.jpg",
-    title: "Закупки",
-    subtitle: "Тендеры и закупочная деятельность",
+    title: "Об атоме",
+    subtitle: "История, безопасность и будущее атомной энергетики",
   },
 ];
 
 // Страницы где показывается слайдшоу
-const SLIDESHOW_ROUTES = ["/", "/about", "/news", "/procurements"];
+const SLIDESHOW_ROUTES = ["/", "/about", "/news", "/atom"];
 
 function getIndexFromPath(path: string) {
   if (path === "/") return slides.findIndex((s) => s.href === "/");
   if (path.startsWith("/about")) return slides.findIndex((s) => s.href === "/about");
   if (path.startsWith("/news")) return slides.findIndex((s) => s.href === "/news");
-  if (path.startsWith("/procurements")) return slides.findIndex((s) => s.href === "/procurements");
+  if (path.startsWith("/atom")) return slides.findIndex((s) => s.href === "/atom");
   return 0;
 }
 
@@ -65,7 +65,7 @@ export default function Slideshow() {
   if (!show) return null;
 
   return (
-    <div className="flex w-full overflow-hidden" style={{ height: 600 }}>
+    <div className="flex w-full overflow-hidden" style={{ height: 700 }}>
       {slides.map((slide, i) => {
         const isActive = i === active;
 
