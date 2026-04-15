@@ -1,12 +1,15 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 const reactors = [
   {
     id: "vver",
     label: "ВВЭР-1200",
     title: "Водо-водяной реактор (ВВЭР-1200, Россия)",
+    image: "/images/vver-1200.png",
+    imageAlt: "ВВЭР-1200",
     specs: [
       { name: "Поколение", value: "III+" },
       { name: "Разработчик", value: "Росатом (Россия)" },
@@ -25,6 +28,8 @@ const reactors = [
     id: "hpr",
     label: "HPR1000",
     title: "Водо-водяной реактор под давлением (HPR1000, Китай)",
+    image: "/images/hpr1000.png",
+    imageAlt: "HPR1000",
     specs: [
       { name: "Поколение", value: "III+" },
       { name: "Разработчик", value: "CNNC (Китай)" },
@@ -45,6 +50,8 @@ const reactors = [
     id: "mmr",
     label: "ММР",
     title: "Малый модульный реактор",
+    image: "/images/smr.png",
+    imageAlt: "Малый модульный реактор",
     specs: [],
     description: "",
     points: [
@@ -73,68 +80,86 @@ export default function TypesSection() {
         качестве возможных вариантов для строительства атомной электростанции в Казахстане.
       </p>
 
-      {/* Переключатель */}
       <div className="flex gap-2">
         {reactors.map((r) => (
           <button
             key={r.id}
             onClick={() => setActive(r.id)}
-            className={`px-5 py-2.5 rounded-full text-sm font-medium transition-colors duration-200 ${
-              active === r.id
-                ? "bg-[#1E4080] text-white"
-                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-            }`}
+            className={`px-5 py-2.5 rounded-full text-sm font-medium transition-colors duration-200 ${active === r.id
+              ? "bg-[#1E4080] text-white"
+              : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+              }`}
           >
             {r.label}
           </button>
         ))}
       </div>
 
-      {/* Одна карточка */}
       <div className="rounded-lg border border-gray-200 p-6 shadow-sm bg-white">
-        <h3 className="text-xl font-medium mb-4">{reactor.title}</h3>
+        <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_420px] gap-8 items-start">
+          <div>
+            <h3 className="text-xl font-medium mb-4">{reactor.title}</h3>
 
-        {reactor.specs.length > 0 && (
-          <div className="space-y-2 text-lg text-gray-700 font-light mb-4">
-            {reactor.specs.map((s) => (
-              <p key={s.name}>
-                <span className="font-medium text-gray-900">{s.name}:</span> {s.value}
+            {reactor.specs.length > 0 && (
+              <div className="space-y-2 text-lg text-gray-700 font-light mb-4">
+                {reactor.specs.map((s) => (
+                  <p key={s.name}>
+                    <span className="font-medium text-gray-900">{s.name}:</span> {s.value}
+                  </p>
+                ))}
+              </div>
+            )}
+
+            {reactor.description && (
+              <p className="text-lg text-gray-700 font-light leading-relaxed mb-4">
+                {reactor.description}
               </p>
-            ))}
-          </div>
-        )}
+            )}
 
-        {reactor.description && (
-          <p className="text-lg text-gray-700 font-light leading-relaxed mb-4">{reactor.description}</p>
-        )}
+            {reactor.points && (
+              <ul className="list-disc ml-6 text-lg text-gray-700 font-light space-y-2 leading-relaxed">
+                {reactor.points.map((p, i) => (
+                  <li key={i}>{p}</li>
+                ))}
+              </ul>
+            )}
 
-        {reactor.points && (
-          <ul className="list-disc ml-6 text-lg text-gray-700 font-light space-y-2 leading-relaxed">
-            {reactor.points.map((p, i) => (
-              <li key={i}>{p}</li>
-            ))}
-          </ul>
-        )}
+            {reactor.deployed && (
+              <div className="mt-4 text-lg text-gray-700 font-light space-y-2">
+                <p>
+                  <span className="font-medium text-gray-900">Введён в эксплуатацию:</span> {reactor.deployed}
+                </p>
+                {reactor.building && (
+                  <p>
+                    <span className="font-medium text-gray-900">Строится:</span> {reactor.building}
+                  </p>
+                )}
+              </div>
+            )}
 
-        {reactor.deployed && (
-          <div className="mt-4 text-lg text-gray-700 font-light space-y-2">
-            <p><span className="font-medium text-gray-900">Введён в эксплуатацию:</span> {reactor.deployed}</p>
-            {reactor.building && (
-              <p><span className="font-medium text-gray-900">Строится:</span> {reactor.building}</p>
+            {reactor.deployedList && (
+              <div className="mt-4 text-lg text-gray-700 font-light">
+                <p className="font-medium text-gray-900 mb-2">Введён в эксплуатацию:</p>
+                <ul className="list-disc ml-6 space-y-1">
+                  {reactor.deployedList.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
+              </div>
             )}
           </div>
-        )}
 
-        {reactor.deployedList && (
-          <div className="mt-4 text-lg text-gray-700 font-light">
-            <p className="font-medium text-gray-900 mb-2">Введён в эксплуатацию:</p>
-            <ul className="list-disc ml-6 space-y-1">
-              {reactor.deployedList.map((item, i) => (
-                <li key={i}>{item}</li>
-              ))}
-            </ul>
+          <div className="w-full">
+            <div className="relative w-full aspect-[4/3] overflow-hidden rounded-2xl border border-[#d9e2f2] bg-[#f8fbff]">
+              <Image
+                src={reactor.image}
+                alt={reactor.imageAlt}
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
-        )}
+        </div>
       </div>
     </div>
   );

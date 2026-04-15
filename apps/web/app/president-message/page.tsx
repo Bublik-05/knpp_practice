@@ -73,8 +73,6 @@ export default function PresidentMessagePage() {
                     {[
                         "Ключевые тезисы",
                         "Официальные материалы",
-                        "Разъяснения и комментарии",
-                        "Архив публикаций",
                     ].map((item) => (
                         <div
                             key={item}

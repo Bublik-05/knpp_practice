@@ -11,6 +11,7 @@ const slides = [
     image: "/images/main-img.jpg",
     title: "Казахстанские атомные\nэлектрические станции",
     subtitle: "Энергия для будущего",
+    path: ["КАЭС"],
   },
   {
     id: "about",
@@ -19,6 +20,7 @@ const slides = [
     image: "/images/about-img.jpg",
     title: "О компании",
     subtitle: "ТОО «Казахстанские атомные электрические станции» (ТОО «КАЭС») создано в 2014 году",
+    path: ["КАЭС", "О компании"],
   },
   {
     id: "news",
@@ -27,6 +29,7 @@ const slides = [
     image: "/images/news-img.jpg",
     title: "Новости",
     subtitle: "Новости и события КАЭС",
+    path: ["КАЭС", "Новости"],
   },
   {
     id: "atom",
@@ -35,10 +38,10 @@ const slides = [
     image: "/images/procurement-img.jpg",
     title: "Об атоме",
     subtitle: "История, безопасность и будущее атомной энергетики",
+    path: ["КАЭС", "Об атоме"],
   },
 ];
 
-// Страницы где показывается слайдшоу
 const SLIDESHOW_ROUTES = ["/", "/about", "/news", "/atom"];
 
 function getIndexFromPath(path: string) {
@@ -58,7 +61,6 @@ export default function Slideshow() {
     setActive(getIndexFromPath(pathname));
   }, [pathname]);
 
-  // Скрываем на страницах вакансий, контактов и других внутренних
   const show = SLIDESHOW_ROUTES.some(
     (r) => pathname === r || pathname.startsWith(r + "/")
   );
@@ -93,9 +95,33 @@ export default function Slideshow() {
               }`}
             />
 
-            {/* Active slide — title + subtitle */}
+            {/* Active slide content */}
             {isActive && (
               <div className="absolute inset-0 flex flex-col justify-center px-12">
+
+                {/* Path breadcrumb */}
+                <div className="flex items-center gap-1.5 mb-5">
+                  {slide.path.map((segment, si) => (
+                    <span key={si} className="flex items-center gap-1.5">
+                      {si > 0 && (
+                        <svg className="w-3 h-3 text-white/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                        </svg>
+                      )}
+                      <span
+                        className={`text-xs font-medium tracking-[0.15em] uppercase ${
+                          si === slide.path.length - 1
+                            ? "text-white/90"
+                            : "text-white/45"
+                        }`}
+                      >
+                        {segment}
+                      </span>
+                    </span>
+                  ))}
+                </div>
+
+                {/* Title */}
                 <h2
                   className="text-white font-bold drop-shadow-lg mb-4"
                   style={{
@@ -106,6 +132,8 @@ export default function Slideshow() {
                 >
                   {slide.title}
                 </h2>
+
+                {/* Subtitle */}
                 {slide.subtitle && (
                   <p className="text-white/85 text-[20px] font-light leading-snug drop-shadow">
                     {slide.subtitle}
@@ -114,9 +142,16 @@ export default function Slideshow() {
               </div>
             )}
 
-            {/* Inactive slide — vertical label */}
+            {/* Inactive slide — vertical label + path hint at bottom */}
             {!isActive && (
-              <div className="absolute inset-0 flex items-end justify-center pb-10">
+              <div className="absolute inset-0 flex flex-col items-center justify-between py-8">
+                {/* Path hint at top */}
+                <span className="text-white/30 text-[10px] tracking-widest uppercase rotate-180"
+                  style={{ writingMode: "vertical-rl" }}>
+                  {slide.path.join(" / ")}
+                </span>
+
+                {/* Label at bottom */}
                 <span
                   className="text-white text-2xl font-medium tracking-wide whitespace-nowrap select-none"
                   style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}
