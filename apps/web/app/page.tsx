@@ -23,7 +23,6 @@ export default async function Home() {
       <DevelopmentSection />
       <ProjectsStages />
       <EnvironmentSection />
-
     </>
   );
 }
