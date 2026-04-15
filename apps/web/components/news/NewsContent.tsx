@@ -60,8 +60,8 @@ export default function NewsContent({ items }: Props) {
             {filtered.length === 1
               ? "публикация"
               : filtered.length < 5
-              ? "публикации"
-              : "публикаций"}
+                ? "публикации"
+                : "публикаций"}
           </p>
         </div>
 
@@ -86,11 +86,10 @@ export default function NewsContent({ items }: Props) {
                   key={page}
                   type="button"
                   onClick={() => setCurrentPage(page)}
-                  className={`w-10 h-10 rounded-lg transition-colors ${
-                    isActive
+                  className={`w-10 h-10 rounded-lg transition-colors ${isActive
                       ? "bg-[#1E4080] text-white"
                       : "border border-gray-200 text-gray-700 hover:bg-gray-50"
-                  }`}
+                    }`}
                 >
                   {page}
                 </button>

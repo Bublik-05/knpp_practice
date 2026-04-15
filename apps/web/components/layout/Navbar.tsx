@@ -193,17 +193,41 @@ export default function Navbar() {
 
           {/* LEFT: burger + logo */}
           <div className="flex items-center gap-4 shrink-0">
+
             <button
-              onClick={() => setMegaOpen(true)}
-              aria-label="Открыть меню"
-              className="p-1.5 text-[#1B2A4A] hover:text-[#1E4080] transition-colors"
+              onClick={() => setMegaOpen((prev) => !prev)}
+              aria-label={megaOpen ? "Закрыть меню" : "Открыть меню"}
+              className={`p-1.5 transition-colors ${megaOpen ? "text-[#1E4080]" : "text-[#1B2A4A] hover:text-[#1E4080]"
+                }`}
             >
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-                <line x1="3" y1="6" x2="21" y2="6" />
-                <line x1="3" y1="12" x2="21" y2="12" />
-                <line x1="3" y1="18" x2="21" y2="18" />
-              </svg>
+              {megaOpen ? (
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                >
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+              ) : (
+                <svg
+                  width="22"
+                  height="22"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                >
+                  <line x1="3" y1="6" x2="21" y2="6" />
+                  <line x1="3" y1="12" x2="21" y2="12" />
+                  <line x1="3" y1="18" x2="21" y2="18" />
+                </svg>
+              )}
             </button>
 
             <Link href="/" className="shrink-0">
@@ -338,94 +362,174 @@ export default function Navbar() {
       {/* Backdrop */}
       <div
         onClick={() => setMegaOpen(false)}
-        className={`fixed inset-0 z-[60] bg-black/30 transition-opacity duration-200 ${megaOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
+        className={`fixed inset-0 z-[60] bg-black/20 transition-opacity duration-200 ${megaOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+          }`}
       />
 
-      {/* Panel — drops down from top, sits just below the navbar (64px) */}
+      {/* Panel */}
       <div
-        className={`fixed left-0 right-0 top-0 z-[65] bg-white shadow-xl border-b border-gray-100 transition-transform duration-300 ease-in-out overflow-y-auto ${megaOpen ? "translate-y-0" : "-translate-y-full"}`}
-        style={{ paddingTop: 50, maxHeight: "80vh" }}
+        className={`fixed left-48 right-48 top-16 z-[65] transition-transform duration-300 ease-in-out ${megaOpen ? "translate-y-0 opacity-100 pointer-events-auto" : "-translate-y-full opacity-0 pointer-events-none"
+          }`}
+        style={{ maxHeight: "calc(100vh - 5rem)" }}
       >
-        <div className="max-w-7xl mx-auto px-8 py-8">
+        <div
+          className="bg-white shadow-xl border border-gray-100 rounded-lg overflow-hidden"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="max-w-7xl mx-auto px-8 py-8">
+            <div className="flex items-start gap-8">
+              {/* Social icons left, vertical, top */}
+              <div className="hidden lg:flex flex-col items-center gap-4 shrink-0 pt-1">
+                <a
+                  href="#"
+                  aria-label="Facebook"
+                  className="w-8 h-8 bg-[#1E4080] rounded-full flex items-center justify-center hover:bg-[#2a4d8f] transition-colors"
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+                    <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+                  </svg>
+                </a>
 
-          {/* Close row */}
-          <div className="flex items-center justify-between mb-6">
-            <span className=" text-gray-500 font-light">Все разделы сайта</span>
-            <button
-              onClick={() => setMegaOpen(false)}
-              className="flex items-center gap-2 text-gray-500 hover:text-[#1E4080] transition-colors"
-            >
-              Закрыть
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" strokeWidth="1" strokeLinecap="round">
-                <line x1="18" y1="6" x2="6" y2="18" />
-                <line x1="6" y1="6" x2="18" y2="18" />
-              </svg>
-            </button>
-          </div>
+                <a
+                  href="#"
+                  aria-label="Instagram"
+                  className="w-8 h-8 bg-[#1E4080] rounded-full flex items-center justify-center hover:bg-[#2a4d8f] transition-colors"
+                >
+                  <svg
+                    width="15"
+                    height="15"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="white"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                    <circle cx="12" cy="12" r="4" />
+                    <circle cx="17.5" cy="6.5" r="0.5" fill="white" stroke="none" />
+                  </svg>
+                </a>
 
-          {/* Columns */}
-          <div className="grid gap-x-8 gap-y-8"
-            style={{ gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))" }}>
-            {menuColumns.map((col) => {
-              const isActive = isLinkActive(pathname, col.href);
-              return (
-                <div key={col.href}>
-                  {/* Section title */}
-                  <div className="pb-2 mb-3 border-b border-gray-200">
-                    <Link
-                      href={col.href}
-                      onClick={() => setMegaOpen(false)}
-                      className={`text-lg font-bold transition-colors hover:text-[#1E4080] ${isActive ? "text-[#1E4080]" : "text-[#111c36]"}`}
+                <a
+                  href="#"
+                  aria-label="TikTok"
+                  className="w-8 h-8 bg-[#1E4080] rounded-full flex items-center justify-center hover:bg-[#2a4d8f] transition-colors"
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="white">
+                    <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.3 6.3 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z" />
+                  </svg>
+                </a>
+              </div>
+
+              {/* Main content */}
+              <div className="flex-1 min-w-0 flex flex-col gap-8 overflow-y-auto">
+                {/* Close row — оставляем почти как было */}
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-500 font-light">Все разделы сайта</span>
+                  <button
+                    onClick={() => setMegaOpen(false)}
+                    className="flex items-center gap-2 text-gray-500 hover:text-[#1E4080] transition-colors"
+                  >
+                    Закрыть
+                    <svg
+                      width="22"
+                      height="22"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1"
+                      strokeLinecap="round"
                     >
-                      {col.label}
-                    </Link>
-                  </div>
-
-                  {/* Sub-links */}
-                  {col.subLinks && (
-                    <ul className="flex flex-col gap-2">
-                      {col.subLinks.map((sub) => (
-                        <li key={sub.label}>
-                          <Link
-                            href={sub.href}
-                            onClick={() => setMegaOpen(false)}
-                            className="font-light text-gray-600 hover:text-[#1E4080] transition-colors leading-snug block"
-                          >
-                            {sub.label}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
+                      <line x1="18" y1="6" x2="6" y2="18" />
+                      <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                  </button>
                 </div>
-              );
-            })}
-          </div>
 
-          {/* Social icons row at bottom */}
-          <div className="flex items-center gap-4 mt-8 pt-6 border-t border-gray-100">
-            <span className="text-[13px] text-gray-400 font-light">Мы в соцсетях:</span>
-            <a href="#" aria-label="Facebook"
-              className="w-8 h-8 bg-[#1E4080] rounded-full flex items-center justify-center hover:bg-[#2a4d8f] transition-colors">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
-                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
-              </svg>
-            </a>
-            <a href="#" aria-label="Instagram"
-              className="w-8 h-8 bg-[#1E4080] rounded-full flex items-center justify-center hover:bg-[#2a4d8f] transition-colors">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                <circle cx="12" cy="12" r="4" />
-                <circle cx="17.5" cy="6.5" r="0.5" fill="white" stroke="none" />
-              </svg>
-            </a>
-            <a href="#" aria-label="TikTok"
-              className="w-8 h-8 bg-[#1E4080] rounded-full flex items-center justify-center hover:bg-[#2a4d8f] transition-colors">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="white">
-                <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.3 6.3 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z" />
-              </svg>
-            </a>
+                {/* Columns */}
+                <div className="flex flex-wrap gap-x-8 gap-y-8">
+                  {menuColumns.map((col) => {
+                    const isActive = isLinkActive(pathname, col.href);
+
+                    return (
+                      <div key={col.href} className="flex min-w-[180px] flex-1 basis-[180px] flex-col">
+                        <div className="pb-2 border-b border-gray-200">
+                          <Link
+                            href={col.href}
+                            onClick={() => setMegaOpen(false)}
+                            className={`text-lg font-bold transition-colors hover:text-[#1E4080] ${isActive ? "text-[#1E4080]" : "text-[#111c36]"
+                              }`}
+                          >
+                            {col.label}
+                          </Link>
+                        </div>
+
+                        {col.subLinks && (
+                          <ul className="flex flex-col gap-2 pt-3">
+                            {col.subLinks.map((sub) => (
+                              <li key={sub.label}>
+                                <Link
+                                  href={sub.href}
+                                  onClick={() => setMegaOpen(false)}
+                                  className="font-light text-gray-600 hover:text-[#1E4080] transition-colors leading-snug block"
+                                >
+                                  {sub.label}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+
+                {/* Socials for smaller screens */}
+                <div className="flex lg:hidden items-center gap-4 pt-2 border-t border-gray-100">
+                  <a
+                    href="#"
+                    aria-label="Facebook"
+                    className="w-8 h-8 bg-[#1E4080] rounded-full flex items-center justify-center hover:bg-[#2a4d8f] transition-colors"
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+                      <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+                    </svg>
+                  </a>
+
+                  <a
+                    href="#"
+                    aria-label="Instagram"
+                    className="w-8 h-8 bg-[#1E4080] rounded-full flex items-center justify-center hover:bg-[#2a4d8f] transition-colors"
+                  >
+                    <svg
+                      width="15"
+                      height="15"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="white"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                      <circle cx="12" cy="12" r="4" />
+                      <circle cx="17.5" cy="6.5" r="0.5" fill="white" stroke="none" />
+                    </svg>
+                  </a>
+
+                  <a
+                    href="#"
+                    aria-label="TikTok"
+                    className="w-8 h-8 bg-[#1E4080] rounded-full flex items-center justify-center hover:bg-[#2a4d8f] transition-colors"
+                  >
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="white">
+                      <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.3 6.3 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
