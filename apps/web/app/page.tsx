@@ -7,6 +7,7 @@ import KazakhstanMapSection from "@/components/main/KazakhstanMapSection";
 import DevelopmentSection from "@/components/main/DevelopmentPlan";
 import News from "@/components/main/News";
 import { getFeaturedNews } from "@/lib/news";
+import EnvironmentSection from "@/components/atom/sections/EnvironmentSection";
 
 export default async function Home() {
   const featuredNews = await getFeaturedNews();
@@ -18,10 +19,12 @@ export default async function Home() {
       <Activities />
 
       <MissionSection />
+      <EnvironmentSection />
       <AchievementsSection />
-      <DevelopmentSection />
       <KazakhstanMapSection />
+      <DevelopmentSection />
       <ProjectsStages />
+
     </>
   );
 }

@@ -35,6 +35,37 @@ export default function VacanciesPage() {
           {/* Breadcrumb */}
           <Breadcrumb items={[{ label: "Вакансии" }]} />
 
+          {/* Категории */}
+          <section className="bg-white rounded-2xl shadow-sm p-6 md:p-10">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Категории</h2>
+
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+              {mainCategories.map((cat) => (
+                <Link
+                  key={cat.slug}
+                  href={`/vacancies/${cat.slug}`}
+                  className="group relative block overflow-hidden rounded-lg aspect-[4/3]"
+                >
+                  <Image
+                    src={cat.image}
+                    alt={cat.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                  <div className="absolute bottom-0 left-0 h-[3px] w-0 bg-[#1E4080] transition-all duration-300 group-hover:w-full" />
+                  <div className="absolute bottom-0 left-0 p-4">
+                    <p className="font-bold text-white text-base leading-tight">{cat.title}</p>
+                    <p className="text-white/80 font-light text-sm mt-0.5">
+                      {cat.count} {pluralize(cat.count)}
+                    </p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </section>
+
           {/* Актуальные вакансии */}
           <section className="bg-white rounded-2xl shadow-sm p-6 md:p-10">
             <div className="flex items-baseline justify-between mb-6">
@@ -89,36 +120,7 @@ export default function VacanciesPage() {
             </div>
           </section>
 
-          {/* Категории */}
-          <section className="bg-white rounded-2xl shadow-sm p-6 md:p-10">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Категории</h2>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-              {mainCategories.map((cat) => (
-                <Link
-                  key={cat.slug}
-                  href={`/vacancies/${cat.slug}`}
-                  className="group relative block overflow-hidden rounded-lg aspect-[4/3]"
-                >
-                  <Image
-                    src={cat.image}
-                    alt={cat.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                  <div className="absolute bottom-0 left-0 h-[3px] w-0 bg-[#1E4080] transition-all duration-300 group-hover:w-full" />
-                  <div className="absolute bottom-0 left-0 p-4">
-                    <p className="font-bold text-white text-base leading-tight">{cat.title}</p>
-                    <p className="text-white/80 font-light text-sm mt-0.5">
-                      {cat.count} {pluralize(cat.count)}
-                    </p>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </section>
 
           {/* Стажировка — баннер + 2 вакансии */}
           {internship && (
