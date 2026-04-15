@@ -1,4 +1,4 @@
-import PageHero from "@/components/vacancies/PageHero";
+import PageHero from "@/components/layout/PageHero";
 import ProjectsContent from "@/components/projects/ProjectsContent";
 
 export default function ProjectsPage() {

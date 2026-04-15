@@ -17,13 +17,12 @@ export default async function Home() {
       <About />
       <News items={featuredNews} />
       <Activities />
-
       <MissionSection />
-      <EnvironmentSection />
       <AchievementsSection />
       <KazakhstanMapSection />
       <DevelopmentSection />
       <ProjectsStages />
+      <EnvironmentSection />
 
     </>
   );

@@ -46,9 +46,9 @@ export default function DevelopmentPlan() {
 
     return (
         <section className="px-30 py-28">
-            <div className="mx-auto w-full max-w-[1500px]">
-                <div className="max-w-3xl">
-                    <p className="mb-3 text-sm uppercase tracking-[0.22em] text-[#1E4080]/70">
+            <div className="mx-auto w-full max-w-7xl flex flex-col gap-15">
+                <div className="max-w-3xl flex flex-col gap-6">
+                    <p className="text-md uppercase tracking-[0.18em] text-[#1E4080]/70">
                         Дорожная карта
                     </p>
 
@@ -56,13 +56,13 @@ export default function DevelopmentPlan() {
                         План развития
                     </h2>
 
-                    <p className="mt-4 text-lg font-light leading-relaxed text-gray-600">
+                    <p className=" text-lg font-light leading-relaxed text-gray-600">
                         Проект реализуется поэтапно. Сейчас работа находится на начальной
                         стадии, а последующие шаги отражают дальнейшую траекторию развития.
                     </p>
                 </div>
 
-                <div className="relative mt-16">
+                <div className="relative">
                     <div className="pointer-events-none absolute left-0 right-0 top-[78px] hidden xl:block">
                         <div className="relative h-24 w-full">
                             <svg
@@ -110,9 +110,9 @@ export default function DevelopmentPlan() {
                                     className={`relative ${index % 2 === 1 ? "xl:mt-20" : "xl:mt-0"
                                         }`}
                                 >
-                                    <div className="relative mx-auto mb-5 hidden h-12 xl:flex items-center justify-center">
+                                    <div className="relative mx-auto hidden h-12 xl:flex items-center justify-center">
                                         <div
-                                            className={`relative flex h-12 w-12 items-center justify-center rounded-full border-4 text-sm font-semibold transition-all duration-300 ${isCurrent
+                                            className={`relative flex h-18 w-18 items-center justify-center rounded-full border-4 text-xl font-semibold transition-all duration-300 ${isCurrent
                                                 ? "border-white bg-[#1E4080] text-white shadow-[0_12px_30px_rgba(30,64,128,0.25)]"
                                                 : "border-white bg-[#DCE6F5] text-[#1E4080]"
                                                 }`}
@@ -123,14 +123,14 @@ export default function DevelopmentPlan() {
                                             }}
                                         >
                                             {isCurrent && (
-                                                <span className="absolute inline-flex h-12 w-12 rounded-full bg-[#1E4080]/20 animate-ping" />
+                                                <span className="absolute inline-flex h-18 w-18 rounded-full bg-[#1E4080]/20 animate-ping" />
                                             )}
                                             <span className="relative z-10">{stage.id}</span>
                                         </div>
                                     </div>
 
                                     <div
-                                        className={`group relative h-full overflow-hidden rounded-[28px] border p-6 transition-all duration-300 ${isCurrent
+                                        className={`group relative h-full mt-10 overflow-hidden rounded-lg border p-6 transition-all duration-300 ${isCurrent
                                             ? "border-[#1E4080] bg-white shadow-[0_18px_50px_rgba(30,64,128,0.10)]"
                                             : "border-[#D7E2F2] bg-[#FBFCFE]"
                                             }`}
@@ -145,10 +145,10 @@ export default function DevelopmentPlan() {
                                                 }`}
                                         />
 
-                                        <div className="relative z-10">
-                                            <div className="mb-5 flex items-start justify-between gap-3">
+                                        <div className="relative z-10 flex flex-col gap-5">
+                                            <div className=" flex items-start justify-between gap-3">
                                                 <span
-                                                    className={`inline-flex rounded-full px-3 py-1.5 text-xs font-medium ${isCurrent
+                                                    className={`inline-flex rounded-full px-3 py-1.5 text-md font-medium ${isCurrent
                                                         ? "bg-[#1E4080] text-white"
                                                         : "border border-[#D7E2F2] bg-white text-[#60708F]"
                                                         }`}
@@ -156,17 +156,11 @@ export default function DevelopmentPlan() {
                                                     {stage.tag}
                                                 </span>
 
-                                                <span
-                                                    className={`text-sm font-medium ${isCurrent ? "text-[#1E4080]" : "text-gray-400"
-                                                        }`}
-                                                >
-                                                    {stage.id}
-                                                </span>
                                             </div>
 
                                             <h3
                                                 className={`text-xl leading-snug ${isCurrent
-                                                    ? "font-semibold text-gray-900"
+                                                    ? "font-bold text-gray-900"
                                                     : "font-medium text-gray-800"
                                                     }`}
                                             >
@@ -177,28 +171,7 @@ export default function DevelopmentPlan() {
                                                 {stage.description}
                                             </p>
 
-                                            <div className="mt-8">
-                                                <div className="h-2 w-full overflow-hidden rounded-full bg-[#E8EEF8]">
-                                                    <div
-                                                        className={`h-full rounded-full ${isCurrent
-                                                            ? "w-[34%] bg-[#1E4080]"
-                                                            : index === 1
-                                                                ? "w-[22%] bg-[#C9D8EE]"
-                                                                : index === 2
-                                                                    ? "w-[14%] bg-[#D4E0F0]"
-                                                                    : index === 3
-                                                                        ? "w-[8%] bg-[#DDE6F3]"
-                                                                        : "w-[4%] bg-[#E7EDF6]"
-                                                            }`}
-                                                    />
-                                                </div>
-
-                                                <p className="mt-3 text-sm text-gray-500">
-                                                    {isCurrent
-                                                        ? "Проект находится на начальной стадии."
-                                                        : "Следующий шаг маршрута развития."}
-                                                </p>
-                                            </div>
+                                        
                                         </div>
 
                                         {!isCurrent && (

@@ -50,7 +50,7 @@ export default function MissionSection() {
         {/* Top: label + mission text */}
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-20 items-start">
           <div className="lg:w-1/3 shrink-0">
-            <span className="inline-block text-white/40 uppercase tracking-widest text-md font-medium mb-4">
+            <span className="inline-block text-white/40 uppercase tracking-widest text-2xl font-medium mb-4">
               Наша миссия
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">

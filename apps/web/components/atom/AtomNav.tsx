@@ -17,7 +17,7 @@ interface Props {
 }
 
 const topItems: { id: SectionId; label: string }[] = [
-  { id: "history", label: "История" },
+  { id: "history", label: "История об атомной энергии" },
   { id: "operation", label: "Как работает атомный реактор" },
   { id: "types", label: "Типы реакторов" },
   { id: "safety", label: "Безопасность" },

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import VacancyCategoryCard from "./VacancyCategoryCard";
+import VacancyCategoryCard from "../shared/VacancyCategoryCard";
 
 interface Category {
   id: string;
@@ -20,7 +20,7 @@ export default function VacancyCategoriesGrid({
   const hasMore = categories.length > previewCount;
 
   return (
-    <section className="bg-white rounded-2xl shadow-sm p-6 md:p-8">
+    <section className="bg-white rounded-lg shadow-sm p-6 md:p-8">
       <h2 className="text-2xl font-bold text-gray-900 mb-6">Категории</h2>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -37,7 +37,7 @@ export default function VacancyCategoriesGrid({
           >
             Смотреть все
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-              fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+              fill="none" stroke="currentColor" strokeWidth={1} strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </Link>

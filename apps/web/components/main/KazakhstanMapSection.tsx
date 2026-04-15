@@ -9,7 +9,7 @@ const cities = [
 
 export default function KazakhstanMapSection() {
     return (
-        <section className="px-30 py-24 flex flex-col gap-8">
+        <section className="px-30 pb-30 flex flex-col gap-8">
             <div className="flex flex-col gap-3 max-w-3xl">
                 <h2 className="font-bold leading-tight text-3xl md:text-4xl lg:text-5xl">
                     Карта Казахстана
@@ -20,8 +20,8 @@ export default function KazakhstanMapSection() {
                 </p>
             </div>
 
-            <div className="rounded-[28px] border border-[#d9e2f2] bg-[#f8fbff] p-6 md:p-8 shadow-sm">
-                <div className="relative mx-auto w-full max-w-6xl aspect-[16/9] rounded-[24px] bg-white border border-[#e5ebf5] overflow-hidden">
+            <div className="rounded-lg border border-[#d9e2f2] bg-[#f8fbff] p-6 md:p-8 shadow-sm">
+                <div className="relative mx-auto w-full max-w-6xl aspect-[16/9] rounded-lg bg-white border border-[#e5ebf5] overflow-hidden">
                     {/* Настоящая карта Казахстана */}
                     <div className="absolute inset-0">
                         <Image

@@ -13,7 +13,7 @@ export default function VacancyCategoryCard({ category }: { category: Category }
   return (
     <Link
       href={`/vacancies/${category.slug}`}
-      className="group relative block overflow-hidden rounded-xl aspect-[4/3] cursor-pointer"
+      className="group relative block overflow-hidden rounded-lg aspect-[4/3] cursor-pointer"
     >
       <Image
         src={category.imageUrl}

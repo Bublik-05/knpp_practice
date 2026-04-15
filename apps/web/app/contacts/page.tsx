@@ -1,4 +1,4 @@
-import PageHero from "@/components/vacancies/PageHero";
+import PageHero from "@/components/layout/PageHero";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 import {
   ContactInfo,

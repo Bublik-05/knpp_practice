@@ -43,7 +43,7 @@ export default function InternshipForm() {
   }
 
   return (
-    <div className="bg-[#F8FAFF] rounded-2xl border border-[#1E4080]/10 p-6 md:p-10">
+    <div id="internship-form" className="bg-[#F8FAFF] rounded-2xl border border-[#1E4080]/10 p-6 md:p-10">
       <h2 className="text-2xl font-bold text-gray-900 mb-1">Подать заявку на стажировку</h2>
       <p className="text-gray-500 font-light text-sm mb-8">
         Заполните форму ниже — мы рассмотрим вашу заявку и свяжемся с вами.

@@ -1,8 +1,9 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import PageHero from "@/components/vacancies/PageHero";
-import InternshipForm from "@/components/vacancies/InternshipForm";
+import PageHero from "@/components/layout/PageHero";
+import InternshipForm from "@/components/vacancies/detail-page/InternshipForm";
 import Breadcrumb from "@/components/ui/Breadcrumb";
+import ApplyButton from "@/components/vacancies/detail-page/ApplyButton";
 import { getVacancyBySlug } from "@/lib/vacancies-data";
 
 export default async function VacancyDetailPage({
@@ -45,9 +46,12 @@ export default async function VacancyDetailPage({
               </div>
             )}
 
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-              {vacancy.title}
-            </h1>
+            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-6">
+              <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
+                {vacancy.title}
+              </h1>
+              <ApplyButton externalUrl={vacancy.externalUrl} isInternship={isInternship} />
+            </div>
 
             {/* Badges */}
             <div className="flex flex-wrap gap-3 mb-10">
@@ -119,42 +123,15 @@ export default async function VacancyDetailPage({
               </Section>
             )}
 
-            {/* CTA для обычных вакансий */}
-            {!isInternship && (
-              <div className="mt-10 pt-8 border-t border-gray-100 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-                <a
-                  href={vacancy.externalUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-[#1E4080] px-7 py-3.5 text-sm font-semibold text-white hover:bg-[#162f66] transition-colors shadow-sm"
-                >
-                  Откликнуться на вакансию
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                    <polyline points="15 3 21 3 21 9" />
-                    <line x1="10" x2="21" y1="14" y2="3" />
-                  </svg>
-                </a>
-                <Link
-                  href={`/vacancies/${categorySlug}`}
-                  className="text-sm text-gray-400 hover:text-[#1E4080] transition-colors font-light"
-                >
-                  ← Назад к списку
-                </Link>
-              </div>
-            )}
-
-            {/* Назад для стажировок */}
-            {isInternship && (
-              <div className="mt-8 pt-6 border-t border-gray-100">
-                <Link
-                  href={`/vacancies/${categorySlug}`}
-                  className="text-sm text-gray-400 hover:text-[#1E4080] transition-colors font-light"
-                >
-                  ← Назад к списку стажировок
-                </Link>
-              </div>
-            )}
+            {/* Назад к списку */}
+            <div className="mt-10 pt-8 border-t border-gray-100">
+              <Link
+                href={`/vacancies/${categorySlug}`}
+                className="text-md text-gray-800 hover:bg-[#1E4080] hover:text-white border border-[#1E4080] px-5 py-3 rounded-full transition-colors font-light"
+              >
+                {isInternship ? "Назад к списку стажировок" : "Назад к списку"}
+              </Link>
+            </div>
           </div>
 
           {/* Форма заявки — всегда видна на страницах вакансий стажировки */}

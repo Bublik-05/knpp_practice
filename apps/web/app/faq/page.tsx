@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import PageHero from "@/components/vacancies/PageHero";
+import PageHero from "@/components/layout/PageHero";
 import FaqContent from "@/components/faq/FaqContent";
 
 export default function FaqPage() {

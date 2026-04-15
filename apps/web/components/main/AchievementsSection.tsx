@@ -128,7 +128,7 @@ export default function AchievementsSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative overflow-hidden w-full p-30 bg-[#F0F0F0]">
+    <section ref={sectionRef} className="relative overflow-hidden w-full p-30 pb-10 bg-[#F0F0F0]">
 
       {/* Атом — большой, справа снизу */}
       <Image
@@ -160,9 +160,6 @@ export default function AchievementsSection() {
         <h2 className="font-bold leading-tight text-3xl md:text-4xl lg:text-5xl text-gray-900">
           Ключевые достижения
         </h2>
-        <p className="font-light text-lg text-gray-600 max-w-xl mt-1">
-          Десять лет работы, направленных на создание атомной энергетики Казахстана
-        </p>
       </div>
 
       {/* Grid */}

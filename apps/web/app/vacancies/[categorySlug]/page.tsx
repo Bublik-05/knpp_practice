@@ -1,5 +1,5 @@
 import Link from "next/link";
-import PageHero from "@/components/vacancies/PageHero";
+import PageHero from "@/components/layout/PageHero";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 import { vacancyCategories, getVacanciesByCategory } from "@/lib/vacancies-data";
 
