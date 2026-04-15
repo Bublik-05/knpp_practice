@@ -246,38 +246,6 @@ export default function DevelopmentPlan() {
                         })}
                     </div>
                 </div>
-
-                <div className="relative z-20 flex items-center justify-between gap-6 rounded-lg border border-[#D7E2F2] bg-white px-6 py-5">
-                    <div className="flex flex-col gap-1">
-                        <p className="text-[13px] uppercase tracking-[0.16em] text-[#1E4080]/70">
-                            Документ
-                        </p>
-                        <p className="text-lg font-bold text-gray-900">
-                            {planDoc.title}
-                        </p>
-                        <p className="text-[14px] font-light text-gray-500">
-                            {planDoc.date}
-                        </p>
-                    </div>
-
-                    <div className="flex flex-wrap items-center gap-3 shrink-0">
-                        <a
-                            href={planDoc.downloadUrl}
-                            className="inline-flex items-center gap-2 rounded-full bg-[#1E4080] px-6 py-3 text-white transition-colors hover:bg-[#163366]"
-                        >
-                            <DownloadIcon />
-                            скачать план
-                        </a>
-
-                        <a
-                            href={planDoc.readUrl}
-                            className="inline-flex items-center gap-2 rounded-full border border-gray-300 px-5 py-3 text-gray-700 transition-colors hover:border-[#1E4080] hover:bg-gray-50"
-                        >
-                            <ReadIcon />
-                            читать онлайн
-                        </a>
-                    </div>
-                </div>
             </div>
         </section>
     );
