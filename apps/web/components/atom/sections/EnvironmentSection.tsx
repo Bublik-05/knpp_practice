@@ -96,18 +96,19 @@ function calculateEmissions(
 
     return {
         volume,
-        source,
-        emissionsKg,
-        emissionsTons,
-        carsEquivalent,
-        comparison,
-        ratioToNuclear,
         insightText: getInsightText(
             source,
             emissionsTons,
             ratioToNuclear,
             carsEquivalent
         ),
+        source,
+        emissionsKg,
+        emissionsTons,
+        carsEquivalent,
+        comparison,
+        ratioToNuclear,
+
     };
 }
 
@@ -276,6 +277,15 @@ export default function EnvironmentSection() {
                                 </p>
                             </div>
 
+                            <div className="rounded-2xl border border-[#dbe5f4] bg-[#f7faff] p-5 shadow-sm">
+                                <h4 className="text-lg font-medium text-[#1E4080] mb-2">
+                                    Пояснение
+                                </h4>
+                                <p className="text-gray-700 font-light leading-relaxed">
+                                    {result.insightText}
+                                </p>
+                            </div>
+
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm">
                                     <p className="text-sm text-gray-500 mb-2">
@@ -332,8 +342,8 @@ export default function EnvironmentSection() {
                                             <div
                                                 key={item.id}
                                                 className={`rounded-xl border p-4 transition ${isActive
-                                                        ? "border-[#1E4080] bg-[#f5f8fd]"
-                                                        : "border-gray-200 bg-white"
+                                                    ? "border-[#1E4080] bg-[#f5f8fd]"
+                                                    : "border-gray-200 bg-white"
                                                     }`}
                                             >
                                                 <div className="flex items-center justify-between gap-4 mb-3">
@@ -362,14 +372,7 @@ export default function EnvironmentSection() {
                                 </div>
                             </div>
 
-                            <div className="rounded-2xl border border-[#dbe5f4] bg-[#f7faff] p-5 shadow-sm">
-                                <h4 className="text-lg font-medium text-[#1E4080] mb-2">
-                                    Пояснение
-                                </h4>
-                                <p className="text-gray-700 font-light leading-relaxed">
-                                    {result.insightText}
-                                </p>
-                            </div>
+
                         </div>
                     </div>
                 </div>
