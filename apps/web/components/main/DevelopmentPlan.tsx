@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import type { CSSProperties } from "react";
 
 const planDoc = {
@@ -103,6 +104,28 @@ export default function DevelopmentPlan() {
                         Проект реализуется поэтапно. Сейчас работа находится на начальной
                         стадии, а последующие шаги отражают дальнейшую траекторию развития.
                     </p>
+
+                    <div className="flex flex-wrap items-center gap-3 pt-2">
+                        <Link
+                            href="/development-plan"
+                            className="inline-flex items-center gap-2 rounded-full bg-[#1E4080] px-6 py-3 text-sm font-medium text-white hover:bg-[#162f66] transition-colors shadow-sm"
+                        >
+                            Подробнее
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </Link>
+                        <a
+                            href="/docs/kaes-development-plan.docx"
+                            download="КАЭС_План_развития.docx"
+                            className="inline-flex items-center gap-2 rounded-full border border-[#1E4080] px-6 py-3 text-sm font-light text-gray-800 hover:bg-[#1E4080] hover:text-white transition-colors"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                            </svg>
+                            Скачать документ
+                        </a>
+                    </div>
                 </div>
 
                 <div className="relative">
