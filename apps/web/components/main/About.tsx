@@ -1,6 +1,25 @@
 import Image from "next/image";
 import Link from "next/link";
 
+function ArrowIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-6 w-6"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      strokeWidth={1.8}
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M7 17L17 7M17 7H9M17 7V15"
+      />
+    </svg>
+  );
+}
+
 export default function About() {
   return (
     <section className="relative overflow-hidden flex w-full p-30">
@@ -19,16 +38,6 @@ export default function About() {
             по строительству АЭС, а также организация работ по строительству АЭС в Республике Казахстан.
           </p>
         </div>
-
-        <Link
-          href="/about"
-          className="mt-10 self-start inline-flex items-center gap-3 bg-[#1E4080] text-white px-7 py-3.5 rounded-full font-light hover:bg-[#0D1E3E] transition-colors duration-200"
-        >
-          Узнать подробнее
-          <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-          </svg>
-        </Link>
       </div>
 
       {/* Атом — маленький, снизу слева */}
