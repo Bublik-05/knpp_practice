@@ -2,6 +2,51 @@
 
 import type { CSSProperties } from "react";
 
+const planDoc = {
+    title: "План развития",
+    date: "дата утверждения — 05.03.2026",
+    downloadUrl: "#",
+    readUrl: "#",
+};
+
+function DownloadIcon() {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-4 w-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+        >
+            <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+            />
+        </svg>
+    );
+}
+
+function ReadIcon() {
+    return (
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-4 w-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+        >
+            <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+            />
+        </svg>
+    );
+}
+
 export default function DevelopmentPlan() {
     const stages = [
         {
@@ -47,13 +92,9 @@ export default function DevelopmentPlan() {
     ] as const;
 
     return (
-        <section className="px-30 py-28">
-            <div className="mx-auto flex w-full max-w-7xl flex-col gap-15">
+        <section className="px-30 py-18">
+            <div className="mx-auto flex w-full max-w-7xl flex-col gap-[110px]">
                 <div className="max-w-3xl flex flex-col gap-6">
-                    <p className="text-md uppercase tracking-[0.18em] text-[#1E4080]/70">
-                        Дорожная карта
-                    </p>
-
                     <h2 className="text-3xl font-bold leading-tight md:text-4xl lg:text-5xl">
                         План развития
                     </h2>
@@ -123,8 +164,8 @@ export default function DevelopmentPlan() {
                                     <div className="relative mx-auto hidden h-12 items-center justify-center xl:flex">
                                         <div
                                             className={`relative flex h-18 w-18 items-center justify-center rounded-full border-4 text-xl font-semibold transition-all duration-500 ease-out ${isCurrent
-                                                    ? "border-white bg-[#1E4080] text-white shadow-[0_12px_30px_rgba(30,64,128,0.25)]"
-                                                    : "border-white bg-[#DCE6F5] text-[#1E4080] [filter:blur(var(--stage-blur-dot))] [opacity:var(--stage-opacity)] [transform:scale(var(--stage-scale))] group-hover:[filter:blur(0px)] group-hover:opacity-100 group-hover:scale-[1.06] group-hover:shadow-[0_12px_30px_rgba(30,64,128,0.18)]"
+                                                ? "border-white bg-[#1E4080] text-white shadow-[0_12px_30px_rgba(30,64,128,0.25)]"
+                                                : "border-white bg-[#DCE6F5] text-[#1E4080] [filter:blur(var(--stage-blur-dot))] [opacity:var(--stage-opacity)] [transform:scale(var(--stage-scale))] group-hover:[filter:blur(0px)] group-hover:opacity-100 group-hover:scale-[1.06] group-hover:shadow-[0_12px_30px_rgba(30,64,128,0.18)]"
                                                 }`}
                                         >
                                             {isCurrent && (
@@ -136,14 +177,14 @@ export default function DevelopmentPlan() {
 
                                     <div
                                         className={`relative mt-10 h-full overflow-hidden rounded-lg border p-6 transition-all duration-500 ease-out ${isCurrent
-                                                ? "border-[#1E4080] bg-white shadow-[0_18px_50px_rgba(30,64,128,0.10)]"
-                                                : "border-[#D7E2F2] bg-[#FBFCFE] [filter:blur(var(--stage-blur))] [opacity:var(--stage-opacity)] [transform:scale(var(--stage-scale))] group-hover:border-[#1E4080]/40 group-hover:bg-white group-hover:[filter:blur(0px)] group-hover:opacity-100 group-hover:scale-[1.035] group-hover:shadow-[0_18px_50px_rgba(30,64,128,0.14)]"
+                                            ? "border-[#1E4080] bg-white shadow-[0_18px_50px_rgba(30,64,128,0.10)]"
+                                            : "border-[#D7E2F2] bg-[#FBFCFE] [filter:blur(var(--stage-blur))] [opacity:var(--stage-opacity)] [transform:scale(var(--stage-scale))] group-hover:border-[#1E4080]/40 group-hover:bg-white group-hover:[filter:blur(0px)] group-hover:opacity-100 group-hover:scale-[1.035] group-hover:shadow-[0_18px_50px_rgba(30,64,128,0.14)]"
                                             }`}
                                     >
                                         <div
                                             className={`absolute right-0 top-0 h-28 w-28 rounded-full blur-3xl transition-all duration-500 ${isCurrent
-                                                    ? "bg-[#1E4080]/10"
-                                                    : "bg-[#AFC4E8]/10 group-hover:bg-[#1E4080]/12"
+                                                ? "bg-[#1E4080]/10"
+                                                : "bg-[#AFC4E8]/10 group-hover:bg-[#1E4080]/12"
                                                 }`}
                                         />
 
@@ -151,8 +192,8 @@ export default function DevelopmentPlan() {
                                             <div className="flex items-start justify-between gap-3">
                                                 <span
                                                     className={`inline-flex rounded-full px-3 py-1.5 text-md font-medium transition-all duration-500 ${isCurrent
-                                                            ? "bg-[#1E4080] text-white"
-                                                            : "border border-[#D7E2F2] bg-white text-[#60708F] group-hover:border-[#1E4080]/20 group-hover:text-[#1E4080]"
+                                                        ? "bg-[#1E4080] text-white"
+                                                        : "border border-[#D7E2F2] bg-white text-[#60708F] group-hover:border-[#1E4080]/20 group-hover:text-[#1E4080]"
                                                         }`}
                                                 >
                                                     {stage.tag}
@@ -161,8 +202,8 @@ export default function DevelopmentPlan() {
 
                                             <h3
                                                 className={`text-xl leading-snug transition-colors duration-500 ${isCurrent
-                                                        ? "font-bold text-gray-900"
-                                                        : "font-medium text-gray-800 group-hover:text-gray-900"
+                                                    ? "font-bold text-gray-900"
+                                                    : "font-medium text-gray-800 group-hover:text-gray-900"
                                                     }`}
                                             >
                                                 {stage.title}
@@ -180,6 +221,38 @@ export default function DevelopmentPlan() {
                                 </div>
                             );
                         })}
+                    </div>
+                </div>
+
+                <div className="relative z-20 flex items-center justify-between gap-6 rounded-lg border border-[#D7E2F2] bg-white px-6 py-5">
+                    <div className="flex flex-col gap-1">
+                        <p className="text-[13px] uppercase tracking-[0.16em] text-[#1E4080]/70">
+                            Документ
+                        </p>
+                        <p className="text-lg font-bold text-gray-900">
+                            {planDoc.title}
+                        </p>
+                        <p className="text-[14px] font-light text-gray-500">
+                            {planDoc.date}
+                        </p>
+                    </div>
+
+                    <div className="flex flex-wrap items-center gap-3 shrink-0">
+                        <a
+                            href={planDoc.downloadUrl}
+                            className="inline-flex items-center gap-2 rounded-full bg-[#1E4080] px-6 py-3 text-white transition-colors hover:bg-[#163366]"
+                        >
+                            <DownloadIcon />
+                            скачать план
+                        </a>
+
+                        <a
+                            href={planDoc.readUrl}
+                            className="inline-flex items-center gap-2 rounded-full border border-gray-300 px-5 py-3 text-gray-700 transition-colors hover:border-[#1E4080] hover:bg-gray-50"
+                        >
+                            <ReadIcon />
+                            читать онлайн
+                        </a>
                     </div>
                 </div>
             </div>

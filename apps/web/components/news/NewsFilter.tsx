@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useMemo, useState } from "react";
 
 export type FilterKey = "Новости" | "События" | "Пресс-релизы";
 
@@ -26,137 +26,192 @@ const directionOptions = [
   "Регулирование",
 ];
 
-const MONTHS_SHORT = [
-  "Янв", "Фев", "Мар", "Апр", "Май", "Июн",
-  "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек",
+const WEEK_DAYS = ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"];
+
+const MONTHS_FULL = [
+  "Январь",
+  "Февраль",
+  "Март",
+  "Апрель",
+  "Май",
+  "Июнь",
+  "Июль",
+  "Август",
+  "Сентябрь",
+  "Октябрь",
+  "Ноябрь",
+  "Декабрь",
 ];
 
-/* ── Кастомный пикер месяц / год ──────────────────────── */
-interface MonthYear { year: number; month: number }
-
-interface PickerProps {
-  value: MonthYear | null;
-  onChange: (v: MonthYear | null) => void;
-  placeholder: string;
-  alignRight?: boolean;
+function getDateKey(date: Date) {
+  const y = date.getFullYear();
+  const m = String(date.getMonth() + 1).padStart(2, "0");
+  const d = String(date.getDate()).padStart(2, "0");
+  return `${y}-${m}-${d}`;
 }
 
-function MonthYearPicker({ value, onChange, placeholder, alignRight }: PickerProps) {
-  const [open, setOpen] = useState(false);
-  const [viewYear, setViewYear] = useState(value?.year ?? new Date().getFullYear());
-  const [yearDraft, setYearDraft] = useState(String(value?.year ?? new Date().getFullYear()));
-  const containerRef = useRef<HTMLDivElement>(null);
+function isSameDay(a: Date, b: Date) {
+  return (
+    a.getFullYear() === b.getFullYear() &&
+    a.getMonth() === b.getMonth() &&
+    a.getDate() === b.getDate()
+  );
+}
 
-  useEffect(() => {
-    function onDown(e: MouseEvent) {
-      if (containerRef.current && !containerRef.current.contains(e.target as Node))
-        setOpen(false);
-    }
-    if (open) document.addEventListener("mousedown", onDown);
-    return () => document.removeEventListener("mousedown", onDown);
-  }, [open]);
+function getCalendarDays(viewDate: Date) {
+  const year = viewDate.getFullYear();
+  const month = viewDate.getMonth();
 
-  function handleOpen() {
-    const y = value?.year ?? new Date().getFullYear();
-    setViewYear(y);
-    setYearDraft(String(y));
-    setOpen(true);
-  }
+  const firstDay = new Date(year, month, 1);
+  const firstWeekDay = (firstDay.getDay() + 6) % 7;
+  const startDate = new Date(year, month, 1 - firstWeekDay);
 
-  function stepYear(delta: number) {
-    setViewYear((y) => {
-      const next = y + delta;
-      setYearDraft(String(next));
-      return next;
-    });
-  }
+  return Array.from({ length: 42 }, (_, index) => {
+    const day = new Date(startDate);
+    day.setDate(startDate.getDate() + index);
+    return day;
+  });
+}
 
-  function handleYearType(raw: string) {
-    setYearDraft(raw);
-    const n = parseInt(raw, 10);
-    if (!isNaN(n) && n >= 1900 && n <= 2100) setViewYear(n);
-  }
+// Пока это просто макетная подсветка.
+// Потом сюда можно подставить реальные даты новостей.
+function getHighlightedKeys(year: number, month: number) {
+  return new Set(
+    [3, 7, 12, 18, 24, 28].map((day) => {
+      const m = String(month + 1).padStart(2, "0");
+      const d = String(day).padStart(2, "0");
+      return `${year}-${m}-${d}`;
+    })
+  );
+}
 
-  function pickMonth(month: number) {
-    onChange({ year: viewYear, month });
-    setOpen(false);
-  }
+function formatDate(date: Date) {
+  return new Intl.DateTimeFormat("ru-RU", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  }).format(date);
+}
 
-  const label = value ? `${MONTHS_SHORT[value.month - 1]} ${value.year}` : "";
+function CalendarBlock() {
+  const today = new Date();
+  const [selectedDate, setSelectedDate] = useState<Date>(today);
+  const [viewDate, setViewDate] = useState<Date>(
+    new Date(today.getFullYear(), today.getMonth(), 1)
+  );
+
+  const calendarDays = useMemo(() => getCalendarDays(viewDate), [viewDate]);
+  const highlightedKeys = useMemo(
+    () => getHighlightedKeys(viewDate.getFullYear(), viewDate.getMonth()),
+    [viewDate]
+  );
+
+  const currentYear = new Date().getFullYear();
+  const years = Array.from({ length: 11 }, (_, i) => currentYear - 10 + i);
+
+  const handlePrevMonth = () => {
+    setViewDate(new Date(viewDate.getFullYear(), viewDate.getMonth() - 1, 1));
+  };
+
+  const handleNextMonth = () => {
+    setViewDate(new Date(viewDate.getFullYear(), viewDate.getMonth() + 1, 1));
+  };
+
+  const handleYearChange = (year: number) => {
+    setViewDate(new Date(year, viewDate.getMonth(), 1));
+  };
 
   return (
-    <div ref={containerRef} className="relative flex-1 min-w-0">
-      <input
-        type="text"
-        readOnly
-        placeholder={placeholder}
-        value={label}
-        onClick={handleOpen}
-        className="w-full bg-transparent outline-none border-none text-[14px] text-gray-700 placeholder-gray-400 cursor-pointer caret-transparent"
-      />
+    <div className="flex flex-col gap-3">
+      <div className="rounded-xl bg-gray-100 p-4">
+        <div className="flex items-center justify-between gap-2">
+          <button
+            type="button"
+            onClick={handlePrevMonth}
+            className="flex h-9 w-9 items-center justify-center rounded-full text-gray-500 transition-colors hover:bg-white"
+            aria-label="Предыдущий месяц"
+          >
+            ‹
+          </button>
 
-      {open && (
-        <div
-          className={`absolute top-full z-50 mt-2 bg-white rounded-2xl shadow-2xl p-4 w-[220px] ${alignRight ? "right-0" : "left-0"}`}
-        >
-          {/* Навигация по году */}
-          <div className="flex items-center justify-between mb-3">
-            <button
-              onMouseDown={(e) => e.preventDefault()}
-              onClick={() => stepYear(-1)}
-              className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 text-gray-500 text-lg font-light"
+          <div className="flex items-center gap-2">
+            <span className="min-w-[96px] text-center text-[15px] font-semibold text-gray-900">
+              {MONTHS_FULL[viewDate.getMonth()]}
+            </span>
+
+            <select
+              value={viewDate.getFullYear()}
+              onChange={(e) => handleYearChange(Number(e.target.value))}
+              className="rounded-lg border border-gray-200 bg-white px-3 py-2 text-[13px] text-gray-700 outline-none"
             >
-              ‹
-            </button>
-
-            <input
-              type="text"
-              value={yearDraft}
-              onChange={(e) => handleYearType(e.target.value)}
-              onMouseDown={(e) => e.stopPropagation()}
-              className="w-16 text-center text-[15px] font-semibold text-gray-900 outline-none border-b border-gray-200 bg-transparent pb-0.5"
-            />
-
-            <button
-              onMouseDown={(e) => e.preventDefault()}
-              onClick={() => stepYear(1)}
-              className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 text-gray-500 text-lg font-light"
-            >
-              ›
-            </button>
+              {years.map((year) => (
+                <option key={year} value={year}>
+                  {year}
+                </option>
+              ))}
+            </select>
           </div>
 
-          {/* Сетка месяцев */}
-          <div className="grid grid-cols-3 gap-1">
-            {MONTHS_SHORT.map((m, i) => {
-              const isActive = value?.year === viewYear && value?.month === i + 1;
+          <button
+            type="button"
+            onClick={handleNextMonth}
+            className="flex h-9 w-9 items-center justify-center rounded-full text-gray-500 transition-colors hover:bg-white"
+            aria-label="Следующий месяц"
+          >
+            ›
+          </button>
+        </div>
+
+        <div className="flex flex-col gap-2 pt-4">
+          <div className="grid grid-cols-7 gap-1">
+            {WEEK_DAYS.map((day) => (
+              <div
+                key={day}
+                className="flex h-9 items-center justify-center text-[12px] font-medium text-gray-400"
+              >
+                {day}
+              </div>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-7 gap-1">
+            {calendarDays.map((day) => {
+              const isCurrentMonth = day.getMonth() === viewDate.getMonth();
+              const isSelected = isSameDay(day, selectedDate);
+              const key = getDateKey(day);
+              const hasNews = highlightedKeys.has(key);
+
               return (
                 <button
-                  key={m}
-                  onMouseDown={(e) => e.preventDefault()}
-                  onClick={() => pickMonth(i + 1)}
-                  className={`py-2 rounded-lg text-[13px] font-medium transition-colors duration-100 ${isActive
+                  key={key}
+                  type="button"
+                  onClick={() => setSelectedDate(day)}
+                  className={`relative h-10 rounded-lg text-[13px] transition-colors ${isSelected
                     ? "bg-[#1E4080] text-white"
-                    : "text-gray-600 hover:bg-gray-100"
+                    : isCurrentMonth
+                      ? hasNews
+                        ? "bg-[#EAF1FF] text-[#1E4080] hover:bg-[#dce8ff]"
+                        : "text-gray-700 hover:bg-white"
+                      : hasNews
+                        ? "bg-[#F4F7FF] text-[#90A3C7] hover:bg-white"
+                        : "text-gray-300 hover:bg-white"
                     }`}
                 >
-                  {m}
+                  {day.getDate()}
+
+                  {hasNews && !isSelected && (
+                    <span className="absolute bottom-1 left-1/2 h-1.5 w-1.5 -translate-x-1/2 rounded-full bg-[#1E4080]" />
+                  )}
                 </button>
               );
             })}
           </div>
-
-          {value && (
-            <button
-              onMouseDown={(e) => e.preventDefault()}
-              onClick={() => { onChange(null); setOpen(false); }}
-              className="mt-3 w-full text-[12px] text-gray-400 hover:text-red-400 transition-colors text-center"
-            >
-              Очистить
-            </button>
-          )}
         </div>
-      )}
+      </div>
+
+      <div className="rounded-xl bg-gray-100 px-4 py-3">
+        <p className="text-[14px] text-gray-700">{formatDate(selectedDate)}</p>
+      </div>
     </div>
   );
 }
@@ -164,8 +219,6 @@ function MonthYearPicker({ value, onChange, placeholder, alignRight }: PickerPro
 /* ── Основной компонент фильтра ───────────────────────── */
 export default function NewsFilter({ active, onChange }: Props) {
   const [keyword, setKeyword] = useState("");
-  const [dateFrom, setDateFrom] = useState("");
-  const [dateTo, setDateTo] = useState("");
   const [category, setCategory] = useState("");
   const [direction, setDirection] = useState("");
 
@@ -175,24 +228,20 @@ export default function NewsFilter({ active, onChange }: Props) {
 
   return (
     <aside className="px-8 shrink-0">
-      <div
-        className="sticky top-16 pt-10"
-        style={{ height: "calc(100vh - 4rem)", overflowY: "auto" }}
-      >
-        <div className="bg-white rounded-lg shadow-sm flex flex-col gap-3">
-
-          {/* ── Табы ── */}
+      <div className="sticky top-16 pt-10">
+        <div className="flex flex-col gap-3 rounded-lg bg-white shadow-sm">
           <div className="flex rounded-lg">
             {tabs.map((tab) => (
               <button
                 key={tab}
                 onClick={() => onChange(tab)}
                 className={`
-                  flex-1 font-medium py-3 px-3 rounded-t-lg
-                  transition-colors duration-150 whitespace-nowrap text-[14px]
+                  flex-1 whitespace-nowrap rounded-t-lg px-3 py-3 text-[14px] font-medium
+                  transition-colors duration-150
                   ${active === tab
                     ? "bg-[#1E4080] text-white"
-                    : "text-gray-600 hover:text-gray-800"}
+                    : "text-gray-600 hover:text-gray-800"
+                  }
                 `}
               >
                 {tab}
@@ -200,96 +249,73 @@ export default function NewsFilter({ active, onChange }: Props) {
             ))}
           </div>
 
-          <div className="flex flex-col p-6 gap-6">
-
-            {/* ── Ключевые слова ── */}
+          <div className="flex flex-col gap-6 p-6">
             <div className="flex flex-col gap-2">
-              <label className="text-[15px] font-semibold text-gray-900">Ключевые слова</label>
+              <label className="text-[15px] font-semibold text-gray-900">
+                Ключевые слова
+              </label>
               <input
                 type="text"
                 placeholder="Ключевые слова"
                 value={keyword}
                 onChange={(e) => setKeyword(e.target.value)}
-                className="w-full bg-gray-100 rounded-xl px-4 py-3 text-[14px] text-gray-700 placeholder-gray-400 outline-none border-none"
+                className="w-full rounded-xl border-none bg-gray-100 px-4 py-3 text-[14px] text-gray-700 placeholder-gray-400 outline-none"
               />
             </div>
 
-            {/* ── Период публикации ── */}
             <div className="flex flex-col gap-2">
               <label className="text-[15px] font-semibold text-gray-900">
-                Период публикации
+                Дата публикации
               </label>
 
-              <div className="flex items-center bg-gray-100 rounded-xl px-4 py-3 gap-3">
-                <input
-                  type="date"
-                  value={dateFrom}
-                  onChange={(e) => setDateFrom(e.target.value)}
-                  className="bg-transparent outline-none text-[14px] text-gray-700 w-full"
-                />
-
-                <span className="text-gray-400 text-[14px] shrink-0">→</span>
-
-                <input
-                  type="date"
-                  value={dateTo}
-                  onChange={(e) => setDateTo(e.target.value)}
-                  className="bg-transparent outline-none text-[14px] text-gray-700 w-full"
-                />
-
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-5 h-5 text-gray-400 shrink-0"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={1.5}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"
-                  />
-                </svg>
-              </div>
+              <CalendarBlock />
             </div>
 
-            {/* ── Категория деятельности ── */}
             <div className="flex flex-col gap-2">
-              <label className="text-[15px] font-semibold text-gray-900">Категория деятельности</label>
+              <label className="text-[15px] font-semibold text-gray-900">
+                Категория деятельности
+              </label>
               <select
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
-                className="w-full bg-gray-100 rounded-xl px-4 py-3 text-[14px] outline-none border-none appearance-none"
+                className="w-full appearance-none rounded-xl border-none bg-gray-100 px-4 py-3 text-[14px] outline-none"
                 style={{ color: category ? "#374151" : "#9ca3af" }}
               >
-                <option value="" disabled hidden>Не выбрано</option>
+                <option value="" disabled hidden>
+                  Не выбрано
+                </option>
                 {categoryOptions.map((opt) => (
-                  <option key={opt} value={opt} className="text-gray-800">{opt}</option>
+                  <option key={opt} value={opt} className="text-gray-800">
+                    {opt}
+                  </option>
                 ))}
               </select>
             </div>
 
-            {/* ── Направление ── */}
             <div className="flex flex-col gap-2">
-              <label className="text-[15px] font-semibold text-gray-900">Направление</label>
+              <label className="text-[15px] font-semibold text-gray-900">
+                Направление
+              </label>
               <select
                 value={direction}
                 onChange={(e) => setDirection(e.target.value)}
-                className="w-full bg-gray-100 rounded-xl px-4 py-3 text-[14px] outline-none border-none appearance-none"
+                className="w-full appearance-none rounded-xl border-none bg-gray-100 px-4 py-3 text-[14px] outline-none"
                 style={{ color: direction ? "#374151" : "#9ca3af" }}
               >
-                <option value="" disabled hidden>Не выбрано</option>
+                <option value="" disabled hidden>
+                  Не выбрано
+                </option>
                 {directionOptions.map((opt) => (
-                  <option key={opt} value={opt} className="text-gray-800">{opt}</option>
+                  <option key={opt} value={opt} className="text-gray-800">
+                    {opt}
+                  </option>
                 ))}
               </select>
             </div>
 
-            {/* ── Применить ── */}
             <button
               onClick={handleApply}
-              className="w-full bg-[#1E4080] text-white py-4 rounded-xl text-[15px] font-medium hover:bg-[#163366] transition-colors duration-150"
+              className="w-full rounded-xl bg-[#1E4080] py-4 text-[15px] font-medium text-white transition-colors duration-150 hover:bg-[#163366]"
             >
               Применить
             </button>
