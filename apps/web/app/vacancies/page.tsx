@@ -4,6 +4,7 @@ import FeaturedVacanciesSection from "@/components/vacancies/main-page/FeaturedV
 import VacancyCategoriesGrid from "@/components/vacancies/main-page/VacancyCategoriesGrid";
 import InternshipSection from "@/components/vacancies/main-page/InternshipSection";
 import { vacancyCategories, allVacancies } from "@/lib/vacancies-data";
+import BackgroundGlow from "@/components/layout/BackgroundGlow";
 
 // 2 featured vacancies pinned to the top
 const featuredVacancies = allVacancies.filter(
@@ -27,7 +28,8 @@ export default function VacanciesPage() {
     }));
 
   return (
-    <>
+    <main className="relative min-h-screen overflow-hidden ">
+      <BackgroundGlow />
       <PageHero title="Вакансии" />
 
       <div className="w-full bg-[#F0F0F0] py-10">
@@ -46,6 +48,6 @@ export default function VacanciesPage() {
 
         </div>
       </div>
-    </>
+    </main>
   );
 }

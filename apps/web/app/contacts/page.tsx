@@ -1,5 +1,6 @@
 import PageHero from "@/components/layout/PageHero";
 import Breadcrumb from "@/components/ui/Breadcrumb";
+import BackgroundGlow from "@/components/layout/BackgroundGlow";
 import {
   ContactInfo,
   ContactMap,
@@ -25,7 +26,8 @@ const mapCoordinates = {
 
 export default function ContactsPage() {
   return (
-    <>
+    <main className="relative min-h-screen overflow-hidden ">
+      <BackgroundGlow />
       <PageHero title="Контакты" />
       <div className="max-w-7xl mx-auto px-8 pt-8">
         <Breadcrumb items={[{ label: "Контакты" }]} />
@@ -37,6 +39,6 @@ export default function ContactsPage() {
         address={contact.address}
       />
       <ContactFeedback />
-    </>
+    </main>
   );
 }

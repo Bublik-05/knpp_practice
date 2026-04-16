@@ -1,6 +1,7 @@
 import Link from "next/link";
 import PageHero from "@/components/layout/PageHero";
 import Breadcrumb from "@/components/ui/Breadcrumb";
+import BackgroundGlow from "@/components/layout/BackgroundGlow";
 
 const DOC_PATH = "/docs/kaes-development-plan.docx";
 
@@ -76,7 +77,8 @@ const facts = [
 
 export default function DevelopmentPlanPage() {
   return (
-    <>
+    <main className="relative min-h-screen overflow-hidden ">
+      <BackgroundGlow />
       <PageHero title="План развития" />
 
       <div className="w-full bg-[#F0F0F0]">
@@ -169,6 +171,6 @@ export default function DevelopmentPlanPage() {
 
         </div>
       </div>
-    </>
+    </main>
   );
 }

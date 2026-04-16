@@ -5,6 +5,7 @@ import InternshipForm from "@/components/vacancies/detail-page/InternshipForm";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 import ApplyButton from "@/components/vacancies/detail-page/ApplyButton";
 import { getVacancyBySlug } from "@/lib/vacancies-data";
+import BackgroundGlow from "@/components/layout/BackgroundGlow";
 
 export default async function VacancyDetailPage({
   params,
@@ -19,7 +20,8 @@ export default async function VacancyDetailPage({
   const isInternship = vacancy.categorySlug === "stazhirovka";
 
   return (
-    <>
+    <main className="relative min-h-screen overflow-hidden ">
+      <BackgroundGlow />
       <PageHero title="Вакансии" />
 
       <div className="w-full bg-[#F0F0F0] py-10">
@@ -139,7 +141,7 @@ export default async function VacancyDetailPage({
 
         </div>
       </div>
-    </>
+    </main>
   );
 }
 
