@@ -12,15 +12,15 @@ import Breadcrumb from "@/components/ui/Breadcrumb";
 const validSections: FaqSectionId[] = ["general", "project", "cooperation"];
 
 const sections: { id: FaqSectionId; label: string; Component: React.FC }[] = [
-  { id: "general",     label: "Об АЭС и атомной энергетике",  Component: GeneralSection },
-  { id: "project",     label: "О проекте в Казахстане",       Component: ProjectSection },
-  { id: "cooperation", label: "Вакансии и сотрудничество",    Component: CooperationSection },
+  { id: "general", label: "Об АЭС и атомной энергетике", Component: GeneralSection },
+  { id: "project", label: "О проекте в Казахстане", Component: ProjectSection },
+  { id: "cooperation", label: "Вакансии и сотрудничество", Component: CooperationSection },
 ];
 
 export default function FaqContent() {
   const router = useRouter();
   const pathname = usePathname();
-  const searchParams = useSearchParams();
+  const searchParams = window.location.search;
 
   const [active, setActive] = useState<FaqSectionId>("general");
   const contentTopRef = useRef<HTMLDivElement | null>(null);

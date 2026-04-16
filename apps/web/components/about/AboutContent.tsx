@@ -24,14 +24,14 @@ const validSections: SectionId[] = [
 ];
 
 const sectionLabels: Record<SectionId, string> = {
-  about:       "О компании",
-  activities:  "Виды деятельности",
-  additional:  "Дополнительная информация",
-  gallery:     "Галерея",
-  leadership:  "Руководство",
-  safety:      "Безопасность",
-  compliance:  "Комплаенс",
-  npa:         "НПА",
+  about: "О компании",
+  activities: "Виды деятельности",
+  additional: "Дополнительная информация",
+  gallery: "Галерея",
+  leadership: "Руководство",
+  safety: "Безопасность",
+  compliance: "Комплаенс",
+  npa: "НПА",
   development: "План развития",
 };
 
@@ -93,7 +93,7 @@ export default function AboutContent() {
       const galleryTitle = galleries.find((g) => g.slug === selectedGallerySlug)?.title ?? "Галерея";
       return [
         { label: "О компании", href: "/about" },
-        { label: "Галерея",    href: "/about?section=gallery" },
+        { label: "Галерея", href: "/about?section=gallery" },
         { label: galleryTitle },
       ];
     }
@@ -105,21 +105,21 @@ export default function AboutContent() {
 
   const renderContent = () => {
     switch (active) {
-      case "about":       return (<><h1 className="text-5xl font-bold text-gray-900 mb-8">О компании</h1><CompanySection /></>);
-      case "activities":  return (<><h1 className="text-5xl font-bold text-gray-900 mb-8">Виды деятельности ТОО «КАЭС»:</h1><ActivitiesSection /></>);
-      case "additional":  return (<><h1 className="text-5xl font-bold text-gray-900 mb-8">Дополнительная информация</h1><AdditionalSection /></>);
+      case "about": return (<><h1 className="text-5xl font-bold text-gray-900 mb-8">О компании</h1><CompanySection /></>);
+      case "activities": return (<><h1 className="text-5xl font-bold text-gray-900 mb-8">Виды деятельности ТОО «КАЭС»:</h1><ActivitiesSection /></>);
+      case "additional": return (<><h1 className="text-5xl font-bold text-gray-900 mb-8">Дополнительная информация</h1><AdditionalSection /></>);
       case "gallery":
         return selectedGallerySlug ? (
           <><h1 className="text-5xl font-bold text-gray-900 mb-8">Галерея</h1><GalleryDetail slug={selectedGallerySlug} onBack={handleBackToGalleryList} /></>
         ) : (
           <GallerySection onOpenGallery={handleOpenGallery} />
         );
-      case "leadership":  return (<><h1 className="text-5xl font-bold text-gray-900 mb-8">Руководство</h1><LeadershipSection /></>);
-      case "safety":      return (<><h1 className="text-5xl font-bold text-gray-900 mb-8">Безопасность</h1><SafetySection /></>);
-      case "compliance":  return (<><h1 className="text-5xl font-bold text-gray-900 mb-8">Комплаенс</h1><ComplianceSection /></>);
-      case "npa":         return (<><h1 className="text-5xl font-bold text-gray-900 mb-8">НПА</h1><NpaSection /></>);
+      case "leadership": return (<><h1 className="text-5xl font-bold text-gray-900 mb-8">Руководство</h1><LeadershipSection /></>);
+      case "safety": return (<><h1 className="text-5xl font-bold text-gray-900 mb-8">Безопасность</h1><SafetySection /></>);
+      case "compliance": return (<><h1 className="text-5xl font-bold text-gray-900 mb-8">Комплаенс</h1><ComplianceSection /></>);
+      case "npa": return (<><h1 className="text-5xl font-bold text-gray-900 mb-8">НПА</h1><NpaSection /></>);
       case "development": return (<><h1 className="text-5xl font-bold text-gray-900 mb-8">План развития</h1><DevelopmentSection /></>);
-      default:            return null;
+      default: return null;
     }
   };
 
