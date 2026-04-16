@@ -24,16 +24,6 @@ export default function PageHero({ title }: { title: string }) {
       >
         {/* золотое свечение */}
         <div
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl"
-          style={{
-            width: "75%",
-            height: "75%",
-            background:
-              "radial-gradient(circle, rgba(224,197,143,0.42) 0%, rgba(224,197,143,0.18) 45%, rgba(224,197,143,0) 75%)",
-            zIndex: 0,
-          }}
-        />
-        <div
           className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full blur-xl"
           style={{
             width: "38%",
@@ -63,16 +53,6 @@ export default function PageHero({ title }: { title: string }) {
         }}
       >
         {/* золотое свечение */}
-        <div
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl"
-          style={{
-            width: "78%",
-            height: "78%",
-            background:
-              "radial-gradient(circle, rgba(224,197,143,0.38) 0%, rgba(224,197,143,0.16) 48%, rgba(224,197,143,0) 76%)",
-            zIndex: 0,
-          }}
-        />
         <div
           className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full blur-xl"
           style={{

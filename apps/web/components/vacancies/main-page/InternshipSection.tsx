@@ -29,7 +29,7 @@ export default function InternshipSection({ vacancies }: Props) {
 
         <Link
           href="/vacancies/stazhirovka"
-          className="relative z-10 inline-flex items-center gap-2 self-start sm:self-auto shrink-0 rounded-full bg-white/15 hover:bg-white hover:text-black px-5 py-2.5 text-sm font-light text-white transition-colors"
+          className="relative z-10 inline-flex items-center gap-2 self-start sm:self-auto shrink-0 rounded-full bg-white hover:bg-[#E0C58F] hover:text-black px-5 py-2.5 text-sm font-light text-black transition-colors"
         >
           Смотреть все
           <svg
