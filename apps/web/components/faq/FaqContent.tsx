@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 import FaqNav, { type FaqSectionId } from "./FaqNav";
 import GeneralSection from "./sections/GeneralSection";
@@ -20,7 +20,6 @@ const sections: { id: FaqSectionId; label: string; Component: React.FC }[] = [
 export default function FaqContent() {
   const router = useRouter();
   const pathname = usePathname();
-  const searchParams = window.location.search;
 
   const [active, setActive] = useState<FaqSectionId>("general");
   const contentTopRef = useRef<HTMLDivElement | null>(null);
@@ -32,14 +31,16 @@ export default function FaqContent() {
   }, []);
 
   useEffect(() => {
+    const searchParams = new URLSearchParams(window.location.search);
     const section = searchParams.get("section");
+
     if (section && validSections.includes(section as FaqSectionId)) {
       setActive(section as FaqSectionId);
       setTimeout(() => scrollToTop(), 0);
     } else {
       setActive("general");
     }
-  }, [searchParams, scrollToTop]);
+  }, [scrollToTop]);
 
   const handleSelect = useCallback(
     (id: FaqSectionId) => {
