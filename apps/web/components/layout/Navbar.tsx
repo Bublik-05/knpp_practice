@@ -197,7 +197,9 @@ export default function Navbar() {
             <button
               onClick={() => setMegaOpen((prev) => !prev)}
               aria-label={megaOpen ? "Закрыть меню" : "Открыть меню"}
-              className={`p-1.5 transition-colors ${megaOpen ? "text-[#E0C58F]" : "text-[#F5F0E9] hover:text-[#E0C58F]"
+              className={`p-1.5 transition-all duration-200 ${megaOpen
+                ? "text-white [text-shadow:0_0_10px_rgba(255,255,255,0.35)]"
+                : "text-[#F5F0E9] hover:text-white hover:[text-shadow:0_0_10px_rgba(255,255,255,0.35)]"
                 }`}
             >
               {megaOpen ? (
@@ -249,9 +251,10 @@ export default function Navbar() {
                   onMouseLeave={() => hasMenu && handleMouseLeave()}>
                   <Link
                     href={link.href}
-                    className={`px-2 py-1.5 text-[14px] whitespace-nowrap rounded transition-colors ${isActive || isMenuOpen
-                      ? "font-medium text-[#E0C58F]"
-                      : "font-light text-[#F5F0E9] hover:text-[#E0C58F]"}`}
+                    className={`px-2 py-1.5 text-[14px] whitespace-nowrap rounded transition-all duration-200 ${isActive || isMenuOpen
+                      ? "font-medium text-white [text-shadow:0_0_12px_rgba(255,255,255,0.35)]"
+                      : "font-light text-[#F5F0E9] hover:text-white hover:[text-shadow:0_0_12px_rgba(255,255,255,0.35)]"
+                      }`}
                   >
                     {link.label}
                   </Link>
@@ -262,12 +265,14 @@ export default function Navbar() {
                       onMouseEnter={() => handleMouseEnter(link.label)}
                       onMouseLeave={handleMouseLeave}>
                       <div className="h-2 w-full" />
-                      <div className="bg-[#3C507D] shadow-[0_18px_40px_rgba(17,34,80,0.16)] border border-[#D9CBC2] rounded-b-xl overflow-hidden"
-                        style={{ minWidth: 600 }}>
-                        <div className="flex flex-wrap items-center gap-x-4 gap-y-1 border-b border-[#D9CBC2] px-6 py-3">
+                      <div
+                        className="bg-white shadow-[0_18px_40px_rgba(17,34,80,0.14)] border border-[#E0C58F]/35 rounded-b-xl overflow-hidden"
+                        style={{ minWidth: 600 }}
+                      >
+                        <div className="flex flex-wrap items-center gap-x-4 gap-y-1 border-b border-[#E0C58F]/25 px-6 py-3">
                           {link.megaMenu!.topLinks.map((sub) => (
                             <Link key={sub.label} href={sub.href}
-                              className="whitespace-nowrap text-[13px] text-[#D9CBC2] font-light hover:text-[#E0C58F] transition-colors">
+                              className="whitespace-nowrap text-[13px] text-[#3C507D] font-light hover:text-[#112250] transition-colors">
                               {sub.label}
                             </Link>
                           ))}
@@ -276,7 +281,7 @@ export default function Navbar() {
                           <div className="flex flex-col px-6 py-4 gap-2.5">
                             {link.megaMenu!.sideLinks.map((sub) => (
                               <Link key={sub.label} href={sub.href}
-                                className="text-[13px] font-light text-[#E0C58F] hover:underline transition-colors w-fit">
+                                className="text-[13px] font-light text-[#112250] hover:text-[#3C507D] hover:underline transition-colors w-fit">
                                 {sub.label}
                               </Link>
                             ))}
@@ -300,7 +305,7 @@ export default function Navbar() {
                 <input type="text" placeholder="Поиск..."
                   onFocus={() => setSearchFocused(true)}
                   onBlur={() => setSearchFocused(false)}
-                  className="w-full rounded-full border border-[#D9CBC2] focus:border-[#E0C58F] px-3 py-1.5 text-[13px] outline-none bg-[#F5F0E9] text-[#2C2C3A] placeholder:text-[#D9CBC2]" />
+                  className="w-full rounded-full border border-[#d7e2f2] focus:border-[#3C507D] px-3 py-1.5 text-[13px] outline-none bg-white text-[#2C2C3A] placeholder:text-gray-400 transition-colors" />
               </div>
               <button aria-label="Поиск" className="p-1.5 text-[#F5F0E9] relative z-10">
                 <SearchIcon className="w-5 h-5" />
@@ -327,7 +332,7 @@ export default function Navbar() {
               )}
             </div>
 
-            <button className="hidden md:flex items-center justify-center px-4 py-1.5 bg-white text-[#112250] text-[13px] font-light rounded-full border border-[#E0C58F]/50 hover:bg-[#E0C58F] hover:border-[#E0C58F] hover:text-[#112250] transition-colors whitespace-nowrap">
+            <button className="hidden md:flex items-center justify-center px-4 py-1.5 bg-white text-[#112250] text-[13px] font-light rounded-full border border-white/30 hover:bg-white hover:border-white hover:text-[#112250] hover:shadow-[0_0_18px_rgba(255,255,255,0.14)] transition-all duration-200 whitespace-nowrap">
               Рус
             </button>
 
@@ -346,10 +351,13 @@ export default function Navbar() {
 
         {/* Mobile dropdown */}
         {menuOpen && (
-          <div className="md:hidden border-t border-[#D9CBC2] bg-[#3C507D]">
+          <div className="md:hidden border-t border-[#E0C58F]/25 bg-white">
             {navLinks.map((link) => (
               <Link key={link.href} href={link.href} onClick={() => setMenuOpen(false)}
-                className={`block px-8 py-3 text-[14px] border-b border-[#D9CBC2]/50 ${pathname === link.href ? "font-bold text-[#E0C58F] bg-[#3C507D]" : "font-light text-[#2C2C3A]"}`}>
+                className={`block px-8 py-3 text-[14px] border-b border-[#E0C58F]/15 transition-colors ${pathname === link.href
+                  ? "font-medium text-[#112250] bg-[#F5F0E9]"
+                  : "font-light text-[#3C507D] hover:bg-[#F5F0E9] hover:text-[#112250]"
+                  }`}>
                 {link.label}
               </Link>
             ))}
@@ -373,7 +381,7 @@ export default function Navbar() {
         style={{ maxHeight: "calc(100vh - 5rem)" }}
       >
         <div
-          className="bg-[#3C507D] shadow-[0_18px_48px_rgba(17,34,80,0.18)] border border-[#E0C58F] rounded-lg overflow-hidden"
+          className="bg-white shadow-xl border border-gray-100 rounded-lg overflow-hidden"
           onClick={(e) => e.stopPropagation()}
         >
           <div className="max-w-7xl mx-auto px-8 py-8">
@@ -383,9 +391,9 @@ export default function Navbar() {
                 <a
                   href="#"
                   aria-label="Facebook"
-                  className="w-8 h-8 bg-[#D9CBC2] rounded-full flex items-center justify-center hover:bg-[#E0C58F] transition-colors"
+                  className="w-8 h-8 bg-[#1E4080] rounded-full flex items-center justify-center hover:bg-[#2a4d8f] transition-colors"
                 >
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="#112250">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
                     <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
                   </svg>
                 </a>
@@ -393,30 +401,30 @@ export default function Navbar() {
                 <a
                   href="#"
                   aria-label="Instagram"
-                  className="w-8 h-8 bg-[#D9CBC2] rounded-full flex items-center justify-center hover:bg-[#E0C58F] transition-colors"
+                  className="w-8 h-8 bg-[#1E4080] rounded-full flex items-center justify-center hover:bg-[#2a4d8f] transition-colors"
                 >
                   <svg
                     width="15"
                     height="15"
                     viewBox="0 0 24 24"
                     fill="none"
-                    stroke="#112250"
+                    stroke="white"
                     strokeWidth="1.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   >
                     <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
                     <circle cx="12" cy="12" r="4" />
-                    <circle cx="17.5" cy="6.5" r="0.5" fill="#F5F0E9" stroke="none" />
+                    <circle cx="17.5" cy="6.5" r="0.5" fill="white" stroke="none" />
                   </svg>
                 </a>
 
                 <a
                   href="#"
                   aria-label="TikTok"
-                  className="w-8 h-8 bg-[#D9CBC2] rounded-full flex items-center justify-center hover:bg-[#E0C58F] transition-colors"
+                  className="w-8 h-8 bg-[#1E4080] rounded-full flex items-center justify-center hover:bg-[#2a4d8f] transition-colors"
                 >
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#112250">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="white">
                     <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.3 6.3 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z" />
                   </svg>
                 </a>
@@ -424,12 +432,12 @@ export default function Navbar() {
 
               {/* Main content */}
               <div className="flex-1 min-w-0 flex flex-col gap-8 overflow-y-auto">
-                {/* Close row */}
+                {/* Close row — оставляем почти как было */}
                 <div className="flex items-center justify-between">
-                  <span className="text-[#D9CBC2] font-light">Все разделы сайта</span>
+                  <span className="text-gray-500 font-light">Все разделы сайта</span>
                   <button
                     onClick={() => setMegaOpen(false)}
-                    className="flex items-center gap-2 text-[#D9CBC2] hover:text-[#E0C58F] transition-colors"
+                    className="flex items-center gap-2 text-gray-500 hover:text-[#1E4080] transition-colors"
                   >
                     Закрыть
                     <svg
@@ -458,7 +466,7 @@ export default function Navbar() {
                           <Link
                             href={col.href}
                             onClick={() => setMegaOpen(false)}
-                            className={`text-lg font-bold transition-colors hover:text-[#E0C58F] ${isActive ? "text-[#E0C58F]" : "text-[#D9CBC2]"
+                            className={`text-lg font-bold transition-colors hover:text-[#1E4080] ${isActive ? "text-[#1E4080]" : "text-[#111c36]"
                               }`}
                           >
                             {col.label}
@@ -472,7 +480,7 @@ export default function Navbar() {
                                 <Link
                                   href={sub.href}
                                   onClick={() => setMegaOpen(false)}
-                                  className="font-light text-[#fcf9f6] hover:text-[#E0C58F] transition-colors leading-snug block"
+                                  className="font-light text-gray-600 hover:text-[#1E4080] transition-colors leading-snug block"
                                 >
                                   {sub.label}
                                 </Link>
@@ -486,13 +494,13 @@ export default function Navbar() {
                 </div>
 
                 {/* Socials for smaller screens */}
-                <div className="flex lg:hidden items-center gap-4 pt-2 border-t border-[#D9CBC2]">
+                <div className="flex lg:hidden items-center gap-4 pt-2 border-t border-gray-100">
                   <a
                     href="#"
                     aria-label="Facebook"
-                    className="w-8 h-8 bg-[#3C507D] rounded-full flex items-center justify-center hover:bg-[#112250] transition-colors"
+                    className="w-8 h-8 bg-[#1E4080] rounded-full flex items-center justify-center hover:bg-[#2a4d8f] transition-colors"
                   >
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="#F5F0E9">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
                       <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
                     </svg>
                   </a>
@@ -500,30 +508,30 @@ export default function Navbar() {
                   <a
                     href="#"
                     aria-label="Instagram"
-                    className="w-8 h-8 bg-[#3C507D] rounded-full flex items-center justify-center hover:bg-[#112250] transition-colors"
+                    className="w-8 h-8 bg-[#1E4080] rounded-full flex items-center justify-center hover:bg-[#2a4d8f] transition-colors"
                   >
                     <svg
                       width="15"
                       height="15"
                       viewBox="0 0 24 24"
                       fill="none"
-                      stroke="#F5F0E9"
+                      stroke="white"
                       strokeWidth="1.5"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     >
                       <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
                       <circle cx="12" cy="12" r="4" />
-                      <circle cx="17.5" cy="6.5" r="0.5" fill="#F5F0E9" stroke="none" />
+                      <circle cx="17.5" cy="6.5" r="0.5" fill="white" stroke="none" />
                     </svg>
                   </a>
 
                   <a
                     href="#"
                     aria-label="TikTok"
-                    className="w-8 h-8 bg-[#3C507D] rounded-full flex items-center justify-center hover:bg-[#112250] transition-colors"
+                    className="w-8 h-8 bg-[#1E4080] rounded-full flex items-center justify-center hover:bg-[#2a4d8f] transition-colors"
                   >
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="#F5F0E9">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="white">
                       <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.3 6.3 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z" />
                     </svg>
                   </a>
