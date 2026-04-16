@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getNewsBySlug } from "@/lib/news";
 import Breadcrumb from "@/components/ui/Breadcrumb";
+import BackgroundGlow from "@/components/layout/BackgroundGlow";
 
 import ClientContentRenderer from "./ClientContentRenderer";
 
@@ -26,7 +27,8 @@ export default async function NewsDetailPage({ params }: Props) {
   const shortTitle = item.title.length > 50 ? item.title.slice(0, 50) + "…" : item.title;
 
   return (
-    <main className="px-6 md:px-10 lg:px-20 py-16">
+    <main className="px-6 md:px-10 lg:px-20 py-16 relative min-h-screen overflow-hidden">
+      <BackgroundGlow />  
       <div className="max-w-7xl mx-auto flex flex-col gap-8">
 
         {/* Хлебные крошки + кнопка назад */}

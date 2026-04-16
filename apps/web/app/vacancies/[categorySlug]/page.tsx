@@ -2,6 +2,7 @@ import Link from "next/link";
 import PageHero from "@/components/layout/PageHero";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 import { vacancyCategories, getVacanciesByCategory } from "@/lib/vacancies-data";
+import BackgroundGlow from "@/components/layout/BackgroundGlow";
 
 export default async function CategoryPage({
   params,
@@ -16,7 +17,8 @@ export default async function CategoryPage({
   const vacancies = getVacanciesByCategory(categorySlug);
 
   return (
-    <>
+    <main className="relative min-h-screen overflow-hidden " >
+      <BackgroundGlow />
       <PageHero title="Вакансии" />
 
       <div className="w-full bg-[#F0F0F0] py-10">
@@ -109,6 +111,6 @@ export default async function CategoryPage({
 
         </div>
       </div>
-    </>
+    </main>
   );
 }

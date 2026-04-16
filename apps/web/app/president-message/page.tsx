@@ -1,3 +1,5 @@
+import BackgroundGlow from "@/components/layout/BackgroundGlow";
+
 export const metadata = {
     title: "Послание президента",
     description: "Раздел с материалами, связанными с посланием президента.",
@@ -5,7 +7,8 @@ export const metadata = {
 
 export default function PresidentMessagePage() {
     return (
-        <main className="px-30 py-20 flex flex-col gap-14">
+        <main className="px-30 py-20 flex flex-col gap-14 relative min-h-screen overflow-hidden">
+            <BackgroundGlow />  
             <section className="max-w-5xl flex flex-col gap-5">
 
                 <h1 className="font-bold leading-tight text-4xl md:text-5xl lg:text-6xl">
