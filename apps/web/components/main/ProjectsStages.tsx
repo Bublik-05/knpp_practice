@@ -133,7 +133,7 @@ const statusConfig = {
     year: "text-[#1E4080]",
   },
   active: {
-    circle: "bg-white border-[#1E4080] ring-4 ring-[#1E4080]/15",
+    circle: "bg-white border-[#E0C58F] ring-4 ring-[#E0C58F]/15",
     card: "border-[#1E4080]/40 bg-white shadow-sm",
     title: "text-gray-900",
     badge: "bg-yellow-50 text-yellow-700 border border-yellow-200",
@@ -159,7 +159,7 @@ function StageIcon({ status }: { status: Stage["status"] }) {
     );
   }
   if (status === "active") {
-    return <div className="w-3 h-3 rounded-full bg-[#1E4080]" />;
+    return <div className="w-3 h-3 rounded-full bg-[#E0C58F]" />;
   }
   return null;
 }
@@ -206,7 +206,7 @@ export default function ProjectsStages() {
           </h2>
           <Link
             href="/projects"
-            className="self-start sm:self-auto inline-flex items-center gap-2 rounded-full border border-[#1E4080] px-5 pl-7 py-2.5 text-lg font-light text-[#1E4080] hover:bg-[#1E4080] hover:text-white transition-colors duration-200"
+            className="self-start sm:self-auto inline-flex items-center gap-2 rounded-full border bg-[#1E4080] text-white px-5 pl-7 py-2.5 text-lg font-light text-[#1E4080] hover:bg-[#E0C58F] transition-colors duration-200"
           >
             Все проекты
             <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
@@ -234,30 +234,30 @@ export default function ProjectsStages() {
       </div>
 
       {/* Project info bar */}
-      <div className="flex flex-wrap items-center gap-4 mb-10 p-5 rounded-lg bg-[#1E4080]/5 border border-[#1E4080]/10">
-        <span className="rounded-full bg-[#1E4080] px-4 py-2 text-md font-medium text-white">
+      <div className="flex flex-wrap items-center gap-4 mb-10 p-5 rounded-lg bg-[#3C507D] border border-[#1E4080]/10">
+        <span className="rounded-full bg-[#E0C58F] px-4 py-2 text-md font-medium text-[#112250]">
           {project.badge}
         </span>
         <div className="flex flex-wrap gap-6 text-md">
           <span className="flex items-center gap-1.5 text-gray-700">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-[#1E4080]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
-            <span className="font-medium text-[#1E4080]">{project.capacity}</span>
-            <span className="text-gray-700 font-light">суммарной мощности</span>
+            <span className="font-medium text-white">{project.capacity}</span>
+            <span className="text-white/90 font-light">суммарной мощности</span>
           </span>
           <span className="flex items-center gap-1.5 text-gray-700">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-[#1E4080]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
             </svg>
-            <span className="font-medium text-[#1E4080]">{project.type}</span>
+            <span className="font-medium text-white">{project.type}</span>
           </span>
           <span className="flex items-center gap-1.5 text-gray-700">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-[#1E4080]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
               <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
             </svg>
-            <span className="text-gray-700 font-light">{project.region}</span>
+            <span className="text-white/90 font-light">{project.region}</span>
           </span>
         </div>
       </div>

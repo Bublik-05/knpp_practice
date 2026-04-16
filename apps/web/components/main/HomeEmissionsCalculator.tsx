@@ -177,9 +177,9 @@ export default function HomeEmissionsCalculator() {
                     </p>
                 </div>
 
-                <div className="rounded-[28px] border border-[#d9e2f2] bg-[#f8fbff] p-6 md:p-8 shadow-sm">
+                <div className="rounded-lg border border-[#d9e2f2] bg-[#f8fbff] p-6 md:p-8 shadow-sm">
                     <div className="grid grid-cols-1 gap-6 lg:grid-cols-[0.92fr_1.08fr]">
-                        <div className="rounded-[24px] border border-gray-200 bg-white p-5 md:p-6 space-y-5">
+                        <div className="rounded-lg border border-gray-200 bg-white p-5 md:p-6 space-y-5">
                             <div className="space-y-2">
                                 <p className="text-sm font-medium text-gray-800">
                                     Источник энергии
@@ -194,7 +194,7 @@ export default function HomeEmissionsCalculator() {
                                                 type="button"
                                                 onClick={() => setSelectedSource(source.id)}
                                                 className={`rounded-full px-4 py-2.5 text-sm font-medium transition ${isActive
-                                                    ? "bg-[#1E4080] text-white shadow-sm"
+                                                    ? "bg-[#1E4080] text-[#E0C58F] shadow-sm"
                                                     : "border border-gray-200 bg-white text-gray-700 hover:border-[#1E4080] hover:text-[#1E4080]"
                                                     }`}
                                             >
@@ -221,7 +221,7 @@ export default function HomeEmissionsCalculator() {
                                     value={volume}
                                     onChange={(e) => setVolume(e.target.value)}
                                     placeholder="Например: 1000"
-                                    className="w-full rounded-2xl border border-gray-300 bg-white px-4 py-3 text-gray-900 outline-none transition focus:border-[#1E4080] focus:ring-2 focus:ring-[#1E4080]/10"
+                                    className="w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-gray-900 outline-none transition focus:border-[#1E4080] focus:ring-2 focus:ring-[#1E4080]/10"
                                 />
 
                                 <div className="flex flex-wrap gap-2 pt-1">
@@ -239,12 +239,12 @@ export default function HomeEmissionsCalculator() {
                             </div>
 
                             {!isValid ? (
-                                <div className="rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+                                <div className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
                                     Введите корректный объем электроэнергии в МВт·ч.
                                 </div>
                             ) : null}
 
-                            <div className="rounded-2xl border border-[#dbe5f4] bg-[#f7faff] p-4">
+                            <div className="rounded-lg border border-[#dbe5f4] bg-[#f7faff] p-4">
                                 <p className="text-sm leading-relaxed text-gray-600">
                                     Расчет ориентировочный и основан на усредненных
                                     коэффициентах выбросов CO₂.
@@ -253,21 +253,21 @@ export default function HomeEmissionsCalculator() {
                         </div>
 
                         <div className="space-y-4">
-                            <div className="rounded-[24px] bg-[#1E4080] p-5 md:p-6 text-white shadow-sm">
-                                <p className="text-sm uppercase tracking-[0.18em] text-white/70">
+                            <div className="rounded-lg bg-[#1E4080] p-5 md:p-6 text-[#E0C58F] shadow-sm">
+                                <p className="text-sm uppercase tracking-[0.18em] text-[#E0C58F]">
                                     Выбросы CO₂
                                 </p>
-                                <div className="mt-3 text-4xl md:text-5xl font-semibold leading-none">
+                                <div className="mt-3 text-4xl md:text-5xl font-bold leading-none">
                                     {isValid ? `${formatNumber(result.emissionsTons)} т` : "—"}
                                 </div>
-                                <p className="mt-3 text-white/80 font-light leading-relaxed">
+                                <p className="mt-3 text-[#E0C58F]/80 font-light leading-relaxed">
                                     {result.source.label} · {isValid ? formatNumber(result.volume) : "—"}{" "}
                                     МВт·ч
                                 </p>
                             </div>
 
-                            <div className="rounded-[24px] border border-[#dbe5f4] bg-white p-5 md:p-6 shadow-sm">
-                                <h3 className="text-lg font-semibold text-[#1E4080] mb-3">
+                            <div className="rounded-lg border border-[#dbe5f4] bg-white p-5 md:p-6 shadow-sm">
+                                <h3 className="text-lg font-bold text-[#1E4080] mb-3">
                                     Пояснение результата
                                 </h3>
                                 <p className="text-gray-700 font-light leading-relaxed">
@@ -276,7 +276,7 @@ export default function HomeEmissionsCalculator() {
                             </div>
 
                             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                                <div className="rounded-[22px] border border-gray-200 bg-white p-4 shadow-sm">
+                                <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm">
                                     <p className="text-sm text-gray-500">
                                         Сравнение с АЭС
                                     </p>
@@ -287,7 +287,7 @@ export default function HomeEmissionsCalculator() {
                                     </p>
                                 </div>
 
-                                <div className="rounded-[22px] border border-gray-200 bg-white p-4 shadow-sm">
+                                <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm">
                                     <p className="text-sm text-gray-500">
                                         Разница с АЭС
                                     </p>
@@ -298,7 +298,7 @@ export default function HomeEmissionsCalculator() {
                                     </p>
                                 </div>
 
-                                <div className="rounded-[22px] border border-gray-200 bg-white p-4 shadow-sm">
+                                <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm">
                                     <p className="text-sm text-gray-500">
                                         Эквивалент авто
                                     </p>

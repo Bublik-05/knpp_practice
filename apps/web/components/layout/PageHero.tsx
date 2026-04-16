@@ -14,26 +14,80 @@ export default function PageHero({ title }: { title: string }) {
       {/* Первый атом */}
       <div
         className="absolute pointer-events-none select-none"
-        style={{ right: "16%", top: "-50px", width: 430, zIndex: 5, transform: "rotate(25deg)" }}
+        style={{
+          right: "16%",
+          top: "-50px",
+          width: 430,
+          zIndex: 5,
+          transform: "rotate(25deg)",
+        }}
       >
+        {/* золотое свечение */}
+        <div
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl"
+          style={{
+            width: "75%",
+            height: "75%",
+            background:
+              "radial-gradient(circle, rgba(224,197,143,0.42) 0%, rgba(224,197,143,0.18) 45%, rgba(224,197,143,0) 75%)",
+            zIndex: 0,
+          }}
+        />
+        <div
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full blur-xl"
+          style={{
+            width: "38%",
+            height: "38%",
+            background: "rgba(224,197,143,0.30)",
+            zIndex: 0,
+          }}
+        />
+
         <img
           src="/images/atom.png"
           alt=""
           aria-hidden
-          className="w-full h-auto drop-shadow-2xl"
+          className="relative z-10 w-full h-auto drop-shadow-2xl"
         />
       </div>
 
-      {/* Второй атом — больше, выше и правее */}
+      {/* Второй атом */}
       <div
         className="absolute pointer-events-none select-none"
-        style={{ right: "0%", top: "-40px", width: 600, zIndex: 10, transform: "scaleX(-1) rotate(25deg)" }}
+        style={{
+          right: "0%",
+          top: "-40px",
+          width: 600,
+          zIndex: 10,
+          transform: "scaleX(-1) rotate(25deg)",
+        }}
       >
+        {/* золотое свечение */}
+        <div
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl"
+          style={{
+            width: "78%",
+            height: "78%",
+            background:
+              "radial-gradient(circle, rgba(224,197,143,0.38) 0%, rgba(224,197,143,0.16) 48%, rgba(224,197,143,0) 76%)",
+            zIndex: 0,
+          }}
+        />
+        <div
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full blur-xl"
+          style={{
+            width: "38%",
+            height: "38%",
+            background: "rgba(224,197,143,0.30)",
+            zIndex: 0,
+          }}
+        />
+
         <img
           src="/images/atom.png"
           alt=""
           aria-hidden
-          className="w-full h-auto drop-shadow-2xl"
+          className="relative z-10 w-full h-auto drop-shadow-2xl"
         />
       </div>
 

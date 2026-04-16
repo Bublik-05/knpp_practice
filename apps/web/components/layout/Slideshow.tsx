@@ -104,14 +104,14 @@ export default function Slideshow() {
                   {slide.path.map((segment, si) => (
                     <span key={si} className="flex items-center gap-1.5">
                       {si > 0 && (
-                        <svg className="w-3 h-3 text-white/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <svg className="w-4 h-4 text-[#E0C58F]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                         </svg>
                       )}
                       <span
                         className={`text-xs font-medium tracking-[0.15em] uppercase ${
                           si === slide.path.length - 1
-                            ? "text-white/90"
+                            ? "text-[#E0C58F]"
                             : "text-white/45"
                         }`}
                       >
@@ -146,7 +146,7 @@ export default function Slideshow() {
             {!isActive && (
               <div className="absolute inset-0 flex flex-col items-center justify-between py-8">
                 {/* Path hint at top */}
-                <span className="text-white/30 text-[10px] tracking-widest uppercase rotate-180"
+                <span className="text-[#E0C58F] text-[10px] tracking-widest uppercase rotate-180"
                   style={{ writingMode: "vertical-rl" }}>
                   {slide.path.join(" / ")}
                 </span>

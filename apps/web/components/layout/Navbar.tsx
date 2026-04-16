@@ -332,7 +332,7 @@ export default function Navbar() {
               )}
             </div>
 
-            <button className="hidden md:flex items-center justify-center px-4 py-1.5 bg-white text-[#112250] text-[13px] font-light rounded-full border border-white/30 hover:bg-white hover:border-white hover:text-[#112250] hover:shadow-[0_0_18px_rgba(255,255,255,0.14)] transition-all duration-200 whitespace-nowrap">
+            <button className="hidden md:flex items-center justify-center px-4 py-1.5 bg-white text-[#112250] text-[13px] font-light rounded-full border hover:bg-[#E0C58F] hover:border-[#E0C58F] hover:text-[#112250] hover:shadow-[0_0_18px_rgba(255,255,255,0.14)] transition-all duration-200 whitespace-nowrap">
               Рус
             </button>
 

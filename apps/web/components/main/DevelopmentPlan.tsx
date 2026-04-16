@@ -93,14 +93,14 @@ export default function DevelopmentPlan() {
     ] as const;
 
     return (
-        <section className="px-30 py-18">
+        <section className="bg-[#112250] px-30 py-30 text-[#F5F0E9]">
             <div className="mx-auto flex w-full max-w-7xl flex-col gap-[110px]">
-                <div className="max-w-3xl flex flex-col gap-6">
-                    <h2 className="text-3xl font-bold leading-tight md:text-4xl lg:text-5xl">
+                <div className="flex max-w-3xl flex-col gap-6">
+                    <h2 className="text-3xl font-bold leading-tight text-[#F5F0E9] md:text-4xl lg:text-5xl">
                         План развития
                     </h2>
 
-                    <p className="text-lg font-light leading-relaxed text-gray-600">
+                    <p className="text-lg font-light leading-relaxed text-white">
                         Проект реализуется поэтапно. Сейчас работа находится на начальной
                         стадии, а последующие шаги отражают дальнейшую траекторию развития.
                     </p>
@@ -108,19 +108,34 @@ export default function DevelopmentPlan() {
                     <div className="flex flex-wrap items-center gap-3 pt-2">
                         <Link
                             href="/development-plan"
-                            className="inline-flex items-center gap-2 rounded-full bg-[#1E4080] px-6 py-3 text-sm font-medium text-white hover:bg-[#162f66] transition-colors shadow-sm"
+                            className="inline-flex items-center gap-2 rounded-full bg-[#E0C58F] px-6 py-3 text-sm font-medium text-[#112250] shadow-sm transition-colors hover:bg-[#c9b07a]"
                         >
                             Подробнее
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-4 w-4"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                                strokeWidth={2}
+                            >
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                             </svg>
                         </Link>
+
                         <a
                             href="/docs/kaes-development-plan.docx"
                             download="КАЭС_План_развития.docx"
-                            className="inline-flex items-center gap-2 rounded-full border border-[#1E4080] px-6 py-3 text-sm font-light text-gray-800 hover:bg-[#1E4080] hover:text-white transition-colors"
+                            className="inline-flex items-center gap-2 rounded-full border border-[#E0C58F] px-6 py-3 text-sm font-light text-[#F5F0E9] transition-colors hover:bg-[#E0C58F] hover:text-[#112250]"
                         >
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-4 w-4"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                                strokeWidth={2}
+                            >
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                             </svg>
                             Скачать документ
@@ -140,19 +155,20 @@ export default function DevelopmentPlan() {
                                 <path
                                     d="M30 60 C160 60, 170 24, 300 24 C430 24, 440 96, 580 96 C720 96, 720 32, 860 32 C1000 32, 1005 88, 1140 88 C1270 88, 1280 48, 1370 48"
                                     fill="none"
-                                    stroke="#D8E3F4"
-                                    strokeWidth="4"
+                                    stroke="#E0C58F"
+                                    strokeWidth="3"
                                     strokeLinecap="round"
                                     strokeDasharray="10 12"
+                                    opacity="0.28"
                                 />
                                 <path
                                     d="M30 60 C160 60, 170 24, 300 24 C430 24, 440 96, 580 96 C720 96, 720 32, 860 32 C1000 32, 1005 88, 1140 88 C1270 88, 1280 48, 1370 48"
                                     fill="none"
-                                    stroke="#1E4080"
-                                    strokeWidth="2.5"
+                                    stroke="#F5F0E9"
+                                    strokeWidth="1.5"
                                     strokeLinecap="round"
                                     strokeDasharray="1 18"
-                                    opacity="0.35"
+                                    opacity="0.22"
                                 />
                             </svg>
                         </div>
@@ -180,65 +196,69 @@ export default function DevelopmentPlan() {
                             return (
                                 <div
                                     key={stage.id}
-                                    className={`group relative ${index % 2 === 1 ? "xl:mt-20" : "xl:mt-0"
-                                        }`}
+                                    className={`group relative ${index % 2 === 1 ? "xl:mt-20" : "xl:mt-0"}`}
                                     style={vars}
                                 >
                                     <div className="relative mx-auto hidden h-12 items-center justify-center xl:flex">
                                         <div
-                                            className={`relative flex h-18 w-18 items-center justify-center rounded-full border-4 text-xl font-semibold transition-all duration-500 ease-out ${isCurrent
-                                                ? "border-white bg-[#1E4080] text-white shadow-[0_12px_30px_rgba(30,64,128,0.25)]"
-                                                : "border-white bg-[#DCE6F5] text-[#1E4080] [filter:blur(var(--stage-blur-dot))] [opacity:var(--stage-opacity)] [transform:scale(var(--stage-scale))] group-hover:[filter:blur(0px)] group-hover:opacity-100 group-hover:scale-[1.06] group-hover:shadow-[0_12px_30px_rgba(30,64,128,0.18)]"
-                                                }`}
+                                            className={`relative flex h-18 w-18 items-center justify-center rounded-full border-4 text-xl font-semibold transition-all duration-500 ease-out ${
+                                                isCurrent
+                                                    ? "border-[#E0C58F] bg-[#E0C58F] text-[#112250] shadow-[0_12px_30px_rgba(224,197,143,0.28)]"
+                                                    : "border-[#F5F0E9]/30 bg-[#3C507D] text-[#F5F0E9] [filter:blur(var(--stage-blur-dot))] [opacity:var(--stage-opacity)] [transform:scale(var(--stage-scale))] group-hover:[filter:blur(0px)] group-hover:border-[#E0C58F]/50 group-hover:opacity-100 group-hover:scale-[1.06] group-hover:shadow-[0_12px_30px_rgba(224,197,143,0.18)]"
+                                            }`}
                                         >
                                             {isCurrent && (
-                                                <span className="absolute inline-flex h-18 w-18 rounded-full bg-[#1E4080]/20 animate-ping" />
+                                                <span className="absolute inline-flex h-18 w-18 rounded-full bg-[#E0C58F]/20 animate-ping" />
                                             )}
                                             <span className="relative z-10">{stage.id}</span>
                                         </div>
                                     </div>
 
                                     <div
-                                        className={`relative mt-10 h-full overflow-hidden rounded-lg border p-6 transition-all duration-500 ease-out ${isCurrent
-                                            ? "border-[#1E4080] bg-white shadow-[0_18px_50px_rgba(30,64,128,0.10)]"
-                                            : "border-[#D7E2F2] bg-[#FBFCFE] [filter:blur(var(--stage-blur))] [opacity:var(--stage-opacity)] [transform:scale(var(--stage-scale))] group-hover:border-[#1E4080]/40 group-hover:bg-white group-hover:[filter:blur(0px)] group-hover:opacity-100 group-hover:scale-[1.035] group-hover:shadow-[0_18px_50px_rgba(30,64,128,0.14)]"
-                                            }`}
+                                        className={`relative mt-10 h-full overflow-hidden rounded-lg border p-6 transition-all duration-500 ease-out ${
+                                            isCurrent
+                                                ? "border-white/60 bg-[#3C507D] shadow-[0_18px_50px_rgba(0,0,0,0.18)]"
+                                                : "border-[#F5F0E9]/12 bg-[#3C507D] [filter:blur(var(--stage-blur))] [opacity:var(--stage-opacity)] [transform:scale(var(--stage-scale))] group-hover:border-white/45 group-hover:[filter:blur(0px)] group-hover:opacity-100 group-hover:scale-[1.035] group-hover:shadow-[0_18px_50px_rgba(0,0,0,0.22)]"
+                                        }`}
                                     >
                                         <div
-                                            className={`absolute right-0 top-0 h-28 w-28 rounded-full blur-3xl transition-all duration-500 ${isCurrent
-                                                ? "bg-[#1E4080]/10"
-                                                : "bg-[#AFC4E8]/10 group-hover:bg-[#1E4080]/12"
-                                                }`}
+                                            className={`absolute right-0 top-0 h-28 w-28 rounded-full blur-3xl transition-all duration-500 ${
+                                                isCurrent
+                                                    ? "bg-[#E0C58F]/14"
+                                                    : "bg-[#E0C58F]/8 group-hover:bg-[#E0C58F]/12"
+                                            }`}
                                         />
 
                                         <div className="relative z-10 flex flex-col gap-5">
                                             <div className="flex items-start justify-between gap-3">
                                                 <span
-                                                    className={`inline-flex rounded-full px-3 py-1.5 text-md font-medium transition-all duration-500 ${isCurrent
-                                                        ? "bg-[#1E4080] text-white"
-                                                        : "border border-[#D7E2F2] bg-white text-[#60708F] group-hover:border-[#1E4080]/20 group-hover:text-[#1E4080]"
-                                                        }`}
+                                                    className={`inline-flex rounded-full px-3 py-1.5 text-md font-medium transition-all duration-500 ${
+                                                        isCurrent
+                                                            ? "bg-[#E0C58F] text-[#112250]"
+                                                            : "border border-[#E0C58F]/20 bg-[#112250] text-[#D9CBC2] group-hover:border-[#E0C58F]/35 group-hover:text-[#F5F0E9]"
+                                                    }`}
                                                 >
                                                     {stage.tag}
                                                 </span>
                                             </div>
 
                                             <h3
-                                                className={`text-xl leading-snug transition-colors duration-500 ${isCurrent
-                                                    ? "font-bold text-gray-900"
-                                                    : "font-medium text-gray-800 group-hover:text-gray-900"
-                                                    }`}
+                                                className={`text-xl leading-snug transition-colors duration-500 ${
+                                                    isCurrent
+                                                        ? "font-bold text-[#F5F0E9]"
+                                                        : "font-medium text-[#F5F0E9] group-hover:text-[#F5F0E9]"
+                                                }`}
                                             >
                                                 {stage.title}
                                             </h3>
 
-                                            <p className="mt-4 text-[15px] font-light leading-relaxed text-gray-600 transition-colors duration-500 group-hover:text-gray-700">
+                                            <p className="mt-4 text-[15px] font-light leading-relaxed text-[#D9CBC2] transition-colors duration-500 group-hover:text-[#F5F0E9]/88">
                                                 {stage.description}
                                             </p>
                                         </div>
 
                                         {!isCurrent && (
-                                            <div className="pointer-events-none absolute inset-0 rounded-[28px] bg-white/[0.04] transition-opacity duration-500 group-hover:opacity-0" />
+                                            <div className="pointer-events-none absolute inset-0 rounded-[28px] bg-white/[0.02] transition-opacity duration-500 group-hover:opacity-0" />
                                         )}
                                     </div>
                                 </div>

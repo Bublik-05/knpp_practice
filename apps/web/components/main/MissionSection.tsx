@@ -33,24 +33,21 @@ const values = [
 export default function MissionSection() {
   return (
     <section className="relative overflow-hidden w-full bg-[#0B1C3C] p-30">
-
-      {/* Атом — огромный, справа сверху, почти невидимый */}
+      {/* Атом — огромный, справа сверху */}
       <Image
         src="/images/atom.png"
         alt=""
         width={800}
         height={800}
-        className="pointer-events-none select-none absolute -top-40 -right-40 opacity-[0.6] blur-sm"
+        className="pointer-events-none select-none absolute -top-40 -right-40 opacity-[0.35] blur-sm"
         aria-hidden
       />
 
-      {/* Контент */}
       <div className="relative z-10 flex flex-col gap-14">
-
         {/* Top: label + mission text */}
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-20 items-start">
           <div className="lg:w-1/3 shrink-0">
-            <span className="inline-block text-white/40 uppercase tracking-widest text-2xl font-medium mb-4">
+            <span className="inline-block text-[#E0C58F] uppercase tracking-widest text-2xl font-medium mb-4">
               Наша миссия
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">
@@ -60,7 +57,7 @@ export default function MissionSection() {
           </div>
 
           <div className="flex-1">
-            <div className="text-[#1E4080] text-8xl font-serif leading-none mb-2 select-none">"</div>
+            <div className="text-[#E0C58F] text-8xl font-serif leading-none mb-2 select-none">"</div>
             <p className="text-white/85 text-xl lg:text-2xl font-light leading-relaxed">
               Обеспечить Казахстан чистой и доступной ядерной энергией, создавая основу для устойчивого
               развития экономики, снижения углеродного следа и укрепления энергетического суверенитета
@@ -74,19 +71,25 @@ export default function MissionSection() {
           {values.map((v, i) => (
             <div
               key={i}
-              className="group flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/5 px-7 py-6 hover:bg-white/10 hover:border-white/20 transition-all duration-300 transform hover:scale-[1.03]"
+              className="group flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/5 px-7 py-6 transition-all duration-300 hover:scale-[1.03] hover:border-[#E0C58F]/35 hover:bg-white/10"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#1E4080]/60 text-white group-hover:bg-[#1E4080] transition-colors duration-300">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#1E4080]/60 text-[#E0C58F] transition-all duration-300 group-hover:bg-[#1E4080] group-hover:shadow-[0_0_22px_rgba(224,197,143,0.18)]">
                 {v.icon}
               </div>
+
               <div className="flex flex-col gap-2">
-                <h3 className="text-white font-semibold text-xl leading-snug">{v.label}</h3>
-                <p className="text-white/60 font-light text-lg leading-relaxed">{v.desc}</p>
+                <h3 className="text-white font-semibold text-xl leading-snug group-hover:text-[#F5F0E9]">
+                  {v.label}
+                </h3>
+                <p className="text-white/60 font-light text-lg leading-relaxed">
+                  {v.desc}
+                </p>
               </div>
+
+              <div className="h-px w-14 bg-[#E0C58F]/55 transition-all duration-300 group-hover:w-20" />
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );
