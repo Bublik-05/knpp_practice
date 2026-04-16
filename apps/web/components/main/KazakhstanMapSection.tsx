@@ -24,7 +24,7 @@ const cities: City[] = [
         summary:
             "Балхаш рассматривается как одна из возможных площадок для развития энергетической инфраструктуры и будущих проектов в атомной сфере.",
         meta: ["Предварительное рассмотрение", "Крупный энергетический объект"],
-        image: null,
+        image: "/images/балхаш.png",
     },
     {
         id: "moyinkul",
@@ -35,7 +35,7 @@ const cities: City[] = [
         summary:
             "Локация пока используется как рабочая заготовка для макета. Позже здесь можно разместить уточнённую информацию о площадке и статусе проекта.",
         meta: ["Рабочая гипотеза", "Резервная площадка"],
-        image: null,
+        image: "/images/мойынкуль.png",
     },
 ];
 
@@ -260,8 +260,8 @@ export default function KazakhstanMapSection() {
 
                                         <span
                                             className={`relative z-10 flex h-8 w-8 items-center justify-center rounded-full border-2 shadow-lg transition-all duration-300 ${isActive
-                                                    ? "border-white bg-[#1E4080] scale-110"
-                                                    : "border-white bg-[#224b93] group-hover:scale-105"
+                                                ? "border-white bg-[#1E4080] scale-110"
+                                                : "border-white bg-[#224b93] group-hover:scale-105"
                                                 }`}
                                         >
                                             <span className="h-2.5 w-2.5 rounded-full bg-white" />

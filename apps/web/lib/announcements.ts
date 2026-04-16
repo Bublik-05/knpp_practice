@@ -12,7 +12,7 @@ export const announcements: AnnouncementItem[] = [
     id: 1,
     title: "Выбор аудиторской организации",
     date: "15.12.2025 г.",
-    image: "/images/news1-img.jpg",
+    image: "/images/generated_human2.png",
     summary:
       '«ТОО «Казахстанские атомные электрические станции» расположенное по адресу: 010000, Республика Казахстан г. Астана, пр. Мангилик ел 57А, БЦ "Аура" объявляет о проведении процедуры выбора аудиторской организации.',
     details:
@@ -23,7 +23,7 @@ export const announcements: AnnouncementItem[] = [
     id: 2,
     title: "Поставка оборудования",
     date: "20.12.2025 г.",
-    image: "/images/news1-img.jpg",
+    image: "/images/generated_human2.png",
     summary:
       "Объявление о проведении процедуры выбора аудиторской организации в целях последующей закупки услуг аудиторской организации по аудиту финансовой отчетности ТОО «КАЭС» за 2022 год",
     details:
@@ -34,7 +34,7 @@ export const announcements: AnnouncementItem[] = [
     id: 3,
     title: "Консультационные услуги",
     date: "25.12.2025 г.",
-    image: "/images/news1-img.jpg",
+    image: "/images/generated_human2.png",
     summary:
       "Полный перечень закупаемых услуг, количество, подробная спецификация и",
     details:
