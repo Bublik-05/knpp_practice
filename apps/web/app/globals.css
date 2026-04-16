@@ -3,6 +3,14 @@
 :root {
   --background: #F0F0F0;  
   --foreground: #171717;
+  --color-primary: #112250;      /* Royal Blue */
+  --color-secondary: #3C507D;    /* Sapphire */
+  --color-accent: #E0C58F;       /* Quicksand */
+  --color-accent-hover: #C9B07A; /* darkened accent for CTA hover */
+  --color-surface: #F5F0E9;      /* Swan Wing */
+  --color-muted: #D9CBC2;        /* Shellstone */
+  --color-text-on-dark: #F5F0E9;
+  --color-text-on-light: #2C2C3A;
 }
 
 @theme inline {
