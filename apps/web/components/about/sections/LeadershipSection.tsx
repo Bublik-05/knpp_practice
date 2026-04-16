@@ -80,21 +80,21 @@ export default function LeadershipSection() {
 
               <a
                 href={person.href}
-                className="absolute bottom-6 right-6 flex h-10 w-10 items-center justify-center rounded-none border-2 border-[#F2B705] bg-transparent text-[#F2B705] transition-colors duration-200 hover:bg-[#F2B705] hover:text-white"
+                className="absolute bottom-6 right-6 flex h-10 w-10 items-center justify-center rounded-none border-2 border-[#E0C58F] bg-transparent text-[#E0C58F] transition-colors duration-200 hover:bg-[#C9B07A] hover:border-[#C9B07A] hover:text-white"
                 aria-label={`Открыть профиль: ${person.name}`}
               >
                 <ArrowIcon />
               </a>
 
               <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#23324d]/45 to-transparent" />
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[10px] bg-[#F2B705]" />
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[10px] bg-[#E0C58F]" />
             </div>
 
             <div className="flex flex-col gap-2 px-2">
               <p
                 className={`text-lg leading-snug ${person.isPlaceholder
-                    ? "font-medium text-gray-500"
-                    : "font-semibold text-gray-900 underline underline-offset-4"
+                  ? "font-medium text-gray-500"
+                  : "font-semibold text-gray-900 underline underline-offset-4"
                   }`}
               >
                 {person.name}
@@ -102,8 +102,8 @@ export default function LeadershipSection() {
 
               <p
                 className={`text-lg leading-snug ${person.isPlaceholder
-                    ? "font-light text-gray-400"
-                    : "font-light text-gray-500"
+                  ? "font-light text-gray-400"
+                  : "font-light text-gray-500"
                   }`}
               >
                 {person.title}

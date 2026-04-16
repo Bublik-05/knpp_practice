@@ -7,7 +7,7 @@ const activities = [
   {
     id: 1,
     text: "Передача электроэнергии.",
-    icon: "/images/activities/atom.svg",
+    icon: "/images/activities/1atom.png",
     iconStyle: {
       bottom: "-120px",
       right: "-100px",
@@ -18,7 +18,7 @@ const activities = [
   {
     id: 2,
     text: "Обеспечение готовности электроэнергетики к работе с нагрузкой, регулирование и резервирование электроэнергии;",
-    icon: "/images/activities/bashnya.svg",
+    icon: "/images/activities/2atom.png",
     iconStyle: {
       bottom: "-60px",
       right: "-80px",
@@ -29,7 +29,7 @@ const activities = [
   {
     id: 3,
     text: "Исследования и экспериментальные разработки в области мирного использования атомной энергии;",
-    icon: "/images/activities/atom_energy.svg",
+    icon: "/images/activities/3atom.png",
     iconStyle: {
       bottom: "-140px",
       right: "-110px",
@@ -40,7 +40,7 @@ const activities = [
   {
     id: 4,
     text: "Деятельность в области архитектуры для атомной промышленности и объектов атомной энергетики;",
-    icon: "/images/activities/atom.svg",
+    icon: "/images/activities/4atom.png",
     iconStyle: {
       bottom: "-120px",
       right: "-100px",
@@ -51,7 +51,7 @@ const activities = [
   {
     id: 5,
     text: "Деятельность в области инженерных изысканий и предоставление технических консультаций в этой области для атомной промышленности и объектов атомной энергетики;",
-    icon: "/images/activities/bashnya.svg",
+    icon: "/images/activities/5atom.png",
     iconStyle: {
       bottom: "-65px",
       right: "-85px",
@@ -61,7 +61,7 @@ const activities = [
   },
 ];
 
-const GAP = 30;  
+const GAP = 30;
 const VISIBLE = 3;
 
 export default function Activities() {

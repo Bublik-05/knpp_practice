@@ -70,13 +70,13 @@ export default function CareersPromoSection({
                             </div>
                         </div>
 
-                        <div className="relative min-h-[320px] border-t border-[#dbe5f4] bg-[#eef4ff] lg:min-h-full lg:border-l lg:border-t-0">
+                        <div className="relative min-h-[320px] border-t border-[#dbe5f4] bg-[#eef4ff] lg:min-h-[620px] lg:border-l lg:border-t-0">
                             <div className="absolute inset-0">
                                 <Image
-                                    src="/images/careers/careers-promo.jpg"
+                                    src="/images/generated_human.png"
                                     alt="Вакансии"
                                     fill
-                                    className="object-cover"
+                                    className="object-cover object-[center_15%]"
                                 />
                             </div>
 
