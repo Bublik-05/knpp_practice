@@ -11,7 +11,7 @@ const slides = [
     image: "/images/main-img.jpg",
     title: "Казахстанские атомные\nэлектрические станции",
     subtitle: "Энергия для будущего",
-    path: ["КАЭС"],
+    path: ["Главная"],
   },
   {
     id: "about",
@@ -20,7 +20,7 @@ const slides = [
     image: "/images/about-img.jpg",
     title: "О компании",
     subtitle: "ТОО «Казахстанские атомные электрические станции» (ТОО «КАЭС») создано в 2014 году",
-    path: ["КАЭС", "О компании"],
+    path: ["Главная", "О компании"],
   },
   {
     id: "news",
@@ -29,7 +29,7 @@ const slides = [
     image: "/images/news-img.jpg",
     title: "Новости",
     subtitle: "Новости и события КАЭС",
-    path: ["КАЭС", "Новости"],
+    path: ["Главная", "Новости"],
   },
   {
     id: "atom",
@@ -38,7 +38,7 @@ const slides = [
     image: "/images/procurement-img.jpg",
     title: "Об атоме",
     subtitle: "История, безопасность и будущее атомной энергетики",
-    path: ["КАЭС", "Об атоме"],
+    path: ["Главная", "Об атоме"],
   },
 ];
 
