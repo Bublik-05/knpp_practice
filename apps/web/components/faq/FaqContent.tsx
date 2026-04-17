@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 import FaqNav, { type FaqSectionId } from "./FaqNav";
 import GeneralSection from "./sections/GeneralSection";
@@ -12,15 +12,14 @@ import Breadcrumb from "@/components/ui/Breadcrumb";
 const validSections: FaqSectionId[] = ["general", "project", "cooperation"];
 
 const sections: { id: FaqSectionId; label: string; Component: React.FC }[] = [
-  { id: "general",     label: "Об АЭС и атомной энергетике",  Component: GeneralSection },
-  { id: "project",     label: "О проекте в Казахстане",       Component: ProjectSection },
-  { id: "cooperation", label: "Вакансии и сотрудничество",    Component: CooperationSection },
+  { id: "general", label: "Об АЭС и атомной энергетике", Component: GeneralSection },
+  { id: "project", label: "О проекте в Казахстане", Component: ProjectSection },
+  { id: "cooperation", label: "Вакансии и сотрудничество", Component: CooperationSection },
 ];
 
 export default function FaqContent() {
   const router = useRouter();
   const pathname = usePathname();
-  const searchParams = useSearchParams();
 
   const [active, setActive] = useState<FaqSectionId>("general");
   const contentTopRef = useRef<HTMLDivElement | null>(null);
@@ -32,14 +31,16 @@ export default function FaqContent() {
   }, []);
 
   useEffect(() => {
+    const searchParams = new URLSearchParams(window.location.search);
     const section = searchParams.get("section");
+
     if (section && validSections.includes(section as FaqSectionId)) {
       setActive(section as FaqSectionId);
       setTimeout(() => scrollToTop(), 0);
     } else {
       setActive("general");
     }
-  }, [searchParams, scrollToTop]);
+  }, [scrollToTop]);
 
   const handleSelect = useCallback(
     (id: FaqSectionId) => {

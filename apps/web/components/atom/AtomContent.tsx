@@ -18,13 +18,13 @@ const validSections: SectionId[] = [
 ];
 
 const sections: { id: SectionId; label: string; Component: React.FC }[] = [
-  { id: "history",     label: "История об атомной энергии",                      Component: HistorySection },
-  { id: "operation",   label: "Как работает атомный реактор", Component: OperationSection },
-  { id: "types",       label: "Типы реакторов",               Component: TypesSection },
-  { id: "safety",      label: "Безопасность",                 Component: SafetySection },
-  { id: "environment", label: "Атомная энергия и экология",     Component: EnvironmentSection },
-  { id: "myths",       label: "Мифы и факты об АЭС",                 Component: MythsSection },
-  { id: "multimedia",  label: "Интерактив / мультимедиа",     Component: MultimediaSection },
+  { id: "history", label: "История об атомной энергии", Component: HistorySection },
+  { id: "operation", label: "Как работает атомный реактор", Component: OperationSection },
+  { id: "types", label: "Типы реакторов", Component: TypesSection },
+  { id: "safety", label: "Безопасность", Component: SafetySection },
+  { id: "environment", label: "Атомная энергия и экология", Component: EnvironmentSection },
+  { id: "myths", label: "Мифы и факты об АЭС", Component: MythsSection },
+  { id: "multimedia", label: "Интерактив / мультимедиа", Component: MultimediaSection },
 ];
 
 export default function AtomContent() {
