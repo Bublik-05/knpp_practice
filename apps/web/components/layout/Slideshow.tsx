@@ -23,6 +23,15 @@ const slides = [
     path: ["Главная", "О компании"],
   },
   {
+    id: "projects",
+    label: "Проекты",
+    href: "/projects",
+    image: "/images/procurement-img.jpg",
+    title: "Проекты АЭС",
+    subtitle: "Балхаш и Майнкум — два стратегических проекта атомной энергетики Казахстана",
+    path: ["Главная", "Проекты"],
+  },
+  {
     id: "news",
     label: "Новости",
     href: "/news",
@@ -32,23 +41,30 @@ const slides = [
     path: ["Главная", "Новости"],
   },
   {
-    id: "atom",
-    label: "Об атоме",
-    href: "/atom",
-    image: "/images/procurement-img.jpg",
-    title: "Об атоме",
-    subtitle: "История, безопасность и будущее атомной энергетики",
-    path: ["Главная", "Об атоме"],
+    id: "international",
+    label: "Сотрудничество",
+    href: "/international-cooperation",
+    image: "/images/about-img.jpg",
+    title: "Международное\nсотрудничество",
+    subtitle: "Партнёрство с ведущими ядерными организациями мира",
+    path: ["Главная", "Международное сотрудничество"],
   },
 ];
 
-const SLIDESHOW_ROUTES = ["/", "/about", "/news", "/atom"];
+const SLIDESHOW_ROUTES = [
+  "/",
+  "/about",
+  "/projects",
+  "/news",
+  "/international-cooperation",
+];
 
 function getIndexFromPath(path: string) {
   if (path === "/") return slides.findIndex((s) => s.href === "/");
   if (path.startsWith("/about")) return slides.findIndex((s) => s.href === "/about");
+  if (path.startsWith("/projects")) return slides.findIndex((s) => s.href === "/projects");
   if (path.startsWith("/news")) return slides.findIndex((s) => s.href === "/news");
-  if (path.startsWith("/atom")) return slides.findIndex((s) => s.href === "/atom");
+  if (path.startsWith("/international-cooperation")) return slides.findIndex((s) => s.href === "/international-cooperation");
   return 0;
 }
 

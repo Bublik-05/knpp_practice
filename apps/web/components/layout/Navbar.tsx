@@ -67,6 +67,7 @@ const navLinks: NavLink[] = [
   { label: "Вакансии", href: "/vacancies" },
   { label: "FAQ", href: "/faq" },
   { label: "Контакты", href: "/contacts" },
+  { label: "Сотрудничество", href: "/international-cooperation" },
 ];
 
 const menuColumns: MenuColumn[] = [
@@ -147,6 +148,15 @@ const menuColumns: MenuColumn[] = [
     href: "/president-message",
     subLinks: [
       { label: "Послание президента", href: "/president-message" },
+    ],
+  },
+  {
+    label: "Сотрудничество",
+    href: "/international-cooperation",
+    subLinks: [
+      { label: "Международное сотрудничество", href: "/international-cooperation" },
+      { label: "Ключевые партнёры", href: "/international-cooperation#partners" },
+      { label: "Хронология", href: "/international-cooperation#timeline" },
     ],
   },
 ];
