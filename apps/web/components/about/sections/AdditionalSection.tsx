@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function AdditionalSection() {
   return (
-    <section id="section-additional" className="flex flex-col gap-4 scroll-mt-24">
+    <section id="section-about-additional" className="flex flex-col gap-4 scroll-mt-24">
 
       <div className="flex gap-10 items-start">
         <div className="flex-1 min-w-0 flex flex-col gap-4 text-xl font-light leading-relaxed">

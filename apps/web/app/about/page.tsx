@@ -4,7 +4,7 @@ import BackgroundGlow from "@/components/layout/BackgroundGlow";
 
 export default function AboutPage() {
   return (
-    <main className="relative min-h-screen overflow-hidden ">
+    <main className="relative min-h-screen">
       <BackgroundGlow />
       <div className="relative z-10">
         <Suspense fallback={null}>

@@ -9,21 +9,23 @@ import News from "@/components/main/News";
 import { getFeaturedNews } from "@/lib/news";
 import HomeEmissionsCalculator from "@/components/main/HomeEmissionsCalculator";
 import CareersPromoSection from "@/components/main/CareersPromoSection";
+import NewAbout from "@/components/main/NewAbout";
 
 export default async function Home() {
   const featuredNews = await getFeaturedNews();
 
   return (
     <>
-      <About />
+      <NewAbout />
+      {/* <About /> */}
       <News items={featuredNews} />
       <Activities />
-      <MissionSection />
+      {/* <MissionSection /> */}
       <AchievementsSection />
-      <KazakhstanMapSection />
       <DevelopmentSection />
-      <ProjectsStages />
       <HomeEmissionsCalculator />
+      <ProjectsStages />
+      <KazakhstanMapSection />
       <CareersPromoSection vacanciesCount={12} />
 
     </>

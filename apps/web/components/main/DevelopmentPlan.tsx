@@ -97,7 +97,7 @@ export default function DevelopmentPlan() {
             <div className="mx-auto flex w-full max-w-7xl flex-col gap-[110px]">
                 <div className="flex max-w-3xl flex-col gap-6">
                     <h2 className="text-3xl font-bold leading-tight text-[#F5F0E9] md:text-4xl lg:text-5xl">
-                        План развития
+                        План развития Компании
                     </h2>
 
                     <p className="text-lg font-light leading-relaxed text-white">
@@ -201,11 +201,10 @@ export default function DevelopmentPlan() {
                                 >
                                     <div className="relative mx-auto hidden h-12 items-center justify-center xl:flex">
                                         <div
-                                            className={`relative flex h-18 w-18 items-center justify-center rounded-full border-4 text-xl font-semibold transition-all duration-500 ease-out ${
-                                                isCurrent
-                                                    ? "border-[#E0C58F] bg-[#E0C58F] text-[#112250] shadow-[0_12px_30px_rgba(224,197,143,0.28)]"
-                                                    : "border-[#F5F0E9]/30 bg-[#3C507D] text-[#F5F0E9] [filter:blur(var(--stage-blur-dot))] [opacity:var(--stage-opacity)] [transform:scale(var(--stage-scale))] group-hover:[filter:blur(0px)] group-hover:border-[#E0C58F]/50 group-hover:opacity-100 group-hover:scale-[1.06] group-hover:shadow-[0_12px_30px_rgba(224,197,143,0.18)]"
-                                            }`}
+                                            className={`relative flex h-18 w-18 items-center justify-center rounded-full border-4 text-xl font-semibold transition-all duration-500 ease-out ${isCurrent
+                                                ? "border-[#E0C58F] bg-[#E0C58F] text-[#112250] shadow-[0_12px_30px_rgba(224,197,143,0.28)]"
+                                                : "border-[#F5F0E9]/30 bg-[#3C507D] text-[#F5F0E9] [filter:blur(var(--stage-blur-dot))] [opacity:var(--stage-opacity)] [transform:scale(var(--stage-scale))] group-hover:[filter:blur(0px)] group-hover:border-[#E0C58F]/50 group-hover:opacity-100 group-hover:scale-[1.06] group-hover:shadow-[0_12px_30px_rgba(224,197,143,0.18)]"
+                                                }`}
                                         >
                                             {isCurrent && (
                                                 <span className="absolute inline-flex h-18 w-18 rounded-full bg-[#E0C58F]/20 animate-ping" />
@@ -215,39 +214,35 @@ export default function DevelopmentPlan() {
                                     </div>
 
                                     <div
-                                        className={`relative mt-10 h-full overflow-hidden rounded-lg border p-6 transition-all duration-500 ease-out ${
-                                            isCurrent
-                                                ? "border-white/60 bg-[#3C507D] shadow-[0_18px_50px_rgba(0,0,0,0.18)]"
-                                                : "border-[#F5F0E9]/12 bg-[#3C507D] [filter:blur(var(--stage-blur))] [opacity:var(--stage-opacity)] [transform:scale(var(--stage-scale))] group-hover:border-white/45 group-hover:[filter:blur(0px)] group-hover:opacity-100 group-hover:scale-[1.035] group-hover:shadow-[0_18px_50px_rgba(0,0,0,0.22)]"
-                                        }`}
+                                        className={`relative mt-10 h-full overflow-hidden rounded-lg border p-6 transition-all duration-500 ease-out ${isCurrent
+                                            ? "border-white/60 bg-[#3C507D] shadow-[0_18px_50px_rgba(0,0,0,0.18)]"
+                                            : "border-[#F5F0E9]/12 bg-[#3C507D] [filter:blur(var(--stage-blur))] [opacity:var(--stage-opacity)] [transform:scale(var(--stage-scale))] group-hover:border-white/45 group-hover:[filter:blur(0px)] group-hover:opacity-100 group-hover:scale-[1.035] group-hover:shadow-[0_18px_50px_rgba(0,0,0,0.22)]"
+                                            }`}
                                     >
                                         <div
-                                            className={`absolute right-0 top-0 h-28 w-28 rounded-full blur-3xl transition-all duration-500 ${
-                                                isCurrent
-                                                    ? "bg-[#E0C58F]/14"
-                                                    : "bg-[#E0C58F]/8 group-hover:bg-[#E0C58F]/12"
-                                            }`}
+                                            className={`absolute right-0 top-0 h-28 w-28 rounded-full blur-3xl transition-all duration-500 ${isCurrent
+                                                ? "bg-[#E0C58F]/14"
+                                                : "bg-[#E0C58F]/8 group-hover:bg-[#E0C58F]/12"
+                                                }`}
                                         />
 
                                         <div className="relative z-10 flex flex-col gap-5">
                                             <div className="flex items-start justify-between gap-3">
                                                 <span
-                                                    className={`inline-flex rounded-full px-3 py-1.5 text-md font-medium transition-all duration-500 ${
-                                                        isCurrent
-                                                            ? "bg-[#E0C58F] text-[#112250]"
-                                                            : "border border-[#E0C58F]/20 bg-[#112250] text-[#D9CBC2] group-hover:border-[#E0C58F]/35 group-hover:text-[#F5F0E9]"
-                                                    }`}
+                                                    className={`inline-flex rounded-full px-3 py-1.5 text-md font-medium transition-all duration-500 ${isCurrent
+                                                        ? "bg-[#E0C58F] text-[#112250]"
+                                                        : "border border-[#E0C58F]/20 bg-[#112250] text-[#D9CBC2] group-hover:border-[#E0C58F]/35 group-hover:text-[#F5F0E9]"
+                                                        }`}
                                                 >
                                                     {stage.tag}
                                                 </span>
                                             </div>
 
                                             <h3
-                                                className={`text-xl leading-snug transition-colors duration-500 ${
-                                                    isCurrent
-                                                        ? "font-bold text-[#F5F0E9]"
-                                                        : "font-medium text-[#F5F0E9] group-hover:text-[#F5F0E9]"
-                                                }`}
+                                                className={`text-xl leading-snug transition-colors duration-500 ${isCurrent
+                                                    ? "font-bold text-[#F5F0E9]"
+                                                    : "font-medium text-[#F5F0E9] group-hover:text-[#F5F0E9]"
+                                                    }`}
                                             >
                                                 {stage.title}
                                             </h3>

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function CompanySection() {
   return (
-    <section id="section-about" className="flex flex-col gap-4 scroll-mt-24">
+    <section id="section-about-company" className="flex flex-col gap-4 scroll-mt-24">
 
       <div className="flex gap-10 items-start">
         <p className="flex-1 font-light leading-relaxed text-xl">
