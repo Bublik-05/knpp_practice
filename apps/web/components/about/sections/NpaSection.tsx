@@ -2,8 +2,20 @@ const docs = [
   {
     title: "Нормативно-правовые акты",
     date: "дата утверждения — 05.03.2026",
-    downloadUrl: "#",
-    readUrl: "#",
+    downloadUrl: "/documents/npa/normativno-pravovye-akty.pdf",
+    readUrl: "/documents/npa/normativno-pravovye-akty.pdf",
+  },
+  {
+    title: "Закон РК «Об использовании атомной энергии»",
+    date: "дата утверждения — 14.04.1997",
+    downloadUrl: "/documents/npa/zakon-ob-ispolzovanii-atomnoy-energii.pdf",
+    readUrl: "/documents/npa/zakon-ob-ispolzovanii-atomnoy-energii.pdf",
+  },
+  {
+    title: "Правила обеспечения ядерной безопасности",
+    date: "дата утверждения — 25.01.2022",
+    downloadUrl: "/documents/npa/pravila-yadernoy-bezopasnosti.pdf",
+    readUrl: "/documents/npa/pravila-yadernoy-bezopasnosti.pdf",
   },
 ];
 

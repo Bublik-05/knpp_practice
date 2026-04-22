@@ -1,35 +1,9 @@
 import Link from "next/link";
 
-const theses = [
-  {
-    num: "01",
-    title: "Энергетическая независимость",
-    text: "Атомная энергетика — стратегический приоритет для обеспечения долгосрочной энергетической независимости Казахстана и снижения зависимости от ископаемого топлива.",
-  },
-  {
-    num: "02",
-    title: "Зелёная экономика",
-    text: "Переход к «зелёной» экономике требует масштабной безуглеродной генерации. Атомная станция позволит Казахстану сократить выбросы CO₂ на десятки миллионов тонн ежегодно.",
-  },
-  {
-    num: "03",
-    title: "Технологический суверенитет",
-    text: "Развитие ядерных технологий формирует национальные компетенции высшего уровня, создаёт тысячи высококвалифицированных рабочих мест и закладывает основу для технологического лидерства.",
-  },
-];
 
 export default function PresidentMessageSection() {
   return (
     <section className="relative overflow-hidden w-full bg-[#0B1C3C] px-30 py-20">
-
-      {/* Decorative quote mark */}
-      <div
-        className="pointer-events-none select-none absolute -top-10 right-[10%] text-[#E0C58F]/8 font-serif leading-none"
-        style={{ fontSize: "clamp(16rem, 25vw, 32rem)" }}
-        aria-hidden
-      >
-        "
-      </div>
 
       <div className="relative z-10 flex flex-col gap-14">
 
@@ -68,34 +42,10 @@ export default function PresidentMessageSection() {
             </blockquote>
             <p className="mt-6 text-[#E0C58F] font-medium tracking-wide">
               — Касым-Жомарт Токаев,<br />
-              <span className="text-white/60 font-light text-sm">
+              <span className="text-white/60 font-light text-md">
                 Президент Республики Казахстан
               </span>
             </p>
-          </div>
-        </div>
-
-        {/* Key theses */}
-        <div>
-          <h3 className="text-xl font-medium text-[#E0C58F] uppercase tracking-widest mb-8">
-            Ключевые тезисы
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {theses.map((t) => (
-              <div
-                key={t.num}
-                className="group flex flex-col gap-4 rounded-2xl border border-white/10 bg-white/5 px-7 py-6 transition-all duration-300 hover:border-[#E0C58F]/30 hover:bg-white/10"
-              >
-                <div className="flex items-center gap-3">
-                  <span className="text-3xl font-bold text-[#E0C58F]/30 leading-none select-none">
-                    {t.num}
-                  </span>
-                  <h4 className="text-white font-semibold text-lg leading-snug">{t.title}</h4>
-                </div>
-                <p className="text-white/60 font-light leading-relaxed">{t.text}</p>
-                <div className="h-px w-10 bg-[#E0C58F]/40 transition-all duration-300 group-hover:w-16" />
-              </div>
-            ))}
           </div>
         </div>
 

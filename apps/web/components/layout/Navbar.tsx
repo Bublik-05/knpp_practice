@@ -25,16 +25,18 @@ type MenuColumn = {
 };
 
 const navLinks: NavLink[] = [
-  { label: "Главное", href: "/" },
+  { label: "Главная", href: "/" },
   {
-    label: "О компании",
+    label: "О КАЭС",
     href: "/about",
     megaMenu: {
       topLinks: [
         { label: "О компании", href: "/about?section=about" },
         { label: "Руководство", href: "/about?section=leadership" },
+        { label: "Корп. управление", href: "/about?section=governance" },
         { label: "Безопасность", href: "/about?section=safety" },
         { label: "Комплаенс", href: "/about?section=compliance" },
+        { label: "Документы", href: "/about?section=documents" },
         { label: "НПА", href: "/about?section=npa" },
         { label: "План развития", href: "/about?section=development" },
       ],
@@ -46,45 +48,67 @@ const navLinks: NavLink[] = [
       ],
     },
   },
-  { label: "Новости", href: "/news" },
   {
     label: "Об Атоме",
     href: "/atom",
     megaMenu: {
       topLinks: [
         { label: "История", href: "/atom?section=history" },
-        { label: "Как работает атомный реактор", href: "/atom?section=operation" },
+        { label: "Как работает реактор", href: "/atom?section=operation" },
         { label: "Типы реакторов", href: "/atom?section=types" },
         { label: "Безопасность", href: "/atom?section=safety" },
         { label: "Атомная энергия и экология", href: "/atom?section=environment" },
         { label: "Мифы и факты об АЭС", href: "/atom?section=myths" },
-        { label: "Интерактив / мультимедиа", href: "/atom?section=multimedia" },
+        { label: "Проверь свои знания", href: "/atom?section=quiz" },
+        { label: "Мультимедиа", href: "/atom?section=multimedia" },
       ],
       sideLinks: [],
     },
   },
-  { label: "Закупки", href: "/procurements" },
+  {
+    label: "Проекты",
+    href: "/projects",
+    megaMenu: {
+      topLinks: [
+        { label: "АЭС «Балхаш»", href: "/projects?tab=balkhash" },
+        { label: "АЭС «Мойынкум»", href: "/projects?tab=moinkum" },
+        { label: "Международное сотрудничество", href: "/international-cooperation" },
+      ],
+      sideLinks: [],
+    },
+  },
+  {
+    label: "Закупки",
+    href: "/procurements",
+    megaMenu: {
+      topLinks: [
+        { label: "Политика закупок", href: "/procurements" },
+        { label: "Текущие закупки", href: "/procurements" },
+        { label: "Локализация", href: "/procurements" },
+        { label: "Документы", href: "/procurements" },
+      ],
+      sideLinks: [],
+    },
+  },
+  { label: "Пресс-центр", href: "/news" },
   { label: "Вакансии", href: "/vacancies" },
   { label: "FAQ", href: "/faq" },
   { label: "Контакты", href: "/contacts" },
-  { label: "Сотрудничество", href: "/international-cooperation" },
 ];
 
 const menuColumns: MenuColumn[] = [
   {
-    label: "О компании",
+    label: "О КАЭС",
     href: "/about",
     subLinks: [
       { label: "О компании", href: "/about?section=about" },
       { label: "Руководство", href: "/about?section=leadership" },
+      { label: "Корпоративное управление", href: "/about?section=governance" },
       { label: "Безопасность", href: "/about?section=safety" },
       { label: "Комплаенс", href: "/about?section=compliance" },
+      { label: "Документы", href: "/about?section=documents" },
       { label: "НПА", href: "/about?section=npa" },
       { label: "План развития", href: "/about?section=development" },
-      { label: 'О ТОО "КАЭС"', href: "/about?section=company" },
-      { label: "Виды деятельности ТОО «КАЭС»", href: "/about?section=activities" },
-      { label: "Дополнительная информация", href: "/about?section=additional" },
-      { label: "Галерея", href: "/about?section=gallery" },
     ],
   },
   {
@@ -97,21 +121,37 @@ const menuColumns: MenuColumn[] = [
       { label: "Безопасность", href: "/atom?section=safety" },
       { label: "Атомная энергия и экология", href: "/atom?section=environment" },
       { label: "Мифы и факты об АЭС", href: "/atom?section=myths" },
-      { label: "Интерактив / мультимедиа", href: "/atom?section=multimedia" },
+      { label: "Проверь свои знания", href: "/atom?section=quiz" },
+      { label: "Мультимедиа", href: "/atom?section=multimedia" },
     ],
   },
   {
-    label: "Новости",
-    href: "/news",
+    label: "Проекты",
+    href: "/projects",
     subLinks: [
-      { label: "Все новости", href: "/news" },
+      { label: "АЭС «Балхаш»", href: "/projects" },
+      { label: "АЭС «Мойынкум»", href: "/projects" },
+      { label: "Международное сотрудничество", href: "/international-cooperation" },
     ],
   },
   {
     label: "Закупки",
     href: "/procurements",
     subLinks: [
-      { label: "Все закупки", href: "/procurements" },
+      { label: "Политика закупок", href: "/procurements" },
+      { label: "Текущие закупки", href: "/procurements" },
+      { label: "Локализация", href: "/procurements" },
+      { label: "Документы и отчётность", href: "/procurements" },
+    ],
+  },
+  {
+    label: "Пресс-центр",
+    href: "/news",
+    subLinks: [
+      { label: "Новости", href: "/news" },
+      { label: "События", href: "/news" },
+      { label: "Пресс-релизы", href: "/news" },
+      { label: "Мультимедиа", href: "/news" },
     ],
   },
   {
@@ -120,13 +160,7 @@ const menuColumns: MenuColumn[] = [
     subLinks: [
       { label: "Все вакансии", href: "/vacancies" },
       { label: "Стажировка", href: "/vacancies/stazhirovka" },
-    ],
-  },
-  {
-    label: "Проекты",
-    href: "/projects",
-    subLinks: [
-      { label: "Все проекты", href: "/projects" },
+      { label: "Подать заявку через Qsamruk", href: "https://qsamruk.kz" },
     ],
   },
   {
@@ -148,15 +182,6 @@ const menuColumns: MenuColumn[] = [
     href: "/president-message",
     subLinks: [
       { label: "Послание президента", href: "/president-message" },
-    ],
-  },
-  {
-    label: "Сотрудничество",
-    href: "/international-cooperation",
-    subLinks: [
-      { label: "Международное сотрудничество", href: "/international-cooperation" },
-      { label: "Ключевые партнёры", href: "/international-cooperation#partners" },
-      { label: "Хронология", href: "/international-cooperation#timeline" },
     ],
   },
 ];

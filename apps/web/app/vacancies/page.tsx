@@ -3,6 +3,7 @@ import Breadcrumb from "@/components/ui/Breadcrumb";
 import FeaturedVacanciesSection from "@/components/vacancies/main-page/FeaturedVacanciesSection";
 import VacancyCategoriesGrid from "@/components/vacancies/main-page/VacancyCategoriesGrid";
 import InternshipSection from "@/components/vacancies/main-page/InternshipSection";
+import QsamrukSection from "@/components/vacancies/QsamrukSection";
 import { vacancyCategories, allVacancies } from "@/lib/vacancies-data";
 import BackgroundGlow from "@/components/layout/BackgroundGlow";
 
@@ -38,6 +39,8 @@ export default function VacanciesPage() {
           <Breadcrumb items={[{ label: "Вакансии" }]} />
 
           <VacancyCategoriesGrid categories={mainCategories} />
+
+          <QsamrukSection />
 
           <FeaturedVacanciesSection
             vacancies={featuredVacancies}

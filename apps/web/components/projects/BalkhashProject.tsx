@@ -1,8 +1,10 @@
 const facts = [
   { label: "Регион", value: "Жетысу / Алматинская область" },
-  { label: "Мощность", value: "до 2400 МВт (2 блока)" },
+  { label: "Мощность", value: "до 2 400 МВт (2 блока)" },
   { label: "Площадка", value: "Южный берег озера Балхаш" },
-  { label: "Статус", value: "Оценка площадки" },
+  { label: "Консорциум", value: "Не сформирован (лидер — Росатом)" },
+  { label: "Сумма инвестиций", value: "14 млрд. долл. США" },
+  { label: "Текущий этап", value: "Разработка EPC-контракта, инженерные изыскания" },
 ];
 
 export default function BalkhashProject() {
@@ -20,7 +22,6 @@ export default function BalkhashProject() {
 
       {/* Content — right */}
       <div className="lg:w-1/2 space-y-6">
-        {/* Badge */}
         <span className="inline-block px-3 py-1 rounded-full bg-blue-100 text-[#1E4080] text-[13px] font-medium">
           Проект №1
         </span>
@@ -29,8 +30,9 @@ export default function BalkhashProject() {
 
         <p className="text-lg text-gray-700 font-light leading-relaxed">
           Площадка на южном берегу озера Балхаш — основной кандидат для размещения
-          первой казахстанской АЭС. Расположение обеспечивает стабильный источник
-          технического водоснабжения и минимальное воздействие на окружающую среду.
+          первой казахстанской АЭС. В настоящее время ведётся разработка EPC-контракта
+          и проведение инженерных изысканий по выбору площадки. Лидером международного
+          консорциума определён Росатом.
         </p>
 
         {/* Facts grid */}

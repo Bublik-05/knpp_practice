@@ -19,7 +19,7 @@ const cities: City[] = [
         id: "balkhash",
         name: "Балхаш",
         x: "68.8%",
-        y: "58.2%",
+        y: "63%",
         badge: "Потенциальная площадка",
         summary:
             "Балхаш рассматривается как одна из возможных площадок для развития энергетической инфраструктуры и будущих проектов в атомной сфере.",
@@ -30,7 +30,7 @@ const cities: City[] = [
         id: "moyinkul",
         name: "Мойнкуль",
         x: "75%",
-        y: "15.5%",
+        y: "21%",
         badge: "Перспективная зона",
         summary:
             "Локация пока используется как рабочая заготовка для макета. Позже здесь можно разместить уточнённую информацию о площадке и статусе проекта.",
@@ -98,7 +98,7 @@ function FlagMarker({ active }: { active: boolean }) {
     );
 }
 
-export default function KazakhstanMapSection() {
+export default function KazakhstanMapSection({ className }: { className?: string }) {
     const [activeCityId, setActiveCityId] = useState<string | null>(null);
 
     const activeCity = useMemo(
@@ -120,7 +120,7 @@ export default function KazakhstanMapSection() {
     }, [activeCityId]);
 
     return (
-        <section className="flex flex-col gap-8 px-30 pb-30">
+        <section className={className ?? "flex flex-col gap-8 px-30 pb-30"}>
             <div className="flex max-w-3xl flex-col gap-3">
                 <h2 className="text-3xl font-bold leading-tight md:text-4xl lg:text-5xl">
                     Карта Казахстана

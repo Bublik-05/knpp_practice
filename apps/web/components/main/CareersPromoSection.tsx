@@ -9,8 +9,8 @@ export default function CareersPromoSection({
     vacanciesCount = 12,
 }: CareersPromoSectionProps) {
     return (
-        <section className="px-30 pb-24">
-            <div className="mx-auto w-full max-w-8xl">
+        <section className="px-30 py-30">
+            <div className="mx-auto w-full max-w-7xl">
                 <Link
                     href="/vacancies"
                     className="group block overflow-hidden rounded-lg border border-[#d9e2f2] bg-gradient-to-br from-[#f8fbff] via-white to-[#eef4ff] shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_50px_rgba(30,64,128,0.14)]"

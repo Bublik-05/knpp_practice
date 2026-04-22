@@ -28,12 +28,12 @@ const topItems: { id: SectionId; label: string }[] = [
 
 export default function AboutNav({ active, onSelect }: Props) {
   return (
-    <aside className="pl-8 shrink-0">
+    <aside className="px-4 md:pl-8 md:pr-0 shrink-0 w-full md:w-auto">
       <div
-        className="sticky top-16"
-        style={{ height: "calc(100vh - 4rem)", overflowY: "auto" }}
+        className="md:sticky md:top-16"
+        style={{ maxHeight: "calc(100vh - 4rem)", overflowY: "auto" }}
       >
-        <div className="bg-white rounded-lg shadow-sm flex flex-col overflow-hidden w-64">
+        <div className="bg-white rounded-lg shadow-sm flex flex-col overflow-hidden w-full md:w-64">
           {/* ── Навигация ── */}
           <div className="flex flex-col">
             {topItems.map((item, i) => (

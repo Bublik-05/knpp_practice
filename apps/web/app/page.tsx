@@ -12,6 +12,8 @@ import CareersPromoSection from "@/components/main/CareersPromoSection";
 import NewAbout from "@/components/main/NewAbout";
 import SubsidiaryAgencies from "@/components/main/SubsidiaryAgencies";
 import PresidentMessageSection from "@/components/main/PresidentMessageSection";
+import CEOSection from "@/components/main/CEOSection";
+import GovernmentLinksSection from "@/components/main/GovernmentLinksSection";
 
 export default async function Home() {
   const featuredNews = await getFeaturedNews();
@@ -20,16 +22,16 @@ export default async function Home() {
     <>
       <NewAbout />
       {/* <About /> */}
+      <CEOSection />
       <News items={featuredNews} />
+      <HomeEmissionsCalculator />
+      <KazakhstanMapSection />
+      <DevelopmentSection />
+      <SubsidiaryAgencies />
       <Activities />
       {/* <MissionSection /> */}
       <AchievementsSection />
-      <SubsidiaryAgencies />
-      <KazakhstanMapSection />
-      <DevelopmentSection />
-      <HomeEmissionsCalculator />
       <ProjectsStages />
-      <KazakhstanMapSection />
       <PresidentMessageSection />
       <CareersPromoSection vacanciesCount={12} />
     </>

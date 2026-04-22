@@ -5,9 +5,10 @@ import { useEffect, useMemo, useState } from "react";
 export type SectionId =
   | "about"
   | "leadership"
-  | "safety"
+  | "governance"
   | "compliance"
-  | "npa"
+  | "documents"
+  | "safety"
   | "development";
 
 interface Props {
@@ -23,16 +24,17 @@ type CompanyAnchorId =
 
 const companyChildren: { id: CompanyAnchorId; label: string }[] = [
   { id: "section-about-company", label: "О ТОО КАЭС" },
-  { id: "section-about-activities", label: 'Виды деятельности ТОО "КАЭС"' },
-  { id: "section-about-additional", label: "Дополнительная информация" },
+  { id: "section-about-activities", label: 'Миссия' },
+  { id: "section-about-additional", label: "Виды деятельности ТОО 'КАЭС'" },
   { id: "section-about-gallery", label: "Галерея" },
 ];
 
 const topItems: { id: SectionId; label: string }[] = [
   { id: "leadership", label: "Руководство" },
-  { id: "safety", label: "Безопасность" },
+  { id: "governance", label: "Корпоративное управление" },
   { id: "compliance", label: "Комплаенс" },
-  { id: "npa", label: "НПА" },
+  { id: "documents", label: "Документы" },
+  { id: "safety", label: "Безопасность" },
   { id: "development", label: "План развития" },
 ];
 
@@ -110,8 +112,8 @@ export default function AboutNav({ active, onSelect }: Props) {
   const isAboutActive = active === "about";
 
   return (
-    <aside className="pl-8 shrink-0 self-start">
-      <div className="w-64">
+    <aside className="px-4 md:pl-8 md:pr-0 shrink-0 self-start w-full md:w-auto">
+      <div className="w-full md:w-64">
         <div className="bg-white rounded-lg shadow-sm flex flex-col overflow-hidden">
           <button
             onClick={() => {
@@ -129,12 +131,12 @@ export default function AboutNav({ active, onSelect }: Props) {
             <span>О компании</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className={`w-4 h-4 transition-transform duration-200 ${companyOpen ? "rotate-180" : ""
+              className={`w-6 h-6 transition-transform duration-200 ${companyOpen ? "rotate-180" : ""
                 }`}
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
-              strokeWidth={2}
+              strokeWidth={1}
             >
               <path
                 strokeLinecap="round"
@@ -170,23 +172,27 @@ export default function AboutNav({ active, onSelect }: Props) {
                 key={item.id}
                 onClick={() => onSelect(item.id)}
                 className={`
-                  flex items-center justify-between px-5 py-4 text-[15px] font-medium
-                  transition-colors duration-150
+                  flex items-center gap-3 px-5 py-4 text-[15px] font-medium
+                  transition-colors duration-150 text-left
                   ${i > 0 ? "border-t border-gray-100" : ""}
-                  ${active === item.id
-                    ? "bg-[#1E4080] text-white"
-                    : "text-gray-800 hover:bg-gray-200"
+                  ${
+                    active === item.id
+                      ? "bg-[#1E4080] text-white"
+                      : "text-gray-800 hover:bg-gray-200"
                   }
                 `}
               >
-                <span>{item.label}</span>
+                <span className="flex-1 leading-snug">
+                  {item.label}
+                </span>
+                
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  className="w-4 h-4"
+                  className="w-6 h-6 shrink-0"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
-                  strokeWidth={2}
+                  strokeWidth={1}
                 >
                   <path
                     strokeLinecap="round"

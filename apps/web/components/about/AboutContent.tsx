@@ -7,11 +7,12 @@ import Breadcrumb, { type BreadcrumbItem } from "@/components/ui/Breadcrumb";
 
 import CompanySection from "./sections/CompanySection";
 import ActivitiesSection from "./sections/ActivitiesSection";
-import AdditionalSection from "./sections/AdditionalSection";
+import MissionSection from "./sections/MissionSection";
 import LeadershipSection from "./sections/LeadershipSection";
 import SafetySection from "./sections/SafetySection";
 import ComplianceSection from "./sections/ComplianceSection";
-import NpaSection from "./sections/NpaSection";
+import CorporateGovernanceSection from "./sections/CorporateGovernanceSection";
+import DocumentsSection from "./sections/DocumentsSection";
 import DevelopmentSection from "./sections/DevelopmentSection";
 
 import GallerySection from "./gallery/GallerySection";
@@ -19,18 +20,20 @@ import GallerySection from "./gallery/GallerySection";
 const validSections: SectionId[] = [
   "about",
   "leadership",
-  "safety",
+  "governance",
   "compliance",
-  "npa",
+  "documents",
+  "safety",
   "development",
 ];
 
 const sectionLabels: Record<SectionId, string> = {
   about: "О компании",
   leadership: "Руководство",
-  safety: "Безопасность",
+  governance: "Корпоративное управление",
   compliance: "Комплаенс",
-  npa: "НПА",
+  documents: "Документы",
+  safety: "Безопасность",
   development: "План развития",
 };
 
@@ -110,21 +113,22 @@ export default function AboutContent() {
               </AboutBlock>
 
               <AboutBlock
+                id="section-about-additional"
+                title="Миссия"
+              >
+                <MissionSection />
+              </AboutBlock>
+              
+              <AboutBlock
                 id="section-about-activities"
                 title='Виды деятельности ТОО "КАЭС"'
               >
                 <ActivitiesSection />
               </AboutBlock>
 
-              <AboutBlock
-                id="section-about-additional"
-                title="Дополнительная информация"
-              >
-                <AdditionalSection />
-              </AboutBlock>
 
-              <AboutBlock id="section-about-gallery">
-                <GallerySection />
+              <AboutBlock id="section-about-gallery" title="Галерея">
+                <GallerySection onOpenGallery={() => {}} />
               </AboutBlock>
             </div>
           </>
@@ -138,11 +142,11 @@ export default function AboutContent() {
           </>
         );
 
-      case "safety":
+      case "governance":
         return (
           <>
-            <h1 className="text-5xl font-bold text-gray-900 mb-8">Безопасность</h1>
-            <SafetySection />
+            <h1 className="text-5xl font-bold text-gray-900 mb-8">Корпоративное управление</h1>
+            <CorporateGovernanceSection />
           </>
         );
 
@@ -154,11 +158,19 @@ export default function AboutContent() {
           </>
         );
 
-      case "npa":
+      case "documents":
         return (
           <>
-            <h1 className="text-5xl font-bold text-gray-900 mb-8">НПА</h1>
-            <NpaSection />
+            <h1 className="text-5xl font-bold text-gray-900 mb-8">Документы</h1>
+            <DocumentsSection />
+          </>
+        );
+
+      case "safety":
+        return (
+          <>
+            <h1 className="text-5xl font-bold text-gray-900 mb-8">Безопасность</h1>
+            <SafetySection />
           </>
         );
 
@@ -176,10 +188,10 @@ export default function AboutContent() {
   };
 
   return (
-    <div className="flex flex-1 w-full pt-10 pb-20">
+    <div className="flex flex-col md:flex-row flex-1 w-full pt-10 pb-20">
       <AboutNav active={active} onSelect={handleSelect} />
 
-      <div ref={contentTopRef} className="flex-1 min-w-0 px-20">
+      <div ref={contentTopRef} className="flex-1 min-w-0 px-4 md:px-10 lg:px-20">
         <Breadcrumb items={getBreadcrumbs()} className="mb-6" />
 
         <div className="flex flex-col">

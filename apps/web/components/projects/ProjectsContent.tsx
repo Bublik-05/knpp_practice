@@ -4,6 +4,7 @@ import { useState } from "react";
 import BalkhashProject from "./BalkhashProject";
 import MainkumProject from "./MainkumProject";
 import Breadcrumb from "@/components/ui/Breadcrumb";
+import KazakhstanMapSection from "@/components/main/KazakhstanMapSection";
 
 // ── Stage data copied from ProjectsStages (main page component) ──────────────
 
@@ -193,7 +194,7 @@ function StagesList({ stages }: { stages: Stage[] }) {
   );
 }
 
-type Tab = "balkhash" | "mainkum";
+type Tab = "balkhash" | "mainkum" | "project3" | "project4" | "international";
 
 export default function ProjectsContent() {
   const [activeTab, setActiveTab] = useState<Tab>("balkhash");
@@ -211,40 +212,131 @@ export default function ProjectsContent() {
         </p>
       </div>
 
+      {/* Интерактивная карта проектов АЭС */}
+      <KazakhstanMapSection className="flex flex-col gap-8" />
+
       {/* Tab switcher */}
-      <div className="flex gap-2 p-1 bg-gray-100 rounded-xl w-fit">
-        {(["balkhash", "mainkum"] as Tab[]).map((tab) => (
-          <button
-            key={tab}
-            onClick={() => setActiveTab(tab)}
-            className={`px-8 py-3 rounded-lg text-[15px] font-medium transition-all duration-200 ${
-              activeTab === tab
-                ? "bg-white text-[#1E4080] shadow-sm"
-                : "text-gray-500 hover:text-gray-800"
-            }`}
-          >
-            {tab === "balkhash" ? "АЭС «Балхаш»" : "АЭС «Майнкум»"}
-          </button>
-        ))}
+      <div className="flex flex-wrap gap-2 p-1 bg-gray-100 rounded-xl w-fit">
+        {(["balkhash", "mainkum", "project3", "project4", "international"] as Tab[]).map((tab) => {
+          const tabLabels: Record<Tab, string> = {
+            balkhash: "АЭС «Балхаш»",
+            mainkum: "АЭС «Мойынкум»",
+            project3: "Проект 4.3",
+            project4: "Проект 4.4",
+            international: "Международное сотрудничество",
+          };
+          return (
+            <button
+              key={tab}
+              onClick={() => setActiveTab(tab)}
+              className={`px-6 py-3 rounded-lg text-[14px] font-medium transition-all duration-200 ${
+                activeTab === tab
+                  ? "bg-white text-[#1E4080] shadow-sm"
+                  : "text-gray-500 hover:text-gray-800"
+              }`}
+            >
+              {tabLabels[tab]}
+            </button>
+          );
+        })}
       </div>
 
-      {/* Project info */}
-      {activeTab === "balkhash" ? <BalkhashProject /> : <MainkumProject />}
+      {/* Tab content */}
+      {activeTab === "balkhash" && (
+        <>
+          <BalkhashProject />
+          <div>
+            <h2 className="text-3xl font-medium text-gray-900 mb-2">
+              Этапы строительства — АЭС «Балхаш»
+            </h2>
+            <p className="text-lg text-gray-600 font-light mb-8">
+              Крупный двухблочный энергетический объект на южном берегу озера Балхаш. Суммарная мощность — 2 400 МВт.
+            </p>
+            <StagesList stages={balkhashStages} />
+          </div>
+        </>
+      )}
 
-      {/* Construction stages per project */}
-      <div>
-        <h2 className="text-3xl font-medium text-gray-900 mb-2">
-          Этапы строительства —{" "}
-          {activeTab === "balkhash" ? "АЭС «Балхаш»" : "АЭС «Майнкум»"}
-        </h2>
-        <p className="text-lg text-gray-600 font-light mb-8">
-          {activeTab === "balkhash"
-            ? "Крупный двухблочный энергетический объект на южном берегу озера Балхаш. Суммарная мощность — 2 400 МВт."
-            : "Малый модульный реактор для электроснабжения южных регионов страны. Мощность — до 300 МВт."}
-        </p>
+      {activeTab === "mainkum" && (
+        <>
+          <MainkumProject />
+          <div>
+            <h2 className="text-3xl font-medium text-gray-900 mb-2">
+              Этапы строительства — АЭС «Мойынкум»
+            </h2>
+            <p className="text-lg text-gray-600 font-light mb-8">
+              Малый модульный реактор для электроснабжения южных регионов страны. Мощность — до 300 МВт.
+            </p>
+            <StagesList stages={mainkumStages} />
+          </div>
+        </>
+      )}
 
-        <StagesList stages={activeTab === "balkhash" ? balkhashStages : mainkumStages} />
-      </div>
+      {(activeTab === "project3" || activeTab === "project4") && (
+        <div className="flex flex-col items-center justify-center py-24 text-center gap-4 rounded-2xl border border-dashed border-gray-300 bg-gray-50">
+          <div className="w-16 h-16 rounded-full bg-gray-100 flex items-center justify-center">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" strokeWidth="1.8" strokeLinecap="round">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 8v4M12 16h.01" />
+            </svg>
+          </div>
+          <h3 className="text-xl font-medium text-gray-500">Данные отсутствуют</h3>
+          <p className="text-gray-400 font-light max-w-sm">
+            Информация по данному проекту находится в стадии формирования и будет добавлена позднее.
+          </p>
+        </div>
+      )}
+
+      {activeTab === "international" && (
+        <div>
+          <p className="text-lg text-gray-600 font-light mb-8">
+            ТОО «КАЭС» активно взаимодействует с международными ядерными организациями и государственными корпорациями ведущих атомных держав. Казахстан ведёт переговоры с рядом стран о технологическом и инвестиционном участии в строительстве АЭС.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mb-10">
+            {[
+              { flag: "🇷🇺", country: "Россия", org: "Росатом", desc: "Определён лидером консорциума по АЭС «Балхаш»" },
+              { flag: "🇫🇷", country: "Франция", org: "EDF / Framatome", desc: "Переговоры по участию в проекте" },
+              { flag: "🇰🇷", country: "Южная Корея", org: "KEPCO / KHNP", desc: "Рассматривается как потенциальный партнёр" },
+              { flag: "🇨🇳", country: "Китай", org: "CNNC", desc: "Изучение возможностей сотрудничества" },
+              { flag: "🇺🇸", country: "США", org: "NuScale / Westinghouse", desc: "Технология SMR для АЭС «Мойынкум»" },
+              { flag: "🌐", country: "Международное", org: "МАГАТЭ", desc: "Техническое содействие и надзор" },
+            ].map((partner) => (
+              <div
+                key={partner.org}
+                className="rounded-xl bg-white border border-gray-200 p-5 flex items-start gap-4"
+              >
+                <span className="text-3xl mt-0.5">{partner.flag}</span>
+                <div>
+                  <p className="text-xs text-gray-400 uppercase tracking-wide">{partner.country}</p>
+                  <p className="font-semibold text-gray-900 mt-0.5">{partner.org}</p>
+                  <p className="text-sm text-gray-500 font-light mt-1">{partner.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="rounded-xl bg-blue-50 border border-blue-100 p-6">
+            <h3 className="text-xl font-semibold text-[#1E4080] mb-3">Ключевые направления сотрудничества</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {[
+                { title: "Передача технологий", desc: "Получение реакторных технологий и обучение казахстанских специалистов" },
+                { title: "Финансирование", desc: "Привлечение иностранных инвестиций и кредитных линий для строительства" },
+                { title: "Ядерное топливо", desc: "Поставка топлива и переработка отработанных материалов" },
+                { title: "Безопасность", desc: "Соответствие стандартам МАГАТЭ и международным нормам ядерной безопасности" },
+              ].map((item) => (
+                <div key={item.title} className="flex gap-3">
+                  <div className="mt-1 h-2 w-2 rounded-full bg-[#1E4080] shrink-0" />
+                  <div>
+                    <p className="font-medium text-gray-900">{item.title}</p>
+                    <p className="text-sm text-gray-600 font-light">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
 
     </section>
   );

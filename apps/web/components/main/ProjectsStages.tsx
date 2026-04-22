@@ -114,7 +114,7 @@ const projects = [
   },
   {
     id: "mainkum",
-    label: "Майнкум",
+    label: "Мойынкум",
     badge: "Проект №2",
     capacity: "300 МВт",
     type: "Малый модульный реактор",

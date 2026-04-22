@@ -6,24 +6,50 @@ const leaders = [
     title: "Генеральный директор",
     image: "/images/General_director.png",
     href: "#",
-    isPlaceholder: false,
   },
   {
-    name: "Информация будет добавлена",
-    title: "Должность будет добавлена",
-    image: "",
+    name: "Ихсанов Мейрбек Уакасович",
+    title: "Руководитель проекта АЭС «Балкаш»",
+    image: "/images/leader-placeholder.png",
     href: "#",
-    isPlaceholder: true,
   },
   {
-    name: "Информация будет добавлена",
-    title: "Должность будет добавлена",
-    image: "",
+    name: "Изтелеуов Бекболсын Жолмуханович",
+    title: "Руководитель проекта АЭС «Мойынкум» (раб. название)",
+    image: "/images/leader-placeholder.png",
     href: "#",
-    isPlaceholder: true,
+  },
+  {
+    name: "Ерболганов Жандос Турысбекулы",
+    title: "Управляющий экономикой и финансами",
+    image: "/images/leader-placeholder.png",
+    href: "#",
+  },
+  {
+    name: "Байдилдин Жигер Еркинбекович",
+    title: "Управляющий директор по правовому сопровождению",
+    image: "/images/leader-placeholder.png",
+    href: "#",
+  },
+  {
+    name: "Окасов Ринат Курмашевич",
+    title: "Управляющий директор по безопасности",
+    image: "/images/leader-placeholder.png",
+    href: "#",
+  },
+  {
+    name: "Рыскулов Марат Кайратович",
+    title: "Управляющий директор по цифровизации",
+    image: "/images/leader-placeholder.png",
+    href: "#",
+  },
+  {
+    name: "Сарпеков Азат Толкынович",
+    title: "Руководитель аппарата",
+    image: "/images/leader-placeholder.png",
+    href: "#",
   },
 ];
-
 function ArrowIcon() {
   return (
     <svg
@@ -61,21 +87,12 @@ export default function LeadershipSection() {
           >
             <div className="relative flex overflow-hidden rounded-lg bg-[#EEF2F8]">
               <div className="relative aspect-[4/5] w-full overflow-hidden rounded-lg">
-                {person.isPlaceholder ? (
-                  <div className="flex h-full w-full items-center justify-center bg-gradient-to-b from-[#e9edf5] to-[#cfd7e6]">
-                    <div className="flex flex-col items-center gap-3 text-center text-gray-500">
-                      <div className="h-16 w-16 rounded-full border border-white/70 bg-white/40" />
-                      <span className="text-lg font-medium">Фото будет добавлено</span>
-                    </div>
-                  </div>
-                ) : (
-                  <Image
-                    src={person.image}
-                    alt={person.name}
-                    fill
-                    className="object-cover object-top"
-                  />
-                )}
+                <Image
+                  src={person.image}
+                  alt={person.name}
+                  fill
+                  className="object-cover object-top"
+                />
               </div>
 
               <a
@@ -91,27 +108,20 @@ export default function LeadershipSection() {
             </div>
 
             <div className="flex flex-col gap-2 px-2">
-              <p
-                className={`text-lg leading-snug ${person.isPlaceholder
-                  ? "font-medium text-gray-500"
-                  : "font-semibold text-gray-900 underline underline-offset-4"
-                  }`}
-              >
+              <p className="text-lg leading-snug font-semibold text-gray-900 underline underline-offset-4">
                 {person.name}
               </p>
-
-              <p
-                className={`text-lg leading-snug ${person.isPlaceholder
-                  ? "font-light text-gray-400"
-                  : "font-light text-gray-500"
-                  }`}
-              >
+              <p className="text-lg leading-snug font-light text-gray-500">
                 {person.title}
               </p>
             </div>
           </article>
         ))}
       </div>
+
+      <p className="text-lg text-gray-500 font-light">
+        Информация о составе руководства будет опубликована после утверждения организационной структуры компании.
+      </p>
     </section>
   );
 }

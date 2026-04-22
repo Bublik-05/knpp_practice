@@ -4,7 +4,7 @@ export default function SafetySection() {
       <h3 className="text-3xl font-medium text-gray-700">Безопасность АЭС</h3>
       <p className="font-light text-xl">Про безопасность современных атомных реакторов:</p>
 
-      <div className="flex flex-col gap-4 font-light text-xl leading-relaxed">
+      <div className="flex flex-col gap-4 font-light text-lg leading-relaxed">
         <p>
           В современных проектах реакторных установок используется глубокоэшелонированная защита для предотвращения выхода радиоактивных материалов в окружающую среду. 
 

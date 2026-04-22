@@ -12,6 +12,7 @@ import TypesSection from "./sections/TypesSection";
 import EnvironmentSection from "./sections/EnvironmentSection";
 import MythsSection from "./sections/MythsSection";
 import MultimediaSection from "./sections/MultimediaSection";
+import QuizSection from "./sections/QuizSection";
 
 const validSections: SectionId[] = [
   "history", "operation", "types", "safety", "environment", "myths", "multimedia",
@@ -64,10 +65,10 @@ export default function AtomContent() {
   const ActiveSection = activeSection?.Component;
 
   return (
-    <div className="flex flex-1 w-full pt-10 pb-50">
+    <div className="flex flex-col md:flex-row flex-1 w-full pt-10 pb-20 md:pb-[320px]">
       <AboutNav active={active} onSelect={handleSelect} />
 
-      <div ref={contentTopRef} className="flex-1 min-w-0 px-20">
+      <div ref={contentTopRef} className="flex-1 min-w-0 px-4 md:px-10 lg:px-20">
         {/* Хлебные крошки */}
         <Breadcrumb
           items={[
