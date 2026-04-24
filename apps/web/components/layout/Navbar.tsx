@@ -72,7 +72,6 @@ const navLinks: NavLink[] = [
       topLinks: [
         { label: "АЭС «Балхаш»", href: "/projects?tab=balkhash" },
         { label: "АЭС «Мойынкум»", href: "/projects?tab=moinkum" },
-        { label: "Международное сотрудничество", href: "/international-cooperation" },
       ],
       sideLinks: [],
     },
@@ -90,7 +89,17 @@ const navLinks: NavLink[] = [
       sideLinks: [],
     },
   },
-  { label: "Пресс-центр", href: "/news" },
+  {
+    label: "Пресс-центр",
+    href: "/news",
+    megaMenu: {
+      topLinks: [
+        { label: "Календарь событий", href: "/news" },
+        { label: "Мультимедиа", href: "/news" },
+      ],
+      sideLinks: [],
+    },
+  },
   { label: "Вакансии", href: "/vacancies" },
   { label: "FAQ", href: "/faq" },
   { label: "Контакты", href: "/contacts" },
@@ -131,7 +140,6 @@ const menuColumns: MenuColumn[] = [
     subLinks: [
       { label: "АЭС «Балхаш»", href: "/projects" },
       { label: "АЭС «Мойынкум»", href: "/projects" },
-      { label: "Международное сотрудничество", href: "/international-cooperation" },
     ],
   },
   {
@@ -148,20 +156,13 @@ const menuColumns: MenuColumn[] = [
     label: "Пресс-центр",
     href: "/news",
     subLinks: [
-      { label: "Пресс-центр", href: "/news" },
-      { label: "События", href: "/news" },
-      { label: "Пресс-релизы", href: "/news" },
+      { label: "Календарь событий", href: "/news" },
       { label: "Мультимедиа", href: "/news" },
     ],
   },
   {
     label: "Вакансии",
     href: "/vacancies",
-    subLinks: [
-      { label: "Все вакансии", href: "/vacancies" },
-      { label: "Стажировка", href: "/vacancies/stazhirovka" },
-      { label: "Подать заявку через Qsamruk", href: "https://qsamruk.kz" },
-    ],
   },
   {
     label: "FAQ",
@@ -302,7 +303,7 @@ export default function Navbar() {
                       <div className="h-2 w-full" />
                       <div
                         className="bg-white shadow-[0_18px_40px_rgba(17,34,80,0.14)] border border-[#E0C58F]/35 rounded-b-xl overflow-hidden"
-                        style={{ minWidth: 600 }}
+                        style={{ minWidth: link.megaMenu!.topLinks.length > 4 ? 600 : "max-content" }}
                       >
                         <div className="flex flex-wrap items-center gap-x-4 gap-y-1 border-b border-[#E0C58F]/25 px-6 py-3">
                           {link.megaMenu!.topLinks.map((sub) => (
