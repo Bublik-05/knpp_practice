@@ -64,9 +64,7 @@ export default function ProcurementDocuments() {
                 Скачать
               </a>
               <a
-                href={doc.href}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={`/pdf-viewer?url=${encodeURIComponent(doc.href)}&title=${encodeURIComponent(doc.title)}`}
                 className="border border-[#1E4080] text-[#1E4080] font-medium rounded-full px-5 py-2.5 hover:bg-[#1E4080] hover:text-white transition-colors text-sm"
               >
                 Открыть PDF

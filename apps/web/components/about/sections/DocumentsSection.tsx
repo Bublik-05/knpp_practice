@@ -34,6 +34,11 @@ const documents = [
     description: "Права, обязанности и полномочия Генерального директора",
     href: "/documents/polozhenie-gd.pdf",
   },
+  {
+    title: "Политика по управлнению рисками и внутреннему контролю ТОО «Казахстанские атомные электрические станции»",
+    description: "Политика управления рисками и внутреннего контроля",
+    href: "/documents/ПОЛИТИКА ПО УПРАВЛЕНИЮ РИСКАМИ И ВНУТРЕННЕМУ КОНТРОЛЮ.pdf",
+  }
 ];
 
 function DocumentIcon() {
@@ -70,9 +75,7 @@ export default function DocumentsSection() {
               <p className="text-lg font-light text-gray-500">{doc.description}</p>
             </div>
             <a
-              href={doc.href}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={`/pdf-viewer?url=${encodeURIComponent(doc.href)}&title=${encodeURIComponent(doc.title)}`}
               className="shrink-0 rounded-full bg-[#1E4080] text-white text-sm px-4 py-2 hover:bg-[#112250] transition-colors"
             >
               Открыть PDF

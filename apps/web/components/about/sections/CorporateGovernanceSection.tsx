@@ -48,9 +48,7 @@ export default function CorporateGovernanceSection() {
         </p>
         <div className="flex flex-wrap gap-3">
           <a
-            href="/documents/governance/kodeks-korporativnogo-upravleniya.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/pdf-viewer?url=%2Fdocuments%2Fgovernance%2Fkodeks-korporativnogo-upravleniya.pdf&title=%D0%9A%D0%BE%D0%B4%D0%B5%D0%BA%D1%81%20%D0%BA%D0%BE%D1%80%D0%BF%D0%BE%D1%80%D0%B0%D1%82%D0%B8%D0%B2%D0%BD%D0%BE%D0%B3%D0%BE%20%D1%83%D0%BF%D1%80%D0%B0%D0%B2%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F"
             className="inline-flex items-center gap-2 rounded-full bg-[#1E4080] px-6 py-2 text-sm font-light text-white transition-colors hover:bg-[#112250]"
           >
             Открыть PDF

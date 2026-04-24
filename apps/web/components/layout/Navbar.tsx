@@ -37,7 +37,6 @@ const navLinks: NavLink[] = [
         { label: "Безопасность", href: "/about?section=safety" },
         { label: "Комплаенс", href: "/about?section=compliance" },
         { label: "Документы", href: "/about?section=documents" },
-        { label: "НПА", href: "/about?section=npa" },
         { label: "План развития", href: "/about?section=development" },
       ],
       sideLinks: [
@@ -116,7 +115,6 @@ const menuColumns: MenuColumn[] = [
       { label: "Безопасность", href: "/about?section=safety" },
       { label: "Комплаенс", href: "/about?section=compliance" },
       { label: "Документы", href: "/about?section=documents" },
-      { label: "НПА", href: "/about?section=npa" },
       { label: "План развития", href: "/about?section=development" },
     ],
   },
@@ -274,8 +272,8 @@ export default function Navbar() {
                 <Image src="/images/KNPP.png" alt="KNPP" width={90} height={56}
                   style={{ width: 70, height: "auto" }} priority />
               </Link>
-              <div className="absolute left-0 top-full mt-2 hidden group-hover:flex flex-col gap-0.5 bg-[#112250] border border-[#E0C58F]/30 rounded-lg px-3 py-2 shadow-lg whitespace-nowrap z-50">
-                <span className="text-[12px] font-medium text-[#F5F0E9]">КНПП</span>
+              <div className="absolute left-0 top-full mt-2 hidden group-hover:flex flex-col gap-0.5 bg-white border border-[#E0C58F]/30 rounded-lg px-3 py-2 shadow-lg whitespace-nowrap z-50">
+                <span className="text-[12px] font-medium text-black">ТОО «Казахстанские атомные электрические станции»</span>
               </div>
             </div>
 
@@ -285,8 +283,8 @@ export default function Navbar() {
                 <Image src="/images/partners/atom-agency.png" alt="Агентство по атомной энергии" width={48} height={48}
                   style={{ width: 48, height: "auto", maxHeight: 40, objectFit: "contain" }} />
               </Link>
-              <div className="absolute left-0 top-full mt-2 hidden group-hover:flex flex-col gap-0.5 bg-[#112250] border border-[#E0C58F]/30 rounded-lg px-3 py-2 shadow-lg whitespace-nowrap z-50">
-                <span className="text-[12px] font-medium text-[#F5F0E9]">Агентство по атомной энергии</span>
+              <div className="absolute left-0 top-full mt-2 hidden group-hover:flex flex-col gap-0.5 bg-white border border-[#E0C58F]/30 rounded-lg px-3 py-2 shadow-lg whitespace-nowrap z-50">
+                <span className="text-[12px] font-medium text-black">Агентство РК по атомной энергии</span>
               </div>
             </div>
           </div>
