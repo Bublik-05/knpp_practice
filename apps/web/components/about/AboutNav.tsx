@@ -23,10 +23,9 @@ type CompanyAnchorId =
   | "section-about-gallery";
 
 const companyChildren: { id: CompanyAnchorId; label: string }[] = [
-  { id: "section-about-company", label: "О ТОО КАЭС" },
+  { id: "section-about-company", label: "О компании" },
   { id: "section-about-activities", label: 'Миссия' },
   { id: "section-about-additional", label: "Виды деятельности ТОО 'КАЭС'" },
-  { id: "section-about-gallery", label: "Галерея" },
 ];
 
 const topItems: { id: SectionId; label: string }[] = [
@@ -128,7 +127,7 @@ export default function AboutNav({ active, onSelect }: Props) {
                 : "text-gray-800 hover:bg-gray-200"}
             `}
           >
-            <span>О компании</span>
+            <span>О КАЭС</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className={`w-6 h-6 transition-transform duration-200 ${companyOpen ? "rotate-180" : ""

@@ -38,16 +38,16 @@ export default function VacanciesPage() {
 
           <Breadcrumb items={[{ label: "Вакансии" }]} />
 
-          <VacancyCategoriesGrid categories={mainCategories} />
+          {/* <VacancyCategoriesGrid categories={mainCategories} /> */}
 
           <QsamrukSection />
 
-          <FeaturedVacanciesSection
+          {/* <FeaturedVacanciesSection
             vacancies={featuredVacancies}
             allHref="/vacancies/it"
-          />
+          /> */}
 
-          <InternshipSection vacancies={featuredInternships} />
+          {/* <InternshipSection vacancies={featuredInternships} /> */}
 
         </div>
       </div>

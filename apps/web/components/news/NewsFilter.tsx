@@ -2,15 +2,15 @@
 
 import { useMemo, useState } from "react";
 
-export type FilterKey = "Новости" | "События" | "Пресс-релизы";
+export type FilterKey = "Календарь событий" | "Мультимедиа";
 
 interface Props {
   active: FilterKey;
   onChange: (f: FilterKey) => void;
-  counts: Record<FilterKey, number>;
+  counts: Partial<Record<FilterKey, number>>;
 }
 
-const tabs: FilterKey[] = ["Новости", "События", "Пресс-релизы"];
+const tabs: FilterKey[] = ["Календарь событий", "Мультимедиа"];
 
 const categoryOptions = [
   "Ядерная энергетика",
@@ -228,7 +228,7 @@ export default function NewsFilter({ active, onChange }: Props) {
 
   return (
     <aside className="px-8 shrink-0">
-      <div className="sticky top-16 pt-10">
+      <div className="sticky ">
         <div className="flex flex-col gap-3 rounded-lg bg-white shadow-sm">
           <div className="flex rounded-lg">
             {tabs.map((tab) => (

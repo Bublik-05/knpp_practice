@@ -163,13 +163,13 @@ export default function HomeEmissionsCalculator() {
 
     return (
         <section className="px-30 pb-24">
-            <div className="mx-auto w-full max-w-8xl">
-                <div className="flex flex-col gap-3 max-w-3xl mb-8">
+            <div className="mx-auto w-full max-w-8xl space-y-12">
+                <div className="flex flex-col gap-3 max-w-4xl ">
                     <span className="text-[#1E4080] uppercase tracking-widest text-md font-medium">
                         CO₂ калькулятор
                     </span>
                     <h2 className="font-bold leading-tight text-3xl md:text-4xl lg:text-5xl text-gray-900">
-                        Сравнение выбросов разных источников энергии
+                        Атомная энергия - один из самых экологически чистых источников электроэнергии. 
                     </h2>
                     <p className="font-light text-lg text-gray-600 leading-relaxed">
                         Быстрый расчет выбросов CO₂ при одинаковом объеме выработки

@@ -194,13 +194,13 @@ function StagesList({ stages }: { stages: Stage[] }) {
   );
 }
 
-type Tab = "balkhash" | "mainkum" | "project3" | "project4" | "international";
+type Tab = "balkhash" | "mainkum" | "project3" | "project4" ;
 
 export default function ProjectsContent() {
   const [activeTab, setActiveTab] = useState<Tab>("balkhash");
 
   return (
-    <section className="max-w-7xl mx-auto px-8 py-16 space-y-14">
+    <section className="max-w-7xl mx-auto px-8 py-8 space-y-14">
 
       <Breadcrumb items={[{ label: "Проекты" }]} />
 
@@ -216,14 +216,13 @@ export default function ProjectsContent() {
       <KazakhstanMapSection className="flex flex-col gap-8" />
 
       {/* Tab switcher */}
-      <div className="flex flex-wrap gap-2 p-1 bg-gray-100 rounded-xl w-fit">
-        {(["balkhash", "mainkum", "project3", "project4", "international"] as Tab[]).map((tab) => {
+      <div className="flex flex-wrap gap-2 p-1 bg-gray-100 rounded-lg w-fit">
+        {(["balkhash", "mainkum", "project3", "project4"] as Tab[]).map((tab) => {
           const tabLabels: Record<Tab, string> = {
             balkhash: "АЭС «Балхаш»",
             mainkum: "АЭС «Мойынкум»",
             project3: "Проект 4.3",
-            project4: "Проект 4.4",
-            international: "Международное сотрудничество",
+            project4: "Проект 4.4"
           };
           return (
             <button
@@ -284,57 +283,6 @@ export default function ProjectsContent() {
           <p className="text-gray-400 font-light max-w-sm">
             Информация по данному проекту находится в стадии формирования и будет добавлена позднее.
           </p>
-        </div>
-      )}
-
-      {activeTab === "international" && (
-        <div>
-          <p className="text-lg text-gray-600 font-light mb-8">
-            ТОО «КАЭС» активно взаимодействует с международными ядерными организациями и государственными корпорациями ведущих атомных держав. Казахстан ведёт переговоры с рядом стран о технологическом и инвестиционном участии в строительстве АЭС.
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mb-10">
-            {[
-              { flag: "🇷🇺", country: "Россия", org: "Росатом", desc: "Определён лидером консорциума по АЭС «Балхаш»" },
-              { flag: "🇫🇷", country: "Франция", org: "EDF / Framatome", desc: "Переговоры по участию в проекте" },
-              { flag: "🇰🇷", country: "Южная Корея", org: "KEPCO / KHNP", desc: "Рассматривается как потенциальный партнёр" },
-              { flag: "🇨🇳", country: "Китай", org: "CNNC", desc: "Изучение возможностей сотрудничества" },
-              { flag: "🇺🇸", country: "США", org: "NuScale / Westinghouse", desc: "Технология SMR для АЭС «Мойынкум»" },
-              { flag: "🌐", country: "Международное", org: "МАГАТЭ", desc: "Техническое содействие и надзор" },
-            ].map((partner) => (
-              <div
-                key={partner.org}
-                className="rounded-xl bg-white border border-gray-200 p-5 flex items-start gap-4"
-              >
-                <span className="text-3xl mt-0.5">{partner.flag}</span>
-                <div>
-                  <p className="text-xs text-gray-400 uppercase tracking-wide">{partner.country}</p>
-                  <p className="font-semibold text-gray-900 mt-0.5">{partner.org}</p>
-                  <p className="text-sm text-gray-500 font-light mt-1">{partner.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="rounded-xl bg-blue-50 border border-blue-100 p-6">
-            <h3 className="text-xl font-semibold text-[#1E4080] mb-3">Ключевые направления сотрудничества</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {[
-                { title: "Передача технологий", desc: "Получение реакторных технологий и обучение казахстанских специалистов" },
-                { title: "Финансирование", desc: "Привлечение иностранных инвестиций и кредитных линий для строительства" },
-                { title: "Ядерное топливо", desc: "Поставка топлива и переработка отработанных материалов" },
-                { title: "Безопасность", desc: "Соответствие стандартам МАГАТЭ и международным нормам ядерной безопасности" },
-              ].map((item) => (
-                <div key={item.title} className="flex gap-3">
-                  <div className="mt-1 h-2 w-2 rounded-full bg-[#1E4080] shrink-0" />
-                  <div>
-                    <p className="font-medium text-gray-900">{item.title}</p>
-                    <p className="text-sm text-gray-600 font-light">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       )}
 

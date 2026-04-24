@@ -20,20 +20,15 @@ export default async function Home() {
 
   return (
     <>
+      <PresidentMessageSection />
       <NewAbout />
-      {/* <About /> */}
       <CEOSection />
       <News items={featuredNews} />
       <HomeEmissionsCalculator />
       <KazakhstanMapSection />
       <DevelopmentSection />
-      <SubsidiaryAgencies />
-      <Activities />
-      {/* <MissionSection /> */}
-      <AchievementsSection />
-      <ProjectsStages />
-      <PresidentMessageSection />
       <CareersPromoSection vacanciesCount={12} />
+      <SubsidiaryAgencies />
     </>
   );
 }

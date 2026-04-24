@@ -75,7 +75,7 @@ export default function CurrentProcurements() {
           href="https://zakup.sk.kz"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-[#1E4080] text-white font-medium text-lg rounded-lg px-6 py-3 hover:bg-[#112250] transition-colors"
+          className="bg-[#1E4080] text-white font-medium text-lg rounded-full px-6 py-3 hover:bg-[#112250] transition-colors"
         >
           Все закупки на портале
         </a>

@@ -25,7 +25,7 @@ const sections: { id: SectionId; label: string; Component: React.FC }[] = [
   { id: "safety", label: "Безопасность", Component: SafetySection },
   { id: "environment", label: "Атомная энергия и экология", Component: EnvironmentSection },
   { id: "myths", label: "Мифы и факты об АЭС", Component: MythsSection },
-  { id: "multimedia", label: "Интерактив / мультимедиа", Component: MultimediaSection },
+  { id: "multimedia", label: "Интерактив", Component: MultimediaSection },
 ];
 
 export default function AtomContent() {

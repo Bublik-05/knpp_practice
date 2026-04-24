@@ -28,7 +28,7 @@ const validSections: SectionId[] = [
 ];
 
 const sectionLabels: Record<SectionId, string> = {
-  about: "О компании",
+  about: "О КАЭС",
   leadership: "Руководство",
   governance: "Корпоративное управление",
   compliance: "Комплаенс",
@@ -95,7 +95,7 @@ export default function AboutContent() {
 
   const getBreadcrumbs = (): BreadcrumbItem[] => {
     return [
-      { label: "О компании", href: "/about" },
+      { label: "О КАЭС", href: "/about" },
       { label: sectionLabels[active] },
     ];
   };
@@ -105,10 +105,10 @@ export default function AboutContent() {
       case "about":
         return (
           <>
-            <h1 className="text-5xl font-bold text-gray-900 mb-10">О компании</h1>
+            <h1 className="text-5xl font-bold text-gray-900 mb-10">О КАЭС</h1>
 
             <div className="flex flex-col gap-10">
-              <AboutBlock id="section-about-company" title="О ТОО КАЭС">
+              <AboutBlock id="section-about-company" title="О компании">
                 <CompanySection />
               </AboutBlock>
 
@@ -124,11 +124,6 @@ export default function AboutContent() {
                 title='Виды деятельности ТОО "КАЭС"'
               >
                 <ActivitiesSection />
-              </AboutBlock>
-
-
-              <AboutBlock id="section-about-gallery" title="Галерея">
-                <GallerySection onOpenGallery={() => {}} />
               </AboutBlock>
             </div>
           </>

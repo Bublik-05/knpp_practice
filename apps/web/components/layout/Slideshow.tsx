@@ -33,12 +33,12 @@ const slides = [
   },
   {
     id: "news",
-    label: "Новости",
+    label: "Пресс-центр",
     href: "/news",
     image: "/images/news-img.jpg",
-    title: "Новости",
+    title: "Пресс-центр",
     subtitle: "Новости и события КАЭС",
-    path: ["Главная", "Новости"],
+    path: ["Главная", "Пресс-центр"],
   },
   {
     id: "international",

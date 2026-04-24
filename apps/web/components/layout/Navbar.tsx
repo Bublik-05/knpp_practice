@@ -148,7 +148,7 @@ const menuColumns: MenuColumn[] = [
     label: "Пресс-центр",
     href: "/news",
     subLinks: [
-      { label: "Новости", href: "/news" },
+      { label: "Пресс-центр", href: "/news" },
       { label: "События", href: "/news" },
       { label: "Пресс-релизы", href: "/news" },
       { label: "Мультимедиа", href: "/news" },

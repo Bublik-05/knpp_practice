@@ -23,7 +23,7 @@ const topItems: { id: SectionId; label: string }[] = [
   { id: "safety", label: "Безопасность" },
   { id: "environment", label: "Атомная энергия и экология" },
   { id: "myths", label: "Мифы и факты об АЭС" },
-  { id: "multimedia", label: "Интерактив / мультимедиа" }
+  { id: "multimedia", label: "Интерактив" }
 ];
 
 export default function AboutNav({ active, onSelect }: Props) {

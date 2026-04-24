@@ -25,13 +25,13 @@ export default function NewsGrid({ items }: Props) {
     <div className="grid grid-cols-3 gap-6">
       {items.map((item) => (
         <Link key={item.id} href={`/news/${item.slug}`} className="block">
-          <article className="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm cursor-pointer hover:shadow-md hover:border-gray-200 transition-all duration-300">
+          <article className="bg-white rounded-lg overflow-hidde shadow-sm cursor-pointer hover:shadow-md hover:border-gray-200 transition-all duration-300">
             <div className="relative h-48 w-full">
               <Image
                 src={item.image}
                 fill
                 alt={item.title}
-                className="object-cover"
+                className="object-cover "
               />
             </div>
 

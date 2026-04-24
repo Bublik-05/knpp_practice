@@ -29,7 +29,7 @@ export default function ProcurementDocuments() {
       </div>
 
       {/* Upload placeholder */}
-      <div className="rounded-xl border-2 border-dashed border-[#dbe5f4] bg-[#f8fbff] p-8 flex flex-col items-center justify-center gap-3 text-center">
+      <div className="rounded-lg border-2 border-dashed border-[#dbe5f4] bg-[#f8fbff] p-8 flex flex-col items-center justify-center gap-3 text-center">
         <div className="w-14 h-14 rounded-full bg-[#eef4ff] flex items-center justify-center">
           <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7 text-[#1E4080]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" />
@@ -59,7 +59,7 @@ export default function ProcurementDocuments() {
               <a
                 href={doc.href}
                 download
-                className="bg-[#1E4080] text-white font-medium rounded-lg px-5 py-2.5 hover:bg-[#112250] transition-colors text-sm"
+                className="bg-[#1E4080] text-white font-medium rounded-full px-5 py-2.5 hover:bg-[#112250] transition-colors text-sm"
               >
                 Скачать
               </a>
@@ -67,7 +67,7 @@ export default function ProcurementDocuments() {
                 href={doc.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border border-[#1E4080] text-[#1E4080] font-medium rounded-lg px-5 py-2.5 hover:bg-[#1E4080] hover:text-white transition-colors text-sm"
+                className="border border-[#1E4080] text-[#1E4080] font-medium rounded-full px-5 py-2.5 hover:bg-[#1E4080] hover:text-white transition-colors text-sm"
               >
                 Открыть PDF
               </a>

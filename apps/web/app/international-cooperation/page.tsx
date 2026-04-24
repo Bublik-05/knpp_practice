@@ -172,6 +172,28 @@ export default function InternationalCooperationPage() {
             ))}
           </div>
         </div>
+        {/* Quick overview — partners + directions */}
+        <div className="space-y-6">
+          <div className="rounded-lg bg-blue-50 border border-blue-100 p-6">
+            <h3 className="text-xl font-bold text-[#1E4080] mb-3">Ключевые направления сотрудничества</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {[
+                { title: "Передача технологий", desc: "Получение реакторных технологий и обучение казахстанских специалистов" },
+                { title: "Финансирование", desc: "Привлечение иностранных инвестиций и кредитных линий для строительства" },
+                { title: "Ядерное топливо", desc: "Поставка топлива и переработка отработанных материалов" },
+                { title: "Безопасность", desc: "Соответствие стандартам МАГАТЭ и международным нормам ядерной безопасности" },
+              ].map((item) => (
+                <div key={item.title} className="flex gap-3">
+                  <div className="mt-1 h-2 w-2 rounded-full bg-[#1E4080] shrink-0" />
+                  <div>
+                    <p className="font-medium text-gray-900">{item.title}</p>
+                    <p className="text-sm text-gray-600 font-light">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
 
         {/* Timeline */}
         <div>
@@ -179,12 +201,11 @@ export default function InternationalCooperationPage() {
             Хронология сотрудничества
           </h2>
           <div className="relative">
-            <div className="absolute left-[52px] top-6 bottom-6 w-px bg-[#1E4080]/30 hidden md:block" />
             <div className="space-y-6">
               {timeline.map((item, i) => (
                 <div key={i} className="flex gap-6 items-start">
                   <div className="shrink-0 w-[104px] hidden md:flex items-center justify-end">
-                    <span className="text-lg font-bold text-[#E0C58F] bg-[#1E4080] px-3 py-1.5 rounded-full whitespace-nowrap z-10 relative">
+                    <span className="text-3xl font-bold text-[#1E4080] px-3 py-1.5 rounded-full whitespace-nowrap z-10 relative">
                       {item.year}
                     </span>
                   </div>

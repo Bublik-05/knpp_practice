@@ -35,7 +35,7 @@ export default async function NewsDetailPage({ params }: Props) {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <Breadcrumb
             items={[
-              { label: "Новости", href: "/news" },
+              { label: "Пресс-центр", href: "/news" },
               { label: shortTitle },
             ]}
           />

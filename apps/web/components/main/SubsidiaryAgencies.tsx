@@ -33,25 +33,7 @@ const items = [...partners, ...partners, ...partners];
 
 export default function SubsidiaryAgencies() {
   return (
-    <section className="relative overflow-hidden w-full py-20 bg-[#F0F0F0]">
-
-      {/* Header */}
-      <div className="relative z-10 px-30 flex flex-col gap-3 mb-12">
-        <span className="text-[#1E4080] uppercase tracking-widest text-md font-medium">
-          Структура компании
-        </span>
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
-          <h2 className="font-bold leading-tight text-3xl md:text-4xl lg:text-5xl max-w-xl">
-            Дочерние <br className="hidden lg:block" /> ведомства
-          </h2>
-          <p className="text-lg font-light leading-relaxed text-gray-600 max-w-lg">
-            ТОО «КАЭС» координирует работу специализированных организаций, каждая из которых
-            отвечает за отдельное направление реализации атомной программы Казахстана —
-            от добычи урана до научных исследований и проектирования.
-          </p>
-        </div>
-      </div>
-
+    <section className="relative overflow-hidden w-full py-20">
       {/* Auto-scrolling carousel */}
       <div className="relative z-10 overflow-hidden">
         <div

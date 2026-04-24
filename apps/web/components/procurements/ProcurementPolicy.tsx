@@ -75,7 +75,7 @@ export default function ProcurementPolicy() {
           href="https://zakup.sk.kz"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-shrink-0 bg-[#1E4080] text-white font-medium text-lg rounded-lg px-6 py-3 hover:bg-[#112250] transition-colors"
+          className="flex-shrink-0 bg-[#1E4080] text-white font-medium text-lg rounded-full px-6 py-3 hover:bg-[#112250] transition-colors"
         >
           Портал закупок Самрук-Казына
         </a>
