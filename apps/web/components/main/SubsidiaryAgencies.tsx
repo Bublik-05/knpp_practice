@@ -14,7 +14,7 @@ const partners = [
   {
     name: "Агентство РК по атомной энергии",
     href: "https://www.gov.kz/memleket/entities/atom-energiyasy",
-    image: "/images/partners/atom-agency.jpg",
+    image: "/images/partners/atom-agency.png",
   },
   {
     name: "НЯЦ",
