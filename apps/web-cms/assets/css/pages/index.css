@@ -1,0 +1,249 @@
+/* ============================================================
+   KAES — Home Page Sections
+   pages/index.css
+   ============================================================ */
+
+/* ── President message section ── */
+.president-section {
+  position: relative;
+  overflow: hidden;
+  padding: var(--py-section) var(--px-section);
+  background: var(--color-bg);
+}
+
+.president-section__layout {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+@media (min-width: 1024px) {
+  .president-section__layout { flex-direction: row; gap: 80px; align-items: flex-start; }
+}
+
+.president-section__left { flex-shrink: 0; }
+@media (min-width: 1024px) { .president-section__left { width: 33%; } }
+
+.president-section__official {
+  display: inline-block;
+  color: var(--color-primary-mid);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-size: 13px; font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.president-section__title {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 700; line-height: 1.2; margin-bottom: 24px;
+}
+
+.president-section__right { flex: 1; }
+
+.quote-mark {
+  font-family: Georgia, serif;
+  font-size: 80px; line-height: 1;
+  color: var(--color-primary-mid);
+  user-select: none; margin-bottom: 8px;
+}
+.quote-mark--gold { color: var(--color-accent); }
+
+.president-section__quote {
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-weight: 300; line-height: 1.7;
+}
+
+.president-section__author {
+  margin-top: 24px;
+  color: var(--color-primary-mid);
+  font-weight: 500; letter-spacing: 0.03em;
+}
+.president-section__author span {
+  display: block; font-weight: 300; font-size: 15px;
+  color: var(--color-text-dark); margin-top: 4px;
+}
+
+/* ── About dark section ── */
+.about-dark {
+  position: relative; overflow: hidden;
+  background: #0B1C3C;
+  padding: var(--py-section) var(--px-section);
+  color: var(--color-text-light);
+}
+
+.about-dark__atom-bg {
+  position: absolute; top: -160px; right: -160px;
+  width: 800px; height: 800px;
+  opacity: 0.35; filter: blur(2px); pointer-events: none;
+}
+
+.about-dark__inner { position: relative; z-index: 1; }
+
+.about-dark__layout { display: flex; flex-direction: column; gap: 40px; }
+@media (min-width: 1024px) {
+  .about-dark__layout { flex-direction: row; gap: 80px; align-items: flex-start; }
+}
+
+.about-dark__left { flex-shrink: 0; }
+@media (min-width: 1024px) { .about-dark__left { width: 33%; } }
+
+.about-dark__label {
+  display: inline-block;
+  color: var(--color-accent);
+  text-transform: uppercase; letter-spacing: 0.15em;
+  font-size: 22px; font-weight: 500; margin-bottom: 16px;
+}
+
+.about-dark__title { font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 700; color: white; line-height: 1.2; }
+.about-dark__right { flex: 1; }
+.about-dark__text {
+  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+  font-weight: 300; line-height: 1.7;
+  color: rgba(245, 240, 233, 0.85);
+}
+
+/* ── CEO section ── */
+.ceo-section { padding: 64px var(--px-section); }
+
+.ceo-section__inner {
+  max-width: var(--container-width); margin: 0 auto;
+  display: flex; gap: 48px; align-items: center;
+  flex-direction: column;
+}
+@media (min-width: 1024px) { .ceo-section__inner { flex-direction: row; } }
+
+.ceo-section__photo {
+  width: 300px; height: 400px;
+  border-radius: 12px; overflow: hidden;
+  box-shadow: var(--shadow-card); flex-shrink: 0;
+}
+.ceo-section__photo img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+
+.ceo-section__badge {
+  display: inline-block;
+  background: var(--color-accent); color: var(--color-primary);
+  font-size: 11px; font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.12em;
+  padding: 6px 14px; border-radius: 100px; margin-bottom: 16px;
+}
+.ceo-section__name { font-size: clamp(1.4rem, 2.5vw, 1.9rem); font-weight: 700; color: #111827; margin-bottom: 8px; }
+.ceo-section__role { font-size: 17px; color: #6b7280; font-weight: 300; margin-bottom: 16px; }
+.ceo-section__bio  { font-size: 17px; color: #374151; font-weight: 300; line-height: 1.7; margin-bottom: 24px; }
+
+/* ── News section (index carousel wrapper) ── */
+.news-section {
+  position: relative; overflow: hidden;
+  padding: var(--py-section) 0;
+}
+.news-section__atom-bg {
+  position: absolute; bottom: -40px; left: -300px;
+  width: 1000px; height: 1000px;
+  opacity: 0.15;
+  transform: scaleX(-1) rotate(-20deg);
+  pointer-events: none;
+}
+.news-section__header {
+  padding: 0 var(--px-section); margin-bottom: 40px;
+  position: relative; z-index: 1;
+}
+.news-section__title {
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  font-weight: 700;
+}
+
+/* ── Development plan section ── */
+.dev-plan-section {
+  background: var(--color-primary);
+  color: var(--color-text-light);
+  padding: var(--py-section) var(--px-section);
+}
+.dev-plan-section__inner {
+  max-width: var(--container-width); margin: 0 auto;
+  display: flex; flex-direction: column; gap: 110px;
+}
+.dev-plan-section__intro { max-width: 720px; }
+.dev-plan-section__text {
+  font-size: 17px; font-weight: 300; color: white; line-height: 1.7;
+  margin: 16px 0 24px;
+}
+.dev-plan-section__actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* ── Careers promo ── */
+.careers-promo { padding: var(--py-section) var(--px-section); }
+
+.careers-promo__card {
+  display: block;
+  border: 1px solid #d9e2f2; border-radius: 12px; overflow: hidden;
+  background: linear-gradient(135deg, #f8fbff, white, #eef4ff);
+  box-shadow: 0 2px 12px rgba(30, 64, 128, 0.06);
+  transition: transform 0.3s, box-shadow 0.3s;
+  max-width: var(--container-width); margin: 0 auto;
+}
+.careers-promo__card:hover { transform: translateY(-4px); box-shadow: 0 20px 50px rgba(30, 64, 128, 0.14); }
+
+.careers-promo__grid { display: grid; grid-template-columns: 1fr; }
+@media (min-width: 1024px) { .careers-promo__grid { grid-template-columns: 1.1fr 0.9fr; } }
+
+.careers-promo__content {
+  padding: 40px 48px; display: flex; flex-direction: column; position: relative;
+}
+
+.careers-promo__badge {
+  display: inline-block;
+  background: var(--color-accent); border: 1px solid #dbe5f4;
+  color: var(--color-primary-mid);
+  font-size: 13px; font-weight: 500;
+  padding: 8px 16px; border-radius: 100px; margin-bottom: 20px;
+  width: fit-content;
+}
+
+.careers-promo__title {
+  font-size: clamp(1.8rem, 3vw, 3rem); font-weight: 700;
+  color: #111827; line-height: 1.2; max-width: 600px; margin-bottom: 20px;
+}
+
+.careers-promo__desc {
+  font-size: 17px; font-weight: 300; color: #6b7280;
+  line-height: 1.7; max-width: 600px; margin-bottom: 32px;
+}
+
+.careers-stats { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 32px; }
+.careers-stat {
+  min-width: 180px;
+  border: 1px solid #dbe5f4; background: white;
+  border-radius: 10px; padding: 16px 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+.careers-stat__label    { font-size: 13px; color: #9ca3af; margin-bottom: 8px; }
+.careers-stat__val      { font-size: 28px; font-weight: 700; color: var(--color-primary-mid); }
+.careers-stat__val--md  { font-size: 17px; font-weight: 600; color: #111827; }
+
+.careers-promo__image {
+  position: relative; min-height: 320px;
+  background: #eef4ff; border-top: 1px solid #dbe5f4;
+}
+@media (min-width: 1024px) {
+  .careers-promo__image { border-top: none; border-left: 1px solid #dbe5f4; min-height: 620px; }
+}
+.careers-promo__image img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 15%;
+}
+
+.careers-promo__img-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(16, 40, 79, 0.30), transparent);
+}
+
+.careers-promo__badge-img {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+  border-radius: 10px; padding: 12px 16px;
+}
+.careers-promo__badge-img--tl { top: 20px; left: 20px; }
+.careers-promo__badge-img--br { bottom: 20px; right: 20px; }
+.careers-promo__badge-img p:first-child { font-size: 12px; color: #9ca3af; }
+.careers-promo__badge-img p:last-child  { font-size: 14px; font-weight: 600; color: #111827; margin-top: 4px; }
+.careers-promo__badge-img--br p:last-child { color: var(--color-primary-mid); }

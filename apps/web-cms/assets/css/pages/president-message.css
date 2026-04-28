@@ -1,0 +1,14 @@
+/* ============================================================
+   KAES — President Message Page
+   pages/president-message.css
+   ============================================================ */
+
+.president-message-body {
+  display: grid; grid-template-columns: 1fr; gap: 48px;
+}
+@media (min-width: 1024px) { .president-message-body { grid-template-columns: 1fr 340px; } }
+
+.president-photo {
+  border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-heavy);
+}
+.president-photo img { width: 100%; height: auto; display: block; }

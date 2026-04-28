@@ -12,7 +12,37 @@
 <!-- CMS: site header -->
 <header class="site-header" id="site-header">
   <div class="site-header__inner">
-    <a href="index.html" class="site-header__logo" aria-label="КАЭС"><img src="assets/images/KNPP.png" alt="КАЭС" /></a>
+    <!-- Logos: KNPP + atom-agency (matches apps/web Navbar) -->
+    <div class="site-header__logos">
+      <!-- Mega-menu burger — left side like apps/web -->
+      <button class="header-burger" id="mega-menu-btn" aria-label="Все разделы" title="Все разделы">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+
+      <!-- KNPP logo -->
+      <div class="site-header__logo-wrap">
+        <a href="index.html" class="site-header__logo" aria-label="КАЭС — на главную">
+          <img src="assets/images/KNPP.png" alt="КАЭС" />
+        </a>
+        <div class="site-header__tooltip">
+          <span>ТОО «Казахстанские атомные электрические станции»</span>
+        </div>
+      </div>
+
+      <!-- Atom-agency logo -->
+      <div class="site-header__partner-logo-wrap">
+        <a href="https://www.gov.kz/memleket/entities/atom-energiyasy"
+           class="site-header__partner-logo" target="_blank" rel="noopener noreferrer"
+           aria-label="Агентство РК по атомной энергии">
+          <img src="assets/images/partners/atom-agency.png" alt="Агентство РК по атомной энергии" />
+        </a>
+        <div class="site-header__tooltip">
+          <span>Агентство РК по атомной энергии</span>
+        </div>
+      </div>
+    </div>
     <nav class="nav-menu" aria-label="Основная навигация">
       <a href="index.html" class="nav-menu__link">Главная</a>
       <a href="about.html" class="nav-menu__link">О КАЭС</a>
@@ -31,9 +61,7 @@
       <div class="header-search__input-wrap" id="search-wrap">
         <input type="search" class="header-search__input" id="search-input" placeholder="Поиск…" aria-label="Поиск по сайту" />
       </div>
-      <button class="header-burger" id="mega-menu-btn" aria-label="Все разделы">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-      </button>
+      <button class="header-lang">Рус</button>
       <button class="header-burger" id="mobile-burger" aria-label="Меню" aria-expanded="false" style="display:none">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </button>
@@ -73,14 +101,54 @@
 </div>
 <!-- /CMS: site header -->
 <div class="header-offset">
+  <!-- CMS: hero slideshow -->
+  <div class="slideshow" aria-label="Главный слайдер">
+    <div class="slideshow__slide" data-href="index.html"
+      style="background-image:url('assets/images/main-img.jpg')">
+      <div class="slideshow__overlay"></div>
+      <div class="slideshow__inactive">
+        <span class="slideshow__inactive-path">Главная</span>
+        <span class="slideshow__inactive-label">Главная</span>
+      </div>
+    </div>
+    <div class="slideshow__slide" data-href="about.html"
+      style="background-image:url('assets/images/about-img.jpg')">
+      <div class="slideshow__overlay"></div>
+      <div class="slideshow__inactive">
+        <span class="slideshow__inactive-path">Главная / О компании</span>
+        <span class="slideshow__inactive-label">О компании</span>
+      </div>
+    </div>
+    <div class="slideshow__slide" data-href="projects.html"
+      style="background-image:url('assets/images/procurement-img.jpg')">
+      <div class="slideshow__overlay"></div>
+      <div class="slideshow__inactive">
+        <span class="slideshow__inactive-path">Главная / Проекты</span>
+        <span class="slideshow__inactive-label">Проекты</span>
+      </div>
+    </div>
+    <div class="slideshow__slide active" data-href="news.html"
+      style="background-image:url('assets/images/news-img.jpg')">
+      <div class="slideshow__overlay"></div>
+      <div class="slideshow__content">
+        <div class="slideshow__breadcrumb"><span class="slideshow__breadcrumb-item">Главная</span><svg class="slideshow__breadcrumb-sep" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><span class="slideshow__breadcrumb-item slideshow__breadcrumb-item--active">Пресс-центр</span></div>
+        <h2 class="slideshow__title">Пресс-центр</h2>
+        <p class="slideshow__subtitle">Новости и события КАЭС</p>
+      </div>
+    </div>
+    <div class="slideshow__slide" data-href="international-cooperation.html"
+      style="background-image:url('assets/images/about-img.jpg')">
+      <div class="slideshow__overlay"></div>
+      <div class="slideshow__inactive">
+        <span class="slideshow__inactive-path">Главная / Международное сотрудничество</span>
+        <span class="slideshow__inactive-label">Сотрудничество</span>
+      </div>
+    </div>
+  </div>
+  <!-- /CMS: hero slideshow -->
+
 
 <!-- CMS: page hero -->
-<div class="page-hero">
-  <div class="breadcrumb">
-    <a href="index.html">Главная</a>
-    <span class="breadcrumb__sep">›</span>
-    <span class="breadcrumb__current">Пресс-центр</span>
-  </div>
   <h1 class="page-hero__title">Пресс-центр</h1>
   <p class="page-hero__subtitle">Новости, события и пресс-релизы ТОО «КАЭС»</p>
 </div>

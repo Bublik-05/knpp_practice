@@ -119,16 +119,26 @@ function initSlideshow() {
   const slides = slideshow.querySelectorAll('.slideshow__slide');
   if (!slides.length) return;
 
-  // Find active by current path
-  const path = window.location.pathname;
-  let activeIndex = 0;
+  // Find active by current filename (works for both server paths and local file:// URLs)
+  const pathname = window.location.pathname;
+  const currentFile = pathname.split('/').pop() || 'index.html';
+  let activeIndex = -1; // -1 means keep the HTML-preset active class
+
   slides.forEach(function (slide, i) {
-    const href = slide.dataset.href || '';
-    const base = href.split('?')[0];
-    if (base === '/' ? path === '/' : (path === base || path.startsWith(base + '/'))) {
-      activeIndex = i;
-    }
+    const href = (slide.dataset.href || '').split('?')[0];
+    const hrefFile = href.split('/').pop() || 'index.html';
+    if (hrefFile === currentFile) activeIndex = i;
   });
+
+  // If running on a server with path-based routing, fall back to path match
+  if (activeIndex === -1) {
+    slides.forEach(function (slide, i) {
+      const href = (slide.dataset.href || '').split('?')[0];
+      if (pathname === '/' + href || pathname.startsWith('/' + href + '/') || pathname.endsWith('/' + href)) {
+        activeIndex = i;
+      }
+    });
+  }
 
   function setActive(index) {
     slides.forEach(function (slide, i) {
@@ -136,7 +146,8 @@ function initSlideshow() {
     });
   }
 
-  setActive(activeIndex);
+  // Only override HTML active class if we found a match
+  if (activeIndex !== -1) setActive(activeIndex);
 
   slides.forEach(function (slide, i) {
     slide.addEventListener('click', function () {

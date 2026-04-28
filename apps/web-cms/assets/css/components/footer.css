@@ -1,0 +1,90 @@
+/* ============================================================
+   KAES — Site Footer
+   components/footer.css
+   ============================================================ */
+
+.site-footer {
+  background: var(--color-primary);
+  color: var(--color-text-light);
+}
+
+/* ── Main section ── */
+.site-footer__main {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 48px clamp(16px, 4vw, 32px);
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+@media (min-width: 1024px) {
+  .site-footer__main { flex-direction: row; justify-content: space-between; }
+}
+
+/* Left column: logo + contacts + map */
+.site-footer__left {
+  display: flex; flex-direction: column; gap: 24px;
+  min-width: 520px;
+}
+.site-footer__logo img { width: 90px; height: auto; }
+
+.site-footer__contact {
+  display: flex; align-items: flex-start; gap: 12px;
+  color: rgba(245, 240, 233, 0.90);
+  font-weight: 300; line-height: 1.5;
+}
+.site-footer__contact svg { margin-top: 2px; flex-shrink: 0; }
+.site-footer__contact a {
+  text-decoration: underline; text-underline-offset: 2px;
+  transition: color 0.2s;
+}
+.site-footer__contact a:hover { color: var(--color-text-light); }
+
+.site-footer__map { border-radius: 6px; overflow: hidden; height: 200px; }
+.site-footer__map iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+/* Right column: contact form */
+.site-footer__right { flex: 1; max-width: 540px; }
+.site-footer__form-title {
+  font-size: 28px; font-weight: 700; color: white; line-height: 1.3; margin-bottom: 8px;
+}
+.site-footer__form-sub {
+  font-size: 20px; font-weight: 300; color: var(--color-muted); margin-bottom: 24px;
+}
+
+/* ── Bottom bar ── */
+.site-footer__bar { border-top: 1px solid var(--color-secondary); }
+
+.site-footer__bar-inner {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 16px clamp(16px, 4vw, 32px);
+  display: flex; flex-direction: column; gap: 12px;
+  align-items: center; justify-content: space-between;
+}
+@media (min-width: 640px) { .site-footer__bar-inner { flex-direction: row; } }
+
+.site-footer__credit {
+  font-size: 14px; font-weight: 300; color: var(--color-muted);
+}
+.site-footer__credit a {
+  font-weight: 500;
+  text-decoration: underline; text-underline-offset: 2px;
+  color: var(--color-accent); transition: color 0.2s;
+}
+.site-footer__credit a:hover { color: var(--color-text-light); }
+
+/* Social buttons */
+.footer-socials {
+  display: flex; align-items: center; gap: 12px;
+}
+.footer-socials span { font-size: 14px; color: var(--color-muted); font-weight: 300; }
+
+.footer-social-btn {
+  width: 36px; height: 36px;
+  background: var(--color-secondary); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--color-text-light);
+  transition: background 0.2s, color 0.2s;
+}
+.footer-social-btn:hover { background: var(--color-text-light); color: var(--color-primary); }

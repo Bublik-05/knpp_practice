@@ -1,0 +1,55 @@
+/* ============================================================
+   KAES — Vacancies Pages
+   pages/vacancies.css
+   ============================================================ */
+
+/* ── Category grid ── */
+.vacancy-categories {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+}
+@media (min-width: 640px)  { .vacancy-categories { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .vacancy-categories { grid-template-columns: repeat(3, 1fr); } }
+
+/* ── Vacancy list ── */
+.vacancy-list { display: flex; flex-direction: column; gap: 16px; }
+
+/* ── Detail page layout ── */
+.vacancy-detail-grid {
+  display: grid; grid-template-columns: 1fr; gap: 32px;
+}
+@media (min-width: 1024px) { .vacancy-detail-grid { grid-template-columns: 2fr 1fr; } }
+
+.vacancy-detail-sidebar {
+  position: sticky; top: 80px;
+  display: flex; flex-direction: column; gap: 20px;
+}
+
+.vacancy-meta-list { display: flex; flex-direction: column; gap: 12px; }
+.vacancy-meta-row {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 14px; color: #374151;
+}
+.vacancy-meta-row svg { color: var(--color-primary-mid); flex-shrink: 0; }
+
+.requirements-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.requirements-list li { display: flex; gap: 10px; font-size: 14px; color: #374151; line-height: 1.5; }
+.requirements-list li::before {
+  content: '';
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--color-primary-mid);
+  flex-shrink: 0; margin-top: 6px;
+}
+
+/* ── Q-Samruk internship block ── */
+.qsamruk-section {
+  background: var(--color-primary-mid);
+  color: white; border-radius: 16px;
+  padding: 40px; display: flex; gap: 32px;
+  align-items: center; flex-direction: column;
+}
+@media (min-width: 768px) { .qsamruk-section { flex-direction: row; } }
+
+.qsamruk-section__text h2 { font-size: 24px; font-weight: 700; margin-bottom: 12px; }
+.qsamruk-section__text p  { font-weight: 300; opacity: 0.85; line-height: 1.6; }

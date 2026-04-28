@@ -1,0 +1,30 @@
+/* ============================================================
+   KAES — Development Plan Page
+   pages/development-plan.css
+   ============================================================ */
+
+.devplan-timeline {
+  position: relative;
+  padding-left: 48px;
+}
+.devplan-timeline::before {
+  content: '';
+  position: absolute; left: 16px; top: 0; bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--color-primary-mid), var(--color-muted));
+  border-radius: 2px;
+}
+
+.devplan-stage { position: relative; margin-bottom: 40px; }
+.devplan-stage::before {
+  content: '';
+  position: absolute; left: -40px; top: 6px;
+  width: 16px; height: 16px; border-radius: 50%;
+  background: var(--color-secondary);
+  border: 3px solid white;
+  box-shadow: 0 0 0 2px var(--color-primary-mid);
+}
+.devplan-stage--current::before {
+  background: var(--color-accent);
+  box-shadow: 0 0 0 2px var(--color-accent), 0 0 12px rgba(224, 197, 143, 0.40);
+}

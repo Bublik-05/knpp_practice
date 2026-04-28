@@ -12,9 +12,28 @@
 <!-- CMS: site header -->
 <header class="site-header" id="site-header">
   <div class="site-header__inner">
-    <a href="index.html" class="site-header__logo" aria-label="КАЭС — на главную">
-      <img src="assets/images/KNPP.png" alt="КАЭС" />
-    </a>
+    <!-- Logos: KNPP + atom-agency (matches apps/web Navbar) -->
+    <div class="site-header__logos">
+      <button class="header-burger" id="mega-menu-btn" aria-label="Все разделы" title="Все разделы">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+      <div class="site-header__logo-wrap">
+        <a href="index.html" class="site-header__logo" aria-label="КАЭС — на главную">
+          <img src="assets/images/KNPP.png" alt="КАЭС" />
+        </a>
+        <div class="site-header__tooltip"><span>ТОО «Казахстанские атомные электрические станции»</span></div>
+      </div>
+      <div class="site-header__partner-logo-wrap">
+        <a href="https://www.gov.kz/memleket/entities/atom-energiyasy"
+           class="site-header__partner-logo" target="_blank" rel="noopener noreferrer"
+           aria-label="Агентство РК по атомной энергии">
+          <img src="assets/images/partners/atom-agency.png" alt="Агентство РК по атомной энергии" />
+        </a>
+        <div class="site-header__tooltip"><span>Агентство РК по атомной энергии</span></div>
+      </div>
+    </div>
     <nav class="nav-menu" aria-label="Основная навигация">
       <a href="index.html" class="nav-menu__link">Главная</a>
       <a href="about.html" class="nav-menu__link active">О КАЭС</a>
@@ -28,21 +47,24 @@
     </nav>
     <div class="header-search">
       <button class="header-search__toggle" id="search-toggle" aria-label="Поиск">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
       </button>
       <div class="header-search__input-wrap" id="search-wrap">
-        <input type="search" class="header-search__input" id="search-input" placeholder="Поиск…" />
+        <input type="search" class="header-search__input" id="search-input" placeholder="Поиск…" aria-label="Поиск по сайту" />
       </div>
-      <button class="header-burger" id="mega-menu-btn" aria-label="Все разделы">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-      </button>
-      <button class="header-burger" id="mobile-burger" aria-label="Меню" style="display:none">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <button class="header-lang">Рус</button>
+      <button class="header-burger" id="mobile-burger" aria-label="Меню" aria-expanded="false" style="display:none">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
       </button>
     </div>
   </div>
 </header>
 
+<!-- Mobile menu -->
 <div class="mobile-menu" id="mobile-menu">
   <a href="index.html" class="mobile-menu__link">Главная</a>
   <a href="about.html" class="mobile-menu__link">О КАЭС</a>
@@ -55,6 +77,7 @@
   <a href="contacts.html" class="mobile-menu__link">Контакты</a>
 </div>
 
+<!-- Mega menu -->
 <div class="mega-menu-backdrop" id="mega-menu-backdrop"></div>
 <div class="mega-menu-panel" id="mega-menu-panel">
   <div class="mega-menu-panel__inner">
@@ -75,354 +98,673 @@
   </div>
 </div>
 
+<!-- ── BackgroundGlow ── -->
+<div class="about-bg-glow" aria-hidden="true">
+  <div class="about-bg-glow__blob about-bg-glow__blob--1"></div>
+  <div class="about-bg-glow__blob about-bg-glow__blob--2"></div>
+  <div class="about-bg-glow__blob about-bg-glow__blob--3"></div>
+  <div class="about-bg-glow__blob about-bg-glow__blob--4"></div>
+  <div class="about-bg-glow__blob about-bg-glow__blob--5"></div>
+  <div class="about-bg-glow__blob about-bg-glow__blob--6"></div>
+</div>
+
 <div class="header-offset">
-
-<div class="about-layout">
-  <!-- Sidebar nav -->
-  <aside class="about-nav" id="about-nav">
-    <nav>
-      <button class="about-nav__item active" data-section="about">О КАЭС</button>
-      <button class="about-nav__item" data-section="leadership">Руководство</button>
-      <button class="about-nav__item" data-section="governance">Корпоративное управление</button>
-      <button class="about-nav__item" data-section="compliance">Комплаенс</button>
-      <button class="about-nav__item" data-section="documents">Документы</button>
-      <button class="about-nav__item" data-section="safety">Безопасность</button>
-      <button class="about-nav__item" data-section="development">План развития</button>
-    </nav>
-  </aside>
-
-  <!-- Main content -->
-  <div class="about-content" id="about-content-area">
-
-    <!-- Breadcrumb -->
-    <nav class="breadcrumb" id="about-breadcrumb">
-      <a href="index.html" class="breadcrumb__link">Главная</a>
-      <span class="breadcrumb__sep">›</span>
-      <a href="about.html" class="breadcrumb__link">О КАЭС</a>
-      <span class="breadcrumb__sep">›</span>
-      <span class="breadcrumb__current" id="about-breadcrumb-label">О КАЭС</span>
-    </nav>
-
-    <!-- CMS: page content — section panels -->
-
-    <!-- SECTION: about -->
-    <div class="about-section" id="section-about" data-label="О КАЭС">
-      <h1 class="section-title-lg">О КАЭС</h1>
-
-      <div class="content-block">
-        <h2 class="section-subtitle">О компании</h2>
-        <p class="text-body">
-          ТОО «Казахстанские атомные электрические станции» (КАЭС) — государственная компания, созданная в 2014 году в соответствии с планом первоочередных мероприятий по строительству атомных электростанций в Республике Казахстан (распоряжение Премьер-Министра РК от 4 мая 2014 года № 60-р) по обеспечению разработки предпроектной (ТЭО) и проектной (проектно-сметной) документации по строительству АЭС, а также организация работ по строительству АЭС в Республике Казахстан.
-        </p>
-        <p class="text-body">
-          Ранее КАЭС являлась дочерним предприятием АО «Фонд национального благосостояния «Самрук-Қазына», однако в соответствии с постановлением Президента Республики Казахстан компания передана под управление Агентства Республики Казахстан по атомной энергии.
-        </p>
-        <p class="text-body">
-          Компания выполняет функции оператора по подготовке, проектированию и реализации проектов строительства атомных электростанций, а также по созданию необходимой инфраструктуры для развития атомной энергетики. Основная цель деятельности КАЭС — создание современной и безопасной атомной энергетической инфраструктуры, направленной на укрепление энергетической безопасности и устойчивое развитие экономики Казахстана.
-        </p>
-      </div>
-
-      <div class="content-block" style="margin-top:48px">
-        <h2 class="section-subtitle">Миссия</h2>
-        <div class="mission-block">
-          <p class="text-body" style="font-size:1.15rem; line-height:1.7;">
-            Обеспечить Казахстан чистой, надёжной и доступной атомной электроэнергией, содействуя декарбонизации национальной энергосистемы и устойчивому социально-экономическому развитию страны.
-          </p>
-        </div>
-      </div>
-
-      <div class="content-block" style="margin-top:48px">
-        <h2 class="section-subtitle">Виды деятельности ТОО «КАЭС»</h2>
-        <ul class="styled-list">
-          <li>Деятельность в области архитектуры для объектов атомной промышленности и атомной энергетики.</li>
-          <li>Деятельность в области инженерных изысканий и предоставление технических консультаций в этой области для объектов атомной промышленности и атомной энергетики.</li>
-          <li>Исследования и экспериментальные разработки в области мирного использования атомной энергии.</li>
-          <li>Обеспечение готовности электрической мощности к несению нагрузки, регулирование и резервирование электрической мощности.</li>
-        </ul>
-      </div>
-
-      <div class="content-block activities-grid" style="margin-top:48px">
-        <div class="activity-card">
-          <img src="assets/images/activities/atom.svg" alt="Атомная энергия" />
-          <p>Атомная энергия</p>
-        </div>
-        <div class="activity-card">
-          <img src="assets/images/activities/atom_energy.svg" alt="Проектирование АЭС" />
-          <p>Проектирование АЭС</p>
-        </div>
-        <div class="activity-card">
-          <img src="assets/images/activities/bashnya.svg" alt="Строительство" />
-          <p>Строительство</p>
-        </div>
-        <div class="activity-card">
-          <img src="assets/images/activities/1atom-5atom.png" alt="Безопасность" />
-          <p>Безопасность</p>
-        </div>
+  <!-- CMS: hero slideshow -->
+  <div class="slideshow" aria-label="Главный слайдер">
+    <div class="slideshow__slide" data-href="index.html"
+      style="background-image:url('assets/images/main-img.jpg')">
+      <div class="slideshow__overlay"></div>
+      <div class="slideshow__inactive">
+        <span class="slideshow__inactive-path">Главная</span>
+        <span class="slideshow__inactive-label">Главная</span>
       </div>
     </div>
+    <div class="slideshow__slide active" data-href="about.html"
+      style="background-image:url('assets/images/about-img.jpg')">
+      <div class="slideshow__overlay"></div>
+      <div class="slideshow__content">
+        <div class="slideshow__breadcrumb"><span class="slideshow__breadcrumb-item">Главная</span><svg class="slideshow__breadcrumb-sep" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg><span class="slideshow__breadcrumb-item slideshow__breadcrumb-item--active">О компании</span></div>
+        <h2 class="slideshow__title">О компании</h2>
+        <p class="slideshow__subtitle">ТОО «Казахстанские атомные электрические станции» (ТОО «КАЭС») создано в 2014 году</p>
+      </div>
+    </div>
+    <div class="slideshow__slide" data-href="projects.html"
+      style="background-image:url('assets/images/procurement-img.jpg')">
+      <div class="slideshow__overlay"></div>
+      <div class="slideshow__inactive">
+        <span class="slideshow__inactive-path">Главная / Проекты</span>
+        <span class="slideshow__inactive-label">Проекты</span>
+      </div>
+    </div>
+    <div class="slideshow__slide" data-href="news.html"
+      style="background-image:url('assets/images/news-img.jpg')">
+      <div class="slideshow__overlay"></div>
+      <div class="slideshow__inactive">
+        <span class="slideshow__inactive-path">Главная / Пресс-центр</span>
+        <span class="slideshow__inactive-label">Пресс-центр</span>
+      </div>
+    </div>
+    <div class="slideshow__slide" data-href="international-cooperation.html"
+      style="background-image:url('assets/images/about-img.jpg')">
+      <div class="slideshow__overlay"></div>
+      <div class="slideshow__inactive">
+        <span class="slideshow__inactive-path">Главная / Международное сотрудничество</span>
+        <span class="slideshow__inactive-label">Сотрудничество</span>
+      </div>
+    </div>
+  </div>
+  <!-- /CMS: hero slideshow -->
 
-    <!-- SECTION: leadership -->
-    <div class="about-section" id="section-leadership" data-label="Руководство" style="display:none">
-      <h1 class="section-title-lg">Руководство</h1>
-      <h3 class="section-subtitle" style="margin-bottom:32px">Руководство компании</h3>
-      <!-- CMS LOOP: leaders start -->
+<main class="about-layout" id="about-main">
+
+  <!-- ═══════════════════════════════════════════════════════
+       SIDEBAR NAV  (AboutNav.tsx)
+       ═══════════════════════════════════════════════════════ -->
+  <aside class="about-nav-wrap">
+    <div class="about-nav-inner">
+      <div class="about-nav-card">
+
+        <!-- "О КАЭС" collapsible button -->
+        <button class="about-nav__main-btn active" id="nav-about-btn" data-section="about">
+          <span>О КАЭС</span>
+          <svg class="about-nav__chevron open" xmlns="http://www.w3.org/2000/svg"
+               fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+
+        <!-- Sub-items for "О КАЭС" -->
+        <div class="about-nav__sub-list open" id="about-sub-list">
+          <button class="about-nav__sub-item active" data-anchor="section-about-company">О компании</button>
+          <button class="about-nav__sub-item" data-anchor="section-about-additional">Миссия</button>
+          <button class="about-nav__sub-item" data-anchor="section-about-activities">Виды деятельности ТОО 'КАЭС'</button>
+        </div>
+
+        <!-- Top-level items -->
+        <div class="about-nav__top-list">
+          <button class="about-nav__top-item" data-section="leadership">
+            <span class="about-nav__top-item-label">Руководство</span>
+            <svg class="about-nav__top-chevron" xmlns="http://www.w3.org/2000/svg"
+                 fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+            </svg>
+          </button>
+          <button class="about-nav__top-item" data-section="governance">
+            <span class="about-nav__top-item-label">Корпоративное управление</span>
+            <svg class="about-nav__top-chevron" xmlns="http://www.w3.org/2000/svg"
+                 fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+            </svg>
+          </button>
+          <button class="about-nav__top-item" data-section="compliance">
+            <span class="about-nav__top-item-label">Комплаенс</span>
+            <svg class="about-nav__top-chevron" xmlns="http://www.w3.org/2000/svg"
+                 fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+            </svg>
+          </button>
+          <button class="about-nav__top-item" data-section="documents">
+            <span class="about-nav__top-item-label">Документы</span>
+            <svg class="about-nav__top-chevron" xmlns="http://www.w3.org/2000/svg"
+                 fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+            </svg>
+          </button>
+          <button class="about-nav__top-item" data-section="safety">
+            <span class="about-nav__top-item-label">Безопасность</span>
+            <svg class="about-nav__top-chevron" xmlns="http://www.w3.org/2000/svg"
+                 fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+            </svg>
+          </button>
+          <button class="about-nav__top-item" data-section="development">
+            <span class="about-nav__top-item-label">План развития</span>
+            <svg class="about-nav__top-chevron" xmlns="http://www.w3.org/2000/svg"
+                 fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </aside>
+
+  <!-- ═══════════════════════════════════════════════════════
+       CONTENT AREA
+       ═══════════════════════════════════════════════════════ -->
+  <div class="about-content" id="about-content-top">
+
+    <!-- Breadcrumb -->
+    <nav class="about-breadcrumb" aria-label="Хлебные крошки">
+      <a href="index.html">Главная</a>
+      <span class="about-breadcrumb__sep">/</span>
+      <span><a href="about.html">О КАЭС</a></span>
+      <span class="about-breadcrumb__sep">/</span>
+      <span class="about-breadcrumb__current" id="breadcrumb-label">О КАЭС</span>
+    </nav>
+
+    <!-- ── SECTION: about (О КАЭС) ── -->
+    <section class="about-section active" id="section-about" data-label="О КАЭС">
+      <h1 class="about-h1">О КАЭС</h1>
+
+      <div class="about-blocks-stack">
+
+        <!-- О компании -->
+        <div class="about-block" id="section-about-company">
+          <h2 class="about-block-title">О компании</h2>
+          <p class="about-text">
+            ТОО «Казахстанские атомные электрические станции» (КАЭС) - государственная компания, созданная в 2014 году в соответствии с планом первоочередных мероприятий по строительству атомных электростанций в Республике Казахстан (распоряжение Премьер-Министра РК от 4 мая 2014 года № 60-р) по обеспечению разработки предпроектной (ТЭО) и проектной (проектно-сметной) документации по строительству АЭС, а также организация работ по строительству АЭС в Республике Казахстан.
+            Ранее КАЭС являлась дочерним предприятием АО «Фонд национального благосостояния «Самрук-Қазына», однако в соответствии с постановлением Президента Республики Казахстан компания передана под управление Агентства Республики Казахстан по атомной энергии.
+            Компания выполняет функции оператора по подготовке, проектированию и реализации проектов строительства атомных электростанций, а также по созданию необходимой инфраструктуры для развития атомной энергетики.
+            Основная цель деятельности КАЭС - создание современной и безопасной атомной энергетической инфраструктуры, направленной на укрепление энергетической безопасности и устойчивое развитие экономики Казахстана.
+            Штат КАЭС укомплектован специалистами, имеющими профильное образование и опыт работы в атомной отрасли и традиционной электроэнергетике. В настоящее время компания готовит научно-обоснованные предложения по срокам, месту строительства и объемам мощности АЭС в соответствии с Общенациональным Планом мероприятий по реализации Послания Главы государства народу Казахстана от 1 сентября 2021 года «Единство народа и системные реформы – прочная основа процветания страны».
+          </p>
+        </div>
+
+        <!-- Миссия -->
+        <div class="about-block" id="section-about-additional">
+          <h2 class="about-block-title">Миссия</h2>
+          <div class="about-text">
+            <p style="margin-bottom:16px">
+              Обеспечить Казахстан чистой и доступной ядерной энергией, создавая основу для устойчивого развития экономики, снижения углеродного следа и укрепления энергетического суверенитета Республики Казахстан на десятилетия вперёд.
+            </p>
+            <ul class="about-list">
+              <li><span style="font-weight:700">Энергетическая безопасность:</span> Обеспечение страны надёжным и стабильным источником электроэнергии для устойчивого развития.</li>
+              <li><span style="font-weight:700">Экологическая ответственность:</span> Сокращение выбросов CO₂ за счёт развития безуглеродной ядерной генерации в Казахстане.</li>
+              <li><span style="font-weight:700">Технологическое лидерство:</span> Внедрение передовых ядерных технологий и формирование национальных компетенций в атомной отрасли.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Виды деятельности -->
+        <div class="about-block" id="section-about-activities">
+          <h2 class="about-block-title">Виды деятельности ТОО «КАЭС»</h2>
+          <ul class="about-list">
+            <li>Деятельность в области архитектуры для объектов атомной промышленности и атомной энергетики.</li>
+            <li>Деятельность в области инженерных изысканий и предоставление технических консультаций в этой области для объектов атомной промышленности и атомной энергетики.</li>
+            <li>Исследования и экспериментальные разработки в области мирного использования атомной энергии.</li>
+            <li>Обеспечение готовности электрической мощности к несению нагрузки, регулирование и резервирование электрической мощности.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── SECTION: leadership ── -->
+    <section class="about-section" id="section-leadership" data-label="Руководство">
+      <h1 class="about-h1 about-h1--sm-mb">Руководство</h1>
+      <h3 class="about-section-h3">Руководство компании</h3>
+
       <div class="leaders-grid">
+
+        <!-- Генеральный директор -->
         <article class="leader-card">
-          <div class="leader-card__photo">
-            <img src="assets/images/General_director.png" alt="Бердигулов Ернат Кудайбергенович" />
-            <div class="leader-card__gradient"></div>
-            <div class="leader-card__bar"></div>
+          <div class="leader-card__photo-wrap">
+            <div class="leader-card__photo">
+              <img src="assets/images/General_director.png" alt="Бердигулов Ернат Кудайбергенович" />
+              <div class="leader-card__gradient"></div>
+              <div class="leader-card__bar"></div>
+            </div>
           </div>
           <div class="leader-card__info">
             <p class="leader-card__name">Бердигулов Ернат Кудайбергенович</p>
             <p class="leader-card__title">Генеральный директор</p>
           </div>
         </article>
+
         <article class="leader-card">
-          <div class="leader-card__photo leader-card__photo--placeholder">
-            <div class="leader-card__initials">ИМ</div>
-            <div class="leader-card__bar"></div>
+          <div class="leader-card__photo-wrap">
+            <div class="leader-card__photo">
+              <img src="assets/images/leader-placeholder.png" alt="Ихсанов Мейрбек Уакасович" />
+              <div class="leader-card__gradient"></div>
+              <div class="leader-card__bar"></div>
+            </div>
           </div>
           <div class="leader-card__info">
             <p class="leader-card__name">Ихсанов Мейрбек Уакасович</p>
             <p class="leader-card__title">Руководитель проекта АЭС «Балхаш»</p>
           </div>
         </article>
+
         <article class="leader-card">
-          <div class="leader-card__photo leader-card__photo--placeholder">
-            <div class="leader-card__initials">ИБ</div>
-            <div class="leader-card__bar"></div>
+          <div class="leader-card__photo-wrap">
+            <div class="leader-card__photo">
+              <img src="assets/images/leader-placeholder.png" alt="Изтелеуов Бекболсын Жолмуханович" />
+              <div class="leader-card__gradient"></div>
+              <div class="leader-card__bar"></div>
+            </div>
           </div>
           <div class="leader-card__info">
             <p class="leader-card__name">Изтелеуов Бекболсын Жолмуханович</p>
             <p class="leader-card__title">Руководитель проекта АЭС «Мойынкум» (раб. название)</p>
           </div>
         </article>
+
         <article class="leader-card">
-          <div class="leader-card__photo leader-card__photo--placeholder">
-            <div class="leader-card__initials">ЕЖ</div>
-            <div class="leader-card__bar"></div>
+          <div class="leader-card__photo-wrap">
+            <div class="leader-card__photo">
+              <img src="assets/images/leader-placeholder.png" alt="Ерболганов Жандос Турысбекулы" />
+              <div class="leader-card__gradient"></div>
+              <div class="leader-card__bar"></div>
+            </div>
           </div>
           <div class="leader-card__info">
             <p class="leader-card__name">Ерболганов Жандос Турысбекулы</p>
             <p class="leader-card__title">Управляющий экономикой и финансами</p>
           </div>
         </article>
+
         <article class="leader-card">
-          <div class="leader-card__photo leader-card__photo--placeholder">
-            <div class="leader-card__initials">БЖ</div>
-            <div class="leader-card__bar"></div>
+          <div class="leader-card__photo-wrap">
+            <div class="leader-card__photo">
+              <img src="assets/images/leader-placeholder.png" alt="Байдилдин Жигер Еркинбекович" />
+              <div class="leader-card__gradient"></div>
+              <div class="leader-card__bar"></div>
+            </div>
           </div>
           <div class="leader-card__info">
             <p class="leader-card__name">Байдилдин Жигер Еркинбекович</p>
             <p class="leader-card__title">Управляющий директор по правовому сопровождению</p>
           </div>
         </article>
+
         <article class="leader-card">
-          <div class="leader-card__photo leader-card__photo--placeholder">
-            <div class="leader-card__initials">ОР</div>
-            <div class="leader-card__bar"></div>
+          <div class="leader-card__photo-wrap">
+            <div class="leader-card__photo">
+              <img src="assets/images/leader-placeholder.png" alt="Окасов Ринат Курмашевич" />
+              <div class="leader-card__gradient"></div>
+              <div class="leader-card__bar"></div>
+            </div>
           </div>
           <div class="leader-card__info">
             <p class="leader-card__name">Окасов Ринат Курмашевич</p>
             <p class="leader-card__title">Управляющий директор по безопасности</p>
           </div>
         </article>
+
         <article class="leader-card">
-          <div class="leader-card__photo leader-card__photo--placeholder">
-            <div class="leader-card__initials">РМ</div>
-            <div class="leader-card__bar"></div>
+          <div class="leader-card__photo-wrap">
+            <div class="leader-card__photo">
+              <img src="assets/images/leader-placeholder.png" alt="Рыскулов Марат Кайратович" />
+              <div class="leader-card__gradient"></div>
+              <div class="leader-card__bar"></div>
+            </div>
           </div>
           <div class="leader-card__info">
             <p class="leader-card__name">Рыскулов Марат Кайратович</p>
             <p class="leader-card__title">Управляющий директор по цифровизации</p>
           </div>
         </article>
+
         <article class="leader-card">
-          <div class="leader-card__photo leader-card__photo--placeholder">
-            <div class="leader-card__initials">СА</div>
-            <div class="leader-card__bar"></div>
+          <div class="leader-card__photo-wrap">
+            <div class="leader-card__photo">
+              <img src="assets/images/leader-placeholder.png" alt="Сарпеков Азат Толкынович" />
+              <div class="leader-card__gradient"></div>
+              <div class="leader-card__bar"></div>
+            </div>
           </div>
           <div class="leader-card__info">
             <p class="leader-card__name">Сарпеков Азат Толкынович</p>
             <p class="leader-card__title">Руководитель аппарата</p>
           </div>
         </article>
-      </div>
-      <!-- CMS LOOP: leaders end -->
-    </div>
 
-    <!-- SECTION: governance -->
-    <div class="about-section" id="section-governance" data-label="Корпоративное управление" style="display:none">
-      <h1 class="section-title-lg">Корпоративное управление</h1>
-      <!-- CMS: page content -->
-      <div class="content-block">
-        <p class="text-body">ТОО «КАЭС» строит систему корпоративного управления на основе принципов прозрачности, подотчётности и ответственного ведения бизнеса. Компания следует лучшим международным практикам управления в соответствии с требованиями законодательства Республики Казахстан.</p>
-        <div class="info-cards-grid" style="margin-top:32px">
-          <div class="info-card">
-            <h4>Совет директоров</h4>
-            <p>Определяет стратегические направления развития компании и осуществляет контроль за деятельностью исполнительного органа.</p>
-          </div>
-          <div class="info-card">
-            <h4>Правление</h4>
-            <p>Осуществляет оперативное руководство деятельностью компании и несёт ответственность за реализацию стратегии.</p>
-          </div>
-          <div class="info-card">
-            <h4>Ревизионная комиссия</h4>
-            <p>Проводит независимую проверку финансово-хозяйственной деятельности и соответствия нормативным требованиям.</p>
-          </div>
+      </div>
+    </section>
+
+    <!-- ── SECTION: governance ── -->
+    <section class="about-section" id="section-governance" data-label="Корпоративное управление">
+      <h1 class="about-h1 about-h1--sm-mb">Корпоративное управление</h1>
+      <h3 class="about-section-h3">Корпоративное управление</h3>
+
+      <p class="gov-intro" style="margin-top:24px">
+        Система корпоративного управления ТОО «КАЭС» выстроена в соответствии с лучшими
+        международными практиками и стандартами АО «Самрук-Казына». Она обеспечивает
+        прозрачность деятельности компании, эффективное взаимодействие органов управления
+        и защиту интересов всех участников.
+      </p>
+
+      <div class="gov-principles-grid">
+        <div class="gov-principle-card">
+          <p class="gov-principle-card__title">Прозрачность</p>
+          <p class="gov-principle-card__desc">Открытость информации для участников и регуляторов</p>
+        </div>
+        <div class="gov-principle-card">
+          <p class="gov-principle-card__title">Ответственность</p>
+          <p class="gov-principle-card__desc">Чёткое распределение полномочий между органами управления</p>
+        </div>
+        <div class="gov-principle-card">
+          <p class="gov-principle-card__title">Эффективность</p>
+          <p class="gov-principle-card__desc">Ориентация на долгосрочные результаты</p>
+        </div>
+        <div class="gov-principle-card">
+          <p class="gov-principle-card__title">Соблюдение интересов участников</p>
+          <p class="gov-principle-card__desc">Защита прав всех акционеров</p>
         </div>
       </div>
-    </div>
 
-    <!-- SECTION: compliance -->
-    <div class="about-section" id="section-compliance" data-label="Комплаенс" style="display:none">
-      <h1 class="section-title-lg">Комплаенс</h1>
-      <!-- CMS: page content -->
-      <div class="content-block">
-        <p class="text-body">КАЭС реализует комплексную программу комплаенс, направленную на предотвращение коррупции, соблюдение антимонопольного законодательства и поддержание высоких стандартов деловой этики.</p>
-        <div class="info-cards-grid" style="margin-top:32px">
-          <div class="info-card">
-            <h4>Антикоррупционная политика</h4>
-            <p>Компания придерживается нулевой терпимости к коррупции и обеспечивает прозрачность всех бизнес-процессов.</p>
-          </div>
-          <div class="info-card">
-            <h4>Кодекс деловой этики</h4>
-            <p>Все сотрудники компании обязаны соблюдать стандарты поведения, закреплённые в Кодексе деловой этики.</p>
-          </div>
-          <div class="info-card">
-            <h4>Горячая линия</h4>
-            <p>Для сообщений о нарушениях работает конфиденциальная горячая линия, доступная всем сотрудникам и внешним лицам.</p>
-          </div>
+      <div class="gov-doc-block">
+        <p class="gov-doc-block__meta">Документ</p>
+        <p class="gov-doc-block__title">Кодекс корпоративного управления</p>
+        <div class="gov-doc-block__actions">
+          <a href="assets/documents/governance/kodeks-korporativnogo-upravleniya.pdf"
+             class="btn-primary-pill">Открыть PDF</a>
+          <a href="assets/documents/governance/kodeks-korporativnogo-upravleniya.pdf"
+             download class="btn-outline-pill">Скачать</a>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- SECTION: documents -->
-    <div class="about-section" id="section-documents" data-label="Документы" style="display:none">
-      <h1 class="section-title-lg">Документы</h1>
-      <!-- CMS LOOP: documents start -->
-      <div class="documents-list">
-        <a href="assets/docs/kaes-development-plan.docx" class="document-item" download="КАЭС_План_развития.docx">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
-          <div>
-            <p class="document-item__name">План развития ТОО «КАЭС»</p>
-            <p class="document-item__meta">DOCX · 2024</p>
-          </div>
-        </a>
-        <div class="document-item document-item--placeholder">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-          <div>
-            <p class="document-item__name">Устав компании</p>
-            <p class="document-item__meta">PDF · 2023</p>
-          </div>
-        </div>
-        <div class="document-item document-item--placeholder">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-          <div>
-            <p class="document-item__name">Годовой отчёт</p>
-            <p class="document-item__meta">PDF · 2023</p>
-          </div>
-        </div>
+    <!-- ── SECTION: compliance ── -->
+    <section class="about-section" id="section-compliance" data-label="Комплаенс">
+      <h1 class="about-h1 about-h1--sm-mb">Комплаенс</h1>
+      <h3 class="about-section-h3">Сведения</h3>
+
+      <p class="compliance-lead" style="margin-top:24px">
+        Сведения по доходам должностных лиц ТОО «Казахстанские атомные электрические станции»:
+      </p>
+      <ol class="compliance-list">
+        <li>Бердигулов Ернат Кудайбергенович – Генеральный директор ТОО «Казахстанские атомные электрические станции». Супруга – Бердигулова Жанар Бериковна.</li>
+        <li>Отчетный налоговый период – 2024 год</li>
+      </ol>
+
+      <div class="compliance-table-wrap">
+        <table class="compliance-table">
+          <thead>
+            <tr>
+              <th>№ п/п</th>
+              <th>Сведения, отраженные в декларации о доходах и имуществе физического лица</th>
+              <th>Сведения, подлежащие опубликованию</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Сведения о доходах, подлежащих налогообложению физическим лицом самостоятельно</td>
+              <td>1) общая сумма дохода 7 800 000 тенге; 2) Бердигулова Жанар Бериковна.</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-      <!-- CMS LOOP: documents end -->
-    </div>
 
-    <!-- SECTION: safety -->
-    <div class="about-section" id="section-safety" data-label="Безопасность" style="display:none">
-      <h1 class="section-title-lg">Безопасность</h1>
-      <div class="content-block">
-        <h3 class="section-subtitle">Безопасность АЭС</h3>
-        <p class="text-body">В современных проектах реакторных установок используется глубокоэшелонированная защита для предотвращения выхода радиоактивных материалов в окружающую среду.</p>
-        <p class="text-body">Глубокоэшелонированная защита достигается за счёт сочетания нескольких последовательных и независимых уровней защиты, которые должны отказать прежде, чем радиация сможет нанести ущерб населению или окружающей среде.</p>
-        <p class="text-body">Благодаря сочетанию активных и пассивных систем безопасности на реакторах поколения III и III+ может достигаться автономность при авариях до 72 часов. Другими словами, в случае крупной аварии, реактор в течение 3 суток может расхолаживаться без вмешательства эксплуатационного персонала.</p>
-        <p class="text-body">Кроме того, при разработке современных реакторов анализируется вероятности запроектных аварий. К примеру, здания некоторых реакторных установок могут быть сконструированы таким образом, чтобы устоять перед ураганами третьей категории.</p>
-
-        <div class="safety-levels" style="margin-top:40px">
-          <h4 class="section-subtitle" style="font-size:1.1rem">Барьеры безопасности</h4>
-          <div class="info-cards-grid">
-            <div class="info-card info-card--accent">
-              <h4>Уровень 1</h4>
-              <p>Нормальная эксплуатация, предотвращение отклонений от нормы.</p>
-            </div>
-            <div class="info-card info-card--accent">
-              <h4>Уровень 2</h4>
-              <p>Управление аномальными режимами и ограничение последствий.</p>
-            </div>
-            <div class="info-card info-card--accent">
-              <h4>Уровень 3</h4>
-              <p>Управление проектными авариями с помощью аварийных систем.</p>
-            </div>
-            <div class="info-card info-card--accent">
-              <h4>Уровень 4–5</h4>
-              <p>Управление запроектными авариями и аварийное планирование.</p>
-            </div>
+      <div style="margin-top:32px">
+        <h4 style="font-size:1.25rem;font-weight:500;color:#374151;margin-bottom:16px">Куда обращаться по вопросам комплаенс</h4>
+        <div class="compliance-contact-block">
+          <div class="compliance-contact-row">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+            </svg>
+            <span class="compliance-contact-text"><strong>Горячая линия АО «Самрук-Казына»:</strong> +7 (727) 356-36-36</span>
           </div>
+          <div class="compliance-contact-row">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+            <span class="compliance-contact-text"><strong>Email для обращений:</strong> <a href="mailto:compliance@kaes.kz">compliance@kaes.kz</a></span>
+          </div>
+          <div class="compliance-contact-row">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+            </svg>
+            <span class="compliance-contact-text"><strong>Онлайн-форма:</strong> <a href="https://sk.kz/hotline/" target="_blank" rel="noopener noreferrer">sk.kz/hotline</a></span>
+          </div>
+          <p class="compliance-note">Все обращения рассматриваются конфиденциально.</p>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- SECTION: development -->
-    <div class="about-section" id="section-development" data-label="План развития" style="display:none">
-      <h1 class="section-title-lg">План развития</h1>
-      <div class="content-block">
-        <p class="text-body">Стратегический план развития ТОО «КАЭС» определяет ключевые направления деятельности компании по реализации проектов строительства атомных электростанций в Казахстане.</p>
-        <a href="assets/docs/kaes-development-plan.docx" class="btn-primary" download="КАЭС_План_развития.docx" style="display:inline-flex;align-items:center;gap:10px;margin-top:24px">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          Скачать план развития
-        </a>
-        <a href="development-plan.html" class="btn-outline" style="display:inline-flex;align-items:center;gap:10px;margin-top:24px;margin-left:16px">
-          Подробнее о плане
-        </a>
+    <!-- ── SECTION: documents ── -->
+    <section class="about-section" id="section-documents" data-label="Документы">
+      <h1 class="about-h1 about-h1--sm-mb">Документы</h1>
+
+      <div class="docs-list">
+
+        <div class="doc-item">
+          <span class="doc-item__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+          </span>
+          <div class="doc-item__body">
+            <p class="doc-item__title">Стратегия развития 2022–2031</p>
+            <p class="doc-item__desc">Долгосрочный план развития ТОО «КАЭС» в сфере ядерной энергетики</p>
+          </div>
+          <a href="assets/documents/strategy-2022-2031.pdf" class="doc-item__btn">Открыть PDF</a>
+        </div>
+
+        <div class="doc-item">
+          <span class="doc-item__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+          </span>
+          <div class="doc-item__body">
+            <p class="doc-item__title">Устав ТОО</p>
+            <p class="doc-item__desc">Учредительный документ Товарищества с ограниченной ответственностью</p>
+          </div>
+          <a href="assets/documents/ustav.pdf" class="doc-item__btn">Открыть PDF</a>
+        </div>
+
+        <div class="doc-item">
+          <span class="doc-item__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+          </span>
+          <div class="doc-item__body">
+            <p class="doc-item__title">Кодекс корпоративного управления</p>
+            <p class="doc-item__desc">Принципы и стандарты корпоративного управления</p>
+          </div>
+          <a href="assets/documents/governance/kodeks-korporativnogo-upravleniya.pdf" class="doc-item__btn">Открыть PDF</a>
+        </div>
+
+        <div class="doc-item">
+          <span class="doc-item__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+          </span>
+          <div class="doc-item__body">
+            <p class="doc-item__title">Кодекс поведения АО «Самрук-Казына»</p>
+            <p class="doc-item__desc">Этические стандарты и нормы поведения сотрудников</p>
+          </div>
+          <a href="assets/documents/kodeks-povedeniya-sk.pdf" class="doc-item__btn">Открыть PDF</a>
+        </div>
+
+        <div class="doc-item">
+          <span class="doc-item__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+          </span>
+          <div class="doc-item__body">
+            <p class="doc-item__title">Кодекс корпоративного управления фонда</p>
+            <p class="doc-item__desc">Корпоративное управление АО «Самрук-Казына»</p>
+          </div>
+          <a href="assets/documents/kodeks-kku-fond.pdf" class="doc-item__btn">Открыть PDF</a>
+        </div>
+
+        <div class="doc-item">
+          <span class="doc-item__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+          </span>
+          <div class="doc-item__body">
+            <p class="doc-item__title">Организационная структура</p>
+            <p class="doc-item__desc">Структура органов управления и подразделений КАЭС</p>
+          </div>
+          <a href="assets/documents/org-struktura.pdf" class="doc-item__btn">Открыть PDF</a>
+        </div>
+
+        <div class="doc-item">
+          <span class="doc-item__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+          </span>
+          <div class="doc-item__body">
+            <p class="doc-item__title">Положение о Генеральном директоре</p>
+            <p class="doc-item__desc">Права, обязанности и полномочия Генерального директора</p>
+          </div>
+          <a href="assets/documents/polozhenie-gd.pdf" class="doc-item__btn">Открыть PDF</a>
+        </div>
+
+        <div class="doc-item">
+          <span class="doc-item__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+          </span>
+          <div class="doc-item__body">
+            <p class="doc-item__title">Политика по управлению рисками и внутреннему контролю ТОО «Казахстанские атомные электрические станции»</p>
+            <p class="doc-item__desc">Политика управления рисками и внутреннего контроля</p>
+          </div>
+          <a href="assets/documents/ПОЛИТИКА ПО УПРАВЛЕНИЮ РИСКАМИ И ВНУТРЕННЕМУ КОНТРОЛЮ.pdf" class="doc-item__btn">Открыть PDF</a>
+        </div>
+
       </div>
-    </div>
+    </section>
+
+    <!-- ── SECTION: safety ── -->
+    <section class="about-section" id="section-safety" data-label="Безопасность">
+      <h1 class="about-h1 about-h1--sm-mb">Безопасность</h1>
+      <h3 class="about-section-h3">Безопасность АЭС</h3>
+
+      <p class="safety-lead" style="margin-top:24px">Про безопасность современных атомных реакторов:</p>
+      <div class="safety-body">
+        <p>В современных проектах реакторных установок используется глубокоэшелонированная защита для предотвращения выхода радиоактивных материалов в окружающую среду.</p>
+        <p>Глубокоэшелонированная защита достигается за счёт сочетания нескольких последовательных и независимых уровней защиты, которые должны отказать прежде, чем радиация сможет нанести ущерб населению или окружающей среде. При проектировании таких систем ядерного реактора предусматриваются серии физических барьеров, а также сочетание активных, пассивных и внутренне присущих характеристик безопасности, чтобы физические барьеры на пути распространения ядерных материалов были эффективны.</p>
+        <p>Благодаря сочетанию активных и пассивных систем безопасности на реакторах поколения III и III+ может достигаться автономность при авариях до 72 часов. Другими словами, в случае крупной аварии, реактор в течение 3 суток может расхолаживаться без вмешательства эксплуатационного персонала.</p>
+        <p>Кроме того, при разработке современных реакторов анализируется вероятности запроектных аварий. К примеру, здания некоторых реакторных установок могут быть сконструированы таким образом, чтобы устоять перед ураганами третьей категории.</p>
+      </div>
+    </section>
+
+    <!-- ── SECTION: development ── -->
+    <section class="about-section" id="section-development" data-label="План развития">
+      <h1 class="about-h1 about-h1--sm-mb">План развития</h1>
+
+      <!-- Download card -->
+      <div class="dev-doc-card">
+        <p class="dev-doc-card__meta">дата утверждения — 05.03.2026</p>
+        <p class="dev-doc-card__title">План развития КАЭС 2024–2035</p>
+        <p class="dev-doc-card__desc">Полный документ с дорожной картой, стратегическими целями и описанием этапов строительства АЭС в Казахстане.</p>
+        <div class="dev-doc-card__actions">
+          <a href="assets/docs/kaes-development-plan.docx" download="КАЭС_План_развития.docx" class="btn-primary-pill">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+            </svg>
+            скачать документ
+          </a>
+        </div>
+      </div>
+
+      <!-- Key facts -->
+      <div class="dev-facts-grid">
+        <div class="dev-fact-card">
+          <span class="dev-fact-card__value">1 200 МВт</span>
+          <span class="dev-fact-card__label">мощность первого блока</span>
+        </div>
+        <div class="dev-fact-card">
+          <span class="dev-fact-card__value">2 035</span>
+          <span class="dev-fact-card__label">год запуска</span>
+        </div>
+        <div class="dev-fact-card">
+          <span class="dev-fact-card__value">2 000+</span>
+          <span class="dev-fact-card__label">рабочих мест</span>
+        </div>
+        <div class="dev-fact-card">
+          <span class="dev-fact-card__value">9 млн т</span>
+          <span class="dev-fact-card__label">снижение CO₂ в год</span>
+        </div>
+      </div>
+
+      <!-- Roadmap -->
+      <div class="dev-roadmap">
+        <h3 class="dev-roadmap-title">Дорожная карта</h3>
+
+        <div class="dev-stage">
+          <div class="dev-stage__head">
+            <span class="dev-stage__num">01</span>
+            <span class="dev-stage__title">Инициация проекта</span>
+            <span class="dev-stage__tag dev-stage__tag--done">Завершён</span>
+            <span class="dev-stage__period">2014–2020</span>
+          </div>
+          <div class="dev-stage__items">
+            <div class="dev-stage__item"><span class="dev-stage__dot"></span>Формирование концепции и разработка технико-экономического обоснования</div>
+            <div class="dev-stage__item"><span class="dev-stage__dot"></span>Выбор потенциальных площадок: Балхаш и Майнкум</div>
+            <div class="dev-stage__item"><span class="dev-stage__dot"></span>Старт переговоров с международными технологическими партнёрами</div>
+            <div class="dev-stage__item"><span class="dev-stage__dot"></span>Создание ТОО «КАЭС» и первичной регуляторной базы</div>
+          </div>
+        </div>
+
+        <div class="dev-stage">
+          <div class="dev-stage__head">
+            <span class="dev-stage__num">02</span>
+            <span class="dev-stage__title">Предварительная проработка</span>
+            <span class="dev-stage__tag dev-stage__tag--done">Завершён</span>
+            <span class="dev-stage__period">2021–2023</span>
+          </div>
+          <div class="dev-stage__items">
+            <div class="dev-stage__item"><span class="dev-stage__dot"></span>Подготовка технических требований к реакторной установке</div>
+            <div class="dev-stage__item"><span class="dev-stage__dot"></span>Экологическая экспертиза и предпроектные изыскания</div>
+            <div class="dev-stage__item"><span class="dev-stage__dot"></span>Миссии МАГАТЭ: SITE и PEER</div>
+            <div class="dev-stage__item"><span class="dev-stage__dot"></span>Проведение публичных слушаний в регионах</div>
+          </div>
+        </div>
+
+        <div class="dev-stage">
+          <div class="dev-stage__head">
+            <span class="dev-stage__num">03</span>
+            <span class="dev-stage__title">Подготовка решений</span>
+            <span class="dev-stage__tag dev-stage__tag--current">Текущий этап</span>
+            <span class="dev-stage__period">2024–2026</span>
+          </div>
+          <div class="dev-stage__items">
+            <div class="dev-stage__item"><span class="dev-stage__dot"></span>Выбор технологического партнёра и типа реакторной установки</div>
+            <div class="dev-stage__item"><span class="dev-stage__dot"></span>Заключение межправительственных соглашений</div>
+            <div class="dev-stage__item"><span class="dev-stage__dot"></span>Разработка проектно-сметной документации и лицензирование</div>
+            <div class="dev-stage__item"><span class="dev-stage__dot"></span>Формирование системы управления проектом</div>
+          </div>
+        </div>
+
+        <div class="dev-stage">
+          <div class="dev-stage__head">
+            <span class="dev-stage__num">04</span>
+            <span class="dev-stage__title">Строительство и монтаж</span>
+            <span class="dev-stage__tag dev-stage__tag--planned">Запланировано</span>
+            <span class="dev-stage__period">2027–2033</span>
+          </div>
+          <div class="dev-stage__items">
+            <div class="dev-stage__item"><span class="dev-stage__dot"></span>Возведение основных и вспомогательных объектов</div>
+            <div class="dev-stage__item"><span class="dev-stage__dot"></span>Монтаж реакторного и турбинного оборудования</div>
+            <div class="dev-stage__item"><span class="dev-stage__dot"></span>Испытания систем безопасности</div>
+            <div class="dev-stage__item"><span class="dev-stage__dot"></span>Подготовка эксплуатационного персонала</div>
+          </div>
+        </div>
+
+        <div class="dev-stage">
+          <div class="dev-stage__head">
+            <span class="dev-stage__num">05</span>
+            <span class="dev-stage__title">Ввод в эксплуатацию</span>
+            <span class="dev-stage__tag dev-stage__tag--future">Будущий этап</span>
+            <span class="dev-stage__period">2034–2035</span>
+          </div>
+          <div class="dev-stage__items">
+            <div class="dev-stage__item"><span class="dev-stage__dot"></span>Физический пуск реактора и проверка систем</div>
+            <div class="dev-stage__item"><span class="dev-stage__dot"></span>Энергетический пуск, выход на проектную мощность</div>
+            <div class="dev-stage__item"><span class="dev-stage__dot"></span>Получение лицензии на промышленную эксплуатацию</div>
+            <div class="dev-stage__item"><span class="dev-stage__dot"></span>Начало коммерческой генерации электроэнергии</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
 
   </div><!-- /about-content -->
-</div><!-- /about-layout -->
-
-<script>
-// About section switching via URLSearchParams
-(function() {
-  var sections = ['about','leadership','governance','compliance','documents','safety','development'];
-  var labels = {
-    about: 'О КАЭС', leadership: 'Руководство', governance: 'Корпоративное управление',
-    compliance: 'Комплаенс', documents: 'Документы', safety: 'Безопасность', development: 'План развития'
-  };
-
-  function activate(id) {
-    sections.forEach(function(s) {
-      var panel = document.getElementById('section-' + s);
-      var btn = document.querySelector('[data-section="' + s + '"]');
-      if (s === id) {
-        if (panel) panel.style.display = '';
-        if (btn) btn.classList.add('active');
-      } else {
-        if (panel) panel.style.display = 'none';
-        if (btn) btn.classList.remove('active');
-      }
-    });
-    var crumb = document.getElementById('about-breadcrumb-label');
-    if (crumb) crumb.textContent = labels[id] || id;
-  }
-
-  document.querySelectorAll('.about-nav__item').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      var id = this.dataset.section;
-      history.pushState(null, '', '?section=' + id);
-      activate(id);
-      var el = document.getElementById('about-content-area');
-      if (el) window.scrollTo({top: el.getBoundingClientRect().top + window.scrollY - 120, behavior: 'smooth'});
-    });
-  });
-
-  var params = new URLSearchParams(window.location.search);
-  var sec = params.get('section');
-  if (sec && sections.includes(sec)) activate(sec);
-  else activate('about');
-})();
-</script>
-
-</div><!-- /header-offset -->
+</main>
 
 <!-- CMS: footer -->
 <footer class="site-footer">
@@ -474,7 +816,149 @@
     </div>
   </div>
 </footer>
-<!-- /CMS: footer -->
+
+</div><!-- /header-offset -->
+
+<!-- ══════════════════════════════════════════════════════════
+     JAVASCRIPT — Section switching + scroll-spy (AboutNav.tsx)
+     ══════════════════════════════════════════════════════════ -->
+<script>
+(function () {
+  var VALID = ['about', 'leadership', 'governance', 'compliance', 'documents', 'safety', 'development'];
+  var LABELS = {
+    about: 'О КАЭС', leadership: 'Руководство',
+    governance: 'Корпоративное управление', compliance: 'Комплаенс',
+    documents: 'Документы', safety: 'Безопасность', development: 'План развития'
+  };
+
+  // Sub-anchor scroll-spy anchors for "О КАЭС" section
+  var ANCHORS = ['section-about-company', 'section-about-additional', 'section-about-activities'];
+
+  var currentSection = 'about';
+  var subListOpen = true;
+
+  /* ── Helpers ──────────────────────────────────────────── */
+  function getEl(id) { return document.getElementById(id); }
+  function qsa(sel) { return document.querySelectorAll(sel); }
+
+  /* ── Activate a top-level section ────────────────────── */
+  function activateSection(id) {
+    if (!VALID.includes(id)) id = 'about';
+    currentSection = id;
+
+    // Show/hide sections
+    qsa('.about-section').forEach(function (el) {
+      el.classList.toggle('active', el.id === 'section-' + id);
+    });
+
+    // Main "О КАЭС" button state
+    var mainBtn = getEl('nav-about-btn');
+    var subList = getEl('about-sub-list');
+    var chevron = mainBtn ? mainBtn.querySelector('.about-nav__chevron') : null;
+
+    if (id === 'about') {
+      if (mainBtn) mainBtn.classList.add('active');
+      if (!subListOpen) {
+        subListOpen = true;
+        if (subList) subList.classList.add('open');
+        if (chevron) chevron.classList.add('open');
+      }
+    } else {
+      if (mainBtn) mainBtn.classList.remove('active');
+    }
+
+    // Top-level nav items state
+    qsa('.about-nav__top-item').forEach(function (btn) {
+      btn.classList.toggle('active', btn.dataset.section === id);
+    });
+
+    // Breadcrumb
+    var crumb = getEl('breadcrumb-label');
+    if (crumb) crumb.textContent = LABELS[id] || id;
+
+    // Update URL
+    history.pushState(null, '', '?section=' + id);
+
+    // Scroll to content top
+    var top = getEl('about-content-top');
+    if (top) {
+      var y = top.getBoundingClientRect().top + window.scrollY - 140;
+      window.scrollTo({ top: Math.max(0, y), behavior: 'auto' });
+    }
+  }
+
+  /* ── Scroll-spy for sub-items (only in "about" section) ─ */
+  function updateSubItemActive() {
+    if (currentSection !== 'about') return;
+    var scrollPos = window.scrollY + 120;
+    var current = ANCHORS[0];
+    ANCHORS.forEach(function (anchorId) {
+      var el = getEl(anchorId);
+      if (el && el.offsetTop <= scrollPos) current = anchorId;
+    });
+    qsa('.about-nav__sub-item').forEach(function (btn) {
+      btn.classList.toggle('active', btn.dataset.anchor === current);
+    });
+  }
+
+  /* ── Scroll to anchor within "about" section ──────────── */
+  function scrollToAnchor(anchorId) {
+    var el = getEl(anchorId);
+    if (!el) return;
+    var y = el.getBoundingClientRect().top + window.scrollY - 100;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+    qsa('.about-nav__sub-item').forEach(function (btn) {
+      btn.classList.toggle('active', btn.dataset.anchor === anchorId);
+    });
+  }
+
+  /* ── Bind: main "О КАЭС" toggle button ───────────────── */
+  var mainBtn = getEl('nav-about-btn');
+  if (mainBtn) {
+    mainBtn.addEventListener('click', function () {
+      if (currentSection !== 'about') {
+        activateSection('about');
+        subListOpen = true;
+      } else {
+        subListOpen = !subListOpen;
+      }
+      var subList = getEl('about-sub-list');
+      var chevron = mainBtn.querySelector('.about-nav__chevron');
+      if (subList) subList.classList.toggle('open', subListOpen);
+      if (chevron) chevron.classList.toggle('open', subListOpen);
+    });
+  }
+
+  /* ── Bind: sub-item buttons ───────────────────────────── */
+  qsa('.about-nav__sub-item').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var anchorId = this.dataset.anchor;
+      if (currentSection !== 'about') {
+        activateSection('about');
+        setTimeout(function () { scrollToAnchor(anchorId); }, 180);
+      } else {
+        scrollToAnchor(anchorId);
+      }
+    });
+  });
+
+  /* ── Bind: top-level nav items ────────────────────────── */
+  qsa('.about-nav__top-item').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      activateSection(this.dataset.section);
+    });
+  });
+
+  /* ── Scroll listener ──────────────────────────────────── */
+  window.addEventListener('scroll', updateSubItemActive, { passive: true });
+
+  /* ── Init from URL ────────────────────────────────────── */
+  var params = new URLSearchParams(window.location.search);
+  var sec = params.get('section');
+  activateSection(VALID.includes(sec) ? sec : 'about');
+  updateSubItemActive();
+})();
+</script>
 
 <script src="assets/js/main.js"></script>
 </body>

@@ -1,0 +1,104 @@
+/* ============================================================
+   KAES — Form Components
+   components/forms.css
+   ============================================================ */
+
+/* ── Footer contact form ── */
+.footer-form { display: flex; flex-direction: column; gap: 16px; }
+
+.footer-input,
+.footer-textarea {
+  width: 100%;
+  background: var(--color-secondary);
+  border: 1px solid var(--color-muted);
+  border-radius: 10px;
+  padding: 12px 16px;
+  color: var(--color-text-dark);
+  font-size: 15px;
+  font-weight: 300;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+.footer-input::placeholder,
+.footer-textarea::placeholder { color: var(--color-muted); }
+.footer-input:focus,
+.footer-textarea:focus { border-color: var(--color-accent); }
+.footer-textarea { resize: none; }
+
+.footer-success {
+  display: none;
+  background: rgba(60, 80, 125, 0.4);
+  border: 1px solid rgba(224, 197, 143, 0.30);
+  border-radius: 14px;
+  padding: 40px 32px;
+  text-align: center;
+}
+.footer-success.visible { display: block; }
+.footer-success p { font-size: 17px; font-weight: 300; color: var(--color-text-light); }
+
+/* ── Contacts page form ── */
+.contact-form { display: flex; flex-direction: column; gap: 16px; }
+
+.contact-input,
+.contact-textarea {
+  width: 100%;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--color-text-dark);
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.2s;
+  background: white;
+}
+.contact-input:focus,
+.contact-textarea:focus { border-color: var(--color-primary-mid); }
+.contact-textarea { resize: vertical; }
+
+/* ── Accordion (FAQ) ── */
+.faq-accordion { display: flex; flex-direction: column; gap: 12px; }
+
+.accordion-item {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+}
+
+.accordion-item__trigger {
+  width: 100%;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 20px 24px;
+  font-size: 16px; font-weight: 500; color: #111827;
+  cursor: pointer; text-align: left; gap: 16px;
+  background: white; transition: background 0.15s;
+}
+.accordion-item__trigger:hover { background: #f9fafb; }
+
+.accordion-item__icon {
+  flex-shrink: 0;
+  width: 24px; height: 24px;
+  border: 1px solid #e5e7eb; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  transition: transform 0.3s, background 0.2s, border-color 0.2s;
+}
+.accordion-item.open .accordion-item__icon {
+  transform: rotate(45deg);
+  background: var(--color-primary-mid);
+  border-color: var(--color-primary-mid);
+  color: white;
+}
+
+.accordion-item__body {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+.accordion-item.open .accordion-item__body { max-height: 600px; }
+
+.accordion-item__content {
+  padding: 0 24px 20px;
+  font-size: 15px; font-weight: 300; color: #6b7280; line-height: 1.7;
+}

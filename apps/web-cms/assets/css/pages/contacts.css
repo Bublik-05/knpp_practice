@@ -1,0 +1,26 @@
+/* ============================================================
+   KAES — Contacts Page
+   pages/contacts.css
+   ============================================================ */
+
+.contact-grid {
+  display: grid; grid-template-columns: 1fr; gap: 32px;
+}
+@media (min-width: 1024px) { .contact-grid { grid-template-columns: 1fr 1fr; } }
+
+.contact-info-card { display: flex; flex-direction: column; gap: 20px; }
+
+.contact-info-item { display: flex; gap: 16px; align-items: flex-start; }
+
+.contact-info-icon {
+  width: 48px; height: 48px; border-radius: 12px;
+  background: #eef4ff; display: flex; align-items: center; justify-content: center;
+  color: var(--color-primary-mid); flex-shrink: 0;
+}
+
+.contact-info-label {
+  font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em;
+  color: #9ca3af; margin-bottom: 4px;
+}
+
+.contact-info-value { font-size: 16px; color: #111827; line-height: 1.5; }

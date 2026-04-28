@@ -1,0 +1,116 @@
+/* ============================================================
+   KAES — Mega Menu Panel
+   components/mega-menu.css
+   ============================================================ */
+
+/* ── Backdrop ── */
+.mega-menu-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  background: rgba(0, 0, 0, 0.20);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+.mega-menu-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ── Panel ── */
+.mega-menu-panel {
+  position: fixed;
+  left: 48px; right: 48px;
+  top: 64px;
+  z-index: 65;
+  transform: translateY(-120%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;
+}
+.mega-menu-panel.open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mega-menu-panel__inner {
+  background: white;
+  border: 1px solid #f3f4f6;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+  padding: 32px;
+}
+
+/* ── Header row ── */
+.mega-menu-panel__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+.mega-menu-panel__head span { color: #6b7280; font-weight: 300; }
+
+.mega-menu-close {
+  display: flex; align-items: center; gap: 8px;
+  color: #6b7280;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+.mega-menu-close:hover { color: var(--color-primary-mid); }
+
+/* ── Columns ── */
+.mega-menu-columns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.mega-menu-col {
+  flex: 1;
+  min-width: 180px;
+}
+
+.mega-menu-col__title {
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  color: #111c36;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 12px;
+  transition: color 0.2s;
+}
+.mega-menu-col__title:hover { color: var(--color-primary-mid); }
+
+.mega-menu-col__links { display: flex; flex-direction: column; gap: 8px; }
+
+.mega-menu-col__sub {
+  font-size: 14px;
+  font-weight: 300;
+  color: #6b7280;
+  transition: color 0.2s;
+  line-height: 1.4;
+}
+.mega-menu-col__sub:hover { color: var(--color-primary-mid); }
+
+/* ── Socials row ── */
+.mega-menu-socials {
+  display: flex; align-items: center; gap: 12px;
+  padding-top: 24px;
+  border-top: 1px solid #f3f4f6;
+  margin-top: 24px;
+}
+
+.social-circle {
+  width: 32px; height: 32px;
+  background: var(--color-primary-mid);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: white;
+  transition: background 0.2s;
+}
+.social-circle:hover { background: #2a4d8f; }

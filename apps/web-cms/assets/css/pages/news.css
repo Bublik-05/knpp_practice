@@ -1,0 +1,30 @@
+/* ============================================================
+   KAES — News Page
+   pages/news.css
+   ============================================================ */
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 24px;
+}
+@media (min-width: 640px)  { .news-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .news-grid { grid-template-columns: repeat(3, 1fr); } }
+
+/* Filter buttons */
+.news-filter {
+  display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px;
+}
+.news-filter__btn {
+  padding: 8px 18px; border-radius: 100px;
+  border: 1px solid #e5e7eb;
+  font-size: 14px; font-weight: 300;
+  color: #374151; background: white;
+  transition: all 0.2s; cursor: pointer;
+}
+.news-filter__btn.active,
+.news-filter__btn:hover {
+  background: var(--color-primary-mid);
+  color: white;
+  border-color: var(--color-primary-mid);
+}

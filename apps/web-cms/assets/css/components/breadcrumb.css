@@ -1,0 +1,18 @@
+/* ============================================================
+   KAES — Breadcrumb
+   components/breadcrumb.css
+   ============================================================ */
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #9ca3af;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+.breadcrumb a          { color: var(--color-primary-mid); transition: color 0.2s; }
+.breadcrumb a:hover    { color: var(--color-primary); }
+.breadcrumb__sep       { color: var(--color-accent); }
+.breadcrumb__current   { color: #374151; }

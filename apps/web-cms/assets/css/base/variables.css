@@ -1,0 +1,65 @@
+/* ============================================================
+   KAES — CSS Variables & Fonts
+   base/variables.css
+   ============================================================ */
+
+/* ── Fonts ── */
+@font-face {
+  font-family: 'TT Firs Neue';
+  src: url('../../fonts/tt_firs_neue/TT Firs Neue Trial Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'TT Firs Neue';
+  src: url('../../fonts/tt_firs_neue/TT Firs Neue Trial ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'TT Firs Neue';
+  src: url('../../fonts/tt_firs_neue/TT Firs Neue Trial Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'TT Firs Neue';
+  src: url('../../fonts/tt_firs_neue/TT Firs Neue Trial Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ── Design Tokens ── */
+:root {
+  /* Brand colours — matches apps/web globals.css exactly */
+  --color-primary:      #112250; /* Royal Blue */
+  --color-primary-mid:  #1E4080; /* Mid Blue */
+  --color-secondary:    #3C507D; /* Sapphire */
+  --color-accent:       #E0C58F; /* Quicksand */
+  --color-accent-hover: #C9B07A; /* Darkened accent */
+  --color-surface:      #F5F0E9; /* Swan Wing */
+  --color-muted:        #D9CBC2; /* Shellstone */
+  --color-text-dark:    #2C2C3A;
+  --color-text-light:   #F5F0E9;
+  --color-white:        #FFFFFF;
+  --color-bg:           #F0F0F0;
+
+  /* Layout */
+  --container-width: 1280px;
+  --px-section: clamp(24px, 7.5vw, 120px);
+  --py-section: clamp(40px, 7.5vw, 120px);
+
+  /* Borders */
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 10px;
+
+  /* Shadows */
+  --shadow-soft:  0 10px 30px rgba(0, 0, 0, 0.08);
+  --shadow-card:  0 4px 16px rgba(17, 34, 80, 0.10);
+  --shadow-heavy: 0 20px 60px rgba(17, 34, 80, 0.18);
+}

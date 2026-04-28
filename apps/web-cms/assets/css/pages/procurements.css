@@ -1,0 +1,6 @@
+/* ============================================================
+   KAES — Procurements Page
+   pages/procurements.css
+   ============================================================ */
+
+.announcement-list { display: flex; flex-direction: column; gap: 16px; }
