@@ -1,6 +1,646 @@
 /* ============================================================
    KAES — Procurements Page
    pages/procurements.css
+   Простая HTML/CSS/JS версия, приближенная к React-оригиналу
    ============================================================ */
 
-.announcement-list { display: flex; flex-direction: column; gap: 16px; }
+.procurement-page {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 12% 10%, rgba(224, 197, 143, 0.14), transparent 28rem),
+    radial-gradient(circle at 92% 24%, rgba(30, 64, 128, 0.10), transparent 30rem),
+    #fff;
+}
+
+/* OPTIONAL BackgroundGlow: удалить этот блок и div.proc-bg-glow в HTML, если не нужен */
+.proc-bg-glow {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.proc-bg-glow__orb {
+  position: absolute;
+  display: block;
+  border-radius: 999px;
+  filter: blur(48px);
+  opacity: 0.55;
+}
+
+.proc-bg-glow__orb--blue {
+  width: 360px;
+  height: 360px;
+  right: -120px;
+  top: 160px;
+  background: rgba(30, 64, 128, 0.16);
+}
+
+.proc-bg-glow__orb--gold {
+  width: 320px;
+  height: 320px;
+  left: -110px;
+  top: 360px;
+  background: rgba(224, 197, 143, 0.20);
+}
+
+.proc-bg-glow__orb--soft {
+  width: 420px;
+  height: 420px;
+  right: 12%;
+  bottom: 160px;
+  background: rgba(219, 229, 244, 0.55);
+}
+/* /OPTIONAL BackgroundGlow */
+
+.proc-hero,
+.proc-section {
+  position: relative;
+  z-index: 1;
+}
+
+.proc-hero__inner {
+  max-width: 1280px;
+}
+
+.proc-section {
+  padding: 40px 0 80px;
+}
+
+.proc-container {
+  width: min(1280px, calc(100% - 64px));
+  margin: 0 auto;
+}
+
+.proc-breadcrumb {
+  margin-bottom: 32px;
+}
+
+.proc-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: fit-content;
+  max-width: 100%;
+  padding: 4px;
+  margin-bottom: 40px;
+  border-radius: 14px;
+  background: #f3f4f6;
+}
+
+.proc-tab {
+  border: 0;
+  border-radius: 12px;
+  padding: 12px 24px;
+  background: transparent;
+  color: #6b7280;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.proc-tab:hover {
+  color: #1f2937;
+}
+
+.proc-tab.active {
+  background: #fff;
+  color: #1E4080;
+  box-shadow: 0 1px 3px rgba(17, 34, 80, 0.10), 0 1px 2px rgba(17, 34, 80, 0.06);
+}
+
+.proc-tab:focus-visible,
+.proc-primary-btn:focus-visible,
+.proc-small-primary:focus-visible,
+.proc-small-outline:focus-visible {
+  outline: 3px solid rgba(224, 197, 143, 0.65);
+  outline-offset: 3px;
+}
+
+.proc-panels {
+  position: relative;
+}
+
+.proc-panel {
+  display: none;
+  flex-direction: column;
+  gap: 32px;
+  animation: procFadeUp 0.22s ease both;
+}
+
+.proc-panel.active {
+  display: flex;
+}
+
+@keyframes procFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.proc-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 780px;
+}
+
+.proc-heading h2 {
+  margin: 0;
+  color: #112250;
+  font-size: clamp(28px, 3vw, 36px);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.proc-heading p {
+  margin: 0;
+  color: #5f6673;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+.proc-principles-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.proc-principle-card {
+  display: flex;
+  gap: 16px;
+  padding: 24px;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 8px 24px rgba(17, 34, 80, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.proc-principle-card:hover {
+  transform: translateY(-2px);
+  border-color: #dbe5f4;
+  box-shadow: 0 16px 36px rgba(17, 34, 80, 0.10);
+}
+
+.proc-icon {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  background: #f0f5ff;
+  color: #1E4080;
+}
+
+.proc-icon svg,
+.proc-doc-icon svg,
+.proc-upload-placeholder__icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.proc-principle-card h3,
+.proc-local-card h3,
+.proc-current-item h3,
+.proc-doc-item h3 {
+  margin: 0;
+  color: #112250;
+}
+
+.proc-principle-card h3,
+.proc-local-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.proc-principle-card p,
+.proc-local-card p,
+.proc-portal-card p,
+.proc-current-item__meta,
+.proc-upload-placeholder span {
+  margin: 0;
+  color: #5f6673;
+  font-weight: 300;
+  line-height: 1.65;
+}
+
+.proc-principle-card p,
+.proc-local-card p {
+  margin-top: 4px;
+}
+
+.proc-portal-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px;
+  border: 1px solid #dbe5f4;
+  border-radius: 16px;
+  background: #f0f5ff;
+}
+
+.proc-portal-card__title {
+  margin: 0 0 4px !important;
+  color: #112250 !important;
+  font-weight: 600 !important;
+}
+
+.proc-primary-btn,
+.proc-small-primary,
+.proc-small-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 999px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.proc-primary-btn {
+  flex-shrink: 0;
+  padding: 12px 24px;
+  background: #1E4080;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.proc-primary-btn:hover,
+.proc-small-primary:hover {
+  background: #112250;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.proc-current-list,
+.proc-doc-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.proc-current-item {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 6px 18px rgba(17, 34, 80, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.proc-current-item:hover {
+  transform: translateY(-2px);
+  border-color: #dbe5f4;
+  box-shadow: 0 14px 30px rgba(17, 34, 80, 0.10);
+}
+
+.proc-current-item__main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.proc-current-item__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.proc-id-badge,
+.proc-status {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.proc-id-badge {
+  background: #1E4080;
+  color: #fff;
+}
+
+.proc-status--accepting {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.proc-status--review {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.proc-status--done {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+.proc-current-item h3 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.proc-current-item__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  font-size: 16px;
+}
+
+.proc-actions-row {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.proc-local-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.proc-local-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px;
+  border: 1px solid #dbe5f4;
+  border-radius: 16px;
+  background: #f8fbff;
+}
+
+.proc-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.proc-metric-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+  min-height: 136px;
+  padding: 24px;
+  border-radius: 16px;
+  background: #112250;
+  text-align: center;
+}
+
+.proc-metric-card strong {
+  color: #E0C58F;
+  font-size: clamp(28px, 3vw, 36px);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.proc-metric-card span {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+.proc-upload-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 32px;
+  border: 2px dashed #dbe5f4;
+  border-radius: 16px;
+  background: #f8fbff;
+  text-align: center;
+}
+
+.proc-upload-placeholder__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  background: #eef4ff;
+  color: #1E4080;
+}
+
+.proc-upload-placeholder p {
+  margin: 0;
+  color: #1E4080;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.proc-doc-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  background: #f9fafb;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.proc-doc-item:hover {
+  transform: translateY(-1px);
+  border-color: #dbe5f4;
+  background: #fff;
+}
+
+.proc-doc-item__left {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.proc-doc-icon {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(30, 64, 128, 0.10);
+  color: #1E4080;
+}
+
+.proc-doc-item h3 {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.proc-doc-actions {
+  display: flex;
+  flex-shrink: 0;
+  gap: 12px;
+  align-items: center;
+}
+
+.proc-small-primary,
+.proc-small-outline {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.proc-small-primary {
+  background: #1E4080;
+  color: #fff;
+}
+
+.proc-small-outline {
+  border: 1px solid #1E4080;
+  color: #1E4080;
+  background: transparent;
+}
+
+.proc-small-outline:hover {
+  background: #1E4080;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* Backward compatibility: если в CMS где-то остались старые классы */
+.announcement-list,
+.procurement-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (max-width: 1023px) {
+  .proc-container {
+    width: min(100% - 40px, 920px);
+  }
+
+  .proc-tabs {
+    width: 100%;
+  }
+
+  .proc-tab {
+    flex: 1 1 auto;
+  }
+
+  .proc-principles-grid,
+  .proc-local-grid,
+  .proc-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .proc-portal-card,
+  .proc-doc-item {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .proc-doc-actions {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .proc-small-primary,
+  .proc-small-outline {
+    flex: 1 1 180px;
+  }
+}
+
+@media (max-width: 767px) {
+  .proc-section {
+    padding: 28px 0 56px;
+  }
+
+  .proc-container {
+    width: calc(100% - 32px);
+  }
+
+  .proc-tabs {
+    margin-bottom: 32px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .proc-tab {
+    flex: 0 0 auto;
+    padding: 11px 16px;
+    white-space: nowrap;
+  }
+
+  .proc-heading p {
+    font-size: 16px;
+  }
+
+  .proc-principle-card,
+  .proc-current-item,
+  .proc-local-card,
+  .proc-doc-item,
+  .proc-portal-card,
+  .proc-upload-placeholder {
+    padding: 18px;
+    border-radius: 14px;
+  }
+
+  .proc-principle-card {
+    flex-direction: column;
+  }
+
+  .proc-primary-btn {
+    width: 100%;
+    padding: 12px 18px;
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .proc-current-item__meta {
+    flex-direction: column;
+    gap: 4px;
+    font-size: 15px;
+  }
+
+  .proc-doc-item__left {
+    align-items: flex-start;
+  }
+
+  .proc-bg-glow__orb {
+    filter: blur(42px);
+    opacity: 0.42;
+  }
+}
+
+

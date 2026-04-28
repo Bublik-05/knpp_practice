@@ -101,186 +101,317 @@
   </div>
 </div>
 
-<div class="header-offset">
+<div class="header-offset procurement-page">
 
-<div class="page-hero">
-  <div class="page-hero__inner">
+<!-- OPTIONAL BackgroundGlow: удалить весь блок .proc-bg-glow, если не понравится -->
+<div class="proc-bg-glow" aria-hidden="true">
+  <span class="proc-bg-glow__orb proc-bg-glow__orb--blue"></span>
+  <span class="proc-bg-glow__orb proc-bg-glow__orb--gold"></span>
+  <span class="proc-bg-glow__orb proc-bg-glow__orb--soft"></span>
+</div>
+<!-- /OPTIONAL BackgroundGlow -->
+
+<div class="page-hero proc-hero">
+  <div class="page-hero__inner proc-hero__inner">
     <h1 class="page-hero__title">Закупки</h1>
-    <p class="page-hero__sub">Тендеры, объявления и политика закупок</p>
+    <p class="page-hero__sub">Прозрачные закупочные процедуры, актуальные объявления и документы для поставщиков</p>
   </div>
 </div>
 
-<section class="page-section">
-  <div class="container">
-    <nav class="breadcrumb" style="margin-bottom:40px">
+<section class="proc-section">
+  <div class="proc-container">
+    <nav class="breadcrumb proc-breadcrumb" aria-label="Хлебные крошки">
       <a href="index.html" class="breadcrumb__link">Главная</a>
       <span class="breadcrumb__sep">›</span>
       <span class="breadcrumb__current">Закупки</span>
     </nav>
 
     <!-- Procurement nav tabs -->
-    <div class="tab-switcher" style="margin-bottom:40px">
-      <button class="tab-btn active" data-proc="policy" id="proc-tab-policy">Политика закупок</button>
-      <button class="tab-btn" data-proc="announcements" id="proc-tab-announcements">Объявления</button>
-      <button class="tab-btn" data-proc="localization" id="proc-tab-localization">Локализация</button>
-      <button class="tab-btn" data-proc="documents" id="proc-tab-documents">Документы</button>
+    <div class="proc-tabs" role="tablist" aria-label="Разделы закупок">
+      <button class="proc-tab active" type="button" role="tab" aria-selected="true" aria-controls="proc-policy" data-proc="policy" id="proc-tab-policy">Политика закупок</button>
+      <button class="proc-tab" type="button" role="tab" aria-selected="false" aria-controls="proc-current" data-proc="current" id="proc-tab-current">Текущие закупки</button>
+      <button class="proc-tab" type="button" role="tab" aria-selected="false" aria-controls="proc-localization" data-proc="localization" id="proc-tab-localization">Локализация и отечественное участие</button>
+      <button class="proc-tab" type="button" role="tab" aria-selected="false" aria-controls="proc-documents" data-proc="documents" id="proc-tab-documents">Документы и отчётность</button>
     </div>
 
     <!-- CMS: procurement tab content -->
-    <div id="proc-policy">
-      <h2 class="section-title" style="margin-bottom:24px">Политика закупок</h2>
-      <div style="max-width:800px">
-        <p class="text-body">ТОО «КАЭС» осуществляет закупки товаров, работ и услуг в соответствии с законодательством Республики Казахстан, внутренними нормативными документами и принципами прозрачности, конкурентности и справедливости.</p>
-        <p class="text-body">Основные принципы закупочной деятельности КАЭС:</p>
-        <ul class="styled-list">
-          <li>Прозрачность и открытость всех закупочных процедур</li>
-          <li>Недискриминационный доступ для всех потенциальных поставщиков</li>
-          <li>Конкурентный отбор на основе объективных критериев</li>
-          <li>Максимальное привлечение казахстанского содержания</li>
-          <li>Соответствие требованиям ядерной безопасности при закупках для объектов АЭС</li>
-        </ul>
-      </div>
-      <div class="info-cards-grid" style="margin-top:40px;max-width:1000px">
-        <div class="info-card">
-          <h4>Открытый тендер</h4>
-          <p>Основной способ закупок для значительных объёмов. Все желающие поставщики могут подать заявку.</p>
+    <div class="proc-panels">
+      <section class="proc-panel active" id="proc-policy" role="tabpanel" aria-labelledby="proc-tab-policy">
+        <div class="proc-heading">
+          <h2>Политика закупок</h2>
+          <p>
+            Закупочная деятельность ТОО «КАЭС» основана на принципах прозрачности, конкурентности и
+            соблюдения законодательства Республики Казахстан. Все процедуры соответствуют стандартам
+            АО «Самрук-Казына».
+          </p>
         </div>
-        <div class="info-card">
-          <h4>Запрос предложений</h4>
-          <p>Применяется при специфических требованиях к поставщику или ограниченном круге квалифицированных участников.</p>
-        </div>
-        <div class="info-card">
-          <h4>Прямое заключение договора</h4>
-          <p>Используется в исключительных случаях, предусмотренных законодательством.</p>
-        </div>
-      </div>
-    </div>
 
-    <div id="proc-announcements" style="display:none">
-      <h2 class="section-title" style="margin-bottom:24px">Объявления о закупках</h2>
-      <!-- CMS LOOP: announcements start -->
-      <div class="procurement-list">
-        <div class="procurement-item">
-          <div class="procurement-item__status procurement-item__status--active">Активно</div>
-          <div class="procurement-item__body">
-            <h4>Услуги по проведению инженерных изысканий</h4>
-            <p class="text-muted">Техническое задание и требования к участникам доступны в разделе документов.</p>
-            <div class="procurement-item__meta">
-              <span>Срок подачи: по запросу</span>
-              <span>Тип: Запрос предложений</span>
+        <div class="proc-principles-grid">
+          <article class="proc-principle-card">
+            <div class="proc-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.04 12.32a1.01 1.01 0 0 1 0-.64C3.42 7.51 7.36 4.5 12 4.5s8.57 3.01 9.96 7.18c.07.21.07.43 0 .64C20.58 16.49 16.64 19.5 12 19.5s-8.57-3.01-9.96-7.18Z"/><path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/></svg>
             </div>
-          </div>
-          <a href="contacts.html" class="btn-outline btn-sm">Запросить документацию</a>
-        </div>
-        <div class="procurement-item">
-          <div class="procurement-item__status procurement-item__status--active">Активно</div>
-          <div class="procurement-item__body">
-            <h4>Консалтинговые услуги в области ядерной безопасности</h4>
-            <p class="text-muted">Требуются специализированные консультации по стандартам МАГАТЭ для объектов АЭС.</p>
-            <div class="procurement-item__meta">
-              <span>Срок подачи: по запросу</span>
-              <span>Тип: Запрос предложений</span>
+            <div>
+              <h3>Прозрачность</h3>
+              <p>Все закупочные процедуры проводятся открыто с обязательной публикацией на портале АО «Самрук-Казына».</p>
             </div>
-          </div>
-          <a href="contacts.html" class="btn-outline btn-sm">Запросить документацию</a>
-        </div>
-        <div class="procurement-item">
-          <div class="procurement-item__status procurement-item__status--pending">Планируется</div>
-          <div class="procurement-item__body">
-            <h4>Поставка специализированного измерительного оборудования</h4>
-            <p class="text-muted">Тендер находится в стадии подготовки. Следите за обновлениями.</p>
-            <div class="procurement-item__meta">
-              <span>Ориентировочные сроки: 2025</span>
-              <span>Тип: Открытый тендер</span>
+          </article>
+
+          <article class="proc-principle-card">
+            <div class="proc-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 20h5v-2a3 3 0 0 0-5.36-1.86M17 20H7m10 0v-2c0-.66-.13-1.28-.36-1.86M7 20H2v-2a3 3 0 0 1 5.36-1.86M7 20v-2c0-.66.13-1.28.36-1.86m0 0a5 5 0 0 1 9.28 0M15 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM7 10a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>
             </div>
-          </div>
-          <span class="btn-outline btn-sm" style="opacity:0.5;pointer-events:none">Скоро</span>
-        </div>
-      </div>
-      <!-- CMS LOOP: announcements end -->
+            <div>
+              <h3>Конкурентность</h3>
+              <p>Равный доступ для всех потенциальных поставщиков, соответствующих квалификационным требованиям.</p>
+            </div>
+          </article>
 
-      <div class="procurement-contact" style="margin-top:40px;padding:32px;background:var(--color-surface);border-radius:var(--radius-md)">
-        <h4 style="margin-bottom:12px;color:var(--color-primary)">Вопросы по закупкам</h4>
-        <p class="text-body">По вопросам участия в закупках и получения документации обращайтесь:</p>
-        <p><a href="mailto:kense@knpp.kz" class="contact-link">kense@knpp.kz</a></p>
-        <p><a href="tel:+77172248450" class="contact-link">+7 (7172) 24 84 50</a></p>
-      </div>
-    </div>
+          <article class="proc-principle-card">
+            <div class="proc-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.1c0-1.13-.85-2.09-1.98-2.18a48 48 0 0 0-1.12-.08m-5.8 0A2.25 2.25 0 0 1 13.5 2.25H15c1.01 0 1.87.67 2.15 1.59m-5.8 0c-.38.02-.75.05-1.12.08C9.1 4.01 8.25 4.97 8.25 6.1v2.15m0 0H4.88c-.62 0-1.13.5-1.13 1.13v11.25c0 .62.51 1.12 1.13 1.12h9.75c.62 0 1.12-.5 1.12-1.12V9.38c0-.62-.5-1.13-1.12-1.13H8.25Z"/></svg>
+            </div>
+            <div>
+              <h3>Законность</h3>
+              <p>Соблюдение законодательства Республики Казахстан и внутренних стандартов корпоративной группы.</p>
+            </div>
+          </article>
 
-    <div id="proc-localization" style="display:none">
-      <h2 class="section-title" style="margin-bottom:24px">Казахстанское содержание</h2>
-      <div style="max-width:800px">
-        <p class="text-body">ТОО «КАЭС» придерживается политики максимального вовлечения казахстанских поставщиков, подрядчиков и специалистов в реализацию проектов строительства АЭС.</p>
-        <p class="text-body">Локализация предусматривает участие отечественных компаний в строительных работах, поставках строительных материалов, инженерном обслуживании, логистике и ряде других направлений, совместимых с требованиями ядерной безопасности.</p>
-      </div>
-      <div class="info-cards-grid" style="margin-top:32px">
-        <div class="info-card">
-          <h4>Строительные работы</h4>
-          <p>Привлечение местных строительных компаний к общестроительным и вспомогательным работам на площадке АЭС.</p>
+          <article class="proc-principle-card">
+            <div class="proc-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6l3 1m0 0-3 9a5 5 0 0 0 6 0L6 7Zm0 0 6-2m6 2 3-1m-3 1-3 9a5 5 0 0 0 6 0l-3-9Zm0 0-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>
+            </div>
+            <div>
+              <h3>Равный доступ</h3>
+              <p>Поставщики оцениваются объективно, без дискриминации и с понятными критериями отбора.</p>
+            </div>
+          </article>
         </div>
-        <div class="info-card">
-          <h4>Материалы и оборудование</h4>
-          <p>Закупки строительных материалов, нестандартных конструкций и оборудования у казахстанских производителей.</p>
-        </div>
-        <div class="info-card">
-          <h4>Профессиональные услуги</h4>
-          <p>Привлечение местных инженеров, консультантов и специалистов в качестве субподрядчиков и партнёров.</p>
-        </div>
-        <div class="info-card">
-          <h4>Кадры</h4>
-          <p>Приоритет при трудоустройстве для граждан Казахстана, прошедших необходимую подготовку.</p>
-        </div>
-      </div>
-    </div>
 
-    <div id="proc-documents" style="display:none">
-      <h2 class="section-title" style="margin-bottom:24px">Документы по закупкам</h2>
-      <!-- CMS LOOP: procurement documents start -->
-      <div class="documents-list">
-        <a href="assets/docs/kaes-development-plan.docx" class="document-item" download>
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+        <div class="proc-portal-card">
           <div>
-            <p class="document-item__name">Политика закупок ТОО «КАЭС»</p>
-            <p class="document-item__meta">PDF · 2024</p>
+            <p class="proc-portal-card__title">Портал закупок АО «Самрук-Казына»</p>
+            <p>Все актуальные объявления, сроки и документация публикуются на официальном портале.</p>
           </div>
-        </a>
-        <div class="document-item document-item--placeholder">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-          <div>
-            <p class="document-item__name">Требования к поставщикам</p>
-            <p class="document-item__meta">PDF · 2024</p>
-          </div>
+          <a href="https://zakup.sk.kz" target="_blank" rel="noopener noreferrer" class="proc-primary-btn">Портал закупок Самрук-Казына</a>
         </div>
-        <div class="document-item document-item--placeholder">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-          <div>
-            <p class="document-item__name">Форма заявки поставщика</p>
-            <p class="document-item__meta">DOCX · 2024</p>
-          </div>
-        </div>
-      </div>
-      <!-- CMS LOOP: procurement documents end -->
-    </div>
+      </section>
 
+      <section class="proc-panel" id="proc-current" role="tabpanel" aria-labelledby="proc-tab-current" hidden>
+        <div class="proc-heading">
+          <h2>Текущие закупки</h2>
+          <p>
+            Актуальные закупки публикуются на официальном портале АО «Самрук-Казына». Ниже представлены
+            примеры закупочных процедур для ознакомления.
+          </p>
+        </div>
+
+        <!-- CMS LOOP: current procurements start -->
+        <div class="procurement-list proc-current-list">
+          <article class="proc-current-item">
+            <div class="proc-current-item__main">
+              <div class="proc-current-item__badges">
+                <span class="proc-id-badge">КЗ-2025-001</span>
+                <span class="proc-status proc-status--accepting">Приём заявок</span>
+              </div>
+              <h3>Поставка оргтехники и расходных материалов</h3>
+              <div class="proc-current-item__meta">
+                <span>Опубликовано: 15.01.2025</span>
+                <span>Срок подачи: 15.02.2025</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="proc-current-item">
+            <div class="proc-current-item__main">
+              <div class="proc-current-item__badges">
+                <span class="proc-id-badge">КЗ-2025-002</span>
+                <span class="proc-status proc-status--review">На рассмотрении</span>
+              </div>
+              <h3>Услуги технического аудита и экспертизы</h3>
+              <div class="proc-current-item__meta">
+                <span>Опубликовано: 20.01.2025</span>
+                <span>Срок подачи: 20.03.2025</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="proc-current-item">
+            <div class="proc-current-item__main">
+              <div class="proc-current-item__badges">
+                <span class="proc-id-badge">КЗ-2025-003</span>
+                <span class="proc-status proc-status--done">Завершено</span>
+              </div>
+              <h3>Консультационные услуги в области ядерной безопасности</h3>
+              <div class="proc-current-item__meta">
+                <span>Опубликовано: 10.12.2024</span>
+                <span>Срок подачи: 10.01.2025</span>
+              </div>
+            </div>
+          </article>
+        </div>
+        <!-- CMS LOOP: current procurements end -->
+
+        <div class="proc-actions-row">
+          <a href="https://zakup.sk.kz" target="_blank" rel="noopener noreferrer" class="proc-primary-btn">Все закупки на портале</a>
+        </div>
+      </section>
+
+      <section class="proc-panel" id="proc-localization" role="tabpanel" aria-labelledby="proc-tab-localization" hidden>
+        <div class="proc-heading">
+          <h2>Локализация и отечественное участие</h2>
+          <p>
+            ТОО «КАЭС» активно поддерживает казахстанское содержание в закупках. Мы содействуем
+            развитию отечественных поставщиков и привлечению малого и среднего бизнеса Республики Казахстан.
+          </p>
+        </div>
+
+        <div class="proc-local-grid">
+          <article class="proc-local-card">
+            <h3>Казахстанское содержание</h3>
+            <p>Требования к доле местных поставщиков определяются в соответствии с законодательством РК. При равных условиях приоритет отдаётся отечественным производителям товаров и услуг.</p>
+          </article>
+          <article class="proc-local-card">
+            <h3>Поддержка МСБ</h3>
+            <p>Малый и средний бизнес Казахстана получает дополнительные возможности для участия в закупочных процедурах ТОО «КАЭС».</p>
+          </article>
+          <article class="proc-local-card">
+            <h3>Трансфер технологий</h3>
+            <p>Сотрудничество с иностранными партнёрами предусматривает передачу компетенций и технологий казахстанской стороне.</p>
+          </article>
+        </div>
+
+        <div class="proc-metrics-grid">
+          <article class="proc-metric-card">
+            <strong>30%+</strong>
+            <span>целевая доля казахстанского содержания</span>
+          </article>
+          <article class="proc-metric-card">
+            <strong>50+</strong>
+            <span>партнёров МСБ (план)</span>
+          </article>
+          <article class="proc-metric-card">
+            <strong>2025–2030</strong>
+            <span>горизонт программы локализации</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="proc-panel" id="proc-documents" role="tabpanel" aria-labelledby="proc-tab-documents" hidden>
+        <div class="proc-heading">
+          <h2>Документы и отчётность</h2>
+          <p>
+            Ниже представлены ключевые нормативные документы, регулирующие закупочную деятельность ТОО «КАЭС».
+          </p>
+        </div>
+
+        <div class="proc-upload-placeholder">
+          <div class="proc-upload-placeholder__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5"/></svg>
+          </div>
+          <div>
+            <p>Документ будет загружен</p>
+            <span>Здесь появится загруженный документ после добавления</span>
+          </div>
+        </div>
+
+        <!-- CMS LOOP: procurement documents start -->
+        <div class="proc-doc-list">
+          <article class="proc-doc-item">
+            <div class="proc-doc-item__left">
+              <div class="proc-doc-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 14.25v-2.63a3.38 3.38 0 0 0-3.38-3.37h-1.5a1.13 1.13 0 0 1-1.12-1.13v-1.5a3.38 3.38 0 0 0-3.38-3.37H8.25M10.5 2.25H5.63c-.62 0-1.13.5-1.13 1.13v17.25c0 .62.51 1.12 1.13 1.12h12.75c.62 0 1.12-.5 1.12-1.12V11.25a9 9 0 0 0-9-9Z"/></svg>
+              </div>
+              <h3>Политика закупок ТОО «КАЭС»</h3>
+            </div>
+            <div class="proc-doc-actions">
+              <a href="assets/docs/procurement/politika-zakupok.pdf" download class="proc-small-primary">Скачать</a>
+              <a href="assets/docs/procurement/politika-zakupok.pdf" target="_blank" rel="noopener noreferrer" class="proc-small-outline">Открыть PDF</a>
+            </div>
+          </article>
+
+          <article class="proc-doc-item">
+            <div class="proc-doc-item__left">
+              <div class="proc-doc-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 14.25v-2.63a3.38 3.38 0 0 0-3.38-3.37h-1.5a1.13 1.13 0 0 1-1.12-1.13v-1.5a3.38 3.38 0 0 0-3.38-3.37H8.25M10.5 2.25H5.63c-.62 0-1.13.5-1.13 1.13v17.25c0 .62.51 1.12 1.13 1.12h12.75c.62 0 1.12-.5 1.12-1.12V11.25a9 9 0 0 0-9-9Z"/></svg>
+              </div>
+              <h3>Правила закупок АО «Самрук-Казына»</h3>
+            </div>
+            <div class="proc-doc-actions">
+              <a href="assets/docs/procurement/pravila-zakupok-sk.pdf" download class="proc-small-primary">Скачать</a>
+              <a href="assets/docs/procurement/pravila-zakupok-sk.pdf" target="_blank" rel="noopener noreferrer" class="proc-small-outline">Открыть PDF</a>
+            </div>
+          </article>
+
+          <article class="proc-doc-item">
+            <div class="proc-doc-item__left">
+              <div class="proc-doc-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 14.25v-2.63a3.38 3.38 0 0 0-3.38-3.37h-1.5a1.13 1.13 0 0 1-1.12-1.13v-1.5a3.38 3.38 0 0 0-3.38-3.37H8.25M10.5 2.25H5.63c-.62 0-1.13.5-1.13 1.13v17.25c0 .62.51 1.12 1.13 1.12h12.75c.62 0 1.12-.5 1.12-1.12V11.25a9 9 0 0 0-9-9Z"/></svg>
+              </div>
+              <h3>Годовой план закупок 2025</h3>
+            </div>
+            <div class="proc-doc-actions">
+              <a href="assets/docs/procurement/plan-zakupok-2025.pdf" download class="proc-small-primary">Скачать</a>
+              <a href="assets/docs/procurement/plan-zakupok-2025.pdf" target="_blank" rel="noopener noreferrer" class="proc-small-outline">Открыть PDF</a>
+            </div>
+          </article>
+
+          <article class="proc-doc-item">
+            <div class="proc-doc-item__left">
+              <div class="proc-doc-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 14.25v-2.63a3.38 3.38 0 0 0-3.38-3.37h-1.5a1.13 1.13 0 0 1-1.12-1.13v-1.5a3.38 3.38 0 0 0-3.38-3.37H8.25M10.5 2.25H5.63c-.62 0-1.13.5-1.13 1.13v17.25c0 .62.51 1.12 1.13 1.12h12.75c.62 0 1.12-.5 1.12-1.12V11.25a9 9 0 0 0-9-9Z"/></svg>
+              </div>
+              <h3>Квалификационные требования к поставщикам</h3>
+            </div>
+            <div class="proc-doc-actions">
+              <a href="assets/docs/procurement/kval-trebovaniya.pdf" download class="proc-small-primary">Скачать</a>
+              <a href="assets/docs/procurement/kval-trebovaniya.pdf" target="_blank" rel="noopener noreferrer" class="proc-small-outline">Открыть PDF</a>
+            </div>
+          </article>
+        </div>
+        <!-- CMS LOOP: procurement documents end -->
+      </section>
+    </div>
   </div>
 </section>
 
 <script>
 (function() {
-  var tabs = ['policy','announcements','localization','documents'];
-  function activate(id) {
+  var tabs = ['policy', 'current', 'localization', 'documents'];
+  var aliases = { announcements: 'current' };
+
+  function activate(id, shouldUpdateHash) {
+    id = aliases[id] || id;
+    if (tabs.indexOf(id) === -1) id = 'policy';
+
     tabs.forEach(function(t) {
       var panel = document.getElementById('proc-' + t);
       var btn = document.getElementById('proc-tab-' + t);
-      if (t === id) { if(panel) panel.style.display=''; if(btn) btn.classList.add('active'); }
-      else { if(panel) panel.style.display='none'; if(btn) btn.classList.remove('active'); }
+      var isActive = t === id;
+
+      if (panel) {
+        panel.classList.toggle('active', isActive);
+        panel.hidden = !isActive;
+      }
+
+      if (btn) {
+        btn.classList.toggle('active', isActive);
+        btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      }
     });
+
+    if (shouldUpdateHash && window.history && window.history.replaceState) {
+      window.history.replaceState(null, '', '#' + id);
+    }
   }
+
   document.querySelectorAll('[data-proc]').forEach(function(btn) {
-    btn.addEventListener('click', function() { activate(this.dataset.proc); });
+    btn.addEventListener('click', function() {
+      activate(this.getAttribute('data-proc'), true);
+    });
   });
-  var hash = window.location.hash.replace('#','');
-  activate(tabs.includes(hash) ? hash : 'policy');
+
+  activate(window.location.hash.replace('#', '') || 'policy', false);
 })();
 </script>
 

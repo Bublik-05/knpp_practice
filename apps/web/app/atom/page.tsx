@@ -5,11 +5,11 @@ export const dynamic = "force-dynamic";
 
 export default function AboutPage() {
   return (
-    <main className="relative min-h-screen overflow-hidden ">
-      <BackgroundGlow />
-      <div className="relative z-10">
-        <AtomContent />
-      </div>
-    </main>
-  );
+      <main className="relative min-h-screen overflow-hidden ">
+        <BackgroundGlow />
+        <div className="relative z-10">
+          <AtomContent />
+        </div>
+      </main>
+    );
 }
