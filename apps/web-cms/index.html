@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ТОО «КАЭС» — Казахстанские атомные электрические станции</title>
+  <meta name="description" content="Официальный сайт ТОО «Казахстанские атомные электрические станции». Развитие атомной энергетики в Казахстане." />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+</head>
+<body>
+
+<!-- CMS: site header -->
+<header class="site-header" id="site-header">
+  <div class="site-header__inner">
+    <!-- Logo -->
+    <a href="index.html" class="site-header__logo" aria-label="КАЭС — на главную">
+      <img src="assets/images/KNPP.png" alt="КАЭС" />
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="nav-menu" aria-label="Основная навигация">
+      <a href="index.html" class="nav-menu__link active">Главная</a>
+      <a href="about.html" class="nav-menu__link">О КАЭС</a>
+      <a href="atom.html" class="nav-menu__link">Об Атоме</a>
+      <a href="projects.html" class="nav-menu__link">Проекты</a>
+      <a href="procurements.html" class="nav-menu__link">Закупки</a>
+      <a href="news.html" class="nav-menu__link">Пресс-центр</a>
+      <a href="vacancies.html" class="nav-menu__link">Вакансии</a>
+      <a href="faq.html" class="nav-menu__link">FAQ</a>
+      <a href="contacts.html" class="nav-menu__link">Контакты</a>
+    </nav>
+
+    <!-- Search + Burger -->
+    <div class="header-search">
+      <button class="header-search__toggle" id="search-toggle" aria-label="Поиск">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+      </button>
+      <div class="header-search__input-wrap" id="search-wrap">
+        <input type="search" class="header-search__input" id="search-input" placeholder="Поиск…" aria-label="Поиск по сайту" />
+      </div>
+
+      <!-- Mega menu burger -->
+      <button class="header-burger" id="mega-menu-btn" aria-label="Все разделы" title="Все разделы">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+
+      <!-- Mobile burger -->
+      <button class="header-burger" id="mobile-burger" aria-label="Меню" aria-expanded="false" style="display:none">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Мобильное меню">
+  <a href="index.html" class="mobile-menu__link">Главная</a>
+  <a href="about.html" class="mobile-menu__link">О КАЭС</a>
+  <a href="atom.html" class="mobile-menu__link">Об Атоме</a>
+  <a href="projects.html" class="mobile-menu__link">Проекты</a>
+  <a href="procurements.html" class="mobile-menu__link">Закупки</a>
+  <a href="news.html" class="mobile-menu__link">Пресс-центр</a>
+  <a href="vacancies.html" class="mobile-menu__link">Вакансии</a>
+  <a href="faq.html" class="mobile-menu__link">FAQ</a>
+  <a href="contacts.html" class="mobile-menu__link">Контакты</a>
+</div>
+
+<!-- Mega menu backdrop -->
+<div class="mega-menu-backdrop" id="mega-menu-backdrop" aria-hidden="true"></div>
+
+<!-- Mega menu panel -->
+<div class="mega-menu-panel" id="mega-menu-panel" role="dialog" aria-label="Все разделы сайта">
+  <div class="mega-menu-panel__inner">
+    <div class="mega-menu-panel__head">
+      <span>Все разделы сайта</span>
+      <button class="mega-menu-close" id="mega-menu-close">
+        Закрыть
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+    <div class="mega-menu-columns">
+      <div class="mega-menu-col">
+        <a href="about.html" class="mega-menu-col__title">О КАЭС</a>
+        <div class="mega-menu-col__links">
+          <a href="about.html?section=about" class="mega-menu-col__sub">О компании</a>
+          <a href="about.html?section=leadership" class="mega-menu-col__sub">Руководство</a>
+          <a href="about.html?section=governance" class="mega-menu-col__sub">Корпоративное управление</a>
+          <a href="about.html?section=safety" class="mega-menu-col__sub">Безопасность</a>
+          <a href="about.html?section=compliance" class="mega-menu-col__sub">Комплаенс</a>
+          <a href="about.html?section=documents" class="mega-menu-col__sub">Документы</a>
+          <a href="about.html?section=development" class="mega-menu-col__sub">План развития</a>
+        </div>
+      </div>
+      <div class="mega-menu-col">
+        <a href="atom.html" class="mega-menu-col__title">Об Атоме</a>
+        <div class="mega-menu-col__links">
+          <a href="atom.html?section=history" class="mega-menu-col__sub">История</a>
+          <a href="atom.html?section=operation" class="mega-menu-col__sub">Как работает реактор</a>
+          <a href="atom.html?section=types" class="mega-menu-col__sub">Типы реакторов</a>
+          <a href="atom.html?section=safety" class="mega-menu-col__sub">Безопасность</a>
+          <a href="atom.html?section=environment" class="mega-menu-col__sub">Атомная энергия и экология</a>
+          <a href="atom.html?section=myths" class="mega-menu-col__sub">Мифы и факты об АЭС</a>
+          <a href="atom.html?section=quiz" class="mega-menu-col__sub">Проверь свои знания</a>
+          <a href="atom.html?section=multimedia" class="mega-menu-col__sub">Мультимедиа</a>
+        </div>
+      </div>
+      <div class="mega-menu-col">
+        <a href="projects.html" class="mega-menu-col__title">Проекты</a>
+        <div class="mega-menu-col__links">
+          <a href="projects.html?tab=balkhash" class="mega-menu-col__sub">АЭС «Балхаш»</a>
+          <a href="projects.html?tab=moinkum" class="mega-menu-col__sub">АЭС «Мойынкум»</a>
+        </div>
+      </div>
+      <div class="mega-menu-col">
+        <a href="procurements.html" class="mega-menu-col__title">Закупки</a>
+        <div class="mega-menu-col__links">
+          <a href="procurements.html" class="mega-menu-col__sub">Политика закупок</a>
+          <a href="procurements.html" class="mega-menu-col__sub">Текущие закупки</a>
+          <a href="procurements.html" class="mega-menu-col__sub">Локализация</a>
+          <a href="procurements.html" class="mega-menu-col__sub">Документы и отчётность</a>
+        </div>
+      </div>
+      <div class="mega-menu-col">
+        <a href="news.html" class="mega-menu-col__title">Пресс-центр</a>
+        <div class="mega-menu-col__links">
+          <a href="news.html" class="mega-menu-col__sub">Календарь событий</a>
+          <a href="news.html" class="mega-menu-col__sub">Мультимедиа</a>
+        </div>
+      </div>
+      <div class="mega-menu-col">
+        <a href="vacancies.html" class="mega-menu-col__title">Вакансии</a>
+        <div class="mega-menu-col__links">
+          <a href="vacancies.html" class="mega-menu-col__sub">Открытые вакансии</a>
+          <a href="vacancies.html?category=stazhirovka" class="mega-menu-col__sub">Стажировка</a>
+        </div>
+      </div>
+      <div class="mega-menu-col">
+        <a href="faq.html" class="mega-menu-col__title">FAQ</a>
+        <div class="mega-menu-col__links">
+          <a href="faq.html" class="mega-menu-col__sub">Часто задаваемые вопросы</a>
+        </div>
+      </div>
+      <div class="mega-menu-col">
+        <a href="contacts.html" class="mega-menu-col__title">Контакты</a>
+        <div class="mega-menu-col__links">
+          <a href="contacts.html" class="mega-menu-col__sub">Связаться с нами</a>
+        </div>
+      </div>
+      <div class="mega-menu-col">
+        <a href="president-message.html" class="mega-menu-col__title">Послание президента</a>
+      </div>
+    </div>
+    <div class="mega-menu-socials">
+      <span style="font-size:13px;color:#6b7280;font-weight:300">Соц. сети:</span>
+      <a href="#" class="social-circle" aria-label="Facebook">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+      </a>
+      <a href="#" class="social-circle" aria-label="Instagram">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="white" stroke="none"/></svg>
+      </a>
+      <a href="#" class="social-circle" aria-label="TikTok">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.3 6.3 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+<!-- /CMS: site header -->
+
+<div class="header-offset">
+
+  <!-- CMS: hero slides -->
+  <div class="slideshow" aria-label="Главный слайдер">
+    <div class="slideshow__slide active" data-href="index.html"
+      style="background-image:url('assets/images/main-img.jpg')">
+      <div class="slideshow__overlay"></div>
+      <div class="slideshow__content">
+        <div class="slideshow__breadcrumb">
+          <span class="slideshow__breadcrumb-item">Главная</span>
+        </div>
+        <h1 class="slideshow__title">Казахстанские атомные<br>электрические станции</h1>
+        <p class="slideshow__subtitle">Энергия для будущего</p>
+      </div>
+    </div>
+    <div class="slideshow__slide" data-href="about.html"
+      style="background-image:url('assets/images/about-img.jpg')">
+      <div class="slideshow__overlay"></div>
+      <div class="slideshow__inactive">
+        <span class="slideshow__inactive-path">Главная / О компании</span>
+        <span class="slideshow__inactive-label">О компании</span>
+      </div>
+    </div>
+    <div class="slideshow__slide" data-href="projects.html"
+      style="background-image:url('assets/images/procurement-img.jpg')">
+      <div class="slideshow__overlay"></div>
+      <div class="slideshow__inactive">
+        <span class="slideshow__inactive-path">Главная / Проекты</span>
+        <span class="slideshow__inactive-label">Проекты</span>
+      </div>
+    </div>
+    <div class="slideshow__slide" data-href="news.html"
+      style="background-image:url('assets/images/news-img.jpg')">
+      <div class="slideshow__overlay"></div>
+      <div class="slideshow__inactive">
+        <span class="slideshow__inactive-path">Главная / Пресс-центр</span>
+        <span class="slideshow__inactive-label">Пресс-центр</span>
+      </div>
+    </div>
+    <div class="slideshow__slide" data-href="international-cooperation.html"
+      style="background-image:url('assets/images/about-img.jpg')">
+      <div class="slideshow__overlay"></div>
+      <div class="slideshow__inactive">
+        <span class="slideshow__inactive-path">Главная / Сотрудничество</span>
+        <span class="slideshow__inactive-label">Сотрудничество</span>
+      </div>
+    </div>
+  </div>
+  <!-- /CMS: hero slides -->
+
+  <!-- PRESIDENT MESSAGE SECTION -->
+  <section class="president-section">
+    <div class="president-section__layout">
+      <div class="president-section__left">
+        <span class="president-section__official">Официальная позиция</span>
+        <h2 class="president-section__title">Послание<br>Президента<br>Республики<br>Казахстан</h2>
+        <a href="president-message.html" class="btn-outline-primary">
+          Читать полностью
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="president-section__right">
+        <div class="quote-mark">"</div>
+        <!-- CMS: president quote -->
+        <blockquote class="president-section__quote">
+          Казахстан должен обеспечить надёжное, доступное и экологически чистое
+          энергоснабжение для устойчивого экономического роста. Строительство атомной
+          электростанции — это не просто энергетический проект, это вклад в будущее
+          наших детей и суверенитет страны на десятилетия вперёд.
+        </blockquote>
+        <p class="president-section__author">
+          — Касым-Жомарт Токаев,<br>
+          <span>Президент Республики Казахстан</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT DARK SECTION -->
+  <section class="about-dark">
+    <img src="assets/images/atom.png" alt="" class="about-dark__atom-bg" aria-hidden="true" />
+    <div class="about-dark__inner">
+      <div class="about-dark__layout">
+        <div class="about-dark__left">
+          <span class="about-dark__label">О компании</span>
+          <h2 class="about-dark__title">О компании<br>ТОО «КАЭС»</h2>
+        </div>
+        <div class="about-dark__right">
+          <div class="quote-mark quote-mark--gold">"</div>
+          <!-- CMS: company intro text -->
+          <p class="about-dark__text">
+            ТОО «Казахстанские атомные электрические станции» — компания, ориентированная на развитие атомной
+            энергетики в Казахстане, подготовку инфраструктуры будущих проектов и внедрение современных
+            технологических решений в отрасли.
+          </p>
+        </div>
+      </div>
+
+      <!-- CMS: value cards -->
+      <div class="value-cards">
+        <div class="value-card">
+          <div class="value-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v1m0 16v1M4.22 4.22l.71.71m13.66 13.66.71.71M3 12H2m20 0h-1M4.22 19.78l.71-.71M18.36 5.64l.71-.71M12 7a5 5 0 100 10A5 5 0 0012 7z"/></svg>
+          </div>
+          <div>
+            <h3 class="value-card__title">Миссия компании</h3>
+            <p class="value-card__desc">Обеспечение Казахстана надёжной, безопасной и современной атомной энергетикой, способствующей устойчивому развитию экономики и укреплению энергетической независимости страны.</p>
+          </div>
+          <div class="value-card__line"></div>
+        </div>
+        <div class="value-card">
+          <div class="value-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div>
+            <h3 class="value-card__title">Ключевые направления</h3>
+            <p class="value-card__desc">Проектирование и сопровождение объектов атомной энергетики, научно-исследовательские работы, инженерные изыскания, техническое консультирование и участие в развитии энергетической инфраструктуры.</p>
+          </div>
+          <div class="value-card__line"></div>
+        </div>
+        <div class="value-card">
+          <div class="value-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+          </div>
+          <div>
+            <h3 class="value-card__title">Технологическое лидерство</h3>
+            <p class="value-card__desc">Внедрение передовых решений в атомной отрасли, развитие национальных компетенций и формирование современной технологической базы для будущих энергетических проектов.</p>
+          </div>
+          <div class="value-card__line"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CEO SECTION -->
+  <section class="ceo-section">
+    <div class="ceo-section__inner">
+      <div class="ceo-section__photo">
+        <!-- CMS: CEO photo -->
+        <img src="assets/images/General_director.png" alt="Бердигулов Ернат Кудайбергенович" />
+      </div>
+      <div>
+        <span class="ceo-section__badge">Руководство</span>
+        <!-- CMS: CEO name, role, bio -->
+        <h2 class="ceo-section__name">Бердигулов Ернат Кудайбергенович</h2>
+        <p class="ceo-section__role">Генеральный директор ТОО «КАЭС»</p>
+        <p class="ceo-section__bio">
+          Руководит реализацией стратегических проектов в области атомной энергетики Казахстана.
+          Под его руководством ТОО «КАЭС» ведёт активную работу по подготовке к строительству
+          атомных электростанций и развитию международного сотрудничества.
+        </p>
+        <a href="about.html?section=leadership" class="btn-ghost-primary">
+          Подробнее о руководстве
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWS SECTION -->
+  <section class="news-section">
+    <img src="assets/images/atom.png" alt="" class="news-section__atom-bg" aria-hidden="true" />
+    <div class="news-section__header">
+      <h2 class="news-section__title">Новости ТОО «КАЭС»</h2>
+    </div>
+
+    <!-- CMS LOOP: news carousel items start -->
+    <div class="news-carousel">
+      <div class="news-carousel__track">
+        <div class="news-card active" data-category="Новости">
+          <div class="news-card__image"><img src="assets/images/news11.png" alt="Координационные встречи с МАГАТЭ в рамках подготовки к миссии INIR" loading="lazy" /></div>
+          <div class="news-card__body">
+            <h3 class="news-card__title">Координационные встречи с МАГАТЭ в рамках подготовки к миссии INIR</h3>
+            <p class="news-card__date">09.02.2026</p>
+          </div>
+        </div>
+        <div class="news-card" data-category="Новости">
+          <div class="news-card__image"><img src="assets/images/news12.png" alt="Развитие ядерной энергетики в Казахстане: итоги года" loading="lazy" /></div>
+          <div class="news-card__body">
+            <h3 class="news-card__title">Развитие ядерной энергетики в Казахстане: итоги года</h3>
+            <p class="news-card__date">15.01.2026</p>
+          </div>
+        </div>
+        <div class="news-card" data-category="Новости">
+          <div class="news-card__image"><img src="assets/images/news13.png" alt="Подписание меморандума о сотрудничестве с международными партнёрами" loading="lazy" /></div>
+          <div class="news-card__body">
+            <h3 class="news-card__title">Подписание меморандума о сотрудничестве с международными партнёрами</h3>
+            <p class="news-card__date">22.12.2025</p>
+          </div>
+        </div>
+        <div class="news-card" data-category="События">
+          <div class="news-card__image"><img src="assets/images/news14.png" alt="Международная конференция по ядерной безопасности в Алматы" loading="lazy" /></div>
+          <div class="news-card__body">
+            <h3 class="news-card__title">Международная конференция по ядерной безопасности в Алматы</h3>
+            <p class="news-card__date">05.11.2025</p>
+          </div>
+        </div>
+        <div class="news-card" data-category="События">
+          <div class="news-card__image"><img src="assets/images/news15.png" alt="Визит делегации МАГАТЭ на производственные объекты КАЭС" loading="lazy" /></div>
+          <div class="news-card__body">
+            <h3 class="news-card__title">Визит делегации МАГАТЭ на производственные объекты КАЭС</h3>
+            <p class="news-card__date">18.10.2025</p>
+          </div>
+        </div>
+      </div>
+      <!-- CMS LOOP: news carousel items end -->
+
+      <div class="news-carousel__controls">
+        <button class="carousel-btn" id="news-prev" aria-label="Предыдущая новость">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+        </button>
+        <button class="carousel-btn" id="news-next" aria-label="Следующая новость">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- EMISSIONS CALCULATOR -->
+  <section class="emissions-calculator" id="emissions-calculator">
+
+  <div class="calc-header">
+    <p class="section-label">CO₂ калькулятор</p>
+    <h2 class="section-title">Сравнение выбросов разных источников энергии</h2>
+    <p>Быстрый расчёт выбросов CO₂ при одинаковом объёме выработки электроэнергии.</p>
+  </div>
+
+  <div class="calc-box">
+    <div class="calc-grid">
+
+      <!-- Left: controls -->
+      <div class="calc-left">
+        <div class="calc-field">
+          <label>Источник энергии</label>
+          <div class="source-buttons">
+            <button class="source-btn is-active" data-source="coal">Уголь</button>
+            <button class="source-btn" data-source="gas">Газ</button>
+            <button class="source-btn" data-source="nuclear">Атомная энергия</button>
+            <button class="source-btn" data-source="solar">Солнечная энергия</button>
+            <button class="source-btn" data-source="wind">Ветровая энергия</button>
+          </div>
+        </div>
+
+        <div class="calc-field">
+          <label for="calc-volume">Объём электроэнергии, МВт·ч</label>
+          <input type="number" id="calc-volume" class="volume-input"
+            value="1000" min="0" step="1" placeholder="Например: 1000" />
+          <div class="quick-volumes">
+            <button class="quick-vol-btn" data-volume="100">100 МВт·ч</button>
+            <button class="quick-vol-btn" data-volume="1000">1&nbsp;000 МВт·ч</button>
+            <button class="quick-vol-btn" data-volume="10000">10&nbsp;000 МВт·ч</button>
+          </div>
+        </div>
+
+        <div class="calc-error" role="alert">Введите корректный объём электроэнергии в МВт·ч.</div>
+
+        <div class="calc-note">
+          Расчёт ориентировочный и основан на усреднённых коэффициентах выбросов CO₂.
+        </div>
+      </div>
+
+      <!-- Right: results -->
+      <div class="calc-right">
+        <div class="calc-result-main">
+          <p class="result-label">Выбросы CO₂</p>
+          <div class="calc-result-value" id="calc-result-value">820 т</div>
+          <p class="calc-result-sub" id="calc-result-sub">Уголь · 1 000 МВт·ч</p>
+        </div>
+
+        <div class="calc-insight">
+          <h3>Пояснение результата</h3>
+          <p id="calc-insight-text">
+            При выработке 1 000 МВт·ч уголь формирует около 820 т CO₂.
+            Если тот же объём произвести на атомной станции, выбросы составят примерно 12 т.
+            Это на 808 т меньше, то есть выбросы можно сократить примерно на 98,5%.
+          </p>
+        </div>
+
+        <div class="calc-stats">
+          <div class="calc-stat">
+            <p class="stat-label">Сравнение с АЭС</p>
+            <p class="stat-value" id="stat-ratio">68,3×</p>
+          </div>
+          <div class="calc-stat">
+            <p class="stat-label">Разница с АЭС</p>
+            <p class="stat-value" id="stat-diff">808 т</p>
+          </div>
+          <div class="calc-stat">
+            <p class="stat-label">Эквивалент авто</p>
+            <p class="stat-value" id="stat-cars">≈ 182</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- KAZAKHSTAN MAP -->
+  <section class="map-section">
+    <div class="map-section__header">
+      <h2 class="section-title">Карта Казахстана</h2>
+      <p class="map-section__desc">Интерактивная карта площадок. Нажмите на метку, чтобы открыть краткую информацию о локации.</p>
+    </div>
+    <div class="map-container">
+      <div class="map-inner">
+        <img src="assets/images/Blank_map_of_Kazakhstan.svg" alt="Карта Казахстана" />
+
+        <!-- CMS: map pins -->
+        <div class="map-pin" style="left:68.8%;top:63%"
+          data-city="balkhash"
+          data-name="Балхаш"
+          data-badge="Потенциальная площадка"
+          data-desc="Балхаш рассматривается как одна из возможных площадок для развития энергетической инфраструктуры и будущих проектов в атомной сфере."
+          data-tags="Предварительное рассмотрение|Крупный энергетический объект"
+          data-img="assets/images/news2-img.jpg"
+          aria-label="Открыть информацию: Балхаш">
+          <div class="map-pin__dot"></div>
+          <div class="map-pin__stem"></div>
+          <span class="map-pin__label">Балхаш</span>
+        </div>
+
+        <div class="map-pin" style="left:75%;top:21%"
+          data-city="moyinkul"
+          data-name="Мойнкуль"
+          data-badge="Перспективная зона"
+          data-desc="Локация рассматривается как резервная площадка. Позже здесь можно разместить уточнённую информацию о площадке и статусе проекта."
+          data-tags="Рабочая гипотеза|Резервная площадка"
+          data-img="assets/images/news3-img.jpg"
+          aria-label="Открыть информацию: Мойнкуль">
+          <div class="map-pin__dot"></div>
+          <div class="map-pin__stem"></div>
+          <span class="map-pin__label">Мойнкуль</span>
+        </div>
+
+        <!-- Map popup (CMS: filled by JS) -->
+        <div class="map-popup" id="map-popup">
+          <div class="map-popup__inner">
+            <img class="map-popup__img" src="" alt="" />
+            <button class="map-popup__close" id="map-popup-close" aria-label="Закрыть">×</button>
+            <div class="map-popup__body">
+              <span class="map-popup__badge"></span>
+              <h3 class="map-popup__title"></h3>
+              <p class="map-popup__desc"></p>
+              <div class="map-popup__tags"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="map-hint" id="map-hint">Нажмите на метку</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEVELOPMENT PLAN -->
+  <section class="dev-plan-section">
+    <div class="dev-plan-section__inner">
+      <div class="dev-plan-section__intro">
+        <h2 class="section-title section-title--light">План развития Компании</h2>
+        <!-- CMS: development plan text -->
+        <p class="dev-plan-section__text">
+          Проект реализуется поэтапно. Сейчас работа находится на начальной стадии,
+          а последующие шаги отражают дальнейшую траекторию развития.
+        </p>
+        <div class="dev-plan-section__actions">
+          <a href="development-plan.html" class="btn-accent">
+            Подробнее
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </a>
+          <a href="assets/docs/kaes-development-plan.docx" download class="btn-outline-light">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+            Скачать документ
+          </a>
+        </div>
+      </div>
+
+      <!-- CMS LOOP: development stages start -->
+      <div class="stage-grid">
+        <div class="stage-card stage-card--current">
+          <div class="stage-card__glow"></div>
+          <div style="position:relative;z-index:1">
+            <span class="stage-card__tag">Текущий этап</span>
+            <p class="stage-card__num">01</p>
+            <h3 class="stage-card__title">Инициация проекта</h3>
+            <p class="stage-card__desc">Формирование базовой концепции, определение направления развития и запуск начальной стадии работ.</p>
+          </div>
+        </div>
+        <div class="stage-card">
+          <div class="stage-card__glow"></div>
+          <div style="position:relative;z-index:1">
+            <span class="stage-card__tag">Запланировано</span>
+            <p class="stage-card__num">02</p>
+            <h3 class="stage-card__title">Предварительная проработка</h3>
+            <p class="stage-card__desc">Уточнение ключевых параметров, анализ направлений и подготовка к следующей фазе развития.</p>
+          </div>
+        </div>
+        <div class="stage-card">
+          <div class="stage-card__glow"></div>
+          <div style="position:relative;z-index:1">
+            <span class="stage-card__tag">В планах</span>
+            <p class="stage-card__num">03</p>
+            <h3 class="stage-card__title">Подготовка решений</h3>
+            <p class="stage-card__desc">Формирование проектных решений, структурирование материалов и дальнейшая детализация.</p>
+          </div>
+        </div>
+        <div class="stage-card">
+          <div class="stage-card__glow"></div>
+          <div style="position:relative;z-index:1">
+            <span class="stage-card__tag">В планах</span>
+            <p class="stage-card__num">04</p>
+            <h3 class="stage-card__title">Этап реализации</h3>
+            <p class="stage-card__desc">Переход к практической части, запуск основных процессов и последовательное развитие проекта.</p>
+          </div>
+        </div>
+        <div class="stage-card">
+          <div class="stage-card__glow"></div>
+          <div style="position:relative;z-index:1">
+            <span class="stage-card__tag">Будущий этап</span>
+            <p class="stage-card__num">05</p>
+            <h3 class="stage-card__title">Развитие и расширение</h3>
+            <p class="stage-card__desc">Следующий шаг масштабирования, укрепления результатов и дальнейшего роста проекта.</p>
+          </div>
+        </div>
+      </div>
+      <!-- CMS LOOP: development stages end -->
+    </div>
+  </section>
+
+  <!-- CAREERS PROMO -->
+  <section class="careers-promo">
+    <a href="vacancies.html" class="careers-promo__card">
+      <div class="careers-promo__grid">
+        <div class="careers-promo__content">
+          <span class="careers-promo__badge">Карьера в компании</span>
+          <h2 class="careers-promo__title">Присоединяйтесь к команде и станьте частью будущих энергетических проектов</h2>
+          <p class="careers-promo__desc">На странице вакансий собраны актуальные предложения, направления работы и возможности для профессионального роста.</p>
+          <!-- CMS: vacancies count -->
+          <div class="careers-stats">
+            <div class="careers-stat">
+              <p class="careers-stat__label">Актуальные вакансии</p>
+              <p class="careers-stat__val">12+</p>
+            </div>
+            <div class="careers-stat">
+              <p class="careers-stat__label">Формат</p>
+              <p class="careers-stat__val--md">Офис · Производство · IT</p>
+            </div>
+          </div>
+          <span class="btn-solid-primary">
+            Смотреть вакансии
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+          </span>
+        </div>
+        <div class="careers-promo__image">
+          <img src="assets/images/generated_human.png" alt="Вакансии в КАЭС" />
+          <div class="careers-promo__img-overlay"></div>
+          <div class="careers-promo__badge-img careers-promo__badge-img--tl">
+            <p>Направления</p>
+            <p>Инженерия · Безопасность · Аналитика</p>
+          </div>
+          <div class="careers-promo__badge-img careers-promo__badge-img--br">
+            <p>Команда</p>
+            <p>Открыты новые позиции</p>
+          </div>
+        </div>
+      </div>
+    </a>
+  </section>
+
+  <!-- PARTNERS SCROLL -->
+  <section class="partners-section">
+    <div class="partners-fade-l"></div>
+    <div class="partners-fade-r"></div>
+    <!-- CMS: partners logos -->
+    <div class="partners-track-wrap">
+      <div class="partners-track">
+        <!-- 3x for infinite loop -->
+        <a href="https://www.akorda.kz/ru" class="partner-item" target="_blank" rel="noopener noreferrer"><img src="assets/images/partners/akorda.jpg" alt="Акорда" /></a>
+        <a href="https://primeminister.kz/ru" class="partner-item" target="_blank" rel="noopener noreferrer"><img src="assets/images/partners/primeminister.jpeg" alt="Премьер-Министр" /></a>
+        <a href="https://www.gov.kz/memleket/entities/atom-energiyasy" class="partner-item" target="_blank" rel="noopener noreferrer"><img src="assets/images/partners/atom-agency.png" alt="Агентство РК по атомной энергии" /></a>
+        <a href="https://www.nnc.kz/ru" class="partner-item" target="_blank" rel="noopener noreferrer"><img src="assets/images/partners/nnc.png" alt="НЯЦ" /></a>
+        <a href="https://inp.kz/ru" class="partner-item" target="_blank" rel="noopener noreferrer"><img src="assets/images/partners/iyaf.png" alt="ИЯФ" /></a>
+        <a href="https://www.akorda.kz/ru" class="partner-item" target="_blank" rel="noopener noreferrer"><img src="assets/images/partners/akorda.jpg" alt="Акорда" /></a>
+        <a href="https://primeminister.kz/ru" class="partner-item" target="_blank" rel="noopener noreferrer"><img src="assets/images/partners/primeminister.jpeg" alt="Премьер-Министр" /></a>
+        <a href="https://www.gov.kz/memleket/entities/atom-energiyasy" class="partner-item" target="_blank" rel="noopener noreferrer"><img src="assets/images/partners/atom-agency.png" alt="Агентство РК по атомной энергии" /></a>
+        <a href="https://www.nnc.kz/ru" class="partner-item" target="_blank" rel="noopener noreferrer"><img src="assets/images/partners/nnc.png" alt="НЯЦ" /></a>
+        <a href="https://inp.kz/ru" class="partner-item" target="_blank" rel="noopener noreferrer"><img src="assets/images/partners/iyaf.png" alt="ИЯФ" /></a>
+        <a href="https://www.akorda.kz/ru" class="partner-item" target="_blank" rel="noopener noreferrer"><img src="assets/images/partners/akorda.jpg" alt="Акорда" /></a>
+        <a href="https://primeminister.kz/ru" class="partner-item" target="_blank" rel="noopener noreferrer"><img src="assets/images/partners/primeminister.jpeg" alt="Премьер-Министр" /></a>
+        <a href="https://www.gov.kz/memleket/entities/atom-energiyasy" class="partner-item" target="_blank" rel="noopener noreferrer"><img src="assets/images/partners/atom-agency.png" alt="Агентство РК по атомной энергии" /></a>
+        <a href="https://www.nnc.kz/ru" class="partner-item" target="_blank" rel="noopener noreferrer"><img src="assets/images/partners/nnc.png" alt="НЯЦ" /></a>
+        <a href="https://inp.kz/ru" class="partner-item" target="_blank" rel="noopener noreferrer"><img src="assets/images/partners/iyaf.png" alt="ИЯФ" /></a>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /header-offset -->
+
+<!-- CMS: footer -->
+<footer class="site-footer">
+  <div class="site-footer__main">
+    <div class="site-footer__left">
+      <a href="index.html" class="site-footer__logo" aria-label="КАЭС">
+        <img src="assets/images/KNPP.png" alt="КАЭС" />
+      </a>
+      <!-- CMS: contact info -->
+      <div class="site-footer__contact">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        <div>
+          <p>БЦ «Аура»</p>
+          <p>Проспект Мангилик Ел, 57а</p>
+        </div>
+      </div>
+      <div class="site-footer__contact">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+        <a href="mailto:kense@knpp.kz">kense@knpp.kz</a>
+      </div>
+      <div class="site-footer__contact">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.86 19.86 0 013.09 4.18 2 2 0 015.09 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.09 9.91a16 16 0 006.99 7l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <span>+7 (7172) 24 84 50</span>
+      </div>
+      <div class="site-footer__map">
+        <iframe
+          src="https://yandex.ru/map-widget/v1/?ll=71.430564%2C51.128207&z=14&pt=71.430564%2C51.128207%2Cpm2rdm&lang=ru_RU"
+          title="Карта расположения офиса КАЭС"
+          allowfullscreen
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+
+    <div class="site-footer__right">
+      <h2 class="site-footer__form-title">Не нашли то что нужно?</h2>
+      <p class="site-footer__form-sub">Свяжитесь с нами</p>
+
+      <!-- CMS: contact form -->
+      <div class="footer-success" id="footer-success">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(245,240,233,1)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto 16px"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <p>Спасибо! Ваша заявка отправлена.</p>
+        <p style="font-size:13px;color:rgba(217,203,194,0.80);margin-top:8px">Мы свяжемся с вами в ближайшее время.</p>
+        <button id="footer-reset" style="margin-top:24px;padding:8px 24px;border:1px solid rgba(255,255,255,0.40);border-radius:100px;color:var(--color-muted);font-size:14px;font-weight:300;cursor:pointer;background:none;font-family:inherit">Отправить ещё</button>
+      </div>
+
+      <form class="footer-form" id="footer-form" novalidate>
+        <input type="text" class="footer-input" placeholder="Ваше имя" required aria-label="Имя" />
+        <input type="email" class="footer-input" placeholder="Email" required aria-label="Email" />
+        <input type="tel" class="footer-input" placeholder="Номер телефона" aria-label="Телефон" />
+        <textarea class="footer-textarea" rows="4" placeholder="Ваше сообщение" aria-label="Сообщение"></textarea>
+        <button type="submit" class="btn-accent" style="align-self:flex-start">Отправить заявку</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="site-footer__bar">
+    <div class="site-footer__bar-inner">
+      <p class="site-footer__credit">
+        Разработчик <a href="#">ТОО «BenchMark Consulting»</a>
+      </p>
+      <div class="footer-socials">
+        <span>Соц. сети:</span>
+        <a href="#" class="footer-social-btn" aria-label="Facebook">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+        <a href="#" class="footer-social-btn" aria-label="Instagram">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="#" class="footer-social-btn" aria-label="TikTok">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.3 6.3 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- /CMS: footer -->
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Вакансия — ТОО «КАЭС»</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+</head>
+<body>
+
+<!-- CMS: site header -->
+<header class="site-header" id="site-header">
+  <div class="site-header__inner">
+    <a href="index.html" class="site-header__logo" aria-label="КАЭС — на главную">
+      <img src="assets/images/KNPP.png" alt="КАЭС" />
+    </a>
+    <nav class="nav-menu" aria-label="Основная навигация">
+      <a href="index.html" class="nav-menu__link">Главная</a>
+      <a href="about.html" class="nav-menu__link">О КАЭС</a>
+      <a href="atom.html" class="nav-menu__link">Об Атоме</a>
+      <a href="projects.html" class="nav-menu__link">Проекты</a>
+      <a href="procurements.html" class="nav-menu__link">Закупки</a>
+      <a href="news.html" class="nav-menu__link">Пресс-центр</a>
+      <a href="vacancies.html" class="nav-menu__link active">Вакансии</a>
+      <a href="faq.html" class="nav-menu__link">FAQ</a>
+      <a href="contacts.html" class="nav-menu__link">Контакты</a>
+    </nav>
+    <div class="header-search">
+      <button class="header-search__toggle" id="search-toggle" aria-label="Поиск">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+      <div class="header-search__input-wrap" id="search-wrap">
+        <input type="search" class="header-search__input" id="search-input" placeholder="Поиск…" />
+      </div>
+      <button class="header-burger" id="mega-menu-btn" aria-label="Все разделы">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <button class="header-burger" id="mobile-burger" aria-label="Меню" style="display:none">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html" class="mobile-menu__link">Главная</a>
+  <a href="about.html" class="mobile-menu__link">О КАЭС</a>
+  <a href="atom.html" class="mobile-menu__link">Об Атоме</a>
+  <a href="projects.html" class="mobile-menu__link">Проекты</a>
+  <a href="procurements.html" class="mobile-menu__link">Закупки</a>
+  <a href="news.html" class="mobile-menu__link">Пресс-центр</a>
+  <a href="vacancies.html" class="mobile-menu__link">Вакансии</a>
+  <a href="faq.html" class="mobile-menu__link">FAQ</a>
+  <a href="contacts.html" class="mobile-menu__link">Контакты</a>
+</div>
+
+<div class="mega-menu-backdrop" id="mega-menu-backdrop"></div>
+<div class="mega-menu-panel" id="mega-menu-panel">
+  <div class="mega-menu-panel__inner">
+    <div class="mega-menu-panel__head">
+      <span>Все разделы сайта</span>
+      <button class="mega-menu-close" id="mega-menu-close">Закрыть <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <div class="mega-menu-columns">
+      <div class="mega-menu-col"><a href="about.html" class="mega-menu-col__title">О КАЭС</a><div class="mega-menu-col__links"><a href="about.html?section=about" class="mega-menu-col__sub">О компании</a><a href="about.html?section=leadership" class="mega-menu-col__sub">Руководство</a><a href="about.html?section=governance" class="mega-menu-col__sub">Корпоративное управление</a><a href="about.html?section=safety" class="mega-menu-col__sub">Безопасность</a><a href="about.html?section=compliance" class="mega-menu-col__sub">Комплаенс</a><a href="about.html?section=documents" class="mega-menu-col__sub">Документы</a></div></div>
+      <div class="mega-menu-col"><a href="atom.html" class="mega-menu-col__title">Об Атоме</a><div class="mega-menu-col__links"><a href="atom.html?section=history" class="mega-menu-col__sub">История атомной энергетики</a><a href="atom.html?section=operation" class="mega-menu-col__sub">Как работает АЭС</a><a href="atom.html?section=types" class="mega-menu-col__sub">Типы реакторов</a><a href="atom.html?section=safety" class="mega-menu-col__sub">Безопасность</a><a href="atom.html?section=environment" class="mega-menu-col__sub">Экология</a><a href="atom.html?section=myths" class="mega-menu-col__sub">Мифы и факты</a></div></div>
+      <div class="mega-menu-col"><a href="projects.html" class="mega-menu-col__title">Проекты</a><div class="mega-menu-col__links"><a href="projects.html?tab=balkhash" class="mega-menu-col__sub">АЭС «Балхаш»</a><a href="projects.html?tab=mainkum" class="mega-menu-col__sub">АЭС «Мойынкум»</a></div></div>
+      <div class="mega-menu-col"><a href="procurements.html" class="mega-menu-col__title">Закупки</a><div class="mega-menu-col__links"><a href="procurements.html#policy" class="mega-menu-col__sub">Политика закупок</a><a href="procurements.html#announcements" class="mega-menu-col__sub">Объявления</a><a href="procurements.html#localization" class="mega-menu-col__sub">Локализация</a><a href="procurements.html#documents" class="mega-menu-col__sub">Документы</a></div></div>
+      <div class="mega-menu-col"><a href="news.html" class="mega-menu-col__title">Пресс-центр</a><div class="mega-menu-col__links"><a href="news.html" class="mega-menu-col__sub">Новости</a><a href="international-cooperation.html" class="mega-menu-col__sub">Международное сотрудничество</a><a href="president-message.html" class="mega-menu-col__sub">Послание Президента</a></div></div>
+      <div class="mega-menu-col"><a href="vacancies.html" class="mega-menu-col__title">Вакансии</a><div class="mega-menu-col__links"><a href="vacancies.html" class="mega-menu-col__sub">Все вакансии</a><a href="vacancies.html#stazhirovka" class="mega-menu-col__sub">Стажировка</a></div></div>
+      <div class="mega-menu-col"><a href="faq.html" class="mega-menu-col__title">FAQ</a><div class="mega-menu-col__links"><a href="faq.html?section=general" class="mega-menu-col__sub">Об АЭС и атомной энергетике</a><a href="faq.html?section=project" class="mega-menu-col__sub">О проекте в Казахстане</a><a href="faq.html?section=cooperation" class="mega-menu-col__sub">Вакансии и сотрудничество</a></div></div>
+      <div class="mega-menu-col"><a href="contacts.html" class="mega-menu-col__title">Контакты</a><div class="mega-menu-col__links"><a href="contacts.html" class="mega-menu-col__sub">Связаться с нами</a></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="header-offset">
+
+<div class="page-hero">
+  <div class="page-hero__inner">
+    <h1 class="page-hero__title" id="vd-hero-title">Вакансия</h1>
+    <p class="page-hero__sub" id="vd-hero-sub">ТОО «КАЭС»</p>
+  </div>
+</div>
+
+<section class="page-section">
+  <div class="container">
+    <nav class="breadcrumb" style="margin-bottom:40px">
+      <a href="index.html" class="breadcrumb__link">Главная</a>
+      <span class="breadcrumb__sep">›</span>
+      <a href="vacancies.html" class="breadcrumb__link">Вакансии</a>
+      <span class="breadcrumb__sep">›</span>
+      <a href="#" class="breadcrumb__link" id="vd-cat-link">Категория</a>
+      <span class="breadcrumb__sep">›</span>
+      <span class="breadcrumb__current" id="vd-breadcrumb">Вакансия</span>
+    </nav>
+
+    <div class="vacancy-detail-wrap">
+      <!-- CMS: vacancy detail -->
+      
+    <div class="vacancy-detail-panel" id="vac-senior-frontend" style="display:none">
+      <div class="vacancy-detail__head">
+        <div>
+          <div class="project-tag" style="margin-bottom:12px">Отдел IT</div>
+          <h1 class="section-title-lg">Senior Frontend Developer</h1>
+          <div class="vacancy-detail__meta">
+            <span class="vacancy-meta-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+              Астана
+            </span>
+            <span class="vacancy-meta-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Полная занятость
+            </span>
+            <span class="vacancy-meta-tag vacancy-meta-tag--salary">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+              от 500 000 тг
+            </span>
+          </div>
+        </div>
+        <a href="https://hh.kz" target="_blank" rel="noopener" class="btn-accent vacancy-apply-btn">Откликнуться</a>
+      </div>
+
+      <div class="vacancy-detail__body">
+        <div class="vacancy-section">
+          <h3>О вакансии</h3>
+          <p class="text-body">Мы ищем опытного Frontend-разработчика для работы над корпоративными веб-приложениями атомной отрасли.</p>
+        </div>
+        <div class="vacancy-section">
+          <h3>Требования</h3>
+          <ul class="styled-list"><li>Опыт от 3 лет с React / Next.js</li><li>Глубокое знание TypeScript</li><li>Опыт с REST API и WebSocket</li><li>Понимание принципов UI/UX и доступности</li></ul>
+        </div>
+        <div class="vacancy-section">
+          <h3>Обязанности</h3>
+          <ul class="styled-list"><li>Разработка и поддержка веб-интерфейсов корпоративных систем</li><li>Code review и менторинг junior-разработчиков</li><li>Взаимодействие с командой бэкенда и дизайнерами</li></ul>
+        </div>
+        <div class="vacancy-section">
+          <h3>Условия</h3>
+          <ul class="styled-list"><li>Официальное трудоустройство по ТК РК</li><li>ДМС после испытательного срока</li><li>Гибкий рабочий график</li><li>Корпоративное обучение</li></ul>
+        </div>
+        <div class="vacancy-detail__actions">
+          <a href="https://hh.kz" target="_blank" rel="noopener" class="btn-primary">Откликнуться на hh.kz</a>
+          <a href="vacancy-category.html?category=it" class="btn-outline">← Все вакансии: Отдел IT</a>
+        </div>
+      </div>
+    </div>
+    <div class="vacancy-detail-panel" id="vac-backend-developer" style="display:none">
+      <div class="vacancy-detail__head">
+        <div>
+          <div class="project-tag" style="margin-bottom:12px">Отдел IT</div>
+          <h1 class="section-title-lg">Backend Developer</h1>
+          <div class="vacancy-detail__meta">
+            <span class="vacancy-meta-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+              Астана
+            </span>
+            <span class="vacancy-meta-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Полная занятость
+            </span>
+            <span class="vacancy-meta-tag vacancy-meta-tag--salary">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+              от 450 000 тг
+            </span>
+          </div>
+        </div>
+        <a href="https://hh.kz" target="_blank" rel="noopener" class="btn-accent vacancy-apply-btn">Откликнуться</a>
+      </div>
+
+      <div class="vacancy-detail__body">
+        <div class="vacancy-section">
+          <h3>О вакансии</h3>
+          <p class="text-body">Ищем Backend-разработчика для поддержки и развития корпоративных API-сервисов.</p>
+        </div>
+        <div class="vacancy-section">
+          <h3>Требования</h3>
+          <ul class="styled-list"><li>Опыт от 2 лет с Python / Django / DRF</li><li>Знание PostgreSQL и Redis</li><li>Опыт с Docker и CI/CD</li><li>Понимание принципов безопасной разработки</li></ul>
+        </div>
+        <div class="vacancy-section">
+          <h3>Обязанности</h3>
+          <ul class="styled-list"><li>Разработка и документирование REST API</li><li>Оптимизация запросов к базе данных</li><li>Написание unit- и интеграционных тестов</li></ul>
+        </div>
+        <div class="vacancy-section">
+          <h3>Условия</h3>
+          <ul class="styled-list"><li>Официальное трудоустройство по ТК РК</li><li>Корпоративное обучение</li><li>Ежегодная индексация заработной платы</li></ul>
+        </div>
+        <div class="vacancy-detail__actions">
+          <a href="https://hh.kz" target="_blank" rel="noopener" class="btn-primary">Откликнуться на hh.kz</a>
+          <a href="vacancy-category.html?category=it" class="btn-outline">← Все вакансии: Отдел IT</a>
+        </div>
+      </div>
+    </div>
+    <div class="vacancy-detail-panel" id="vac-senior-engineer" style="display:none">
+      <div class="vacancy-detail__head">
+        <div>
+          <div class="project-tag" style="margin-bottom:12px">Инженерный отдел</div>
+          <h1 class="section-title-lg">Ведущий инженер-технолог</h1>
+          <div class="vacancy-detail__meta">
+            <span class="vacancy-meta-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+              Улькен, Алматинская обл.
+            </span>
+            <span class="vacancy-meta-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Полная занятость
+            </span>
+            <span class="vacancy-meta-tag vacancy-meta-tag--salary">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+              от 600 000 тг
+            </span>
+          </div>
+        </div>
+        <a href="https://hh.kz" target="_blank" rel="noopener" class="btn-accent vacancy-apply-btn">Откликнуться</a>
+      </div>
+
+      <div class="vacancy-detail__body">
+        <div class="vacancy-section">
+          <h3>О вакансии</h3>
+          <p class="text-body">Мы ищем опытного инженера-технолога для участия в проектировании и запуске технологических систем атомной электростанции.</p>
+        </div>
+        <div class="vacancy-section">
+          <h3>Требования</h3>
+          <ul class="styled-list"><li>Высшее техническое образование (атомная энергетика или смежные специальности)</li><li>Опыт работы от 5 лет на объектах энергетики</li><li>Знание нормативной базы РК</li><li>Английский язык — не ниже B2</li></ul>
+        </div>
+        <div class="vacancy-section">
+          <h3>Обязанности</h3>
+          <ul class="styled-list"><li>Разработка и экспертиза технологических регламентов</li><li>Контроль за соответствием проекта требованиям МАГАТЭ</li><li>Участие в пуско-наладочных работах</li></ul>
+        </div>
+        <div class="vacancy-section">
+          <h3>Условия</h3>
+          <ul class="styled-list"><li>Официальное трудоустройство</li><li>Жильё за счёт компании или компенсация аренды</li><li>ДМС и страхование жизни</li></ul>
+        </div>
+        <div class="vacancy-detail__actions">
+          <a href="https://hh.kz" target="_blank" rel="noopener" class="btn-primary">Откликнуться на hh.kz</a>
+          <a href="vacancy-category.html?category=engineering" class="btn-outline">← Все вакансии: Инженерный отдел</a>
+        </div>
+      </div>
+    </div>
+    <div class="vacancy-detail-panel" id="vac-security-specialist" style="display:none">
+      <div class="vacancy-detail__head">
+        <div>
+          <div class="project-tag" style="margin-bottom:12px">Отдел безопасности</div>
+          <h1 class="section-title-lg">Специалист по ядерной безопасности</h1>
+          <div class="vacancy-detail__meta">
+            <span class="vacancy-meta-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+              Астана / Улькен
+            </span>
+            <span class="vacancy-meta-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Полная занятость
+            </span>
+            <span class="vacancy-meta-tag vacancy-meta-tag--salary">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+              от 550 000 тг
+            </span>
+          </div>
+        </div>
+        <a href="https://hh.kz" target="_blank" rel="noopener" class="btn-accent vacancy-apply-btn">Откликнуться</a>
+      </div>
+
+      <div class="vacancy-detail__body">
+        <div class="vacancy-section">
+          <h3>О вакансии</h3>
+          <p class="text-body">Требуется специалист для организации и контроля системы ядерной и радиационной безопасности.</p>
+        </div>
+        <div class="vacancy-section">
+          <h3>Требования</h3>
+          <ul class="styled-list"><li>Образование в области ядерной физики или ядерной инженерии</li><li>Опыт работы от 4 лет на ядерных объектах</li><li>Знание требований МАГАТЭ (серии NS-R)</li></ul>
+        </div>
+        <div class="vacancy-section">
+          <h3>Обязанности</h3>
+          <ul class="styled-list"><li>Разработка документации по ядерной безопасности</li><li>Проведение внутренних проверок и тренингов персонала</li><li>Взаимодействие с регулятором (КАЭ РК) и МАГАТЭ</li></ul>
+        </div>
+        <div class="vacancy-section">
+          <h3>Условия</h3>
+          <ul class="styled-list"><li>Официальное трудоустройство</li><li>Надбавки за работу в зоне ядерной безопасности</li><li>ДМС расширенный</li><li>Ежегодный медицинский осмотр</li></ul>
+        </div>
+        <div class="vacancy-detail__actions">
+          <a href="https://hh.kz" target="_blank" rel="noopener" class="btn-primary">Откликнуться на hh.kz</a>
+          <a href="vacancy-category.html?category=safety" class="btn-outline">← Все вакансии: Отдел безопасности</a>
+        </div>
+      </div>
+    </div>
+    <div class="vacancy-detail-panel" id="vac-financial-analyst" style="display:none">
+      <div class="vacancy-detail__head">
+        <div>
+          <div class="project-tag" style="margin-bottom:12px">Финансовый отдел</div>
+          <h1 class="section-title-lg">Финансовый аналитик</h1>
+          <div class="vacancy-detail__meta">
+            <span class="vacancy-meta-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+              Астана
+            </span>
+            <span class="vacancy-meta-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Полная занятость
+            </span>
+            <span class="vacancy-meta-tag vacancy-meta-tag--salary">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+              от 470 000 тг
+            </span>
+          </div>
+        </div>
+        <a href="https://hh.kz" target="_blank" rel="noopener" class="btn-accent vacancy-apply-btn">Откликнуться</a>
+      </div>
+
+      <div class="vacancy-detail__body">
+        <div class="vacancy-section">
+          <h3>О вакансии</h3>
+          <p class="text-body">Ищем финансового аналитика для поддержки принятия управленческих решений.</p>
+        </div>
+        <div class="vacancy-section">
+          <h3>Требования</h3>
+          <ul class="styled-list"><li>Высшее образование в области финансов или экономики</li><li>Опыт от 3 лет в финансовом анализе</li><li>Знание МСФО</li><li>Владение Excel на продвинутом уровне</li></ul>
+        </div>
+        <div class="vacancy-section">
+          <h3>Обязанности</h3>
+          <ul class="styled-list"><li>Разработка финансовых моделей проекта АЭС</li><li>Подготовка ежемесячных управленческих отчётов</li><li>Анализ отклонений план/факт</li></ul>
+        </div>
+        <div class="vacancy-section">
+          <h3>Условия</h3>
+          <ul class="styled-list"><li>Официальное трудоустройство</li><li>Конкурентная заработная плата + KPI-бонус</li><li>ДМС</li></ul>
+        </div>
+        <div class="vacancy-detail__actions">
+          <a href="https://hh.kz" target="_blank" rel="noopener" class="btn-primary">Откликнуться на hh.kz</a>
+          <a href="vacancy-category.html?category=finance" class="btn-outline">← Все вакансии: Финансовый отдел</a>
+        </div>
+      </div>
+    </div>
+    <div class="vacancy-detail-panel" id="vac-hr-manager" style="display:none">
+      <div class="vacancy-detail__head">
+        <div>
+          <div class="project-tag" style="margin-bottom:12px">Отдел кадров</div>
+          <h1 class="section-title-lg">HR-менеджер</h1>
+          <div class="vacancy-detail__meta">
+            <span class="vacancy-meta-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+              Астана
+            </span>
+            <span class="vacancy-meta-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Полная занятость
+            </span>
+            <span class="vacancy-meta-tag vacancy-meta-tag--salary">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+              от 380 000 тг
+            </span>
+          </div>
+        </div>
+        <a href="https://hh.kz" target="_blank" rel="noopener" class="btn-accent vacancy-apply-btn">Откликнуться</a>
+      </div>
+
+      <div class="vacancy-detail__body">
+        <div class="vacancy-section">
+          <h3>О вакансии</h3>
+          <p class="text-body">Ищем HR-менеджера для поддержки всего цикла работы с персоналом.</p>
+        </div>
+        <div class="vacancy-section">
+          <h3>Требования</h3>
+          <ul class="styled-list"><li>Высшее образование (управление персоналом или психология)</li><li>Опыт от 3 лет в HR</li><li>Навыки проведения интервью и оценки компетенций</li><li>Знание трудового законодательства РК</li></ul>
+        </div>
+        <div class="vacancy-section">
+          <h3>Обязанности</h3>
+          <ul class="styled-list"><li>Полный цикл подбора персонала</li><li>Разработка программ адаптации</li><li>Оформление кадровых документов</li></ul>
+        </div>
+        <div class="vacancy-section">
+          <h3>Условия</h3>
+          <ul class="styled-list"><li>Официальное трудоустройство</li><li>Гибкий рабочий график</li><li>ДМС</li></ul>
+        </div>
+        <div class="vacancy-detail__actions">
+          <a href="https://hh.kz" target="_blank" rel="noopener" class="btn-primary">Откликнуться на hh.kz</a>
+          <a href="vacancy-category.html?category=hr" class="btn-outline">← Все вакансии: Отдел кадров</a>
+        </div>
+      </div>
+    </div>
+    <div class="vacancy-detail-panel" id="vac-legal-counsel" style="display:none">
+      <div class="vacancy-detail__head">
+        <div>
+          <div class="project-tag" style="margin-bottom:12px">Юридический отдел</div>
+          <h1 class="section-title-lg">Юрисконсульт</h1>
+          <div class="vacancy-detail__meta">
+            <span class="vacancy-meta-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+              Астана
+            </span>
+            <span class="vacancy-meta-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Полная занятость
+            </span>
+            <span class="vacancy-meta-tag vacancy-meta-tag--salary">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+              от 500 000 тг
+            </span>
+          </div>
+        </div>
+        <a href="https://hh.kz" target="_blank" rel="noopener" class="btn-accent vacancy-apply-btn">Откликнуться</a>
+      </div>
+
+      <div class="vacancy-detail__body">
+        <div class="vacancy-section">
+          <h3>О вакансии</h3>
+          <p class="text-body">Ищем опытного юриста для правового сопровождения деятельности компании.</p>
+        </div>
+        <div class="vacancy-section">
+          <h3>Требования</h3>
+          <ul class="styled-list"><li>Высшее юридическое образование</li><li>Опыт юридической работы от 5 лет</li><li>Знание гражданского, корпоративного и административного права РК</li><li>Английский язык — не ниже B2</li></ul>
+        </div>
+        <div class="vacancy-section">
+          <h3>Обязанности</h3>
+          <ul class="styled-list"><li>Экспертиза и подготовка договоров и соглашений</li><li>Представление интересов компании в государственных органах</li><li>Правовое консультирование подразделений</li></ul>
+        </div>
+        <div class="vacancy-section">
+          <h3>Условия</h3>
+          <ul class="styled-list"><li>Официальное трудоустройство</li><li>Конкурентная заработная плата</li><li>ДМС</li></ul>
+        </div>
+        <div class="vacancy-detail__actions">
+          <a href="https://hh.kz" target="_blank" rel="noopener" class="btn-primary">Откликнуться на hh.kz</a>
+          <a href="vacancy-category.html?category=legal" class="btn-outline">← Все вакансии: Юридический отдел</a>
+        </div>
+      </div>
+    </div>
+    <div class="vacancy-detail-panel" id="vac-logistics-coordinator" style="display:none">
+      <div class="vacancy-detail__head">
+        <div>
+          <div class="project-tag" style="margin-bottom:12px">Отдел логистики</div>
+          <h1 class="section-title-lg">Координатор логистики</h1>
+          <div class="vacancy-detail__meta">
+            <span class="vacancy-meta-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+              Астана
+            </span>
+            <span class="vacancy-meta-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Полная занятость
+            </span>
+            <span class="vacancy-meta-tag vacancy-meta-tag--salary">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+              от 400 000 тг
+            </span>
+          </div>
+        </div>
+        <a href="https://hh.kz" target="_blank" rel="noopener" class="btn-accent vacancy-apply-btn">Откликнуться</a>
+      </div>
+
+      <div class="vacancy-detail__body">
+        <div class="vacancy-section">
+          <h3>О вакансии</h3>
+          <p class="text-body">Ищем координатора для управления цепочками поставок оборудования и материалов для строительства АЭС.</p>
+        </div>
+        <div class="vacancy-section">
+          <h3>Требования</h3>
+          <ul class="styled-list"><li>Высшее образование в области логистики или ВЭД</li><li>Опыт в логистике от 3 лет</li><li>Знание таможенного законодательства РК</li><li>Английский язык — B1 и выше</li></ul>
+        </div>
+        <div class="vacancy-section">
+          <h3>Обязанности</h3>
+          <ul class="styled-list"><li>Планирование и контроль поставок оборудования</li><li>Взаимодействие с поставщиками и транспортными компаниями</li><li>Оформление таможенной документации</li></ul>
+        </div>
+        <div class="vacancy-section">
+          <h3>Условия</h3>
+          <ul class="styled-list"><li>Официальное трудоустройство</li><li>ДМС</li><li>Командировки по РК и за рубеж</li></ul>
+        </div>
+        <div class="vacancy-detail__actions">
+          <a href="https://hh.kz" target="_blank" rel="noopener" class="btn-primary">Откликнуться на hh.kz</a>
+          <a href="vacancy-category.html?category=logistics" class="btn-outline">← Все вакансии: Отдел логистики</a>
+        </div>
+      </div>
+    </div>
+    <div class="vacancy-detail-panel" id="vac-project-director" style="display:none">
+      <div class="vacancy-detail__head">
+        <div>
+          <div class="project-tag" style="margin-bottom:12px">Руководство</div>
+          <h1 class="section-title-lg">Директор проекта</h1>
+          <div class="vacancy-detail__meta">
+            <span class="vacancy-meta-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+              Астана / Улькен
+            </span>
+            <span class="vacancy-meta-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Полная занятость
+            </span>
+            <span class="vacancy-meta-tag vacancy-meta-tag--salary">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+              по договорённости
+            </span>
+          </div>
+        </div>
+        <a href="https://hh.kz" target="_blank" rel="noopener" class="btn-accent vacancy-apply-btn">Откликнуться</a>
+      </div>
+
+      <div class="vacancy-detail__body">
+        <div class="vacancy-section">
+          <h3>О вакансии</h3>
+          <p class="text-body">Ищем опытного руководителя для управления ключевыми аспектами проекта строительства АЭС.</p>
+        </div>
+        <div class="vacancy-section">
+          <h3>Требования</h3>
+          <ul class="styled-list"><li>Высшее образование (технические или экономические специальности)</li><li>Опыт управления крупными проектами от 10 лет</li><li>Опыт в энергетике будет преимуществом</li><li>Свободное владение русским и английским языками</li></ul>
+        </div>
+        <div class="vacancy-section">
+          <h3>Обязанности</h3>
+          <ul class="styled-list"><li>Управление командой проекта</li><li>Взаимодействие с генеральным подрядчиком и государственными органами</li><li>Контроль бюджета, сроков и качества работ</li></ul>
+        </div>
+        <div class="vacancy-section">
+          <h3>Условия</h3>
+          <ul class="styled-list"><li>Официальное трудоустройство</li><li>Конкурентный компенсационный пакет</li><li>Автомобиль компании</li><li>ДМС расширенный</li></ul>
+        </div>
+        <div class="vacancy-detail__actions">
+          <a href="https://hh.kz" target="_blank" rel="noopener" class="btn-primary">Откликнуться на hh.kz</a>
+          <a href="vacancy-category.html?category=management" class="btn-outline">← Все вакансии: Руководство</a>
+        </div>
+      </div>
+    </div>
+    <div class="vacancy-detail-panel" id="vac-it-intern" style="display:none">
+      <div class="vacancy-detail__head">
+        <div>
+          <div class="project-tag" style="margin-bottom:12px">Стажировка</div>
+          <h1 class="section-title-lg">Стажёр — Отдел IT</h1>
+          <div class="vacancy-detail__meta">
+            <span class="vacancy-meta-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
+              Астана
+            </span>
+            <span class="vacancy-meta-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Стажировка (3–6 месяцев)
+            </span>
+            <span class="vacancy-meta-tag vacancy-meta-tag--salary">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+              150 000 тг
+            </span>
+          </div>
+        </div>
+        <a href="https://hh.kz" target="_blank" rel="noopener" class="btn-accent vacancy-apply-btn">Откликнуться</a>
+      </div>
+
+      <div class="vacancy-detail__body">
+        <div class="vacancy-section">
+          <h3>О вакансии</h3>
+          <p class="text-body">Мы приглашаем студентов и выпускников технических специальностей присоединиться к IT-команде КАЭС.</p>
+        </div>
+        <div class="vacancy-section">
+          <h3>Требования</h3>
+          <ul class="styled-list"><li>Студент 3–4 курса или выпускник по ИТ-специальности</li><li>Базовые знания JavaScript / Python</li><li>Желание учиться и развиваться</li></ul>
+        </div>
+        <div class="vacancy-section">
+          <h3>Обязанности</h3>
+          <ul class="styled-list"><li>Участие в разработке внутренних приложений</li><li>Написание и тестирование кода под руководством наставника</li><li>Подготовка технической документации</li></ul>
+        </div>
+        <div class="vacancy-section">
+          <h3>Условия</h3>
+          <ul class="styled-list"><li>Официальное оформление на период стажировки</li><li>Выплата стипендии</li><li>Наставник от компании</li><li>Возможность получить постоянную должность</li></ul>
+        </div>
+        <div class="vacancy-detail__actions">
+          <a href="https://hh.kz" target="_blank" rel="noopener" class="btn-primary">Откликнуться на hh.kz</a>
+          <a href="vacancy-category.html?category=stazhirovka" class="btn-outline">← Все вакансии: Стажировка</a>
+        </div>
+      </div>
+    </div>
+
+      <div id="vd-not-found" style="display:none;text-align:center;padding:80px 0">
+        <p class="text-muted">Вакансия не найдена. <a href="vacancies.html" class="text-link">Вернуться к вакансиям</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function() {
+  var catTitles = {'it': 'Отдел IT', 'engineering': 'Инженерный отдел', 'safety': 'Отдел безопасности', 'finance': 'Финансовый отдел', 'hr': 'Отдел кадров', 'legal': 'Юридический отдел', 'logistics': 'Отдел логистики', 'management': 'Руководство', 'stazhirovka': 'Стажировка'};
+  var p = new URLSearchParams(window.location.search);
+  var slug = p.get('slug') || '';
+  var panel = document.getElementById('vac-' + slug);
+  if (panel) {
+    panel.style.display = '';
+    var t = panel.querySelector('.section-title-lg');
+    if (t) {
+      document.getElementById('vd-hero-title').textContent = t.textContent;
+      document.getElementById('vd-breadcrumb').textContent = t.textContent;
+    }
+    var tag = panel.querySelector('.project-tag');
+    if (tag) {
+      document.getElementById('vd-hero-sub').textContent = tag.textContent;
+      document.getElementById('vd-breadcrumb').textContent = t ? t.textContent : '';
+    }
+  } else {
+    document.getElementById('vd-not-found').style.display = '';
+  }
+})();
+</script>
+
+</div><!-- /header-offset -->
+
+<!-- CMS: footer -->
+<footer class="site-footer">
+  <div class="site-footer__main">
+    <div class="site-footer__left">
+      <a href="index.html" class="site-footer__logo"><img src="assets/images/KNPP.png" alt="КАЭС" /></a>
+      <div class="site-footer__contact">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        <div><p>БЦ «Аура»</p><p>Проспект Мангилик Ел, 57а</p></div>
+      </div>
+      <div class="site-footer__contact">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+        <a href="mailto:kense@knpp.kz">kense@knpp.kz</a>
+      </div>
+      <div class="site-footer__contact">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.86 19.86 0 013.09 4.18 2 2 0 015.09 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.09 9.91a16 16 0 006.99 7l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <span>+7 (7172) 24 84 50</span>
+      </div>
+      <div class="site-footer__map">
+        <iframe src="https://yandex.ru/map-widget/v1/?ll=71.430564%2C51.128207&z=14&pt=71.430564%2C51.128207%2Cpm2rdm&lang=ru_RU" title="Карта" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+    <div class="site-footer__right">
+      <h2 class="site-footer__form-title">Не нашли то что нужно?</h2>
+      <p class="site-footer__form-sub">Свяжитесь с нами</p>
+      <div class="footer-success" id="footer-success">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(245,240,233,1)" stroke-width="1.5" stroke-linecap="round" style="margin:0 auto 16px"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <p>Спасибо! Ваша заявка отправлена.</p>
+        <p style="font-size:13px;color:rgba(217,203,194,0.80);margin-top:8px">Мы свяжемся с вами в ближайшее время.</p>
+        <button id="footer-reset" style="margin-top:24px;padding:8px 24px;border:1px solid rgba(255,255,255,0.40);border-radius:100px;color:var(--color-muted);font-size:14px;font-weight:300;cursor:pointer;background:none;font-family:inherit">Отправить ещё</button>
+      </div>
+      <form class="footer-form" id="footer-form" novalidate>
+        <input type="text" class="footer-input" placeholder="Ваше имя" required aria-label="Имя" />
+        <input type="email" class="footer-input" placeholder="Email" required aria-label="Email" />
+        <input type="tel" class="footer-input" placeholder="Номер телефона" aria-label="Телефон" />
+        <textarea class="footer-textarea" rows="4" placeholder="Ваше сообщение" aria-label="Сообщение"></textarea>
+        <button type="submit" class="btn-accent" style="align-self:flex-start">Отправить заявку</button>
+      </form>
+    </div>
+  </div>
+  <div class="site-footer__bar">
+    <div class="site-footer__bar-inner">
+      <p class="site-footer__credit">Разработчик <a href="#">ТОО «BenchMark Consulting»</a></p>
+      <div class="footer-socials">
+        <span>Соц. сети:</span>
+        <a href="#" class="footer-social-btn" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+        <a href="#" class="footer-social-btn" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- /CMS: footer -->
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>

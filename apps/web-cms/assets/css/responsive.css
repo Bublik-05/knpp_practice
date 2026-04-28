@@ -1,0 +1,96 @@
+/* ============================================================
+   KAES — CMS-Compatible Theme
+   responsive.css  — Mobile / Tablet overrides
+   ============================================================ */
+
+/* ── Header ── */
+@media (max-width: 1023px) {
+  .nav-menu { display: none; }
+  .header-burger { display: flex; }
+  .mega-menu-panel { left: 16px; right: 16px; }
+}
+
+/* ── Slideshow ── */
+@media (max-width: 767px) {
+  .slideshow { height: 480px; }
+  .slideshow__inactive { display: none; }
+  .slideshow__slide { flex: 0 0 100%; }
+  .slideshow__slide:not(.active) { display: none; }
+  .slideshow__title { font-size: 1.8rem; }
+  .slideshow__subtitle { font-size: 16px; }
+  .slideshow__content { padding: 0 24px; }
+}
+
+/* ── Sections ── */
+@media (max-width: 767px) {
+  :root { --px-section: 20px; --py-section: 48px; }
+
+  .president-section__layout { flex-direction: column; }
+  .president-section__left { width: 100%; }
+  .quote-mark { font-size: 56px; }
+
+  .about-dark__layout { flex-direction: column; }
+  .about-dark__left { width: 100%; }
+  .about-dark__atom-bg { width: 400px; height: 400px; opacity: 0.20; }
+
+  .value-cards { grid-template-columns: 1fr; }
+
+  .ceo-section { padding: 48px 20px; }
+  .ceo-section__inner { flex-direction: column; gap: 24px; }
+  .ceo-section__photo { width: 100%; height: 300px; }
+
+  .news-carousel__track { height: 380px; }
+  .news-card { width: calc(100vw - 40px) !important; }
+  .news-card.side { display: none; }
+
+  .stage-grid { grid-template-columns: 1fr; }
+
+  .careers-promo__content { padding: 24px; }
+  .careers-promo__title { font-size: 1.8rem; }
+  .careers-stats { flex-direction: column; }
+  .careers-stat { min-width: auto; }
+
+  .site-footer__left { min-width: auto; }
+  .site-footer__main { padding: 32px 20px; }
+
+  .contact-grid { grid-template-columns: 1fr; }
+  .project-tabs { overflow-x: auto; }
+  .project-tab { white-space: nowrap; padding: 12px 20px; }
+
+  .vacancy-detail-grid { grid-template-columns: 1fr; }
+  .vacancy-detail-sidebar { position: static; }
+
+  .president-message-body { grid-template-columns: 1fr; }
+
+  .map-inner { aspect-ratio: auto; min-height: 300px; }
+
+  .dev-plan-section__inner { gap: 48px; }
+
+  .page-hero { padding: 32px 20px 28px; }
+  .page-hero__title { font-size: 1.8rem; }
+
+  .news-filter { gap: 6px; }
+  .news-filter__btn { font-size: 13px; padding: 6px 14px; }
+
+  .vacancy-categories { grid-template-columns: 1fr; }
+
+  .mega-menu-columns { flex-direction: column; gap: 20px; }
+  .mega-menu-col { min-width: auto; }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  :root { --px-section: 40px; }
+  .ceo-section__inner { flex-direction: column; }
+  .ceo-section__photo { width: 260px; }
+  .stage-grid { grid-template-columns: repeat(2, 1fr); }
+  .president-message-body { grid-template-columns: 1fr; }
+}
+
+/* ── Print ── */
+@media print {
+  .site-header, .site-footer, .slideshow,
+  .mega-menu-backdrop, .mega-menu-panel,
+  .mobile-menu, .news-carousel__controls { display: none !important; }
+  .header-offset { padding-top: 0; }
+  body { background: white; color: black; }
+}

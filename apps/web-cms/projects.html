@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Проекты — ТОО «КАЭС»</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/responsive.css" />
+</head>
+<body>
+
+<!-- CMS: site header -->
+<header class="site-header" id="site-header">
+  <div class="site-header__inner">
+    <a href="index.html" class="site-header__logo" aria-label="КАЭС — на главную">
+      <img src="assets/images/KNPP.png" alt="КАЭС" />
+    </a>
+    <nav class="nav-menu" aria-label="Основная навигация">
+      <a href="index.html" class="nav-menu__link">Главная</a>
+      <a href="about.html" class="nav-menu__link">О КАЭС</a>
+      <a href="atom.html" class="nav-menu__link">Об Атоме</a>
+      <a href="projects.html" class="nav-menu__link active">Проекты</a>
+      <a href="procurements.html" class="nav-menu__link">Закупки</a>
+      <a href="news.html" class="nav-menu__link">Пресс-центр</a>
+      <a href="vacancies.html" class="nav-menu__link">Вакансии</a>
+      <a href="faq.html" class="nav-menu__link">FAQ</a>
+      <a href="contacts.html" class="nav-menu__link">Контакты</a>
+    </nav>
+    <div class="header-search">
+      <button class="header-search__toggle" id="search-toggle" aria-label="Поиск">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+      <div class="header-search__input-wrap" id="search-wrap">
+        <input type="search" class="header-search__input" id="search-input" placeholder="Поиск…" />
+      </div>
+      <button class="header-burger" id="mega-menu-btn" aria-label="Все разделы">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <button class="header-burger" id="mobile-burger" aria-label="Меню" style="display:none">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html" class="mobile-menu__link">Главная</a>
+  <a href="about.html" class="mobile-menu__link">О КАЭС</a>
+  <a href="atom.html" class="mobile-menu__link">Об Атоме</a>
+  <a href="projects.html" class="mobile-menu__link">Проекты</a>
+  <a href="procurements.html" class="mobile-menu__link">Закупки</a>
+  <a href="news.html" class="mobile-menu__link">Пресс-центр</a>
+  <a href="vacancies.html" class="mobile-menu__link">Вакансии</a>
+  <a href="faq.html" class="mobile-menu__link">FAQ</a>
+  <a href="contacts.html" class="mobile-menu__link">Контакты</a>
+</div>
+
+<div class="mega-menu-backdrop" id="mega-menu-backdrop"></div>
+<div class="mega-menu-panel" id="mega-menu-panel">
+  <div class="mega-menu-panel__inner">
+    <div class="mega-menu-panel__head">
+      <span>Все разделы сайта</span>
+      <button class="mega-menu-close" id="mega-menu-close">Закрыть <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+    </div>
+    <div class="mega-menu-columns">
+      <div class="mega-menu-col"><a href="about.html" class="mega-menu-col__title">О КАЭС</a><div class="mega-menu-col__links"><a href="about.html?section=about" class="mega-menu-col__sub">О компании</a><a href="about.html?section=leadership" class="mega-menu-col__sub">Руководство</a><a href="about.html?section=governance" class="mega-menu-col__sub">Корпоративное управление</a><a href="about.html?section=safety" class="mega-menu-col__sub">Безопасность</a><a href="about.html?section=compliance" class="mega-menu-col__sub">Комплаенс</a><a href="about.html?section=documents" class="mega-menu-col__sub">Документы</a></div></div>
+      <div class="mega-menu-col"><a href="atom.html" class="mega-menu-col__title">Об Атоме</a><div class="mega-menu-col__links"><a href="atom.html?section=history" class="mega-menu-col__sub">История атомной энергетики</a><a href="atom.html?section=operation" class="mega-menu-col__sub">Как работает АЭС</a><a href="atom.html?section=types" class="mega-menu-col__sub">Типы реакторов</a><a href="atom.html?section=safety" class="mega-menu-col__sub">Безопасность</a><a href="atom.html?section=environment" class="mega-menu-col__sub">Экология</a><a href="atom.html?section=myths" class="mega-menu-col__sub">Мифы и факты</a></div></div>
+      <div class="mega-menu-col"><a href="projects.html" class="mega-menu-col__title">Проекты</a><div class="mega-menu-col__links"><a href="projects.html?tab=balkhash" class="mega-menu-col__sub">АЭС «Балхаш»</a><a href="projects.html?tab=mainkum" class="mega-menu-col__sub">АЭС «Мойынкум»</a></div></div>
+      <div class="mega-menu-col"><a href="procurements.html" class="mega-menu-col__title">Закупки</a><div class="mega-menu-col__links"><a href="procurements.html#policy" class="mega-menu-col__sub">Политика закупок</a><a href="procurements.html#announcements" class="mega-menu-col__sub">Объявления</a><a href="procurements.html#localization" class="mega-menu-col__sub">Локализация</a><a href="procurements.html#documents" class="mega-menu-col__sub">Документы</a></div></div>
+      <div class="mega-menu-col"><a href="news.html" class="mega-menu-col__title">Пресс-центр</a><div class="mega-menu-col__links"><a href="news.html" class="mega-menu-col__sub">Новости</a><a href="international-cooperation.html" class="mega-menu-col__sub">Международное сотрудничество</a><a href="president-message.html" class="mega-menu-col__sub">Послание Президента</a></div></div>
+      <div class="mega-menu-col"><a href="vacancies.html" class="mega-menu-col__title">Вакансии</a><div class="mega-menu-col__links"><a href="vacancies.html" class="mega-menu-col__sub">Все вакансии</a><a href="vacancies.html#stazhirovka" class="mega-menu-col__sub">Стажировка</a></div></div>
+      <div class="mega-menu-col"><a href="faq.html" class="mega-menu-col__title">FAQ</a><div class="mega-menu-col__links"><a href="faq.html?section=general" class="mega-menu-col__sub">Об АЭС и атомной энергетике</a><a href="faq.html?section=project" class="mega-menu-col__sub">О проекте в Казахстане</a><a href="faq.html?section=cooperation" class="mega-menu-col__sub">Вакансии и сотрудничество</a></div></div>
+      <div class="mega-menu-col"><a href="contacts.html" class="mega-menu-col__title">Контакты</a><div class="mega-menu-col__links"><a href="contacts.html" class="mega-menu-col__sub">Связаться с нами</a></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="header-offset">
+
+<section class="page-section" style="padding-top:40px">
+  <div class="container">
+    <nav class="breadcrumb">
+      <a href="index.html" class="breadcrumb__link">Главная</a>
+      <span class="breadcrumb__sep">›</span>
+      <span class="breadcrumb__current">Проекты</span>
+    </nav>
+
+    <div class="section-intro" style="max-width:700px;margin:24px 0 40px">
+      <p class="text-body" style="font-size:1.1rem">ТОО «КАЭС» реализует два ключевых проекта по размещению атомной электростанции в Казахстане. Оба проекта проходят стадию детального изучения и оценки.</p>
+    </div>
+
+    <!-- Kazakhstan Map embed -->
+    <div class="map-section-mini" style="margin-bottom:48px">
+      <h2 class="section-title" style="margin-bottom:24px">Площадки проектов АЭС</h2>
+      <div class="projects-map-card">
+        <img src="assets/images/Blank_map_of_Kazakhstan.svg" alt="Карта Казахстана" style="width:100%;max-width:700px;opacity:0.8" />
+        <div class="map-pin-container">
+          <div class="map-pin-static" style="left:68%;top:52%" title="АЭС Балхаш">
+            <div class="map-pin__dot map-pin__dot--gold"></div>
+            <span>Балхаш</span>
+          </div>
+          <div class="map-pin-static" style="left:58%;top:65%" title="АЭС Мойынкум">
+            <div class="map-pin__dot map-pin__dot--blue"></div>
+            <span>Мойынкум</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab switcher -->
+    <div class="tab-switcher" id="projects-tabs">
+      <button class="tab-btn active" data-tab="balkhash">АЭС «Балхаш»</button>
+      <button class="tab-btn" data-tab="mainkum">АЭС «Мойынкум»</button>
+      <button class="tab-btn" data-tab="project3">Проект 4.3</button>
+      <button class="tab-btn" data-tab="project4">Проект 4.4</button>
+    </div>
+
+    <!-- CMS: project tab content -->
+    <div class="tab-panel" id="tab-balkhash">
+      <div class="project-hero-card">
+        <div class="project-hero-card__info">
+          <div class="project-tag">АЭС «Балхаш»</div>
+          <h2 class="project-title">Крупная атомная электростанция на берегу озера Балхаш</h2>
+          <p class="text-body">Проект предусматривает строительство двухблочной атомной электростанции суммарной мощностью 2 400 МВт на южном берегу озера Балхаш в Алматинской области.</p>
+          <div class="project-specs">
+            <div class="project-spec"><span class="project-spec__label">Мощность</span><span class="project-spec__val">2 × 1 200 МВт</span></div>
+            <div class="project-spec"><span class="project-spec__label">Технология</span><span class="project-spec__val">ВВЭР-1200 (Поколение III+)</span></div>
+            <div class="project-spec"><span class="project-spec__label">Площадка</span><span class="project-spec__val">Улькен, Алматинская обл.</span></div>
+          </div>
+        </div>
+        <div class="project-hero-card__img">
+          <img src="assets/images/vver-1200.png" alt="ВВЭР-1200 реактор" />
+        </div>
+      </div>
+
+      <div style="margin-top:48px">
+        <h2 class="section-title">Этапы строительства — АЭС «Балхаш»</h2>
+        <p class="text-body" style="margin-bottom:32px">Крупный двухблочный энергетический объект на южном берегу озера Балхаш. Суммарная мощность — 2 400 МВт.</p>
+        <div class="project-stages">
+          
+    <div class="project-stage">
+      <div class="stage-circle stage-circle--done"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <div class="stage-card stage-card--done">
+        <div class="stage-card__head">
+          <h3 class="stage-title">Выбор площадки</h3>
+          <span class="stage-badge stage-badge--done">Выполнено</span>
+          <span class="stage-year stage-year--done">2014–2017</span>
+        </div>
+        <p class="stage-desc">Геологические, сейсмические и гидрологические исследования береговой зоны озера Балхаш. Одобрение регулятора.</p>
+      </div>
+    </div>
+    <div class="project-stage">
+      <div class="stage-circle stage-circle--done"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <div class="stage-card stage-card--done">
+        <div class="stage-card__head">
+          <h3 class="stage-title">Технико-экономическое обоснование</h3>
+          <span class="stage-badge stage-badge--done">Выполнено</span>
+          <span class="stage-year stage-year--done">2017–2021</span>
+        </div>
+        <p class="stage-desc">Сравнительный анализ реакторных технологий, оценка стоимости жизненного цикла, выбор зарубежного партнёра-поставщика.</p>
+      </div>
+    </div>
+    <div class="project-stage">
+      <div class="stage-circle stage-circle--active"><div class="stage-dot-gold"></div></div>
+      <div class="stage-card stage-card--active">
+        <div class="stage-card__head">
+          <h3 class="stage-title">Проектирование</h3>
+          <span class="stage-badge stage-badge--active">В процессе</span>
+          <span class="stage-year stage-year--active">2022 — сейчас</span>
+        </div>
+        <p class="stage-desc">Разработка предпроектной и проектной документации, согласование с МАГАТЭ и уполномоченным органом РК.</p>
+      </div>
+    </div>
+    <div class="project-stage">
+      <div class="stage-circle stage-circle--pending"><span class="stage-num-text">04</span></div>
+      <div class="stage-card stage-card--pending">
+        <div class="stage-card__head">
+          <h3 class="stage-title">Строительство</h3>
+          
+          <span class="stage-year stage-year--pending">Ожидается</span>
+        </div>
+        <p class="stage-desc">Возведение реакторного здания, машинного зала и систем охлаждения. Поэтапный контроль качества.</p>
+      </div>
+    </div>
+    <div class="project-stage">
+      <div class="stage-circle stage-circle--pending"><span class="stage-num-text">05</span></div>
+      <div class="stage-card stage-card--pending">
+        <div class="stage-card__head">
+          <h3 class="stage-title">Пуско-наладка</h3>
+          
+          <span class="stage-year stage-year--pending">Ожидается</span>
+        </div>
+        <p class="stage-desc">Физический пуск реактора, испытания систем безопасности, получение лицензии на эксплуатацию.</p>
+      </div>
+    </div>
+    <div class="project-stage">
+      <div class="stage-circle stage-circle--pending"><span class="stage-num-text">06</span></div>
+      <div class="stage-card stage-card--pending">
+        <div class="stage-card__head">
+          <h3 class="stage-title">Ввод в эксплуатацию</h3>
+          
+          <span class="stage-year stage-year--pending">Ожидается</span>
+        </div>
+        <p class="stage-desc">Выход на промышленную мощность, начало коммерческой поставки электроэнергии в национальную сеть.</p>
+      </div>
+    </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel" id="tab-mainkum" style="display:none">
+      <div class="project-hero-card">
+        <div class="project-hero-card__info">
+          <div class="project-tag">АЭС «Мойынкум»</div>
+          <h2 class="project-title">Малый модульный реактор для электроснабжения южных регионов</h2>
+          <p class="text-body">Проект предусматривает строительство атомной станции малой мощности на основе технологии SMR для обеспечения электроэнергией южных регионов страны.</p>
+          <div class="project-specs">
+            <div class="project-spec"><span class="project-spec__label">Мощность</span><span class="project-spec__val">до 300 МВт</span></div>
+            <div class="project-spec"><span class="project-spec__label">Технология</span><span class="project-spec__val">SMR / HPR-1000</span></div>
+            <div class="project-spec"><span class="project-spec__label">Площадка</span><span class="project-spec__val">Жамбылская область</span></div>
+          </div>
+        </div>
+        <div class="project-hero-card__img">
+          <img src="assets/images/smr.png" alt="SMR реактор" />
+        </div>
+      </div>
+
+      <div style="margin-top:48px">
+        <h2 class="section-title">Этапы строительства — АЭС «Мойынкум»</h2>
+        <p class="text-body" style="margin-bottom:32px">Малый модульный реактор для электроснабжения южных регионов страны. Мощность — до 300 МВт.</p>
+        <div class="project-stages">
+          
+    <div class="project-stage">
+      <div class="stage-circle stage-circle--done"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <div class="stage-card stage-card--done">
+        <div class="stage-card__head">
+          <h3 class="stage-title">Выбор площадки</h3>
+          <span class="stage-badge stage-badge--done">Выполнено</span>
+          <span class="stage-year stage-year--done">2016–2019</span>
+        </div>
+        <p class="stage-desc">Изучение площадки в Жамбылской области, оценка сейсмической активности и водоснабжения от р. Чу.</p>
+      </div>
+    </div>
+    <div class="project-stage">
+      <div class="stage-circle stage-circle--done"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+      <div class="stage-card stage-card--done">
+        <div class="stage-card__head">
+          <h3 class="stage-title">Технико-экономическое обоснование</h3>
+          <span class="stage-badge stage-badge--done">Выполнено</span>
+          <span class="stage-year stage-year--done">2019–2023</span>
+        </div>
+        <p class="stage-desc">Разработка ТЭО малой атомной электростанции, анализ применимости малых модульных реакторов (SMR).</p>
+      </div>
+    </div>
+    <div class="project-stage">
+      <div class="stage-circle stage-circle--active"><div class="stage-dot-gold"></div></div>
+      <div class="stage-card stage-card--active">
+        <div class="stage-card__head">
+          <h3 class="stage-title">Проектирование</h3>
+          <span class="stage-badge stage-badge--active">В процессе</span>
+          <span class="stage-year stage-year--active">2023 — сейчас</span>
+        </div>
+        <p class="stage-desc">Согласование концепции проекта, выбор технологии реактора и международного партнёра для реализации.</p>
+      </div>
+    </div>
+    <div class="project-stage">
+      <div class="stage-circle stage-circle--pending"><span class="stage-num-text">04</span></div>
+      <div class="stage-card stage-card--pending">
+        <div class="stage-card__head">
+          <h3 class="stage-title">Строительство</h3>
+          
+          <span class="stage-year stage-year--pending">Ожидается</span>
+        </div>
+        <p class="stage-desc">Строительство энергоблоков малой мощности, создание локальной инфраструктуры электроснабжения региона.</p>
+      </div>
+    </div>
+    <div class="project-stage">
+      <div class="stage-circle stage-circle--pending"><span class="stage-num-text">05</span></div>
+      <div class="stage-card stage-card--pending">
+        <div class="stage-card__head">
+          <h3 class="stage-title">Пуско-наладка</h3>
+          
+          <span class="stage-year stage-year--pending">Ожидается</span>
+        </div>
+        <p class="stage-desc">Функциональное тестирование модульного реактора, верификация систем управления и безопасности.</p>
+      </div>
+    </div>
+    <div class="project-stage">
+      <div class="stage-circle stage-circle--pending"><span class="stage-num-text">06</span></div>
+      <div class="stage-card stage-card--pending">
+        <div class="stage-card__head">
+          <h3 class="stage-title">Ввод в эксплуатацию</h3>
+          
+          <span class="stage-year stage-year--pending">Ожидается</span>
+        </div>
+        <p class="stage-desc">Начало выработки электроэнергии для нужд Жамбылской области и смежных регионов Казахстана.</p>
+      </div>
+    </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-panel tab-panel--empty" id="tab-project3" style="display:none">
+      <div class="empty-state">
+        <div class="empty-state__icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+        </div>
+        <h3>Данные отсутствуют</h3>
+        <p>Информация по данному проекту находится в стадии формирования и будет добавлена позднее.</p>
+      </div>
+    </div>
+    <div class="tab-panel tab-panel--empty" id="tab-project4" style="display:none">
+      <div class="empty-state">
+        <div class="empty-state__icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+        </div>
+        <h3>Данные отсутствуют</h3>
+        <p>Информация по данному проекту находится в стадии формирования и будет добавлена позднее.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+(function() {
+  var tabs = ['balkhash','mainkum','project3','project4'];
+  function activate(id) {
+    tabs.forEach(function(t) {
+      var panel = document.getElementById('tab-' + t);
+      var btn = document.querySelector('[data-tab="' + t + '"]');
+      if (t === id) { if(panel) panel.style.display=''; if(btn) btn.classList.add('active'); }
+      else { if(panel) panel.style.display='none'; if(btn) btn.classList.remove('active'); }
+    });
+  }
+  document.querySelectorAll('[data-tab]').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var id = this.dataset.tab;
+      history.pushState(null,'','?tab='+id);
+      activate(id);
+    });
+  });
+  var p = new URLSearchParams(window.location.search);
+  var t = p.get('tab');
+  activate(tabs.includes(t) ? t : 'balkhash');
+})();
+</script>
+
+</div><!-- /header-offset -->
+
+<!-- CMS: footer -->
+<footer class="site-footer">
+  <div class="site-footer__main">
+    <div class="site-footer__left">
+      <a href="index.html" class="site-footer__logo"><img src="assets/images/KNPP.png" alt="КАЭС" /></a>
+      <div class="site-footer__contact">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        <div><p>БЦ «Аура»</p><p>Проспект Мангилик Ел, 57а</p></div>
+      </div>
+      <div class="site-footer__contact">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+        <a href="mailto:kense@knpp.kz">kense@knpp.kz</a>
+      </div>
+      <div class="site-footer__contact">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.86 19.86 0 013.09 4.18 2 2 0 015.09 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.09 9.91a16 16 0 006.99 7l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        <span>+7 (7172) 24 84 50</span>
+      </div>
+      <div class="site-footer__map">
+        <iframe src="https://yandex.ru/map-widget/v1/?ll=71.430564%2C51.128207&z=14&pt=71.430564%2C51.128207%2Cpm2rdm&lang=ru_RU" title="Карта" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+    <div class="site-footer__right">
+      <h2 class="site-footer__form-title">Не нашли то что нужно?</h2>
+      <p class="site-footer__form-sub">Свяжитесь с нами</p>
+      <div class="footer-success" id="footer-success">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(245,240,233,1)" stroke-width="1.5" stroke-linecap="round" style="margin:0 auto 16px"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <p>Спасибо! Ваша заявка отправлена.</p>
+        <p style="font-size:13px;color:rgba(217,203,194,0.80);margin-top:8px">Мы свяжемся с вами в ближайшее время.</p>
+        <button id="footer-reset" style="margin-top:24px;padding:8px 24px;border:1px solid rgba(255,255,255,0.40);border-radius:100px;color:var(--color-muted);font-size:14px;font-weight:300;cursor:pointer;background:none;font-family:inherit">Отправить ещё</button>
+      </div>
+      <form class="footer-form" id="footer-form" novalidate>
+        <input type="text" class="footer-input" placeholder="Ваше имя" required aria-label="Имя" />
+        <input type="email" class="footer-input" placeholder="Email" required aria-label="Email" />
+        <input type="tel" class="footer-input" placeholder="Номер телефона" aria-label="Телефон" />
+        <textarea class="footer-textarea" rows="4" placeholder="Ваше сообщение" aria-label="Сообщение"></textarea>
+        <button type="submit" class="btn-accent" style="align-self:flex-start">Отправить заявку</button>
+      </form>
+    </div>
+  </div>
+  <div class="site-footer__bar">
+    <div class="site-footer__bar-inner">
+      <p class="site-footer__credit">Разработчик <a href="#">ТОО «BenchMark Consulting»</a></p>
+      <div class="footer-socials">
+        <span>Соц. сети:</span>
+        <a href="#" class="footer-social-btn" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+        <a href="#" class="footer-social-btn" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- /CMS: footer -->
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
