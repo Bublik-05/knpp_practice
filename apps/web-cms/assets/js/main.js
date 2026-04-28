@@ -312,26 +312,74 @@ function initAtomTabs() {
 
 /* ─── PROJECT TABS ─── */
 function initProjectTabs() {
-  const tabs = document.querySelectorAll('.project-tab');
-  const panels = document.querySelectorAll('.project-panel');
-  if (!tabs.length) return;
+  const tabs = Array.from(document.querySelectorAll('.project-tab'));
+  const panels = Array.from(document.querySelectorAll('.project-panel'));
 
-  const params = new URLSearchParams(window.location.search);
-  const initTab = params.get('tab') || tabs[0]?.dataset.tab || '';
+  if (!tabs.length || !panels.length) return;
 
-  function activate(tab) {
-    tabs.forEach(function (t) { t.classList.toggle('active', t.dataset.tab === tab); });
-    panels.forEach(function (p) { p.classList.toggle('active', p.dataset.tab === tab); });
+  // Чтобы старые ссылки тоже работали:
+  // ?tab=moinkum, ?tab=moyinkum → mainkum
+  const aliases = {
+    moinkum: 'mainkum',
+    moyinkum: 'mainkum',
+    mainkum: 'mainkum',
+    balkhash: 'balkhash',
+    project3: 'project3',
+    project4: 'project4'
+  };
+
+  const availableTabs = tabs
+    .map(function (tab) {
+      return tab.dataset.tab;
+    })
+    .filter(Boolean);
+
+  function normalizeTab(value) {
+    const normalized = aliases[value] || value;
+    return availableTabs.includes(normalized) ? normalized : availableTabs[0];
+  }
+
+  function activate(tabValue, shouldPushUrl) {
+    const tab = normalizeTab(tabValue);
+
+    tabs.forEach(function (item) {
+      const isActive = item.dataset.tab === tab;
+
+      item.classList.toggle('active', isActive);
+      item.setAttribute('aria-selected', isActive ? 'true' : 'false');
+      item.setAttribute('tabindex', isActive ? '0' : '-1');
+    });
+
+    panels.forEach(function (panel) {
+      const isActive = panel.dataset.tab === tab;
+
+      panel.classList.toggle('active', isActive);
+
+      if (isActive) {
+        panel.removeAttribute('hidden');
+      } else {
+        panel.setAttribute('hidden', '');
+      }
+    });
+
     const url = new URL(window.location);
     url.searchParams.set('tab', tab);
-    window.history.replaceState({}, '', url);
+
+    if (shouldPushUrl) {
+      window.history.pushState({}, '', url);
+    } else {
+      window.history.replaceState({}, '', url);
+    }
   }
 
   tabs.forEach(function (tab) {
-    tab.addEventListener('click', function () { activate(tab.dataset.tab); });
+    tab.addEventListener('click', function () {
+      activate(tab.dataset.tab, true);
+    });
   });
 
-  activate(initTab || (tabs[0] && tabs[0].dataset.tab));
+  const params = new URLSearchParams(window.location.search);
+  activate(params.get('tab') || availableTabs[0], false);
 }
 
 /* ─── INTERACTIVE MAP ─── */

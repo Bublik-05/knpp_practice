@@ -149,274 +149,271 @@
   <!-- /CMS: hero slideshow -->
 
 
-<section class="page-section" style="padding-top:40px">
-  <div class="container">
-    <nav class="breadcrumb">
+<section class="projects-page" aria-labelledby="projects-title">
+  <h1 class="projects-page__sr-title" id="projects-title">Проекты</h1>
+  <div class="projects-bg-glow projects-bg-glow--blue" aria-hidden="true"></div>
+  <div class="projects-bg-glow projects-bg-glow--gold" aria-hidden="true"></div>
+
+  <div class="projects-shell">
+    <nav class="breadcrumb projects-breadcrumb" aria-label="Хлебные крошки">
       <a href="index.html" class="breadcrumb__link">Главная</a>
       <span class="breadcrumb__sep">›</span>
       <span class="breadcrumb__current">Проекты</span>
     </nav>
 
-    <div class="section-intro" style="max-width:700px;margin:24px 0 40px">
-      <p class="text-body" style="font-size:1.1rem">ТОО «КАЭС» реализует два ключевых проекта по размещению атомной электростанции в Казахстане. Оба проекта проходят стадию детального изучения и оценки.</p>
+    <div class="projects-intro">
+      <p>
+        ТОО «КАЭС» реализует два ключевых проекта по размещению атомной электростанции
+        в Казахстане. Оба проекта проходят стадию детального изучения и оценки.
+      </p>
     </div>
 
-    <!-- Kazakhstan Map embed -->
-    <div class="map-section-mini" style="margin-bottom:48px">
-      <h2 class="section-title" style="margin-bottom:24px">Площадки проектов АЭС</h2>
-      <div class="projects-map-card">
-        <img src="assets/images/Blank_map_of_Kazakhstan.svg" alt="Карта Казахстана" style="width:100%;max-width:700px;opacity:0.8" />
-        <div class="map-pin-container">
-          <div class="map-pin-static" style="left:68%;top:52%" title="АЭС Балхаш">
-            <div class="map-pin__dot map-pin__dot--gold"></div>
-            <span>Балхаш</span>
+    <!-- CMS: shared Kazakhstan map component, same visual logic as homepage map -->
+    <section class="projects-map-section" aria-labelledby="projects-map-title">
+      <div class="map-section__header projects-map-section__header">
+        <h2 class="section-title" id="projects-map-title">Карта Казахстана</h2>
+        <p class="map-section__desc">
+          Интерактивная карта площадок. Нажмите на метку, чтобы открыть краткую информацию о проекте.
+        </p>
+      </div>
+
+      <div class="map-container projects-map-container">
+        <div class="map-inner projects-map-inner">
+          <img src="assets/images/Blank_map_of_Kazakhstan.svg" alt="Карта Казахстана" />
+
+          <div class="map-pin" style="left:68.8%;top:63%"
+            data-city="balkhash"
+            data-name="АЭС «Балхаш»"
+            data-badge="Проект №1"
+            data-desc="Площадка на южном берегу озера Балхаш — основной кандидат для размещения первой казахстанской АЭС. Сейчас ведутся инженерные изыскания и подготовка проектной документации."
+            data-tags="2 400 МВт|Южный берег озера Балхаш|Проектирование"
+            data-img="assets/images/procurement-img.jpg"
+            aria-label="Открыть информацию: АЭС Балхаш">
+            <div class="map-pin__dot"></div>
+            <div class="map-pin__stem"></div>
+            <span class="map-pin__label">Балхаш</span>
           </div>
-          <div class="map-pin-static" style="left:58%;top:65%" title="АЭС Мойынкум">
-            <div class="map-pin__dot map-pin__dot--blue"></div>
-            <span>Мойынкум</span>
+
+          <div class="map-pin" style="left:75%;top:21%"
+            data-city="mainkum"
+            data-name="АЭС «Мойынкум»"
+            data-badge="Проект №2"
+            data-desc="Площадка в Жамбылской области рассматривается как перспективная зона для малой атомной электростанции с использованием модульных реакторов."
+            data-tags="до 300 МВт|Жамбылская область|Предварительные исследования"
+            data-img="assets/images/about-img.jpg"
+            aria-label="Открыть информацию: АЭС Мойынкум">
+            <div class="map-pin__dot"></div>
+            <div class="map-pin__stem"></div>
+            <span class="map-pin__label">Мойынкум</span>
           </div>
-        </div>
-      </div>
-    </div>
 
-    <!-- Tab switcher -->
-    <div class="tab-switcher" id="projects-tabs">
-      <button class="tab-btn active" data-tab="balkhash">АЭС «Балхаш»</button>
-      <button class="tab-btn" data-tab="mainkum">АЭС «Мойынкум»</button>
-      <button class="tab-btn" data-tab="project3">Проект 4.3</button>
-      <button class="tab-btn" data-tab="project4">Проект 4.4</button>
-    </div>
-
-    <!-- CMS: project tab content -->
-    <div class="tab-panel" id="tab-balkhash">
-      <div class="project-hero-card">
-        <div class="project-hero-card__info">
-          <div class="project-tag">АЭС «Балхаш»</div>
-          <h2 class="project-title">Крупная атомная электростанция на берегу озера Балхаш</h2>
-          <p class="text-body">Проект предусматривает строительство двухблочной атомной электростанции суммарной мощностью 2 400 МВт на южном берегу озера Балхаш в Алматинской области.</p>
-          <div class="project-specs">
-            <div class="project-spec"><span class="project-spec__label">Мощность</span><span class="project-spec__val">2 × 1 200 МВт</span></div>
-            <div class="project-spec"><span class="project-spec__label">Технология</span><span class="project-spec__val">ВВЭР-1200 (Поколение III+)</span></div>
-            <div class="project-spec"><span class="project-spec__label">Площадка</span><span class="project-spec__val">Улькен, Алматинская обл.</span></div>
+          <div class="map-popup" id="map-popup">
+            <div class="map-popup__inner">
+              <img class="map-popup__img" src="" alt="" />
+              <button class="map-popup__close" id="map-popup-close" aria-label="Закрыть">×</button>
+              <div class="map-popup__body">
+                <span class="map-popup__badge"></span>
+                <h3 class="map-popup__title"></h3>
+                <p class="map-popup__desc"></p>
+                <div class="map-popup__tags"></div>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="project-hero-card__img">
-          <img src="assets/images/vver-1200.png" alt="ВВЭР-1200 реактор" />
-        </div>
-      </div>
 
-      <div style="margin-top:48px">
-        <h2 class="section-title">Этапы строительства — АЭС «Балхаш»</h2>
-        <p class="text-body" style="margin-bottom:32px">Крупный двухблочный энергетический объект на южном берегу озера Балхаш. Суммарная мощность — 2 400 МВт.</p>
-        <div class="project-stages">
-          
-    <div class="project-stage">
-      <div class="stage-circle stage-circle--done"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-      <div class="stage-card stage-card--done">
-        <div class="stage-card__head">
-          <h3 class="stage-title">Выбор площадки</h3>
-          <span class="stage-badge stage-badge--done">Выполнено</span>
-          <span class="stage-year stage-year--done">2014–2017</span>
-        </div>
-        <p class="stage-desc">Геологические, сейсмические и гидрологические исследования береговой зоны озера Балхаш. Одобрение регулятора.</p>
-      </div>
-    </div>
-    <div class="project-stage">
-      <div class="stage-circle stage-circle--done"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-      <div class="stage-card stage-card--done">
-        <div class="stage-card__head">
-          <h3 class="stage-title">Технико-экономическое обоснование</h3>
-          <span class="stage-badge stage-badge--done">Выполнено</span>
-          <span class="stage-year stage-year--done">2017–2021</span>
-        </div>
-        <p class="stage-desc">Сравнительный анализ реакторных технологий, оценка стоимости жизненного цикла, выбор зарубежного партнёра-поставщика.</p>
-      </div>
-    </div>
-    <div class="project-stage">
-      <div class="stage-circle stage-circle--active"><div class="stage-dot-gold"></div></div>
-      <div class="stage-card stage-card--active">
-        <div class="stage-card__head">
-          <h3 class="stage-title">Проектирование</h3>
-          <span class="stage-badge stage-badge--active">В процессе</span>
-          <span class="stage-year stage-year--active">2022 — сейчас</span>
-        </div>
-        <p class="stage-desc">Разработка предпроектной и проектной документации, согласование с МАГАТЭ и уполномоченным органом РК.</p>
-      </div>
-    </div>
-    <div class="project-stage">
-      <div class="stage-circle stage-circle--pending"><span class="stage-num-text">04</span></div>
-      <div class="stage-card stage-card--pending">
-        <div class="stage-card__head">
-          <h3 class="stage-title">Строительство</h3>
-          
-          <span class="stage-year stage-year--pending">Ожидается</span>
-        </div>
-        <p class="stage-desc">Возведение реакторного здания, машинного зала и систем охлаждения. Поэтапный контроль качества.</p>
-      </div>
-    </div>
-    <div class="project-stage">
-      <div class="stage-circle stage-circle--pending"><span class="stage-num-text">05</span></div>
-      <div class="stage-card stage-card--pending">
-        <div class="stage-card__head">
-          <h3 class="stage-title">Пуско-наладка</h3>
-          
-          <span class="stage-year stage-year--pending">Ожидается</span>
-        </div>
-        <p class="stage-desc">Физический пуск реактора, испытания систем безопасности, получение лицензии на эксплуатацию.</p>
-      </div>
-    </div>
-    <div class="project-stage">
-      <div class="stage-circle stage-circle--pending"><span class="stage-num-text">06</span></div>
-      <div class="stage-card stage-card--pending">
-        <div class="stage-card__head">
-          <h3 class="stage-title">Ввод в эксплуатацию</h3>
-          
-          <span class="stage-year stage-year--pending">Ожидается</span>
-        </div>
-        <p class="stage-desc">Выход на промышленную мощность, начало коммерческой поставки электроэнергии в национальную сеть.</p>
-      </div>
-    </div>
+          <div class="map-hint" id="map-hint">Нажмите на метку</div>
         </div>
       </div>
+    </section>
+
+    <!-- CMS: project tabs -->
+    <div class="project-tabs" role="tablist" aria-label="Проекты АЭС">
+      <button class="project-tab active" type="button" role="tab" aria-selected="true" data-tab="balkhash">АЭС «Балхаш»</button>
+      <button class="project-tab" type="button" role="tab" aria-selected="false" data-tab="mainkum">АЭС «Мойынкум»</button>
+      <button class="project-tab" type="button" role="tab" aria-selected="false" data-tab="project3">Проект 4.3</button>
+      <button class="project-tab" type="button" role="tab" aria-selected="false" data-tab="project4">Проект 4.4</button>
     </div>
 
-    <div class="tab-panel" id="tab-mainkum" style="display:none">
-      <div class="project-hero-card">
-        <div class="project-hero-card__info">
-          <div class="project-tag">АЭС «Мойынкум»</div>
-          <h2 class="project-title">Малый модульный реактор для электроснабжения южных регионов</h2>
-          <p class="text-body">Проект предусматривает строительство атомной станции малой мощности на основе технологии SMR для обеспечения электроэнергией южных регионов страны.</p>
-          <div class="project-specs">
-            <div class="project-spec"><span class="project-spec__label">Мощность</span><span class="project-spec__val">до 300 МВт</span></div>
-            <div class="project-spec"><span class="project-spec__label">Технология</span><span class="project-spec__val">SMR / HPR-1000</span></div>
-            <div class="project-spec"><span class="project-spec__label">Площадка</span><span class="project-spec__val">Жамбылская область</span></div>
+    <div class="project-panels">
+      <article class="project-panel active" data-tab="balkhash" role="tabpanel">
+        <div class="project-detail project-detail--balkhash">
+          <div class="project-detail__media">
+            <img src="assets/images/procurement-img.jpg" alt="АЭС Балхаш" loading="lazy" />
+          </div>
+
+          <div class="project-detail__content">
+            <span class="project-badge">Проект №1</span>
+            <h2 class="project-detail__title">АЭС «Балхаш»</h2>
+            <p class="project-detail__text">
+              Площадка на южном берегу озера Балхаш — основной кандидат для размещения
+              первой казахстанской АЭС. В настоящее время ведётся разработка EPC-контракта
+              и проведение инженерных изысканий по выбору площадки. Лидером международного
+              консорциума определён Росатом.
+            </p>
+
+            <div class="project-facts" aria-label="Краткие параметры проекта Балхаш">
+              <div class="project-fact"><span>Регион</span><strong>Жетысу / Алматинская область</strong></div>
+              <div class="project-fact"><span>Мощность</span><strong>до 2 400 МВт (2 блока)</strong></div>
+              <div class="project-fact"><span>Площадка</span><strong>Южный берег озера Балхаш</strong></div>
+              <div class="project-fact"><span>Консорциум</span><strong>Не сформирован (лидер — Росатом)</strong></div>
+              <div class="project-fact"><span>Сумма инвестиций</span><strong>14 млрд. долл. США</strong></div>
+              <div class="project-fact"><span>Текущий этап</span><strong>Разработка EPC-контракта, инженерные изыскания</strong></div>
+            </div>
           </div>
         </div>
-        <div class="project-hero-card__img">
-          <img src="assets/images/smr.png" alt="SMR реактор" />
-        </div>
-      </div>
 
-      <div style="margin-top:48px">
-        <h2 class="section-title">Этапы строительства — АЭС «Мойынкум»</h2>
-        <p class="text-body" style="margin-bottom:32px">Малый модульный реактор для электроснабжения южных регионов страны. Мощность — до 300 МВт.</p>
-        <div class="project-stages">
-          
-    <div class="project-stage">
-      <div class="stage-circle stage-circle--done"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-      <div class="stage-card stage-card--done">
-        <div class="stage-card__head">
-          <h3 class="stage-title">Выбор площадки</h3>
-          <span class="stage-badge stage-badge--done">Выполнено</span>
-          <span class="stage-year stage-year--done">2016–2019</span>
-        </div>
-        <p class="stage-desc">Изучение площадки в Жамбылской области, оценка сейсмической активности и водоснабжения от р. Чу.</p>
-      </div>
-    </div>
-    <div class="project-stage">
-      <div class="stage-circle stage-circle--done"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
-      <div class="stage-card stage-card--done">
-        <div class="stage-card__head">
-          <h3 class="stage-title">Технико-экономическое обоснование</h3>
-          <span class="stage-badge stage-badge--done">Выполнено</span>
-          <span class="stage-year stage-year--done">2019–2023</span>
-        </div>
-        <p class="stage-desc">Разработка ТЭО малой атомной электростанции, анализ применимости малых модульных реакторов (SMR).</p>
-      </div>
-    </div>
-    <div class="project-stage">
-      <div class="stage-circle stage-circle--active"><div class="stage-dot-gold"></div></div>
-      <div class="stage-card stage-card--active">
-        <div class="stage-card__head">
-          <h3 class="stage-title">Проектирование</h3>
-          <span class="stage-badge stage-badge--active">В процессе</span>
-          <span class="stage-year stage-year--active">2023 — сейчас</span>
-        </div>
-        <p class="stage-desc">Согласование концепции проекта, выбор технологии реактора и международного партнёра для реализации.</p>
-      </div>
-    </div>
-    <div class="project-stage">
-      <div class="stage-circle stage-circle--pending"><span class="stage-num-text">04</span></div>
-      <div class="stage-card stage-card--pending">
-        <div class="stage-card__head">
-          <h3 class="stage-title">Строительство</h3>
-          
-          <span class="stage-year stage-year--pending">Ожидается</span>
-        </div>
-        <p class="stage-desc">Строительство энергоблоков малой мощности, создание локальной инфраструктуры электроснабжения региона.</p>
-      </div>
-    </div>
-    <div class="project-stage">
-      <div class="stage-circle stage-circle--pending"><span class="stage-num-text">05</span></div>
-      <div class="stage-card stage-card--pending">
-        <div class="stage-card__head">
-          <h3 class="stage-title">Пуско-наладка</h3>
-          
-          <span class="stage-year stage-year--pending">Ожидается</span>
-        </div>
-        <p class="stage-desc">Функциональное тестирование модульного реактора, верификация систем управления и безопасности.</p>
-      </div>
-    </div>
-    <div class="project-stage">
-      <div class="stage-circle stage-circle--pending"><span class="stage-num-text">06</span></div>
-      <div class="stage-card stage-card--pending">
-        <div class="stage-card__head">
-          <h3 class="stage-title">Ввод в эксплуатацию</h3>
-          
-          <span class="stage-year stage-year--pending">Ожидается</span>
-        </div>
-        <p class="stage-desc">Начало выработки электроэнергии для нужд Жамбылской области и смежных регионов Казахстана.</p>
-      </div>
-    </div>
-        </div>
-      </div>
-    </div>
+        <section class="project-stages-section" aria-labelledby="balkhash-stages-title">
+          <h2 class="project-stages-title" id="balkhash-stages-title">Этапы строительства — АЭС «Балхаш»</h2>
+          <p class="project-stages-subtitle">
+            Крупный двухблочный энергетический объект на южном берегу озера Балхаш. Суммарная мощность — 2 400 МВт.
+          </p>
 
-    <div class="tab-panel tab-panel--empty" id="tab-project3" style="display:none">
-      <div class="empty-state">
-        <div class="empty-state__icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
-        </div>
-        <h3>Данные отсутствуют</h3>
-        <p>Информация по данному проекту находится в стадии формирования и будет добавлена позднее.</p>
-      </div>
-    </div>
-    <div class="tab-panel tab-panel--empty" id="tab-project4" style="display:none">
-      <div class="empty-state">
-        <div class="empty-state__icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
-        </div>
-        <h3>Данные отсутствуют</h3>
-        <p>Информация по данному проекту находится в стадии формирования и будет добавлена позднее.</p>
-      </div>
-    </div>
+          <div class="project-stages-list">
+            <div class="project-stage-item">
+              <div class="project-stage-circle project-stage-circle--done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div class="project-stage-card project-stage-card--done">
+                <div class="project-stage-card__head"><h3>Выбор площадки</h3><span class="project-stage-badge project-stage-badge--done">Выполнено</span><time>2014–2017</time></div>
+                <p>Геологические, сейсмические и гидрологические исследования береговой зоны озера Балхаш. Одобрение регулятора.</p>
+              </div>
+            </div>
+            <div class="project-stage-item">
+              <div class="project-stage-circle project-stage-circle--done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div class="project-stage-card project-stage-card--done">
+                <div class="project-stage-card__head"><h3>Технико-экономическое обоснование</h3><span class="project-stage-badge project-stage-badge--done">Выполнено</span><time>2017–2021</time></div>
+                <p>Сравнительный анализ реакторных технологий, оценка стоимости жизненного цикла, выбор зарубежного партнёра-поставщика.</p>
+              </div>
+            </div>
+            <div class="project-stage-item">
+              <div class="project-stage-circle project-stage-circle--active"><span></span></div>
+              <div class="project-stage-card project-stage-card--active">
+                <div class="project-stage-card__head"><h3>Проектирование</h3><span class="project-stage-badge project-stage-badge--active">В процессе</span><time>2022 — сейчас</time></div>
+                <p>Разработка предпроектной и проектной документации, согласование с МАГАТЭ и уполномоченным органом РК.</p>
+              </div>
+            </div>
+            <div class="project-stage-item">
+              <div class="project-stage-circle project-stage-circle--pending">04</div>
+              <div class="project-stage-card project-stage-card--pending">
+                <div class="project-stage-card__head"><h3>Строительство</h3><time>Ожидается</time></div>
+                <p>Возведение реакторного здания, машинного зала и систем охлаждения. Поэтапный контроль качества.</p>
+              </div>
+            </div>
+            <div class="project-stage-item">
+              <div class="project-stage-circle project-stage-circle--pending">05</div>
+              <div class="project-stage-card project-stage-card--pending">
+                <div class="project-stage-card__head"><h3>Пуско-наладка</h3><time>Ожидается</time></div>
+                <p>Физический пуск реактора, испытания систем безопасности, получение лицензии на эксплуатацию.</p>
+              </div>
+            </div>
+            <div class="project-stage-item">
+              <div class="project-stage-circle project-stage-circle--pending">06</div>
+              <div class="project-stage-card project-stage-card--pending">
+                <div class="project-stage-card__head"><h3>Ввод в эксплуатацию</h3><time>Ожидается</time></div>
+                <p>Выход на промышленную мощность, начало коммерческой поставки электроэнергии в национальную сеть.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </article>
 
+      <article class="project-panel" data-tab="mainkum" role="tabpanel">
+        <div class="project-detail project-detail--reverse project-detail--mainkum">
+          <div class="project-detail__media">
+            <img src="assets/images/about-img.jpg" alt="АЭС Мойынкум" loading="lazy" />
+          </div>
+
+          <div class="project-detail__content">
+            <span class="project-badge">Проект №2</span>
+            <h2 class="project-detail__title">АЭС «Мойынкум»</h2>
+            <p class="project-detail__text">
+              Площадка в Жамбылской области рассматривается в качестве перспективного
+              расположения малой атомной электростанции с использованием малых модульных
+              реакторов (SMR). В настоящее время ведётся работа по определению потенциальных
+              районов размещения. Консорциум и вендор технологии не определены.
+            </p>
+
+            <div class="project-facts" aria-label="Краткие параметры проекта Мойынкум">
+              <div class="project-fact"><span>Регион</span><strong>Жамбылская область</strong></div>
+              <div class="project-fact"><span>Мощность</span><strong>до 300 МВт (малый модульный реактор)</strong></div>
+              <div class="project-fact"><span>Площадка</span><strong>Район Мойынкум</strong></div>
+              <div class="project-fact"><span>Консорциум</span><strong>Не сформирован</strong></div>
+              <div class="project-fact"><span>Сумма инвестиций</span><strong>Информация отсутствует</strong></div>
+              <div class="project-fact"><span>Текущий этап</span><strong>Определение потенциальных районов</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <section class="project-stages-section" aria-labelledby="mainkum-stages-title">
+          <h2 class="project-stages-title" id="mainkum-stages-title">Этапы строительства — АЭС «Мойынкум»</h2>
+          <p class="project-stages-subtitle">
+            Малый модульный реактор для электроснабжения южных регионов страны. Мощность — до 300 МВт.
+          </p>
+
+          <div class="project-stages-list">
+            <div class="project-stage-item">
+              <div class="project-stage-circle project-stage-circle--done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div class="project-stage-card project-stage-card--done">
+                <div class="project-stage-card__head"><h3>Выбор площадки</h3><span class="project-stage-badge project-stage-badge--done">Выполнено</span><time>2016–2019</time></div>
+                <p>Изучение площадки в Жамбылской области, оценка сейсмической активности и водоснабжения от р. Чу.</p>
+              </div>
+            </div>
+            <div class="project-stage-item">
+              <div class="project-stage-circle project-stage-circle--done"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+              <div class="project-stage-card project-stage-card--done">
+                <div class="project-stage-card__head"><h3>Технико-экономическое обоснование</h3><span class="project-stage-badge project-stage-badge--done">Выполнено</span><time>2019–2023</time></div>
+                <p>Разработка ТЭО малой атомной электростанции, анализ применимости малых модульных реакторов (SMR).</p>
+              </div>
+            </div>
+            <div class="project-stage-item">
+              <div class="project-stage-circle project-stage-circle--active"><span></span></div>
+              <div class="project-stage-card project-stage-card--active">
+                <div class="project-stage-card__head"><h3>Проектирование</h3><span class="project-stage-badge project-stage-badge--active">В процессе</span><time>2023 — сейчас</time></div>
+                <p>Согласование концепции проекта, выбор технологии реактора и международного партнёра для реализации.</p>
+              </div>
+            </div>
+            <div class="project-stage-item">
+              <div class="project-stage-circle project-stage-circle--pending">04</div>
+              <div class="project-stage-card project-stage-card--pending">
+                <div class="project-stage-card__head"><h3>Строительство</h3><time>Ожидается</time></div>
+                <p>Строительство энергоблоков малой мощности, создание локальной инфраструктуры электроснабжения региона.</p>
+              </div>
+            </div>
+            <div class="project-stage-item">
+              <div class="project-stage-circle project-stage-circle--pending">05</div>
+              <div class="project-stage-card project-stage-card--pending">
+                <div class="project-stage-card__head"><h3>Пуско-наладка</h3><time>Ожидается</time></div>
+                <p>Функциональное тестирование модульного реактора, верификация систем управления и безопасности.</p>
+              </div>
+            </div>
+            <div class="project-stage-item">
+              <div class="project-stage-circle project-stage-circle--pending">06</div>
+              <div class="project-stage-card project-stage-card--pending">
+                <div class="project-stage-card__head"><h3>Ввод в эксплуатацию</h3><time>Ожидается</time></div>
+                <p>Начало выработки электроэнергии для нужд Жамбылской области и смежных регионов Казахстана.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </article>
+
+      <article class="project-panel project-panel--empty" data-tab="project3" role="tabpanel">
+        <div class="project-empty-state">
+          <div class="project-empty-state__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg></div>
+          <h3>Данные отсутствуют</h3>
+          <p>Информация по данному проекту находится в стадии формирования и будет добавлена позднее.</p>
+        </div>
+      </article>
+
+      <article class="project-panel project-panel--empty" data-tab="project4" role="tabpanel">
+        <div class="project-empty-state">
+          <div class="project-empty-state__icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg></div>
+          <h3>Данные отсутствуют</h3>
+          <p>Информация по данному проекту находится в стадии формирования и будет добавлена позднее.</p>
+        </div>
+      </article>
+    </div>
   </div>
 </section>
 
-<script>
-(function() {
-  var tabs = ['balkhash','mainkum','project3','project4'];
-  function activate(id) {
-    tabs.forEach(function(t) {
-      var panel = document.getElementById('tab-' + t);
-      var btn = document.querySelector('[data-tab="' + t + '"]');
-      if (t === id) { if(panel) panel.style.display=''; if(btn) btn.classList.add('active'); }
-      else { if(panel) panel.style.display='none'; if(btn) btn.classList.remove('active'); }
-    });
-  }
-  document.querySelectorAll('[data-tab]').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      var id = this.dataset.tab;
-      history.pushState(null,'','?tab='+id);
-      activate(id);
-    });
-  });
-  var p = new URLSearchParams(window.location.search);
-  var t = p.get('tab');
-  activate(tabs.includes(t) ? t : 'balkhash');
-})();
-</script>
+
 
 </div><!-- /header-offset -->
 
