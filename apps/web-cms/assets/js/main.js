@@ -17,6 +17,8 @@ document.addEventListener("DOMContentLoaded", function () {
   initNewsFilter();
   initActiveNavLink();
   initUrlSectionNav();
+  initNewsPageTabs();
+  initNewsPageCalendar();
 });
 
 /* ─── ACTIVE NAV LINK ─── */
@@ -620,6 +622,194 @@ function initNewsFilter() {
       });
     });
   });
+}
+
+/* ─── NEWS PAGE TABS ─── */
+function initNewsPageTabs() {
+  var sidebarTabs  = document.querySelectorAll('.news-sidebar__tab[data-tab]');
+  var mobileTabs   = document.querySelectorAll('.news-mobile-tab[data-tab]');
+  var panels       = document.querySelectorAll('.news-panel[data-tab]');
+
+  if (!panels.length) return;
+
+  function activateTab(tabValue) {
+    sidebarTabs.forEach(function (btn) {
+      btn.classList.toggle('is-active', btn.dataset.tab === tabValue);
+    });
+    mobileTabs.forEach(function (btn) {
+      btn.classList.toggle('is-active', btn.dataset.tab === tabValue);
+    });
+    panels.forEach(function (panel) {
+      panel.classList.toggle('is-active', panel.dataset.tab === tabValue);
+    });
+  }
+
+  sidebarTabs.forEach(function (btn) {
+    btn.addEventListener('click', function () { activateTab(btn.dataset.tab); });
+  });
+  mobileTabs.forEach(function (btn) {
+    btn.addEventListener('click', function () { activateTab(btn.dataset.tab); });
+  });
+
+  // Default: activate first tab
+  var first = sidebarTabs[0] || mobileTabs[0];
+  if (first) activateTab(first.dataset.tab);
+}
+
+/* ─── NEWS PAGE CALENDAR ─── */
+function initNewsPageCalendar() {
+  var calContainer  = document.getElementById('news-cal');
+  var calSelectedEl = document.getElementById('news-cal-selected');
+  if (!calContainer) return;
+
+  // Days that have news (mock data — same visual as Next.js CalendarBlock)
+  var NEWS_DAYS = [3, 7, 12, 18, 24, 28];
+
+  var today      = new Date();
+  var curYear    = today.getFullYear();
+  var curMonth   = today.getMonth(); // 0-based
+  var selectedDate = null; // Date object or null
+
+  var RU_MONTHS = [
+    'Январь','Февраль','Март','Апрель','Май','Июнь',
+    'Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'
+  ];
+  var RU_WEEKDAYS = ['Пн','Вт','Ср','Чт','Пт','Сб','Вс'];
+
+  function formatDateRu(d) {
+    return new Intl.DateTimeFormat('ru-RU', {
+      day: 'numeric', month: 'long', year: 'numeric'
+    }).format(d);
+  }
+
+  function getDaysInMonth(year, month) {
+    return new Date(year, month + 1, 0).getDate();
+  }
+
+  // Returns 0=Mon … 6=Sun (Mon-first)
+  function firstDayOfMonthMon(year, month) {
+    var d = new Date(year, month, 1).getDay(); // 0=Sun
+    return (d + 6) % 7;
+  }
+
+  function render() {
+    var totalDays = getDaysInMonth(curYear, curMonth);
+    var startOffset = firstDayOfMonthMon(curYear, curMonth);
+    var prevMonthDays = getDaysInMonth(curYear, curMonth - 1);
+
+    // Build year options (±5 years around today)
+    var yearOpts = '';
+    for (var y = today.getFullYear() - 5; y <= today.getFullYear() + 5; y++) {
+      yearOpts += '<option value="' + y + '"' + (y === curYear ? ' selected' : '') + '>' + y + '</option>';
+    }
+
+    // Build weekday headers
+    var weekdayHtml = RU_WEEKDAYS.map(function (wd) {
+      return '<div class="news-cal__weekday">' + wd + '</div>';
+    }).join('');
+
+    // Build day cells
+    var dayHtml = '';
+
+    // Previous month's trailing days
+    for (var i = 0; i < startOffset; i++) {
+      var day = prevMonthDays - startOffset + 1 + i;
+      dayHtml += '<button class="news-cal__day news-cal__day--other news-cal__day--no-news" disabled>' + day + '</button>';
+    }
+
+    // Current month days
+    for (var d = 1; d <= totalDays; d++) {
+      var hasNews = NEWS_DAYS.indexOf(d) !== -1;
+      var isSelected = selectedDate &&
+        selectedDate.getFullYear() === curYear &&
+        selectedDate.getMonth() === curMonth &&
+        selectedDate.getDate() === d;
+
+      var cls = 'news-cal__day';
+      if (hasNews) cls += ' news-cal__day--has-news';
+      else         cls += ' news-cal__day--no-news';
+      if (isSelected) cls += ' news-cal__day--selected';
+
+      var dot = hasNews ? '<span class="news-cal__dot"></span>' : '';
+      dayHtml += '<button class="' + cls + '" data-day="' + d + '">' + d + dot + '</button>';
+    }
+
+    // Next month's leading days to fill the grid
+    var totalCells = startOffset + totalDays;
+    var remaining = totalCells % 7 === 0 ? 0 : 7 - (totalCells % 7);
+    for (var n = 1; n <= remaining; n++) {
+      dayHtml += '<button class="news-cal__day news-cal__day--other news-cal__day--no-news" disabled>' + n + '</button>';
+    }
+
+    calContainer.innerHTML =
+      '<div class="news-cal__head">' +
+        '<button class="news-cal__nav" id="news-cal-prev">&#8249;</button>' +
+        '<div class="news-cal__head-center">' +
+          '<span class="news-cal__month-name">' + RU_MONTHS[curMonth] + '</span>' +
+          '<select class="news-cal__year-select" id="news-cal-year">' + yearOpts + '</select>' +
+        '</div>' +
+        '<button class="news-cal__nav" id="news-cal-next">&#8250;</button>' +
+      '</div>' +
+      '<div class="news-cal__grid">' +
+        weekdayHtml +
+        dayHtml +
+      '</div>';
+
+    // Update selected date display
+    if (calSelectedEl) {
+      if (selectedDate) {
+        calSelectedEl.textContent = formatDateRu(selectedDate);
+        calSelectedEl.style.display = '';
+      } else {
+        calSelectedEl.textContent = '';
+        calSelectedEl.style.display = 'none';
+      }
+    }
+
+    // Bind events after render
+    var prevBtn = document.getElementById('news-cal-prev');
+    var nextBtn = document.getElementById('news-cal-next');
+    var yearSel = document.getElementById('news-cal-year');
+
+    if (prevBtn) prevBtn.addEventListener('click', function () {
+      curMonth--;
+      if (curMonth < 0) { curMonth = 11; curYear--; }
+      render();
+    });
+    if (nextBtn) nextBtn.addEventListener('click', function () {
+      curMonth++;
+      if (curMonth > 11) { curMonth = 0; curYear++; }
+      render();
+    });
+    if (yearSel) yearSel.addEventListener('change', function () {
+      curYear = parseInt(this.value, 10);
+      render();
+    });
+
+    // Day click
+    calContainer.querySelectorAll('.news-cal__day[data-day]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var day = parseInt(btn.dataset.day, 10);
+        var clicked = new Date(curYear, curMonth, day);
+        if (
+          selectedDate &&
+          selectedDate.getFullYear() === curYear &&
+          selectedDate.getMonth() === curMonth &&
+          selectedDate.getDate() === day
+        ) {
+          selectedDate = null; // deselect
+        } else {
+          selectedDate = clicked;
+        }
+        render();
+      });
+    });
+  }
+
+  // Hide selected date display initially
+  if (calSelectedEl) calSelectedEl.style.display = 'none';
+
+  render();
 }
 
 /* ─── URL SECTION NAV (for pages with ?section= links) ─── */
