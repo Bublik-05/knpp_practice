@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,473 +8,550 @@
   <link rel="stylesheet" href="assets/css/main.css" />
   <link rel="stylesheet" href="assets/css/responsive.css" />
 </head>
+
 <body>
 
-<!-- CMS: site header -->
-<header class="site-header" id="site-header">
-  <div class="site-header__inner">
-    <!-- LEFT: burger + logos -->
-    <div class="site-header__logos">
-      <button class="header-burger" id="mega-menu-btn" aria-label="Открыть меню">
-        <svg class="icon-burger" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg><svg class="icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-      </button>
-      <div class="site-header__logo-wrap">
-        <a href="index.html" class="site-header__logo" aria-label="КАЭС — на главную">
-          <img src="assets/images/KNPP.png" alt="КАЭС" />
-        </a>
-        <div class="site-header__tooltip"><span>ТОО «Казахстанские атомные электрические станции»</span></div>
+  <!-- CMS: site header -->
+  <header class="site-header" id="site-header">
+    <div class="site-header__inner">
+      <!-- LEFT: burger + logos -->
+      <div class="site-header__logos">
+        <button class="header-burger" id="mega-menu-btn" aria-label="Открыть меню">
+          <svg class="icon-burger" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.5" stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg><svg class="icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.5" stroke-linecap="round">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+        <div class="site-header__logo-wrap">
+          <a href="index.html" class="site-header__logo" aria-label="КАЭС — на главную">
+            <img src="assets/images/KNPP.png" alt="КАЭС" />
+          </a>
+          <div class="site-header__tooltip"><span>ТОО «Казахстанские атомные электрические станции»</span></div>
+        </div>
+        <div class="site-header__partner-logo-wrap">
+          <a href="https://www.gov.kz/memleket/entities/atom-energiyasy" class="site-header__partner-logo"
+            target="_blank" rel="noopener noreferrer" aria-label="Агентство РК по атомной энергии">
+            <img src="assets/images/partners/atom-agency.png" alt="Агентство РК по атомной энергии" />
+          </a>
+          <div class="site-header__tooltip"><span>Агентство РК по атомной энергии</span></div>
+        </div>
       </div>
-      <div class="site-header__partner-logo-wrap">
-        <a href="https://www.gov.kz/memleket/entities/atom-energiyasy"
-           class="site-header__partner-logo" target="_blank" rel="noopener noreferrer"
-           aria-label="Агентство РК по атомной энергии">
-          <img src="assets/images/partners/atom-agency.png" alt="Агентство РК по атомной энергии" />
-        </a>
-        <div class="site-header__tooltip"><span>Агентство РК по атомной энергии</span></div>
+
+      <!-- CENTER: desktop nav links -->
+      <ul class="nav-menu" aria-label="Основная навигация">
+        <li class="nav-menu__item">
+          <a href="index.html" class="nav-menu__link">Главная</a>
+        </li>
+        <li class="nav-menu__item nav-menu__item--has-drop">
+          <a href="about.html" class="nav-menu__link">О КАЭС</a>
+          <div class="nav-dropdown">
+            <div class="nav-dropdown__bridge"></div>
+            <div class="nav-dropdown__box">
+              <div class="nav-dropdown__top">
+                <a href="about.html?section=about">О компании</a>
+                <a href="about.html?section=leadership">Руководство</a>
+                <a href="about.html?section=governance">Корп. управление</a>
+                <a href="about.html?section=safety">Безопасность</a>
+                <a href="about.html?section=compliance">Комплаенс</a>
+                <a href="about.html?section=documents">Документы</a>
+                <a href="about.html?section=development">План развития</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="nav-menu__item nav-menu__item--has-drop">
+          <a href="atom.html" class="nav-menu__link">Об Атоме</a>
+          <div class="nav-dropdown">
+            <div class="nav-dropdown__bridge"></div>
+            <div class="nav-dropdown__box">
+              <div class="nav-dropdown__top">
+                <a href="atom.html?section=history">История</a>
+                <a href="atom.html?section=operation">Как работает реактор</a>
+                <a href="atom.html?section=types">Типы реакторов</a>
+                <a href="atom.html?section=safety">Безопасность</a>
+                <a href="atom.html?section=environment">Атомная энергия и экология</a>
+                <a href="atom.html?section=myths">Мифы и факты об АЭС</a>
+                <a href="atom.html?section=quiz">Проверь свои знания</a>
+                <a href="atom.html?section=multimedia">Мультимедиа</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="nav-menu__item nav-menu__item--has-drop">
+          <a href="projects.html" class="nav-menu__link">Проекты</a>
+          <div class="nav-dropdown">
+            <div class="nav-dropdown__bridge"></div>
+            <div class="nav-dropdown__box">
+              <div class="nav-dropdown__top">
+                <a href="projects.html?tab=balkhash">АЭС «Балхаш»</a>
+                <a href="projects.html?tab=mainkum">АЭС «Мойынкум»</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="nav-menu__item nav-menu__item--has-drop">
+          <a href="procurements.html" class="nav-menu__link">Закупки</a>
+          <div class="nav-dropdown">
+            <div class="nav-dropdown__bridge"></div>
+            <div class="nav-dropdown__box">
+              <div class="nav-dropdown__top">
+                <a href="procurements.html">Политика закупок</a>
+                <a href="procurements.html">Текущие закупки</a>
+                <a href="procurements.html">Локализация</a>
+                <a href="procurements.html">Документы</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="nav-menu__item nav-menu__item--has-drop">
+          <a href="news.html" class="nav-menu__link">Пресс-центр</a>
+          <div class="nav-dropdown">
+            <div class="nav-dropdown__bridge"></div>
+            <div class="nav-dropdown__box">
+              <div class="nav-dropdown__top">
+                <a href="news.html">Календарь событий</a>
+                <a href="news.html">Мультимедиа</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="nav-menu__item">
+          <a href="vacancies.html" class="nav-menu__link">Вакансии</a>
+        </li>
+        <li class="nav-menu__item">
+          <a href="faq.html" class="nav-menu__link">FAQ</a>
+        </li>
+        <li class="nav-menu__item">
+          <a href="contacts.html" class="nav-menu__link active">Контакты</a>
+        </li>
+      </ul>
+
+      <!-- RIGHT: search + lang + mobile burger -->
+      <div class="header-search">
+        <button class="header-search__toggle" id="search-toggle" aria-label="Поиск">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+            stroke-linecap="round">
+            <circle cx="11" cy="11" r="8" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          </svg>
+        </button>
+        <div class="header-search__input-wrap" id="search-wrap">
+          <input type="search" class="header-search__input" id="search-input" placeholder="Поиск…"
+            aria-label="Поиск по сайту" />
+        </div>
+        <button class="header-lang">Рус</button>
+        <button class="header-mobile-burger" id="mobile-burger" aria-label="Меню" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+            stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+        </button>
       </div>
     </div>
+  </header>
 
-    <!-- CENTER: desktop nav links -->
-    <ul class="nav-menu" aria-label="Основная навигация">
-      <li class="nav-menu__item">
-        <a href="index.html" class="nav-menu__link">Главная</a>
-      </li>
-      <li class="nav-menu__item nav-menu__item--has-drop">
-        <a href="about.html" class="nav-menu__link">О КАЭС</a>
-        <div class="nav-dropdown">
-          <div class="nav-dropdown__bridge"></div>
-          <div class="nav-dropdown__box">
-            <div class="nav-dropdown__top">
-          <a href="about.html?section=about">О компании</a>
-          <a href="about.html?section=leadership">Руководство</a>
-          <a href="about.html?section=governance">Корп. управление</a>
-          <a href="about.html?section=safety">Безопасность</a>
-          <a href="about.html?section=compliance">Комплаенс</a>
-          <a href="about.html?section=documents">Документы</a>
-          <a href="about.html?section=development">План развития</a>
-            </div>
-          </div>
-        </div>
-      </li>
-      <li class="nav-menu__item nav-menu__item--has-drop">
-        <a href="atom.html" class="nav-menu__link">Об Атоме</a>
-        <div class="nav-dropdown">
-          <div class="nav-dropdown__bridge"></div>
-          <div class="nav-dropdown__box">
-            <div class="nav-dropdown__top">
-          <a href="atom.html?section=history">История</a>
-          <a href="atom.html?section=operation">Как работает реактор</a>
-          <a href="atom.html?section=types">Типы реакторов</a>
-          <a href="atom.html?section=safety">Безопасность</a>
-          <a href="atom.html?section=environment">Атомная энергия и экология</a>
-          <a href="atom.html?section=myths">Мифы и факты об АЭС</a>
-          <a href="atom.html?section=quiz">Проверь свои знания</a>
-          <a href="atom.html?section=multimedia">Мультимедиа</a>
-            </div>
-          </div>
-        </div>
-      </li>
-      <li class="nav-menu__item nav-menu__item--has-drop">
-        <a href="projects.html" class="nav-menu__link">Проекты</a>
-        <div class="nav-dropdown">
-          <div class="nav-dropdown__bridge"></div>
-          <div class="nav-dropdown__box">
-            <div class="nav-dropdown__top">
-          <a href="projects.html?tab=balkhash">АЭС «Балхаш»</a>
-          <a href="projects.html?tab=mainkum">АЭС «Мойынкум»</a>
-            </div>
-          </div>
-        </div>
-      </li>
-      <li class="nav-menu__item nav-menu__item--has-drop">
-        <a href="procurements.html" class="nav-menu__link">Закупки</a>
-        <div class="nav-dropdown">
-          <div class="nav-dropdown__bridge"></div>
-          <div class="nav-dropdown__box">
-            <div class="nav-dropdown__top">
-          <a href="procurements.html">Политика закупок</a>
-          <a href="procurements.html">Текущие закупки</a>
-          <a href="procurements.html">Локализация</a>
-          <a href="procurements.html">Документы</a>
-            </div>
-          </div>
-        </div>
-      </li>
-      <li class="nav-menu__item nav-menu__item--has-drop">
-        <a href="news.html" class="nav-menu__link">Пресс-центр</a>
-        <div class="nav-dropdown">
-          <div class="nav-dropdown__bridge"></div>
-          <div class="nav-dropdown__box">
-            <div class="nav-dropdown__top">
-          <a href="news.html">Календарь событий</a>
-          <a href="news.html">Мультимедиа</a>
-            </div>
-          </div>
-        </div>
-      </li>
-      <li class="nav-menu__item">
-        <a href="vacancies.html" class="nav-menu__link">Вакансии</a>
-      </li>
-      <li class="nav-menu__item">
-        <a href="faq.html" class="nav-menu__link">FAQ</a>
-      </li>
-      <li class="nav-menu__item">
-        <a href="contacts.html" class="nav-menu__link active">Контакты</a>
-      </li>
-    </ul>
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html" class="mobile-menu__link">Главная</a>
+    <a href="about.html" class="mobile-menu__link">О КАЭС</a>
+    <a href="atom.html" class="mobile-menu__link">Об Атоме</a>
+    <a href="projects.html" class="mobile-menu__link">Проекты</a>
+    <a href="procurements.html" class="mobile-menu__link">Закупки</a>
+    <a href="news.html" class="mobile-menu__link">Пресс-центр</a>
+    <a href="vacancies.html" class="mobile-menu__link">Вакансии</a>
+    <a href="faq.html" class="mobile-menu__link">FAQ</a>
+    <a href="contacts.html" class="mobile-menu__link">Контакты</a>
+  </div>
 
-    <!-- RIGHT: search + lang + mobile burger -->
-    <div class="header-search">
-      <button class="header-search__toggle" id="search-toggle" aria-label="Поиск">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-        </svg>
-      </button>
-      <div class="header-search__input-wrap" id="search-wrap">
-        <input type="search" class="header-search__input" id="search-input" placeholder="Поиск…" aria-label="Поиск по сайту" />
+  <!-- Mega menu backdrop -->
+  <div class="mega-menu-backdrop" id="mega-menu-backdrop"></div>
+
+  <!-- Mega menu panel -->
+  <div class="mega-menu-panel" id="mega-menu-panel">
+    <div class="mega-menu-panel__box">
+      <div class="mega-menu-panel__inner">
+
+        <!-- Social icons — left vertical column (desktop) -->
+        <div class="mega-menu-panel__socials">
+          <a href="#" class="social-circle" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24"
+              fill="white">
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+            </svg></a>
+          <a href="#" class="social-circle" aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 24 24"
+              fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.5" cy="6.5" r="0.5" fill="white" stroke="none" />
+            </svg></a>
+          <a href="#" class="social-circle" aria-label="TikTok"><svg width="14" height="14" viewBox="0 0 24 24"
+              fill="white">
+              <path
+                d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.3 6.3 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z" />
+            </svg></a>
+        </div>
+
+        <!-- Main content -->
+        <div class="mega-menu-panel__body">
+          <!-- Close row -->
+          <div class="mega-menu-panel__head">
+            <span>Все разделы сайта</span>
+            <button class="mega-menu-close" id="mega-menu-close">
+              Закрыть
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"
+                stroke-linecap="round">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Columns -->
+          <div class="mega-menu-columns">
+            <div class="mega-menu-col">
+              <div class="mega-menu-col__head">
+                <a href="about.html" class="mega-menu-col__title">О КАЭС</a>
+              </div>
+              <ul class="mega-menu-col__links">
+                <li><a href="about.html?section=about" class="mega-menu-col__sub">О компании</a></li>
+                <li><a href="about.html?section=leadership" class="mega-menu-col__sub">Руководство</a></li>
+                <li><a href="about.html?section=governance" class="mega-menu-col__sub">Корпоративное управление</a></li>
+                <li><a href="about.html?section=safety" class="mega-menu-col__sub">Безопасность</a></li>
+                <li><a href="about.html?section=compliance" class="mega-menu-col__sub">Комплаенс</a></li>
+                <li><a href="about.html?section=documents" class="mega-menu-col__sub">Документы</a></li>
+                <li><a href="about.html?section=development" class="mega-menu-col__sub">План развития</a></li>
+              </ul>
+            </div>
+            <div class="mega-menu-col">
+              <div class="mega-menu-col__head">
+                <a href="atom.html" class="mega-menu-col__title">Об Атоме</a>
+              </div>
+              <ul class="mega-menu-col__links">
+                <li><a href="atom.html?section=history" class="mega-menu-col__sub">История</a></li>
+                <li><a href="atom.html?section=operation" class="mega-menu-col__sub">Как работает атомный реактор</a>
+                </li>
+                <li><a href="atom.html?section=types" class="mega-menu-col__sub">Типы реакторов</a></li>
+                <li><a href="atom.html?section=safety" class="mega-menu-col__sub">Безопасность</a></li>
+                <li><a href="atom.html?section=environment" class="mega-menu-col__sub">Атомная энергия и экология</a>
+                </li>
+                <li><a href="atom.html?section=myths" class="mega-menu-col__sub">Мифы и факты об АЭС</a></li>
+                <li><a href="atom.html?section=quiz" class="mega-menu-col__sub">Проверь свои знания</a></li>
+                <li><a href="atom.html?section=multimedia" class="mega-menu-col__sub">Мультимедиа</a></li>
+              </ul>
+            </div>
+            <div class="mega-menu-col">
+              <div class="mega-menu-col__head">
+                <a href="projects.html" class="mega-menu-col__title">Проекты</a>
+              </div>
+              <ul class="mega-menu-col__links">
+                <li><a href="projects.html?tab=balkhash" class="mega-menu-col__sub">АЭС «Балхаш»</a></li>
+                <li><a href="projects.html?tab=mainkum" class="mega-menu-col__sub">АЭС «Мойынкум»</a></li>
+              </ul>
+            </div>
+            <div class="mega-menu-col">
+              <div class="mega-menu-col__head">
+                <a href="procurements.html" class="mega-menu-col__title">Закупки</a>
+              </div>
+              <ul class="mega-menu-col__links">
+                <li><a href="procurements.html" class="mega-menu-col__sub">Политика закупок</a></li>
+                <li><a href="procurements.html" class="mega-menu-col__sub">Текущие закупки</a></li>
+                <li><a href="procurements.html" class="mega-menu-col__sub">Локализация</a></li>
+                <li><a href="procurements.html" class="mega-menu-col__sub">Документы и отчётность</a></li>
+              </ul>
+            </div>
+            <div class="mega-menu-col">
+              <div class="mega-menu-col__head">
+                <a href="news.html" class="mega-menu-col__title">Пресс-центр</a>
+              </div>
+              <ul class="mega-menu-col__links">
+                <li><a href="news.html" class="mega-menu-col__sub">Новости</a></li>
+                <li><a href="international-cooperation.html" class="mega-menu-col__sub">Международное сотрудничество</a>
+                </li>
+                <li><a href="president-message.html" class="mega-menu-col__sub">Послание Президента</a></li>
+                <li><a href="news.html" class="mega-menu-col__sub">Календарь событий</a></li>
+                <li><a href="news.html" class="mega-menu-col__sub">Мультимедиа</a></li>
+              </ul>
+            </div>
+            <div class="mega-menu-col">
+              <div class="mega-menu-col__head">
+                <a href="vacancies.html" class="mega-menu-col__title">Вакансии</a>
+              </div>
+              <ul class="mega-menu-col__links">
+                <li><a href="vacancies.html" class="mega-menu-col__sub">Все вакансии</a></li>
+                <li><a href="vacancies.html#stazhirovka" class="mega-menu-col__sub">Стажировка</a></li>
+              </ul>
+            </div>
+            <div class="mega-menu-col">
+              <div class="mega-menu-col__head">
+                <a href="faq.html" class="mega-menu-col__title">FAQ</a>
+              </div>
+              <ul class="mega-menu-col__links">
+                <li><a href="faq.html?section=general" class="mega-menu-col__sub">Об АЭС и атомной энергетике</a></li>
+                <li><a href="faq.html?section=project" class="mega-menu-col__sub">О проекте в Казахстане</a></li>
+                <li><a href="faq.html?section=cooperation" class="mega-menu-col__sub">Вакансии и сотрудничество</a></li>
+              </ul>
+            </div>
+            <div class="mega-menu-col">
+              <div class="mega-menu-col__head">
+                <a href="contacts.html" class="mega-menu-col__title">Контакты</a>
+              </div>
+              <ul class="mega-menu-col__links">
+                <li><a href="contacts.html" class="mega-menu-col__sub">Связаться с нами</a></li>
+              </ul>
+            </div>
+            <div class="mega-menu-col">
+              <div class="mega-menu-col__head">
+                <a href="president-message.html" class="mega-menu-col__title">Послание президента</a>
+              </div>
+              <ul class="mega-menu-col__links">
+                <li><a href="president-message.html" class="mega-menu-col__sub">Послание президента</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Socials row — mobile only -->
+          <div class="mega-menu-socials-row">
+            <a href="#" class="social-circle" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24"
+                fill="white">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+              </svg></a>
+            <a href="#" class="social-circle" aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 24 24"
+                fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.5" cy="6.5" r="0.5" fill="white" stroke="none" />
+              </svg></a>
+            <a href="#" class="social-circle" aria-label="TikTok"><svg width="14" height="14" viewBox="0 0 24 24"
+                fill="white">
+                <path
+                  d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.3 6.3 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z" />
+              </svg></a>
+          </div>
+        </div>
+
       </div>
-      <button class="header-lang">Рус</button>
-      <button class="header-mobile-burger" id="mobile-burger" aria-label="Меню" aria-expanded="false">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-      </button>
     </div>
   </div>
-</header>
 
-<!-- Mobile menu -->
-<div class="mobile-menu" id="mobile-menu">
-  <a href="index.html" class="mobile-menu__link">Главная</a>
-  <a href="about.html" class="mobile-menu__link">О КАЭС</a>
-  <a href="atom.html" class="mobile-menu__link">Об Атоме</a>
-  <a href="projects.html" class="mobile-menu__link">Проекты</a>
-  <a href="procurements.html" class="mobile-menu__link">Закупки</a>
-  <a href="news.html" class="mobile-menu__link">Пресс-центр</a>
-  <a href="vacancies.html" class="mobile-menu__link">Вакансии</a>
-  <a href="faq.html" class="mobile-menu__link">FAQ</a>
-  <a href="contacts.html" class="mobile-menu__link">Контакты</a>
-</div>
 
-<!-- Mega menu backdrop -->
-<div class="mega-menu-backdrop" id="mega-menu-backdrop"></div>
+  <div class="header-offset"></div>
 
-<!-- Mega menu panel -->
-<div class="mega-menu-panel" id="mega-menu-panel">
-  <div class="mega-menu-panel__box">
-    <div class="mega-menu-panel__inner">
+  <main class="contacts-page">
+    <section class="page-hero contacts-hero" aria-labelledby="contacts-title">
+      <div class="page-hero__grid" aria-hidden="true"></div>
 
-      <!-- Social icons — left vertical column (desktop) -->
-      <div class="mega-menu-panel__socials">
-        <a href="#" class="social-circle" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
-        <a href="#" class="social-circle" aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="white" stroke="none"/></svg></a>
-        <a href="#" class="social-circle" aria-label="TikTok"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.3 6.3 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"/></svg></a>
+      <div class="page-hero__atom page-hero__atom--first" aria-hidden="true">
+        <div class="page-hero__atom-glow"></div>
+        <img src="assets/images/atom.png" alt="" />
       </div>
 
-      <!-- Main content -->
-      <div class="mega-menu-panel__body">
-        <!-- Close row -->
-        <div class="mega-menu-panel__head">
-          <span>Все разделы сайта</span>
-          <button class="mega-menu-close" id="mega-menu-close">
-            Закрыть
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
-              <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-            </svg>
-          </button>
-        </div>
-
-        <!-- Columns -->
-        <div class="mega-menu-columns">
-        <div class="mega-menu-col">
-          <div class="mega-menu-col__head">
-            <a href="about.html" class="mega-menu-col__title">О КАЭС</a>
-          </div>
-          <ul class="mega-menu-col__links">
-            <li><a href="about.html?section=about" class="mega-menu-col__sub">О компании</a></li>
-            <li><a href="about.html?section=leadership" class="mega-menu-col__sub">Руководство</a></li>
-            <li><a href="about.html?section=governance" class="mega-menu-col__sub">Корпоративное управление</a></li>
-            <li><a href="about.html?section=safety" class="mega-menu-col__sub">Безопасность</a></li>
-            <li><a href="about.html?section=compliance" class="mega-menu-col__sub">Комплаенс</a></li>
-            <li><a href="about.html?section=documents" class="mega-menu-col__sub">Документы</a></li>
-            <li><a href="about.html?section=development" class="mega-menu-col__sub">План развития</a></li>
-          </ul>
-        </div>
-        <div class="mega-menu-col">
-          <div class="mega-menu-col__head">
-            <a href="atom.html" class="mega-menu-col__title">Об Атоме</a>
-          </div>
-          <ul class="mega-menu-col__links">
-            <li><a href="atom.html?section=history" class="mega-menu-col__sub">История</a></li>
-            <li><a href="atom.html?section=operation" class="mega-menu-col__sub">Как работает атомный реактор</a></li>
-            <li><a href="atom.html?section=types" class="mega-menu-col__sub">Типы реакторов</a></li>
-            <li><a href="atom.html?section=safety" class="mega-menu-col__sub">Безопасность</a></li>
-            <li><a href="atom.html?section=environment" class="mega-menu-col__sub">Атомная энергия и экология</a></li>
-            <li><a href="atom.html?section=myths" class="mega-menu-col__sub">Мифы и факты об АЭС</a></li>
-            <li><a href="atom.html?section=quiz" class="mega-menu-col__sub">Проверь свои знания</a></li>
-            <li><a href="atom.html?section=multimedia" class="mega-menu-col__sub">Мультимедиа</a></li>
-          </ul>
-        </div>
-        <div class="mega-menu-col">
-          <div class="mega-menu-col__head">
-            <a href="projects.html" class="mega-menu-col__title">Проекты</a>
-          </div>
-          <ul class="mega-menu-col__links">
-            <li><a href="projects.html?tab=balkhash" class="mega-menu-col__sub">АЭС «Балхаш»</a></li>
-            <li><a href="projects.html?tab=mainkum" class="mega-menu-col__sub">АЭС «Мойынкум»</a></li>
-          </ul>
-        </div>
-        <div class="mega-menu-col">
-          <div class="mega-menu-col__head">
-            <a href="procurements.html" class="mega-menu-col__title">Закупки</a>
-          </div>
-          <ul class="mega-menu-col__links">
-            <li><a href="procurements.html" class="mega-menu-col__sub">Политика закупок</a></li>
-            <li><a href="procurements.html" class="mega-menu-col__sub">Текущие закупки</a></li>
-            <li><a href="procurements.html" class="mega-menu-col__sub">Локализация</a></li>
-            <li><a href="procurements.html" class="mega-menu-col__sub">Документы и отчётность</a></li>
-          </ul>
-        </div>
-        <div class="mega-menu-col">
-          <div class="mega-menu-col__head">
-            <a href="news.html" class="mega-menu-col__title">Пресс-центр</a>
-          </div>
-          <ul class="mega-menu-col__links">
-            <li><a href="news.html" class="mega-menu-col__sub">Новости</a></li>
-            <li><a href="international-cooperation.html" class="mega-menu-col__sub">Международное сотрудничество</a></li>
-            <li><a href="president-message.html" class="mega-menu-col__sub">Послание Президента</a></li>
-            <li><a href="news.html" class="mega-menu-col__sub">Календарь событий</a></li>
-            <li><a href="news.html" class="mega-menu-col__sub">Мультимедиа</a></li>
-          </ul>
-        </div>
-        <div class="mega-menu-col">
-          <div class="mega-menu-col__head">
-            <a href="vacancies.html" class="mega-menu-col__title">Вакансии</a>
-          </div>
-          <ul class="mega-menu-col__links">
-            <li><a href="vacancies.html" class="mega-menu-col__sub">Все вакансии</a></li>
-            <li><a href="vacancies.html#stazhirovka" class="mega-menu-col__sub">Стажировка</a></li>
-          </ul>
-        </div>
-        <div class="mega-menu-col">
-          <div class="mega-menu-col__head">
-            <a href="faq.html" class="mega-menu-col__title">FAQ</a>
-          </div>
-          <ul class="mega-menu-col__links">
-            <li><a href="faq.html?section=general" class="mega-menu-col__sub">Об АЭС и атомной энергетике</a></li>
-            <li><a href="faq.html?section=project" class="mega-menu-col__sub">О проекте в Казахстане</a></li>
-            <li><a href="faq.html?section=cooperation" class="mega-menu-col__sub">Вакансии и сотрудничество</a></li>
-          </ul>
-        </div>
-        <div class="mega-menu-col">
-          <div class="mega-menu-col__head">
-            <a href="contacts.html" class="mega-menu-col__title">Контакты</a>
-          </div>
-          <ul class="mega-menu-col__links">
-            <li><a href="contacts.html" class="mega-menu-col__sub">Связаться с нами</a></li>
-          </ul>
-        </div>
-        <div class="mega-menu-col">
-          <div class="mega-menu-col__head">
-            <a href="president-message.html" class="mega-menu-col__title">Послание президента</a>
-          </div>
-          <ul class="mega-menu-col__links">
-            <li><a href="president-message.html" class="mega-menu-col__sub">Послание президента</a></li>
-          </ul>
-        </div>
-        </div>
-
-        <!-- Socials row — mobile only -->
-        <div class="mega-menu-socials-row">
-          <a href="#" class="social-circle" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
-        <a href="#" class="social-circle" aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="white" stroke="none"/></svg></a>
-        <a href="#" class="social-circle" aria-label="TikTok"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.3 6.3 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"/></svg></a>
-        </div>
+      <div class="page-hero__atom page-hero__atom--second" aria-hidden="true">
+        <div class="page-hero__atom-glow"></div>
+        <img src="assets/images/atom.png" alt="" />
       </div>
 
-    </div>
-  </div>
-</div>
+      <div class="page-hero__inner">
+        <h1 class="page-hero__title" id="contacts-title">Контакты</h1>
+      </div>
+    </section>
 
-
-<div class="header-offset">
-
-<div class="page-hero">
-  <!-- Grid texture -->
-  <div class="page-hero__grid"></div>
-
-  <!-- Atom 1: right 16%, rotate 25deg -->
-  <div class="page-hero__atom page-hero__atom--first">
-    <div class="page-hero__atom-glow"></div>
-    <img src="assets/images/atom.png" alt="" aria-hidden="true" />
-  </div>
-
-  <!-- Atom 2: right 0%, scaleX(-1) rotate 25deg -->
-  <div class="page-hero__atom page-hero__atom--second">
-    <div class="page-hero__atom-glow"></div>
-    <img src="assets/images/atom.png" alt="" aria-hidden="true" />
-  </div>
-
-  <div class="page-hero__inner">
-    <h1 class="page-hero__title">Контакты</h1>
-  </div>
-</div>
-
-<section class="page-section">
-  <div class="container">
-    <nav class="breadcrumb" style="margin-bottom:40px">
-      <a href="index.html" class="breadcrumb__link">Главная</a>
-      <span class="breadcrumb__sep">›</span>
-      <span class="breadcrumb__current">Контакты</span>
-    </nav>
-
-    <!-- CMS: contact info -->
-    <div class="contacts-grid">
-      <div class="contacts-info">
-        <h2 class="section-title">Наши контакты</h2>
-
-        <div class="contact-card">
-          <div class="contact-card__icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-          </div>
-          <div>
-            <h4>Адрес</h4>
-            <p>Республика Казахстан, г. Астана</p>
-            <p>БЦ «Аура», Проспект Мангилик Ел, 57а</p>
-          </div>
-        </div>
-
-        <div class="contact-card">
-          <div class="contact-card__icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.86 19.86 0 013.09 4.18 2 2 0 015.09 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.09 9.91a16 16 0 006.99 7l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-          </div>
-          <div>
-            <h4>Телефон</h4>
-            <a href="tel:+77172248450" class="contact-link">+7 (7172) 24 84 50</a>
-          </div>
-        </div>
-
-        <div class="contact-card">
-          <div class="contact-card__icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
-          </div>
-          <div>
-            <h4>Email</h4>
-            <a href="mailto:kense@knpp.kz" class="contact-link">kense@knpp.kz</a>
-          </div>
-        </div>
-
-        <div class="contact-card">
-          <div class="contact-card__icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          </div>
-          <div>
-            <h4>Режим работы</h4>
-            <p>Понедельник — Пятница: 9:00 — 18:00</p>
-            <p>Суббота — Воскресенье: выходной</p>
-          </div>
-        </div>
+    <section class="contacts-content-section">
+      <div class="contacts-container">
+        <nav class="contacts-breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Главная</a>
+          <span>/</span>
+          <span>Контакты</span>
+        </nav>
       </div>
 
-      <!-- Contact form -->
-      <div class="contacts-form-wrap">
-        <h2 class="section-title">Написать нам</h2>
-        <form class="contact-form" id="contact-form" novalidate>
-          <div class="form-row">
-            <div class="form-field">
-              <label class="form-label">Имя *</label>
-              <input type="text" class="form-input" placeholder="Ваше имя" required />
+      <!-- CMS: contact info, converted from ContactInfo.tsx -->
+      <section class="contacts-info-section" aria-labelledby="contacts-info-title">
+        <div class="contacts-container">
+          <h2 class="contacts-visually-hidden" id="contacts-info-title">Контактная информация</h2>
+
+          <div class="contacts-info-grid">
+            <article class="contacts-info-card contacts-info-card--name">
+              <p class="contacts-info-card__title">Наименование:</p>
+              <p class="contacts-info-card__text">
+                Товарищество с ограниченной ответственностью «Казахстанские атомные электрические станции»
+              </p>
+            </article>
+
+            <article class="contacts-info-card contacts-info-card--details">
+              <div class="contacts-info-group">
+                <p class="contacts-info-card__title">Телефон:</p>
+                <a href="tel:+77172575748" class="contacts-info-card__link">+7 (7172) 57 57 48</a>
+              </div>
+
+              <div class="contacts-info-group">
+                <p class="contacts-info-card__title">Адрес:</p>
+                <p class="contacts-info-card__link contacts-info-card__link--plain">пр. Мангилик ел, 57а БЦ «Аура»</p>
+              </div>
+
+              <div class="contacts-info-group">
+                <p class="contacts-info-card__title">Почта:</p>
+                <a href="mailto:kense@knpp.kz" class="contacts-info-card__link">kense@knpp.kz</a>
+              </div>
+            </article>
+
+            <article class="contacts-info-card contacts-info-card--schedule">
+              <p class="contacts-info-card__title">Режим работы:</p>
+              <p class="contacts-info-card__text">Пн-Пт: 09:00–18:30</p>
+              <p class="contacts-info-card__text">Обед: 13:00–14:30</p>
+              <p class="contacts-info-card__text contacts-info-card__weekend">
+                <span>Выходные:</span> суббота, воскресенье
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CMS: map, converted from ContactMap.tsx -->
+      <section class="contacts-map-section" aria-labelledby="contacts-map-title">
+        <h2 class="contacts-visually-hidden" id="contacts-map-title">Карта расположения офиса</h2>
+        <div class="contacts-map-static" aria-label="Карта расположения офиса">
+          <iframe
+            src="https://yandex.ru/map-widget/v1/?ll=71.430600%2C51.128200&z=16&pt=71.430600%2C51.128200%2Cpm2rdm&lang=ru_RU"
+            title="Карта расположения офиса КАЭС" width="100%" height="460" allowfullscreen loading="lazy">
+          </iframe>
+        </div>
+      </section>
+
+      <!-- CMS: feedback form, converted from ContactFeedback.tsx + ContactForm.tsx -->
+      <section class="contacts-feedback-section" aria-labelledby="contacts-feedback-title">
+        <div class="contacts-container">
+          <div class="contacts-feedback-grid">
+            <div class="contacts-feedback-card">
+              <h2 class="contacts-feedback-card__title" id="contacts-feedback-title">Форма обратной связи</h2>
+
+              <form class="contacts-form" id="contact-form" novalidate>
+                <input name="lastName" type="text" class="contacts-form__input" placeholder="Фамилия" required
+                  aria-label="Фамилия" />
+                <input name="firstName" type="text" class="contacts-form__input" placeholder="Имя" required
+                  aria-label="Имя" />
+                <input name="middleName" type="text" class="contacts-form__input" placeholder="Отчество"
+                  aria-label="Отчество" />
+                <input name="email" type="email" class="contacts-form__input" placeholder="Email" required
+                  aria-label="Email" />
+
+                <div class="contacts-form__message-wrap">
+                  <label for="contact-message" class="contacts-form__label">Текст обращения:</label>
+                  <textarea id="contact-message" name="message" class="contacts-form__textarea" rows="5"
+                    placeholder="Текст обращения" required></textarea>
+                </div>
+
+                <p class="contacts-form__status" id="contact-success" hidden>
+                  Ваше сообщение успешно отправлено. Мы свяжемся с вами в ближайшее время.
+                </p>
+
+                <button type="submit" class="contacts-form__submit">Отправить</button>
+              </form>
             </div>
-            <div class="form-field">
-              <label class="form-label">Email *</label>
-              <input type="email" class="form-input" placeholder="email@example.com" required />
+
+            <div class="contacts-feedback-atom" aria-hidden="true">
+              <img src="assets/images/atom.png" alt="" />
             </div>
           </div>
-          <div class="form-field">
-            <label class="form-label">Тема обращения</label>
-            <input type="text" class="form-input" placeholder="Тема вашего обращения" />
+        </div>
+      </section>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- CMS: footer -->
+  <footer class="site-footer">
+    <div class="site-footer__main">
+      <div class="site-footer__left">
+        <a href="index.html" class="site-footer__logo"><img src="assets/images/KNPP.png" alt="КАЭС" /></a>
+        <div class="site-footer__contact">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"
+            stroke-linecap="round">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
+            <circle cx="12" cy="9" r="2.5" />
+          </svg>
+          <div>
+            <p>БЦ «Аура»</p>
+            <p>Проспект Мангилик Ел, 57а</p>
           </div>
-          <div class="form-field">
-            <label class="form-label">Сообщение *</label>
-            <textarea class="form-textarea" rows="5" placeholder="Ваше сообщение…" required></textarea>
-          </div>
-          <button type="submit" class="btn-primary contact-submit">Отправить сообщение</button>
-          <div class="contact-success" id="contact-success" style="display:none">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="1.5" stroke-linecap="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            <p>Спасибо! Ваше сообщение отправлено. Мы ответим в ближайшее время.</p>
-          </div>
+        </div>
+        <div class="site-footer__contact">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"
+            stroke-linecap="round">
+            <rect x="2" y="4" width="20" height="16" rx="2" />
+            <path d="M2 7l10 7 10-7" />
+          </svg>
+          <a href="mailto:kense@knpp.kz">kense@knpp.kz</a>
+        </div>
+        <div class="site-footer__contact">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"
+            stroke-linecap="round">
+            <path
+              d="M22 16.92v3a2 2 0 01-2.18 2A19.86 19.86 0 013.09 4.18 2 2 0 015.09 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.09 9.91a16 16 0 006.99 7l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+          </svg>
+          <span>+7 (7172) 24 84 50</span>
+        </div>
+        <div class="site-footer__map">
+          <iframe
+            src="https://yandex.ru/map-widget/v1/?ll=71.430564%2C51.128207&z=14&pt=71.430564%2C51.128207%2Cpm2rdm&lang=ru_RU"
+            title="Карта" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+      <div class="site-footer__right">
+        <h2 class="site-footer__form-title">Не нашли то что нужно?</h2>
+        <p class="site-footer__form-sub">Свяжитесь с нами</p>
+        <div class="footer-success" id="footer-success">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(245,240,233,1)" stroke-width="1.5"
+            stroke-linecap="round" style="margin:0 auto 16px">
+            <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+            <polyline points="22 4 12 14.01 9 11.01" />
+          </svg>
+          <p>Спасибо! Ваша заявка отправлена.</p>
+          <p style="font-size:13px;color:rgba(217,203,194,0.80);margin-top:8px">Мы свяжемся с вами в ближайшее
+            время.
+          </p>
+          <button id="footer-reset"
+            style="margin-top:24px;padding:8px 24px;border:1px solid rgba(255,255,255,0.40);border-radius:100px;color:var(--color-muted);font-size:14px;font-weight:300;cursor:pointer;background:none;font-family:inherit">Отправить
+            ещё</button>
+        </div>
+        <form class="footer-form" id="footer-form" novalidate>
+          <input type="text" class="footer-input" placeholder="Ваше имя" required aria-label="Имя" />
+          <input type="email" class="footer-input" placeholder="Email" required aria-label="Email" />
+          <input type="tel" class="footer-input" placeholder="Номер телефона" aria-label="Телефон" />
+          <textarea class="footer-textarea" rows="4" placeholder="Ваше сообщение" aria-label="Сообщение"></textarea>
+          <button type="submit" class="btn-accent" style="align-self:flex-start">Отправить заявку</button>
         </form>
       </div>
     </div>
-
-    <!-- Map -->
-    <div class="contacts-map" style="margin-top:60px">
-      <h2 class="section-title" style="margin-bottom:24px">Как нас найти</h2>
-      <div class="contacts-map__frame">
-        <iframe
-          src="https://yandex.ru/map-widget/v1/?ll=71.430564%2C51.128207&z=15&pt=71.430564%2C51.128207%2Cpm2rdm&lang=ru_RU"
-          title="Расположение офиса КАЭС на карте"
-          width="100%" height="450"
-          allowfullscreen loading="lazy"
-          style="border:none;border-radius:var(--radius-lg)">
-        </iframe>
+    <div class="site-footer__bar">
+      <div class="site-footer__bar-inner">
+        <p class="site-footer__credit">Разработчик <a href="#">ТОО «BenchMark Consulting»</a></p>
+        <div class="footer-socials">
+          <span>Соц. сети:</span>
+          <a href="#" class="footer-social-btn" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24"
+              fill="currentColor">
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+            </svg></a>
+          <a href="#" class="footer-social-btn" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none" />
+            </svg></a>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </footer>
+  <!-- /CMS: footer -->
 
-</div><!-- /header-offset -->
-
-<!-- CMS: footer -->
-<footer class="site-footer">
-  <div class="site-footer__main">
-    <div class="site-footer__left">
-      <a href="index.html" class="site-footer__logo"><img src="assets/images/KNPP.png" alt="КАЭС" /></a>
-      <div class="site-footer__contact">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-        <div><p>БЦ «Аура»</p><p>Проспект Мангилик Ел, 57а</p></div>
-      </div>
-      <div class="site-footer__contact">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
-        <a href="mailto:kense@knpp.kz">kense@knpp.kz</a>
-      </div>
-      <div class="site-footer__contact">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.86 19.86 0 013.09 4.18 2 2 0 015.09 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.09 9.91a16 16 0 006.99 7l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-        <span>+7 (7172) 24 84 50</span>
-      </div>
-      <div class="site-footer__map">
-        <iframe src="https://yandex.ru/map-widget/v1/?ll=71.430564%2C51.128207&z=14&pt=71.430564%2C51.128207%2Cpm2rdm&lang=ru_RU" title="Карта" allowfullscreen loading="lazy"></iframe>
-      </div>
-    </div>
-    <div class="site-footer__right">
-      <h2 class="site-footer__form-title">Не нашли то что нужно?</h2>
-      <p class="site-footer__form-sub">Свяжитесь с нами</p>
-      <div class="footer-success" id="footer-success">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(245,240,233,1)" stroke-width="1.5" stroke-linecap="round" style="margin:0 auto 16px"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-        <p>Спасибо! Ваша заявка отправлена.</p>
-        <p style="font-size:13px;color:rgba(217,203,194,0.80);margin-top:8px">Мы свяжемся с вами в ближайшее время.</p>
-        <button id="footer-reset" style="margin-top:24px;padding:8px 24px;border:1px solid rgba(255,255,255,0.40);border-radius:100px;color:var(--color-muted);font-size:14px;font-weight:300;cursor:pointer;background:none;font-family:inherit">Отправить ещё</button>
-      </div>
-      <form class="footer-form" id="footer-form" novalidate>
-        <input type="text" class="footer-input" placeholder="Ваше имя" required aria-label="Имя" />
-        <input type="email" class="footer-input" placeholder="Email" required aria-label="Email" />
-        <input type="tel" class="footer-input" placeholder="Номер телефона" aria-label="Телефон" />
-        <textarea class="footer-textarea" rows="4" placeholder="Ваше сообщение" aria-label="Сообщение"></textarea>
-        <button type="submit" class="btn-accent" style="align-self:flex-start">Отправить заявку</button>
-      </form>
-    </div>
-  </div>
-  <div class="site-footer__bar">
-    <div class="site-footer__bar-inner">
-      <p class="site-footer__credit">Разработчик <a href="#">ТОО «BenchMark Consulting»</a></p>
-      <div class="footer-socials">
-        <span>Соц. сети:</span>
-        <a href="#" class="footer-social-btn" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
-        <a href="#" class="footer-social-btn" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg></a>
-      </div>
-    </div>
-  </div>
-</footer>
-<!-- /CMS: footer -->
-
-<script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
+
 </html>
