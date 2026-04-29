@@ -341,38 +341,33 @@
   </div>
 
 
-  <div class="header-offset">
+  <div class="header-offset"></div>
 
-    <div class="contacts-page">
-      <div class="contacts-bg contacts-bg--one"></div>
-      <div class="contacts-bg contacts-bg--two"></div>
+  <main class="contacts-page">
+    <section class="page-hero contacts-hero" aria-labelledby="contacts-title">
+      <div class="page-hero__grid" aria-hidden="true"></div>
 
-      <div class="page-hero">
-        <!-- Grid texture -->
-        <div class="page-hero__grid"></div>
-
-        <!-- Atom 1: right 16%, rotate 25deg -->
-        <div class="page-hero__atom page-hero__atom--first">
-          <div class="page-hero__atom-glow"></div>
-          <img src="assets/images/atom.png" alt="" aria-hidden="true" />
-        </div>
-
-        <!-- Atom 2: right 0%, scaleX(-1) rotate 25deg -->
-        <div class="page-hero__atom page-hero__atom--second">
-          <div class="page-hero__atom-glow"></div>
-          <img src="assets/images/atom.png" alt="" aria-hidden="true" />
-        </div>
-
-        <div class="page-hero__inner">
-          <h1 class="page-hero__title">Контакты</h1>
-        </div>
+      <div class="page-hero__atom page-hero__atom--first" aria-hidden="true">
+        <div class="page-hero__atom-glow"></div>
+        <img src="assets/images/atom.png" alt="" />
       </div>
 
-      <div class="contacts-breadcrumb-wrap">
-        <nav class="breadcrumb" aria-label="Навигационная цепочка">
-          <a href="index.html" class="breadcrumb__link">Главная</a>
-          <span class="breadcrumb__sep">/</span>
-          <span class="breadcrumb__current">Контакты</span>
+      <div class="page-hero__atom page-hero__atom--second" aria-hidden="true">
+        <div class="page-hero__atom-glow"></div>
+        <img src="assets/images/atom.png" alt="" />
+      </div>
+
+      <div class="page-hero__inner">
+        <h1 class="page-hero__title" id="contacts-title">Контакты</h1>
+      </div>
+    </section>
+
+    <section class="contacts-content-section">
+      <div class="contacts-container">
+        <nav class="contacts-breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Главная</a>
+          <span>/</span>
+          <span>Контакты</span>
         </nav>
       </div>
 
@@ -466,9 +461,10 @@
           </div>
         </div>
       </section>
-    </div>
+      </div>
 
-  </div><!-- /header-offset -->
+    </section>
+  </main>
 
   <!-- CMS: footer -->
   <footer class="site-footer">
@@ -518,7 +514,8 @@
             <polyline points="22 4 12 14.01 9 11.01" />
           </svg>
           <p>Спасибо! Ваша заявка отправлена.</p>
-          <p style="font-size:13px;color:rgba(217,203,194,0.80);margin-top:8px">Мы свяжемся с вами в ближайшее время.
+          <p style="font-size:13px;color:rgba(217,203,194,0.80);margin-top:8px">Мы свяжемся с вами в ближайшее
+            время.
           </p>
           <button id="footer-reset"
             style="margin-top:24px;padding:8px 24px;border:1px solid rgba(255,255,255,0.40);border-radius:100px;color:var(--color-muted);font-size:14px;font-weight:300;cursor:pointer;background:none;font-family:inherit">Отправить

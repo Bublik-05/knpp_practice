@@ -457,111 +457,203 @@
   }
 }
 
-/* ─── Contacts page hero + breadcrumb fix ───────────────────── */
+/* ============================================================
+   Contacts page — hero + breadcrumb like Vacancies/FAQ
+   ============================================================ */
 
 .contacts-page {
-  background: #f0f0f0;
-}
-
-/* основной блок под hero должен быть того же цвета, не белый */
-.contacts-page .page-section {
-  background: #f0f0f0;
-  padding-top: 40px;
-}
-
-/* выравниваем заголовок hero по тому же левому краю, что и контент */
-.contacts-page .page-hero__inner {
-  max-width: none;
-  width: 100%;
-  margin: 0;
-  padding-left: var(--px-section);
-  padding-right: var(--px-section);
-}
-
-/* моделька не должна пропадать под следующим блоком */
-.contacts-page .page-hero {
   position: relative;
-  z-index: 3;
-  overflow: visible;
-  margin-bottom: 0;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #f0f0f0;
+  isolation: isolate;
 }
 
-.contacts-page .page-section {
+/* Hero */
+.contacts-page .page-hero.contacts-hero {
   position: relative;
-  z-index: 1;
-}
-
-/* возвращаем атом в нормальное положение и держим поверх фона */
-.contacts-page .page-hero__atom {
   z-index: 2;
+  min-height: 140px;
+  overflow: visible;
+  background: #1a2f6e;
+}
+
+.contacts-page .page-hero__grid {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  opacity: 0.10;
+  background-image:
+    repeating-linear-gradient(0deg,
+      transparent,
+      transparent 39px,
+      rgba(255, 255, 255, 0.4) 39px,
+      rgba(255, 255, 255, 0.4) 40px),
+    repeating-linear-gradient(90deg,
+      transparent,
+      transparent 39px,
+      rgba(255, 255, 255, 0.4) 39px,
+      rgba(255, 255, 255, 0.4) 40px);
+}
+
+.contacts-page .page-hero__atom {
+  position: absolute;
   pointer-events: none;
+  user-select: none;
 }
 
 .contacts-page .page-hero__atom--first {
   right: 16%;
-  top: -58px;
+  top: -50px;
+  width: 430px;
+  z-index: 5;
+  transform: rotate(25deg);
 }
 
 .contacts-page .page-hero__atom--second {
   right: 0;
-  top: -58px;
+  top: -40px;
+  width: 600px;
+  z-index: 10;
+  transform: scaleX(-1) rotate(25deg);
 }
 
-/* breadcrumb как на about, но без золотого разделителя */
-.contacts-page .contacts-breadcrumb,
-.contacts-page .breadcrumb.contacts-breadcrumb {
+.contacts-page .page-hero__atom-glow {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 38%;
+  height: 38%;
+  border-radius: 999px;
+  background: rgba(224, 197, 143, 0.30);
+  filter: blur(24px);
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.contacts-page .page-hero__atom img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.18));
+}
+
+.contacts-page .page-hero__inner {
+  position: relative;
+  z-index: 20;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 40px 32px;
+}
+
+.contacts-page .page-hero__title {
+  margin: 0;
+  color: #ffffff;
+  font-size: 36px;
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+/* Content area */
+.contacts-content-section {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  background: #f0f0f0;
+  padding: 40px 0 80px;
+}
+
+.contacts-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Breadcrumb */
+.contacts-breadcrumb {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
   gap: 4px;
+  margin-bottom: 40px;
+  color: #374151;
   font-size: 14px;
-  margin-bottom: 40px !important;
 }
 
-.contacts-page .contacts-breadcrumb .breadcrumb__link {
+.contacts-breadcrumb a {
   color: #9ca3af;
-  font-weight: 300;
   text-decoration: none;
-  transition: color 0.15s;
+  font-weight: 300;
+  transition: color 150ms ease;
 }
 
-.contacts-page .contacts-breadcrumb .breadcrumb__link:hover {
+.contacts-breadcrumb a:hover {
   color: #1E4080;
 }
 
-/* важно: перебиваем золотой цвет */
-.contacts-page .contacts-breadcrumb .breadcrumb__sep {
-  color: #d1d5db !important;
+.contacts-breadcrumb span:first-of-type {
+  color: #d1d5db;
   user-select: none;
 }
 
-.contacts-page .contacts-breadcrumb .breadcrumb__current {
+.contacts-breadcrumb span:last-of-type {
   color: #374151;
   font-weight: 500;
 }
 
-@media (max-width: 767px) {
-  .contacts-page .page-section {
-    padding-top: 28px;
+/* Responsive */
+@media (max-width: 1024px) {
+  .contacts-page .page-hero__atom--first {
+    right: 10%;
+    width: 360px;
   }
 
-  .contacts-page .page-hero__inner {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  .contacts-page .contacts-breadcrumb,
-  .contacts-page .breadcrumb.contacts-breadcrumb {
-    margin-bottom: 28px !important;
-    font-size: 13px;
-  }
-
-  .contacts-page .page-hero {
-    overflow: hidden;
-  }
-
-  .contacts-page .page-hero__atom--first,
   .contacts-page .page-hero__atom--second {
-    top: -40px;
+    width: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contacts-page .page-hero__inner {
+    padding: 36px 16px;
+  }
+
+  .contacts-page .page-hero__title {
+    font-size: 30px;
+  }
+
+  .contacts-page .page-hero__atom {
+    opacity: 0.45;
+  }
+
+  .contacts-page .page-hero__atom--first {
+    right: 20%;
+    top: -30px;
+    width: 260px;
+  }
+
+  .contacts-page .page-hero__atom--second {
+    right: -16%;
+    top: -25px;
+    width: 360px;
+  }
+
+  .contacts-content-section {
+    padding-top: 32px;
+    padding-bottom: 64px;
+  }
+
+  .contacts-container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .contacts-breadcrumb {
+    margin-bottom: 28px;
+    font-size: 13px;
   }
 }
