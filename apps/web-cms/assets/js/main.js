@@ -33,7 +33,7 @@ function initActiveNavLink() {
 /* ─── MOBILE MENU ─── */
 function initMobileMenu() {
   // New id is mobile-burger (button.header-mobile-burger)
-  const burger     = document.getElementById('mobile-burger');
+  const burger = document.getElementById('mobile-burger');
   const mobileMenu = document.getElementById('mobile-menu');
   if (!burger || !mobileMenu) return;
 
@@ -62,10 +62,10 @@ function initMobileMenu() {
 
 /* ─── MEGA MENU (Burger Drawer) ─── */
 function initMegaMenu() {
-  const megaBtn     = document.getElementById('mega-menu-btn');
-  const megaPanel   = document.getElementById('mega-menu-panel');
-  const megaBackdrop= document.getElementById('mega-menu-backdrop');
-  const megaClose   = document.getElementById('mega-menu-close');
+  const megaBtn = document.getElementById('mega-menu-btn');
+  const megaPanel = document.getElementById('mega-menu-panel');
+  const megaBackdrop = document.getElementById('mega-menu-backdrop');
+  const megaClose = document.getElementById('mega-menu-close');
   if (!megaBtn || !megaPanel) return;
 
   function openMega() {
@@ -90,7 +90,7 @@ function initMegaMenu() {
     megaPanel.classList.contains('open') ? closeMega() : openMega();
   });
 
-  if (megaClose)    megaClose.addEventListener('click', closeMega);
+  if (megaClose) megaClose.addEventListener('click', closeMega);
   if (megaBackdrop) megaBackdrop.addEventListener('click', closeMega);
 
   // Close on any mega-menu link click
@@ -463,19 +463,19 @@ function initMapSection() {
 
 /* ─── EMISSIONS CALCULATOR ─── */
 function initEmissionsCalculator() {
-  var sourceBtns   = document.querySelectorAll('.source-btn');
-  var volumeInput  = document.getElementById('calc-volume');
+  var sourceBtns = document.querySelectorAll('.source-btn');
+  var volumeInput = document.getElementById('calc-volume');
   var quickVolBtns = document.querySelectorAll('.quick-vol-btn');
-  var errorEl      = document.querySelector('.calc-error');
+  var errorEl = document.querySelector('.calc-error');
 
   if (!sourceBtns.length || !volumeInput) return;
 
   var SOURCES = {
-    coal:    { label: 'Уголь',            factor: 820 },
-    gas:     { label: 'Газ',              factor: 490 },
-    nuclear: { label: 'Атомная энергия',  factor: 12  },
-    solar:   { label: 'Солнечная энергия',factor: 40  },
-    wind:    { label: 'Ветровая энергия', factor: 8   }
+    coal: { label: 'Уголь', factor: 820 },
+    gas: { label: 'Газ', factor: 490 },
+    nuclear: { label: 'Атомная энергия', factor: 12 },
+    solar: { label: 'Солнечная энергия', factor: 40 },
+    wind: { label: 'Ветровая энергия', factor: 8 }
   };
   var CAR_TONS = 4.5;
   var selectedSource = 'coal';
@@ -508,26 +508,26 @@ function initEmissionsCalculator() {
     if (errorEl) errorEl.classList.remove('is-visible');
 
     var src = SOURCES[selectedSource] || SOURCES.coal;
-    var emissionsKg   = volume * src.factor;
+    var emissionsKg = volume * src.factor;
     var emissionsTons = emissionsKg / 1000;
-    var nuclearTons   = (volume * 12) / 1000;
+    var nuclearTons = (volume * 12) / 1000;
     var carsEquivalent = emissionsTons / CAR_TONS;
     var ratioToNuclear = nuclearTons > 0 ? emissionsTons / nuclearTons : 0;
-    var diffTons       = emissionsTons - nuclearTons;
+    var diffTons = emissionsTons - nuclearTons;
 
-    var resultVal  = document.getElementById('calc-result-value');
-    var resultSub  = document.getElementById('calc-result-sub');
+    var resultVal = document.getElementById('calc-result-value');
+    var resultSub = document.getElementById('calc-result-sub');
     var insightTxt = document.getElementById('calc-insight-text');
-    var statRatio  = document.getElementById('stat-ratio');
-    var statDiff   = document.getElementById('stat-diff');
-    var statCars   = document.getElementById('stat-cars');
+    var statRatio = document.getElementById('stat-ratio');
+    var statDiff = document.getElementById('stat-diff');
+    var statCars = document.getElementById('stat-cars');
 
-    if (resultVal)  resultVal.textContent  = fmt(emissionsTons) + ' т';
-    if (resultSub)  resultSub.textContent  = src.label + ' · ' + fmt(volume) + ' МВт·ч';
+    if (resultVal) resultVal.textContent = fmt(emissionsTons) + ' т';
+    if (resultSub) resultSub.textContent = src.label + ' · ' + fmt(volume) + ' МВт·ч';
     if (insightTxt) insightTxt.textContent = getInsight(selectedSource, emissionsTons, ratioToNuclear, carsEquivalent);
-    if (statRatio)  statRatio.textContent  = selectedSource === 'nuclear' ? '1×' : fmt(ratioToNuclear, 1) + '×';
-    if (statDiff)   statDiff.textContent   = fmt(diffTons) + ' т';
-    if (statCars)   statCars.textContent   = '≈ ' + fmt(carsEquivalent);
+    if (statRatio) statRatio.textContent = selectedSource === 'nuclear' ? '1×' : fmt(ratioToNuclear, 1) + '×';
+    if (statDiff) statDiff.textContent = fmt(diffTons) + ' т';
+    if (statCars) statCars.textContent = '≈ ' + fmt(carsEquivalent);
   }
 
   // Source button clicks
@@ -584,18 +584,31 @@ function initContactForm() {
   const form = document.getElementById('contact-form');
   if (!form) return;
 
+  const success = document.getElementById('contact-success');
+  const btn = form.querySelector('[type="submit"]');
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-    const btn = form.querySelector('[type="submit"]');
+
     if (btn) {
-      btn.textContent = 'Отправлено!';
+      btn.textContent = 'Отправка…';
       btn.disabled = true;
     }
-    /* CMS: POST to /api/contact */
+
+    if (success) success.hidden = true;
+
+    /* CMS: здесь потом можно сделать POST в WordPress/CMS endpoint */
+
     setTimeout(function () {
       form.reset();
-      if (btn) { btn.textContent = 'Отправить'; btn.disabled = false; }
-    }, 3000);
+
+      if (success) success.hidden = false;
+
+      if (btn) {
+        btn.textContent = 'Отправить';
+        btn.disabled = false;
+      }
+    }, 700);
   });
 }
 
