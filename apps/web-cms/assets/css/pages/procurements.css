@@ -9,9 +9,9 @@
   overflow: hidden;
   min-height: 100vh;
   background:
-    radial-gradient(circle at 12% 10%, rgba(224, 197, 143, 0.14), transparent 28rem),
-    radial-gradient(circle at 92% 24%, rgba(30, 64, 128, 0.10), transparent 30rem),
-    #fff;
+    radial-gradient(circle at 10% 12%, rgba(224, 197, 143, 0.12), transparent 28rem),
+    radial-gradient(circle at 88% 34%, rgba(30, 64, 128, 0.10), transparent 32rem),
+    #f0f0f0;
 }
 
 /* OPTIONAL BackgroundGlow: удалить этот блок и div.proc-bg-glow в HTML, если не нужен */
@@ -54,20 +54,111 @@
   bottom: 160px;
   background: rgba(219, 229, 244, 0.55);
 }
-/* /OPTIONAL BackgroundGlow */
 
-.proc-hero,
-.proc-section {
+/* ─── Procurements Hero ─── */
+
+.proc-hero {
   position: relative;
   z-index: 1;
+  min-height: 140px;
+  overflow: visible;
+  background: #1a2f6e;
+}
+
+.proc-hero__grid {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  opacity: 0.10;
+  background-image:
+    repeating-linear-gradient(0deg,
+      transparent,
+      transparent 39px,
+      rgba(255, 255, 255, 0.4) 39px,
+      rgba(255, 255, 255, 0.4) 40px),
+    repeating-linear-gradient(90deg,
+      transparent,
+      transparent 39px,
+      rgba(255, 255, 255, 0.4) 39px,
+      rgba(255, 255, 255, 0.4) 40px);
+}
+
+.proc-hero__atom {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+}
+
+.proc-hero__atom--first {
+  right: 16%;
+  top: -50px;
+  width: 430px;
+  z-index: 5;
+  transform: rotate(25deg);
+}
+
+.proc-hero__atom--second {
+  right: 0;
+  top: -40px;
+  width: 600px;
+  z-index: 10;
+  transform: scaleX(-1) rotate(25deg);
+}
+
+.proc-hero__atom-glow {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 38%;
+  height: 38%;
+  border-radius: 999px;
+  background: rgba(224, 197, 143, 0.30);
+  filter: blur(24px);
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.proc-hero__atom img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.18));
 }
 
 .proc-hero__inner {
+  position: relative;
+  z-index: 20;
   max-width: 1280px;
+  margin: 0 auto;
+  padding: 48px 24px;
 }
 
+.proc-hero__title {
+  margin: 0;
+  color: #ffffff;
+  font-size: 36px;
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+.proc-hero__sub {
+  max-width: 720px;
+  margin: 10px 0 0;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 17px;
+  line-height: 1.55;
+  font-weight: 300;
+}
+
+/* ─── Main section ─── */
+
 .proc-section {
+  position: relative;
+  z-index: 1;
   padding: 40px 0 80px;
+  background: transparent;
 }
 
 .proc-container {
@@ -75,9 +166,40 @@
   margin: 0 auto;
 }
 
+/* ─── Breadcrumb ─── */
+
 .proc-breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
   margin-bottom: 32px;
+  color: #374151;
+  font-size: 14px;
 }
+
+.proc-breadcrumb a {
+  color: #9ca3af;
+  text-decoration: none;
+  font-weight: 300;
+  transition: color 150ms ease;
+}
+
+.proc-breadcrumb a:hover {
+  color: #1E4080;
+}
+
+.proc-breadcrumb__sep {
+  color: #c7ccd5;
+  user-select: none;
+}
+
+.proc-breadcrumb span:last-child {
+  color: #374151;
+  font-weight: 500;
+}
+
+/* ─── Tabs ─── */
 
 .proc-tabs {
   display: flex;
@@ -102,7 +224,11 @@
   font-weight: 500;
   line-height: 1.2;
   cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 }
 
 .proc-tab:hover {
@@ -112,7 +238,9 @@
 .proc-tab.active {
   background: #fff;
   color: #1E4080;
-  box-shadow: 0 1px 3px rgba(17, 34, 80, 0.10), 0 1px 2px rgba(17, 34, 80, 0.06);
+  box-shadow:
+    0 1px 3px rgba(17, 34, 80, 0.10),
+    0 1px 2px rgba(17, 34, 80, 0.06);
 }
 
 .proc-tab:focus-visible,
@@ -122,6 +250,8 @@
   outline: 3px solid rgba(224, 197, 143, 0.65);
   outline-offset: 3px;
 }
+
+/* ─── Panels ─── */
 
 .proc-panels {
   position: relative;
@@ -143,6 +273,7 @@
     opacity: 0;
     transform: translateY(8px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -172,6 +303,8 @@
   line-height: 1.7;
 }
 
+/* ─── Policy cards ─── */
+
 .proc-principles-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -186,7 +319,10 @@
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.94);
   box-shadow: 0 8px 24px rgba(17, 34, 80, 0.06);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .proc-principle-card:hover {
@@ -261,6 +397,8 @@
   font-weight: 600 !important;
 }
 
+/* ─── Buttons ─── */
+
 .proc-primary-btn,
 .proc-small-primary,
 .proc-small-outline {
@@ -271,7 +409,11 @@
   border-radius: 999px;
   text-decoration: none;
   white-space: nowrap;
-  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .proc-primary-btn {
@@ -290,6 +432,8 @@
   transform: translateY(-1px);
 }
 
+/* ─── Current procurements ─── */
+
 .proc-current-list,
 .proc-doc-list {
   display: flex;
@@ -306,7 +450,10 @@
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.96);
   box-shadow: 0 6px 18px rgba(17, 34, 80, 0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .proc-current-item:hover {
@@ -380,6 +527,8 @@
   justify-content: flex-start;
 }
 
+/* ─── Localization ─── */
+
 .proc-local-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -429,6 +578,8 @@
   line-height: 1.4;
 }
 
+/* ─── Documents ─── */
+
 .proc-upload-placeholder {
   display: flex;
   flex-direction: column;
@@ -469,7 +620,10 @@
   border: 1px solid #e5e7eb;
   border-radius: 16px;
   background: #f9fafb;
-  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .proc-doc-item:hover {
@@ -543,6 +697,8 @@
   gap: 16px;
 }
 
+/* ─── Responsive ─── */
+
 @media (max-width: 1023px) {
   .proc-container {
     width: min(100% - 40px, 920px);
@@ -580,6 +736,35 @@
 }
 
 @media (max-width: 767px) {
+  .proc-hero {
+    min-height: 150px;
+  }
+
+  .proc-hero__inner {
+    padding: 40px 20px;
+  }
+
+  .proc-hero__title {
+    font-size: 32px;
+  }
+
+  .proc-hero__sub {
+    max-width: 60%;
+    font-size: 15px;
+  }
+
+  .proc-hero__atom--first {
+    right: 8%;
+    top: -22px;
+    width: 230px;
+  }
+
+  .proc-hero__atom--second {
+    right: -25%;
+    top: -10px;
+    width: 330px;
+  }
+
   .proc-section {
     padding: 28px 0 56px;
   }
@@ -643,4 +828,9 @@
   }
 }
 
-
+@media (max-width: 520px) {
+  .proc-hero__sub {
+    max-width: 100%;
+    padding-right: 96px;
+  }
+}

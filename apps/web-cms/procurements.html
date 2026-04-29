@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,660 +8,805 @@
   <link rel="stylesheet" href="assets/css/main.css" />
   <link rel="stylesheet" href="assets/css/responsive.css" />
 </head>
+
 <body>
 
-<!-- CMS: site header -->
-<header class="site-header" id="site-header">
-  <div class="site-header__inner">
-    <!-- LEFT: burger + logos -->
-    <div class="site-header__logos">
-      <button class="header-burger" id="mega-menu-btn" aria-label="Открыть меню">
-        <svg class="icon-burger" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg><svg class="icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-      </button>
-      <div class="site-header__logo-wrap">
-        <a href="index.html" class="site-header__logo" aria-label="КАЭС — на главную">
-          <img src="assets/images/KNPP.png" alt="КАЭС" />
-        </a>
-        <div class="site-header__tooltip"><span>ТОО «Казахстанские атомные электрические станции»</span></div>
+  <!-- CMS: site header -->
+  <header class="site-header" id="site-header">
+    <div class="site-header__inner">
+      <!-- LEFT: burger + logos -->
+      <div class="site-header__logos">
+        <button class="header-burger" id="mega-menu-btn" aria-label="Открыть меню">
+          <svg class="icon-burger" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.5" stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg><svg class="icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.5" stroke-linecap="round">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+        <div class="site-header__logo-wrap">
+          <a href="index.html" class="site-header__logo" aria-label="КАЭС — на главную">
+            <img src="assets/images/KNPP.png" alt="КАЭС" />
+          </a>
+          <div class="site-header__tooltip"><span>ТОО «Казахстанские атомные электрические станции»</span></div>
+        </div>
+        <div class="site-header__partner-logo-wrap">
+          <a href="https://www.gov.kz/memleket/entities/atom-energiyasy" class="site-header__partner-logo"
+            target="_blank" rel="noopener noreferrer" aria-label="Агентство РК по атомной энергии">
+            <img src="assets/images/partners/atom-agency.png" alt="Агентство РК по атомной энергии" />
+          </a>
+          <div class="site-header__tooltip"><span>Агентство РК по атомной энергии</span></div>
+        </div>
       </div>
-      <div class="site-header__partner-logo-wrap">
-        <a href="https://www.gov.kz/memleket/entities/atom-energiyasy"
-           class="site-header__partner-logo" target="_blank" rel="noopener noreferrer"
-           aria-label="Агентство РК по атомной энергии">
-          <img src="assets/images/partners/atom-agency.png" alt="Агентство РК по атомной энергии" />
-        </a>
-        <div class="site-header__tooltip"><span>Агентство РК по атомной энергии</span></div>
+
+      <!-- CENTER: desktop nav links -->
+      <ul class="nav-menu" aria-label="Основная навигация">
+        <li class="nav-menu__item">
+          <a href="index.html" class="nav-menu__link">Главная</a>
+        </li>
+        <li class="nav-menu__item nav-menu__item--has-drop">
+          <a href="about.html" class="nav-menu__link">О КАЭС</a>
+          <div class="nav-dropdown">
+            <div class="nav-dropdown__bridge"></div>
+            <div class="nav-dropdown__box">
+              <div class="nav-dropdown__top">
+                <a href="about.html?section=about">О компании</a>
+                <a href="about.html?section=leadership">Руководство</a>
+                <a href="about.html?section=governance">Корп. управление</a>
+                <a href="about.html?section=safety">Безопасность</a>
+                <a href="about.html?section=compliance">Комплаенс</a>
+                <a href="about.html?section=documents">Документы</a>
+                <a href="about.html?section=development">План развития</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="nav-menu__item nav-menu__item--has-drop">
+          <a href="atom.html" class="nav-menu__link">Об Атоме</a>
+          <div class="nav-dropdown">
+            <div class="nav-dropdown__bridge"></div>
+            <div class="nav-dropdown__box">
+              <div class="nav-dropdown__top">
+                <a href="atom.html?section=history">История</a>
+                <a href="atom.html?section=operation">Как работает реактор</a>
+                <a href="atom.html?section=types">Типы реакторов</a>
+                <a href="atom.html?section=safety">Безопасность</a>
+                <a href="atom.html?section=environment">Атомная энергия и экология</a>
+                <a href="atom.html?section=myths">Мифы и факты об АЭС</a>
+                <a href="atom.html?section=quiz">Проверь свои знания</a>
+                <a href="atom.html?section=multimedia">Мультимедиа</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="nav-menu__item nav-menu__item--has-drop">
+          <a href="projects.html" class="nav-menu__link">Проекты</a>
+          <div class="nav-dropdown">
+            <div class="nav-dropdown__bridge"></div>
+            <div class="nav-dropdown__box">
+              <div class="nav-dropdown__top">
+                <a href="projects.html?tab=balkhash">АЭС «Балхаш»</a>
+                <a href="projects.html?tab=mainkum">АЭС «Мойынкум»</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="nav-menu__item nav-menu__item--has-drop">
+          <a href="procurements.html" class="nav-menu__link active">Закупки</a>
+          <div class="nav-dropdown">
+            <div class="nav-dropdown__bridge"></div>
+            <div class="nav-dropdown__box">
+              <div class="nav-dropdown__top">
+                <a href="procurements.html">Политика закупок</a>
+                <a href="procurements.html">Текущие закупки</a>
+                <a href="procurements.html">Локализация</a>
+                <a href="procurements.html">Документы</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="nav-menu__item nav-menu__item--has-drop">
+          <a href="news.html" class="nav-menu__link">Пресс-центр</a>
+          <div class="nav-dropdown">
+            <div class="nav-dropdown__bridge"></div>
+            <div class="nav-dropdown__box">
+              <div class="nav-dropdown__top">
+                <a href="news.html">Календарь событий</a>
+                <a href="news.html">Мультимедиа</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="nav-menu__item">
+          <a href="vacancies.html" class="nav-menu__link">Вакансии</a>
+        </li>
+        <li class="nav-menu__item">
+          <a href="faq.html" class="nav-menu__link">FAQ</a>
+        </li>
+        <li class="nav-menu__item">
+          <a href="contacts.html" class="nav-menu__link">Контакты</a>
+        </li>
+      </ul>
+
+      <!-- RIGHT: search + lang + mobile burger -->
+      <div class="header-search">
+        <button class="header-search__toggle" id="search-toggle" aria-label="Поиск">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+            stroke-linecap="round">
+            <circle cx="11" cy="11" r="8" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          </svg>
+        </button>
+        <div class="header-search__input-wrap" id="search-wrap">
+          <input type="search" class="header-search__input" id="search-input" placeholder="Поиск…"
+            aria-label="Поиск по сайту" />
+        </div>
+        <button class="header-lang">Рус</button>
+        <button class="header-mobile-burger" id="mobile-burger" aria-label="Меню" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+            stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+        </button>
       </div>
     </div>
+  </header>
 
-    <!-- CENTER: desktop nav links -->
-    <ul class="nav-menu" aria-label="Основная навигация">
-      <li class="nav-menu__item">
-        <a href="index.html" class="nav-menu__link">Главная</a>
-      </li>
-      <li class="nav-menu__item nav-menu__item--has-drop">
-        <a href="about.html" class="nav-menu__link">О КАЭС</a>
-        <div class="nav-dropdown">
-          <div class="nav-dropdown__bridge"></div>
-          <div class="nav-dropdown__box">
-            <div class="nav-dropdown__top">
-          <a href="about.html?section=about">О компании</a>
-          <a href="about.html?section=leadership">Руководство</a>
-          <a href="about.html?section=governance">Корп. управление</a>
-          <a href="about.html?section=safety">Безопасность</a>
-          <a href="about.html?section=compliance">Комплаенс</a>
-          <a href="about.html?section=documents">Документы</a>
-          <a href="about.html?section=development">План развития</a>
-            </div>
-          </div>
-        </div>
-      </li>
-      <li class="nav-menu__item nav-menu__item--has-drop">
-        <a href="atom.html" class="nav-menu__link">Об Атоме</a>
-        <div class="nav-dropdown">
-          <div class="nav-dropdown__bridge"></div>
-          <div class="nav-dropdown__box">
-            <div class="nav-dropdown__top">
-          <a href="atom.html?section=history">История</a>
-          <a href="atom.html?section=operation">Как работает реактор</a>
-          <a href="atom.html?section=types">Типы реакторов</a>
-          <a href="atom.html?section=safety">Безопасность</a>
-          <a href="atom.html?section=environment">Атомная энергия и экология</a>
-          <a href="atom.html?section=myths">Мифы и факты об АЭС</a>
-          <a href="atom.html?section=quiz">Проверь свои знания</a>
-          <a href="atom.html?section=multimedia">Мультимедиа</a>
-            </div>
-          </div>
-        </div>
-      </li>
-      <li class="nav-menu__item nav-menu__item--has-drop">
-        <a href="projects.html" class="nav-menu__link">Проекты</a>
-        <div class="nav-dropdown">
-          <div class="nav-dropdown__bridge"></div>
-          <div class="nav-dropdown__box">
-            <div class="nav-dropdown__top">
-          <a href="projects.html?tab=balkhash">АЭС «Балхаш»</a>
-          <a href="projects.html?tab=mainkum">АЭС «Мойынкум»</a>
-            </div>
-          </div>
-        </div>
-      </li>
-      <li class="nav-menu__item nav-menu__item--has-drop">
-        <a href="procurements.html" class="nav-menu__link active">Закупки</a>
-        <div class="nav-dropdown">
-          <div class="nav-dropdown__bridge"></div>
-          <div class="nav-dropdown__box">
-            <div class="nav-dropdown__top">
-          <a href="procurements.html">Политика закупок</a>
-          <a href="procurements.html">Текущие закупки</a>
-          <a href="procurements.html">Локализация</a>
-          <a href="procurements.html">Документы</a>
-            </div>
-          </div>
-        </div>
-      </li>
-      <li class="nav-menu__item nav-menu__item--has-drop">
-        <a href="news.html" class="nav-menu__link">Пресс-центр</a>
-        <div class="nav-dropdown">
-          <div class="nav-dropdown__bridge"></div>
-          <div class="nav-dropdown__box">
-            <div class="nav-dropdown__top">
-          <a href="news.html">Календарь событий</a>
-          <a href="news.html">Мультимедиа</a>
-            </div>
-          </div>
-        </div>
-      </li>
-      <li class="nav-menu__item">
-        <a href="vacancies.html" class="nav-menu__link">Вакансии</a>
-      </li>
-      <li class="nav-menu__item">
-        <a href="faq.html" class="nav-menu__link">FAQ</a>
-      </li>
-      <li class="nav-menu__item">
-        <a href="contacts.html" class="nav-menu__link">Контакты</a>
-      </li>
-    </ul>
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html" class="mobile-menu__link">Главная</a>
+    <a href="about.html" class="mobile-menu__link">О КАЭС</a>
+    <a href="atom.html" class="mobile-menu__link">Об Атоме</a>
+    <a href="projects.html" class="mobile-menu__link">Проекты</a>
+    <a href="procurements.html" class="mobile-menu__link">Закупки</a>
+    <a href="news.html" class="mobile-menu__link">Пресс-центр</a>
+    <a href="vacancies.html" class="mobile-menu__link">Вакансии</a>
+    <a href="faq.html" class="mobile-menu__link">FAQ</a>
+    <a href="contacts.html" class="mobile-menu__link">Контакты</a>
+  </div>
 
-    <!-- RIGHT: search + lang + mobile burger -->
-    <div class="header-search">
-      <button class="header-search__toggle" id="search-toggle" aria-label="Поиск">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-        </svg>
-      </button>
-      <div class="header-search__input-wrap" id="search-wrap">
-        <input type="search" class="header-search__input" id="search-input" placeholder="Поиск…" aria-label="Поиск по сайту" />
+  <!-- Mega menu backdrop -->
+  <div class="mega-menu-backdrop" id="mega-menu-backdrop"></div>
+
+  <!-- Mega menu panel -->
+  <div class="mega-menu-panel" id="mega-menu-panel">
+    <div class="mega-menu-panel__box">
+      <div class="mega-menu-panel__inner">
+
+        <!-- Social icons — left vertical column (desktop) -->
+        <div class="mega-menu-panel__socials">
+          <a href="#" class="social-circle" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24"
+              fill="white">
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+            </svg></a>
+          <a href="#" class="social-circle" aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 24 24"
+              fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.5" cy="6.5" r="0.5" fill="white" stroke="none" />
+            </svg></a>
+          <a href="#" class="social-circle" aria-label="TikTok"><svg width="14" height="14" viewBox="0 0 24 24"
+              fill="white">
+              <path
+                d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.3 6.3 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z" />
+            </svg></a>
+        </div>
+
+        <!-- Main content -->
+        <div class="mega-menu-panel__body">
+          <!-- Close row -->
+          <div class="mega-menu-panel__head">
+            <span>Все разделы сайта</span>
+            <button class="mega-menu-close" id="mega-menu-close">
+              Закрыть
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"
+                stroke-linecap="round">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Columns -->
+          <div class="mega-menu-columns">
+            <div class="mega-menu-col">
+              <div class="mega-menu-col__head">
+                <a href="about.html" class="mega-menu-col__title">О КАЭС</a>
+              </div>
+              <ul class="mega-menu-col__links">
+                <li><a href="about.html?section=about" class="mega-menu-col__sub">О компании</a></li>
+                <li><a href="about.html?section=leadership" class="mega-menu-col__sub">Руководство</a></li>
+                <li><a href="about.html?section=governance" class="mega-menu-col__sub">Корпоративное управление</a></li>
+                <li><a href="about.html?section=safety" class="mega-menu-col__sub">Безопасность</a></li>
+                <li><a href="about.html?section=compliance" class="mega-menu-col__sub">Комплаенс</a></li>
+                <li><a href="about.html?section=documents" class="mega-menu-col__sub">Документы</a></li>
+                <li><a href="about.html?section=development" class="mega-menu-col__sub">План развития</a></li>
+              </ul>
+            </div>
+            <div class="mega-menu-col">
+              <div class="mega-menu-col__head">
+                <a href="atom.html" class="mega-menu-col__title">Об Атоме</a>
+              </div>
+              <ul class="mega-menu-col__links">
+                <li><a href="atom.html?section=history" class="mega-menu-col__sub">История</a></li>
+                <li><a href="atom.html?section=operation" class="mega-menu-col__sub">Как работает атомный реактор</a>
+                </li>
+                <li><a href="atom.html?section=types" class="mega-menu-col__sub">Типы реакторов</a></li>
+                <li><a href="atom.html?section=safety" class="mega-menu-col__sub">Безопасность</a></li>
+                <li><a href="atom.html?section=environment" class="mega-menu-col__sub">Атомная энергия и экология</a>
+                </li>
+                <li><a href="atom.html?section=myths" class="mega-menu-col__sub">Мифы и факты об АЭС</a></li>
+                <li><a href="atom.html?section=quiz" class="mega-menu-col__sub">Проверь свои знания</a></li>
+                <li><a href="atom.html?section=multimedia" class="mega-menu-col__sub">Мультимедиа</a></li>
+              </ul>
+            </div>
+            <div class="mega-menu-col">
+              <div class="mega-menu-col__head">
+                <a href="projects.html" class="mega-menu-col__title">Проекты</a>
+              </div>
+              <ul class="mega-menu-col__links">
+                <li><a href="projects.html?tab=balkhash" class="mega-menu-col__sub">АЭС «Балхаш»</a></li>
+                <li><a href="projects.html?tab=mainkum" class="mega-menu-col__sub">АЭС «Мойынкум»</a></li>
+              </ul>
+            </div>
+            <div class="mega-menu-col">
+              <div class="mega-menu-col__head">
+                <a href="procurements.html" class="mega-menu-col__title">Закупки</a>
+              </div>
+              <ul class="mega-menu-col__links">
+                <li><a href="procurements.html" class="mega-menu-col__sub">Политика закупок</a></li>
+                <li><a href="procurements.html" class="mega-menu-col__sub">Текущие закупки</a></li>
+                <li><a href="procurements.html" class="mega-menu-col__sub">Локализация</a></li>
+                <li><a href="procurements.html" class="mega-menu-col__sub">Документы и отчётность</a></li>
+              </ul>
+            </div>
+            <div class="mega-menu-col">
+              <div class="mega-menu-col__head">
+                <a href="news.html" class="mega-menu-col__title">Пресс-центр</a>
+              </div>
+              <ul class="mega-menu-col__links">
+                <li><a href="news.html" class="mega-menu-col__sub">Новости</a></li>
+                <li><a href="international-cooperation.html" class="mega-menu-col__sub">Международное сотрудничество</a>
+                </li>
+                <li><a href="president-message.html" class="mega-menu-col__sub">Послание Президента</a></li>
+                <li><a href="news.html" class="mega-menu-col__sub">Календарь событий</a></li>
+                <li><a href="news.html" class="mega-menu-col__sub">Мультимедиа</a></li>
+              </ul>
+            </div>
+            <div class="mega-menu-col">
+              <div class="mega-menu-col__head">
+                <a href="vacancies.html" class="mega-menu-col__title">Вакансии</a>
+              </div>
+              <ul class="mega-menu-col__links">
+                <li><a href="vacancies.html" class="mega-menu-col__sub">Все вакансии</a></li>
+                <li><a href="vacancies.html#stazhirovka" class="mega-menu-col__sub">Стажировка</a></li>
+              </ul>
+            </div>
+            <div class="mega-menu-col">
+              <div class="mega-menu-col__head">
+                <a href="faq.html" class="mega-menu-col__title">FAQ</a>
+              </div>
+              <ul class="mega-menu-col__links">
+                <li><a href="faq.html?section=general" class="mega-menu-col__sub">Об АЭС и атомной энергетике</a></li>
+                <li><a href="faq.html?section=project" class="mega-menu-col__sub">О проекте в Казахстане</a></li>
+                <li><a href="faq.html?section=cooperation" class="mega-menu-col__sub">Вакансии и сотрудничество</a></li>
+              </ul>
+            </div>
+            <div class="mega-menu-col">
+              <div class="mega-menu-col__head">
+                <a href="contacts.html" class="mega-menu-col__title">Контакты</a>
+              </div>
+              <ul class="mega-menu-col__links">
+                <li><a href="contacts.html" class="mega-menu-col__sub">Связаться с нами</a></li>
+              </ul>
+            </div>
+            <div class="mega-menu-col">
+              <div class="mega-menu-col__head">
+                <a href="president-message.html" class="mega-menu-col__title">Послание президента</a>
+              </div>
+              <ul class="mega-menu-col__links">
+                <li><a href="president-message.html" class="mega-menu-col__sub">Послание президента</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Socials row — mobile only -->
+          <div class="mega-menu-socials-row">
+            <a href="#" class="social-circle" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24"
+                fill="white">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+              </svg></a>
+            <a href="#" class="social-circle" aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 24 24"
+                fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.5" cy="6.5" r="0.5" fill="white" stroke="none" />
+              </svg></a>
+            <a href="#" class="social-circle" aria-label="TikTok"><svg width="14" height="14" viewBox="0 0 24 24"
+                fill="white">
+                <path
+                  d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.3 6.3 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z" />
+              </svg></a>
+          </div>
+        </div>
+
       </div>
-      <button class="header-lang">Рус</button>
-      <button class="header-mobile-burger" id="mobile-burger" aria-label="Меню" aria-expanded="false">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-      </button>
     </div>
   </div>
-</header>
 
-<!-- Mobile menu -->
-<div class="mobile-menu" id="mobile-menu">
-  <a href="index.html" class="mobile-menu__link">Главная</a>
-  <a href="about.html" class="mobile-menu__link">О КАЭС</a>
-  <a href="atom.html" class="mobile-menu__link">Об Атоме</a>
-  <a href="projects.html" class="mobile-menu__link">Проекты</a>
-  <a href="procurements.html" class="mobile-menu__link">Закупки</a>
-  <a href="news.html" class="mobile-menu__link">Пресс-центр</a>
-  <a href="vacancies.html" class="mobile-menu__link">Вакансии</a>
-  <a href="faq.html" class="mobile-menu__link">FAQ</a>
-  <a href="contacts.html" class="mobile-menu__link">Контакты</a>
-</div>
+  <div class="header-offset procurement-page">
 
-<!-- Mega menu backdrop -->
-<div class="mega-menu-backdrop" id="mega-menu-backdrop"></div>
+    <!-- OPTIONAL BackgroundGlow: удалить весь блок .proc-bg-glow, если не понравится -->
+    <div class="proc-bg-glow" aria-hidden="true">
+      <span class="proc-bg-glow__orb proc-bg-glow__orb--blue"></span>
+      <span class="proc-bg-glow__orb proc-bg-glow__orb--gold"></span>
+      <span class="proc-bg-glow__orb proc-bg-glow__orb--soft"></span>
+    </div>
+    <!-- /OPTIONAL BackgroundGlow -->
 
-<!-- Mega menu panel -->
-<div class="mega-menu-panel" id="mega-menu-panel">
-  <div class="mega-menu-panel__box">
-    <div class="mega-menu-panel__inner">
+    <section class="proc-hero" aria-labelledby="proc-title">
+      <div class="proc-hero__grid" aria-hidden="true"></div>
 
-      <!-- Social icons — left vertical column (desktop) -->
-      <div class="mega-menu-panel__socials">
-        <a href="#" class="social-circle" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
-        <a href="#" class="social-circle" aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="white" stroke="none"/></svg></a>
-        <a href="#" class="social-circle" aria-label="TikTok"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.3 6.3 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"/></svg></a>
+      <div class="proc-hero__atom proc-hero__atom--first" aria-hidden="true">
+        <div class="proc-hero__atom-glow"></div>
+        <img src="assets/images/atom.png" alt="" />
       </div>
 
-      <!-- Main content -->
-      <div class="mega-menu-panel__body">
-        <!-- Close row -->
-        <div class="mega-menu-panel__head">
-          <span>Все разделы сайта</span>
-          <button class="mega-menu-close" id="mega-menu-close">
-            Закрыть
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
-              <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-            </svg>
-          </button>
-        </div>
-
-        <!-- Columns -->
-        <div class="mega-menu-columns">
-        <div class="mega-menu-col">
-          <div class="mega-menu-col__head">
-            <a href="about.html" class="mega-menu-col__title">О КАЭС</a>
-          </div>
-          <ul class="mega-menu-col__links">
-            <li><a href="about.html?section=about" class="mega-menu-col__sub">О компании</a></li>
-            <li><a href="about.html?section=leadership" class="mega-menu-col__sub">Руководство</a></li>
-            <li><a href="about.html?section=governance" class="mega-menu-col__sub">Корпоративное управление</a></li>
-            <li><a href="about.html?section=safety" class="mega-menu-col__sub">Безопасность</a></li>
-            <li><a href="about.html?section=compliance" class="mega-menu-col__sub">Комплаенс</a></li>
-            <li><a href="about.html?section=documents" class="mega-menu-col__sub">Документы</a></li>
-            <li><a href="about.html?section=development" class="mega-menu-col__sub">План развития</a></li>
-          </ul>
-        </div>
-        <div class="mega-menu-col">
-          <div class="mega-menu-col__head">
-            <a href="atom.html" class="mega-menu-col__title">Об Атоме</a>
-          </div>
-          <ul class="mega-menu-col__links">
-            <li><a href="atom.html?section=history" class="mega-menu-col__sub">История</a></li>
-            <li><a href="atom.html?section=operation" class="mega-menu-col__sub">Как работает атомный реактор</a></li>
-            <li><a href="atom.html?section=types" class="mega-menu-col__sub">Типы реакторов</a></li>
-            <li><a href="atom.html?section=safety" class="mega-menu-col__sub">Безопасность</a></li>
-            <li><a href="atom.html?section=environment" class="mega-menu-col__sub">Атомная энергия и экология</a></li>
-            <li><a href="atom.html?section=myths" class="mega-menu-col__sub">Мифы и факты об АЭС</a></li>
-            <li><a href="atom.html?section=quiz" class="mega-menu-col__sub">Проверь свои знания</a></li>
-            <li><a href="atom.html?section=multimedia" class="mega-menu-col__sub">Мультимедиа</a></li>
-          </ul>
-        </div>
-        <div class="mega-menu-col">
-          <div class="mega-menu-col__head">
-            <a href="projects.html" class="mega-menu-col__title">Проекты</a>
-          </div>
-          <ul class="mega-menu-col__links">
-            <li><a href="projects.html?tab=balkhash" class="mega-menu-col__sub">АЭС «Балхаш»</a></li>
-            <li><a href="projects.html?tab=mainkum" class="mega-menu-col__sub">АЭС «Мойынкум»</a></li>
-          </ul>
-        </div>
-        <div class="mega-menu-col">
-          <div class="mega-menu-col__head">
-            <a href="procurements.html" class="mega-menu-col__title">Закупки</a>
-          </div>
-          <ul class="mega-menu-col__links">
-            <li><a href="procurements.html" class="mega-menu-col__sub">Политика закупок</a></li>
-            <li><a href="procurements.html" class="mega-menu-col__sub">Текущие закупки</a></li>
-            <li><a href="procurements.html" class="mega-menu-col__sub">Локализация</a></li>
-            <li><a href="procurements.html" class="mega-menu-col__sub">Документы и отчётность</a></li>
-          </ul>
-        </div>
-        <div class="mega-menu-col">
-          <div class="mega-menu-col__head">
-            <a href="news.html" class="mega-menu-col__title">Пресс-центр</a>
-          </div>
-          <ul class="mega-menu-col__links">
-            <li><a href="news.html" class="mega-menu-col__sub">Новости</a></li>
-            <li><a href="international-cooperation.html" class="mega-menu-col__sub">Международное сотрудничество</a></li>
-            <li><a href="president-message.html" class="mega-menu-col__sub">Послание Президента</a></li>
-            <li><a href="news.html" class="mega-menu-col__sub">Календарь событий</a></li>
-            <li><a href="news.html" class="mega-menu-col__sub">Мультимедиа</a></li>
-          </ul>
-        </div>
-        <div class="mega-menu-col">
-          <div class="mega-menu-col__head">
-            <a href="vacancies.html" class="mega-menu-col__title">Вакансии</a>
-          </div>
-          <ul class="mega-menu-col__links">
-            <li><a href="vacancies.html" class="mega-menu-col__sub">Все вакансии</a></li>
-            <li><a href="vacancies.html#stazhirovka" class="mega-menu-col__sub">Стажировка</a></li>
-          </ul>
-        </div>
-        <div class="mega-menu-col">
-          <div class="mega-menu-col__head">
-            <a href="faq.html" class="mega-menu-col__title">FAQ</a>
-          </div>
-          <ul class="mega-menu-col__links">
-            <li><a href="faq.html?section=general" class="mega-menu-col__sub">Об АЭС и атомной энергетике</a></li>
-            <li><a href="faq.html?section=project" class="mega-menu-col__sub">О проекте в Казахстане</a></li>
-            <li><a href="faq.html?section=cooperation" class="mega-menu-col__sub">Вакансии и сотрудничество</a></li>
-          </ul>
-        </div>
-        <div class="mega-menu-col">
-          <div class="mega-menu-col__head">
-            <a href="contacts.html" class="mega-menu-col__title">Контакты</a>
-          </div>
-          <ul class="mega-menu-col__links">
-            <li><a href="contacts.html" class="mega-menu-col__sub">Связаться с нами</a></li>
-          </ul>
-        </div>
-        <div class="mega-menu-col">
-          <div class="mega-menu-col__head">
-            <a href="president-message.html" class="mega-menu-col__title">Послание президента</a>
-          </div>
-          <ul class="mega-menu-col__links">
-            <li><a href="president-message.html" class="mega-menu-col__sub">Послание президента</a></li>
-          </ul>
-        </div>
-        </div>
-
-        <!-- Socials row — mobile only -->
-        <div class="mega-menu-socials-row">
-          <a href="#" class="social-circle" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
-        <a href="#" class="social-circle" aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="white" stroke="none"/></svg></a>
-        <a href="#" class="social-circle" aria-label="TikTok"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.3 6.3 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"/></svg></a>
-        </div>
+      <div class="proc-hero__atom proc-hero__atom--second" aria-hidden="true">
+        <div class="proc-hero__atom-glow"></div>
+        <img src="assets/images/atom.png" alt="" />
       </div>
 
-    </div>
-  </div>
-</div>
+      <div class="proc-hero__inner">
+        <h1 class="proc-hero__title" id="proc-title">Закупки</h1>
 
-<div class="header-offset procurement-page">
+      </div>
+    </section>
 
-<!-- OPTIONAL BackgroundGlow: удалить весь блок .proc-bg-glow, если не понравится -->
-<div class="proc-bg-glow" aria-hidden="true">
-  <span class="proc-bg-glow__orb proc-bg-glow__orb--blue"></span>
-  <span class="proc-bg-glow__orb proc-bg-glow__orb--gold"></span>
-  <span class="proc-bg-glow__orb proc-bg-glow__orb--soft"></span>
-</div>
-<!-- /OPTIONAL BackgroundGlow -->
+    <section class="proc-section">
+      <div class="proc-container">
+        <nav class="proc-breadcrumb" aria-label="Хлебные крошки">
+          <a href="index.html">Главная</a>
+          <span class="proc-breadcrumb__sep" aria-hidden="true">/</span>
+          <span>Закупки</span>
+        </nav>
 
-<div class="page-hero proc-hero">
-  <div class="page-hero__inner proc-hero__inner">
-    <h1 class="page-hero__title">Закупки</h1>
-    <p class="page-hero__sub">Прозрачные закупочные процедуры, актуальные объявления и документы для поставщиков</p>
-  </div>
-</div>
-
-<section class="proc-section">
-  <div class="proc-container">
-    <nav class="breadcrumb proc-breadcrumb" aria-label="Хлебные крошки">
-      <a href="index.html" class="breadcrumb__link">Главная</a>
-      <span class="breadcrumb__sep">›</span>
-      <span class="breadcrumb__current">Закупки</span>
-    </nav>
-
-    <!-- Procurement nav tabs -->
-    <div class="proc-tabs" role="tablist" aria-label="Разделы закупок">
-      <button class="proc-tab active" type="button" role="tab" aria-selected="true" aria-controls="proc-policy" data-proc="policy" id="proc-tab-policy">Политика закупок</button>
-      <button class="proc-tab" type="button" role="tab" aria-selected="false" aria-controls="proc-current" data-proc="current" id="proc-tab-current">Текущие закупки</button>
-      <button class="proc-tab" type="button" role="tab" aria-selected="false" aria-controls="proc-localization" data-proc="localization" id="proc-tab-localization">Локализация и отечественное участие</button>
-      <button class="proc-tab" type="button" role="tab" aria-selected="false" aria-controls="proc-documents" data-proc="documents" id="proc-tab-documents">Документы и отчётность</button>
-    </div>
-
-    <!-- CMS: procurement tab content -->
-    <div class="proc-panels">
-      <section class="proc-panel active" id="proc-policy" role="tabpanel" aria-labelledby="proc-tab-policy">
-        <div class="proc-heading">
-          <h2>Политика закупок</h2>
-          <p>
-            Закупочная деятельность ТОО «КАЭС» основана на принципах прозрачности, конкурентности и
-            соблюдения законодательства Республики Казахстан. Все процедуры соответствуют стандартам
-            АО «Самрук-Казына».
-          </p>
+        <!-- Procurement nav tabs -->
+        <div class="proc-tabs" role="tablist" aria-label="Разделы закупок">
+          <button class="proc-tab active" type="button" role="tab" aria-selected="true" aria-controls="proc-policy"
+            data-proc="policy" id="proc-tab-policy">Политика закупок</button>
+          <button class="proc-tab" type="button" role="tab" aria-selected="false" aria-controls="proc-current"
+            data-proc="current" id="proc-tab-current">Текущие закупки</button>
+          <button class="proc-tab" type="button" role="tab" aria-selected="false" aria-controls="proc-localization"
+            data-proc="localization" id="proc-tab-localization">Локализация и отечественное участие</button>
+          <button class="proc-tab" type="button" role="tab" aria-selected="false" aria-controls="proc-documents"
+            data-proc="documents" id="proc-tab-documents">Документы и отчётность</button>
         </div>
 
-        <div class="proc-principles-grid">
-          <article class="proc-principle-card">
-            <div class="proc-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.04 12.32a1.01 1.01 0 0 1 0-.64C3.42 7.51 7.36 4.5 12 4.5s8.57 3.01 9.96 7.18c.07.21.07.43 0 .64C20.58 16.49 16.64 19.5 12 19.5s-8.57-3.01-9.96-7.18Z"/><path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/></svg>
+        <!-- CMS: procurement tab content -->
+        <div class="proc-panels">
+          <section class="proc-panel active" id="proc-policy" role="tabpanel" aria-labelledby="proc-tab-policy">
+            <div class="proc-heading">
+              <h2>Политика закупок</h2>
+              <p>
+                Закупочная деятельность ТОО «КАЭС» основана на принципах прозрачности, конкурентности и
+                соблюдения законодательства Республики Казахстан. Все процедуры соответствуют стандартам
+                АО «Самрук-Казына».
+              </p>
             </div>
-            <div>
-              <h3>Прозрачность</h3>
-              <p>Все закупочные процедуры проводятся открыто с обязательной публикацией на портале АО «Самрук-Казына».</p>
-            </div>
-          </article>
 
-          <article class="proc-principle-card">
-            <div class="proc-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 20h5v-2a3 3 0 0 0-5.36-1.86M17 20H7m10 0v-2c0-.66-.13-1.28-.36-1.86M7 20H2v-2a3 3 0 0 1 5.36-1.86M7 20v-2c0-.66.13-1.28.36-1.86m0 0a5 5 0 0 1 9.28 0M15 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM7 10a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/></svg>
-            </div>
-            <div>
-              <h3>Конкурентность</h3>
-              <p>Равный доступ для всех потенциальных поставщиков, соответствующих квалификационным требованиям.</p>
-            </div>
-          </article>
+            <div class="proc-principles-grid">
+              <article class="proc-principle-card">
+                <div class="proc-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path
+                      d="M2.04 12.32a1.01 1.01 0 0 1 0-.64C3.42 7.51 7.36 4.5 12 4.5s8.57 3.01 9.96 7.18c.07.21.07.43 0 .64C20.58 16.49 16.64 19.5 12 19.5s-8.57-3.01-9.96-7.18Z" />
+                    <path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3>Прозрачность</h3>
+                  <p>Все закупочные процедуры проводятся открыто с обязательной публикацией на портале АО
+                    «Самрук-Казына».</p>
+                </div>
+              </article>
 
-          <article class="proc-principle-card">
-            <div class="proc-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.1c0-1.13-.85-2.09-1.98-2.18a48 48 0 0 0-1.12-.08m-5.8 0A2.25 2.25 0 0 1 13.5 2.25H15c1.01 0 1.87.67 2.15 1.59m-5.8 0c-.38.02-.75.05-1.12.08C9.1 4.01 8.25 4.97 8.25 6.1v2.15m0 0H4.88c-.62 0-1.13.5-1.13 1.13v11.25c0 .62.51 1.12 1.13 1.12h9.75c.62 0 1.12-.5 1.12-1.12V9.38c0-.62-.5-1.13-1.12-1.13H8.25Z"/></svg>
-            </div>
-            <div>
-              <h3>Законность</h3>
-              <p>Соблюдение законодательства Республики Казахстан и внутренних стандартов корпоративной группы.</p>
-            </div>
-          </article>
+              <article class="proc-principle-card">
+                <div class="proc-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path
+                      d="M17 20h5v-2a3 3 0 0 0-5.36-1.86M17 20H7m10 0v-2c0-.66-.13-1.28-.36-1.86M7 20H2v-2a3 3 0 0 1 5.36-1.86M7 20v-2c0-.66.13-1.28.36-1.86m0 0a5 5 0 0 1 9.28 0M15 7a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM7 10a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3>Конкурентность</h3>
+                  <p>Равный доступ для всех потенциальных поставщиков, соответствующих квалификационным требованиям.</p>
+                </div>
+              </article>
 
-          <article class="proc-principle-card">
-            <div class="proc-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6l3 1m0 0-3 9a5 5 0 0 0 6 0L6 7Zm0 0 6-2m6 2 3-1m-3 1-3 9a5 5 0 0 0 6 0l-3-9Zm0 0-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>
+              <article class="proc-principle-card">
+                <div class="proc-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path
+                      d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.1c0-1.13-.85-2.09-1.98-2.18a48 48 0 0 0-1.12-.08m-5.8 0A2.25 2.25 0 0 1 13.5 2.25H15c1.01 0 1.87.67 2.15 1.59m-5.8 0c-.38.02-.75.05-1.12.08C9.1 4.01 8.25 4.97 8.25 6.1v2.15m0 0H4.88c-.62 0-1.13.5-1.13 1.13v11.25c0 .62.51 1.12 1.13 1.12h9.75c.62 0 1.12-.5 1.12-1.12V9.38c0-.62-.5-1.13-1.12-1.13H8.25Z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3>Законность</h3>
+                  <p>Соблюдение законодательства Республики Казахстан и внутренних стандартов корпоративной группы.</p>
+                </div>
+              </article>
+
+              <article class="proc-principle-card">
+                <div class="proc-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path
+                      d="M3 6l3 1m0 0-3 9a5 5 0 0 0 6 0L6 7Zm0 0 6-2m6 2 3-1m-3 1-3 9a5 5 0 0 0 6 0l-3-9Zm0 0-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+                  </svg>
+                </div>
+                <div>
+                  <h3>Равный доступ</h3>
+                  <p>Поставщики оцениваются объективно, без дискриминации и с понятными критериями отбора.</p>
+                </div>
+              </article>
             </div>
-            <div>
-              <h3>Равный доступ</h3>
-              <p>Поставщики оцениваются объективно, без дискриминации и с понятными критериями отбора.</p>
+
+            <div class="proc-portal-card">
+              <div>
+                <p class="proc-portal-card__title">Портал закупок АО «Самрук-Казына»</p>
+                <p>Все актуальные объявления, сроки и документация публикуются на официальном портале.</p>
+              </div>
+              <a href="https://zakup.sk.kz" target="_blank" rel="noopener noreferrer" class="proc-primary-btn">Портал
+                закупок Самрук-Казына</a>
             </div>
-          </article>
+          </section>
+
+          <section class="proc-panel" id="proc-current" role="tabpanel" aria-labelledby="proc-tab-current" hidden>
+            <div class="proc-heading">
+              <h2>Текущие закупки</h2>
+              <p>
+                Актуальные закупки публикуются на официальном портале АО «Самрук-Казына». Ниже представлены
+                примеры закупочных процедур для ознакомления.
+              </p>
+            </div>
+
+            <!-- CMS LOOP: current procurements start -->
+            <div class="procurement-list proc-current-list">
+              <article class="proc-current-item">
+                <div class="proc-current-item__main">
+                  <div class="proc-current-item__badges">
+                    <span class="proc-id-badge">КЗ-2025-001</span>
+                    <span class="proc-status proc-status--accepting">Приём заявок</span>
+                  </div>
+                  <h3>Поставка оргтехники и расходных материалов</h3>
+                  <div class="proc-current-item__meta">
+                    <span>Опубликовано: 15.01.2025</span>
+                    <span>Срок подачи: 15.02.2025</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="proc-current-item">
+                <div class="proc-current-item__main">
+                  <div class="proc-current-item__badges">
+                    <span class="proc-id-badge">КЗ-2025-002</span>
+                    <span class="proc-status proc-status--review">На рассмотрении</span>
+                  </div>
+                  <h3>Услуги технического аудита и экспертизы</h3>
+                  <div class="proc-current-item__meta">
+                    <span>Опубликовано: 20.01.2025</span>
+                    <span>Срок подачи: 20.03.2025</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="proc-current-item">
+                <div class="proc-current-item__main">
+                  <div class="proc-current-item__badges">
+                    <span class="proc-id-badge">КЗ-2025-003</span>
+                    <span class="proc-status proc-status--done">Завершено</span>
+                  </div>
+                  <h3>Консультационные услуги в области ядерной безопасности</h3>
+                  <div class="proc-current-item__meta">
+                    <span>Опубликовано: 10.12.2024</span>
+                    <span>Срок подачи: 10.01.2025</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <!-- CMS LOOP: current procurements end -->
+
+            <div class="proc-actions-row">
+              <a href="https://zakup.sk.kz" target="_blank" rel="noopener noreferrer" class="proc-primary-btn">Все
+                закупки на портале</a>
+            </div>
+          </section>
+
+          <section class="proc-panel" id="proc-localization" role="tabpanel" aria-labelledby="proc-tab-localization"
+            hidden>
+            <div class="proc-heading">
+              <h2>Локализация и отечественное участие</h2>
+              <p>
+                ТОО «КАЭС» активно поддерживает казахстанское содержание в закупках. Мы содействуем
+                развитию отечественных поставщиков и привлечению малого и среднего бизнеса Республики Казахстан.
+              </p>
+            </div>
+
+            <div class="proc-local-grid">
+              <article class="proc-local-card">
+                <h3>Казахстанское содержание</h3>
+                <p>Требования к доле местных поставщиков определяются в соответствии с законодательством РК. При равных
+                  условиях приоритет отдаётся отечественным производителям товаров и услуг.</p>
+              </article>
+              <article class="proc-local-card">
+                <h3>Поддержка МСБ</h3>
+                <p>Малый и средний бизнес Казахстана получает дополнительные возможности для участия в закупочных
+                  процедурах ТОО «КАЭС».</p>
+              </article>
+              <article class="proc-local-card">
+                <h3>Трансфер технологий</h3>
+                <p>Сотрудничество с иностранными партнёрами предусматривает передачу компетенций и технологий
+                  казахстанской стороне.</p>
+              </article>
+            </div>
+
+            <div class="proc-metrics-grid">
+              <article class="proc-metric-card">
+                <strong>30%+</strong>
+                <span>целевая доля казахстанского содержания</span>
+              </article>
+              <article class="proc-metric-card">
+                <strong>50+</strong>
+                <span>партнёров МСБ (план)</span>
+              </article>
+              <article class="proc-metric-card">
+                <strong>2025–2030</strong>
+                <span>горизонт программы локализации</span>
+              </article>
+            </div>
+          </section>
+
+          <section class="proc-panel" id="proc-documents" role="tabpanel" aria-labelledby="proc-tab-documents" hidden>
+            <div class="proc-heading">
+              <h2>Документы и отчётность</h2>
+              <p>
+                Ниже представлены ключевые нормативные документы, регулирующие закупочную деятельность ТОО «КАЭС».
+              </p>
+            </div>
+
+            <div class="proc-upload-placeholder">
+              <div class="proc-upload-placeholder__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path
+                    d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5" />
+                </svg>
+              </div>
+              <div>
+                <p>Документ будет загружен</p>
+                <span>Здесь появится загруженный документ после добавления</span>
+              </div>
+            </div>
+
+            <!-- CMS LOOP: procurement documents start -->
+            <div class="proc-doc-list">
+              <article class="proc-doc-item">
+                <div class="proc-doc-item__left">
+                  <div class="proc-doc-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <path
+                        d="M19.5 14.25v-2.63a3.38 3.38 0 0 0-3.38-3.37h-1.5a1.13 1.13 0 0 1-1.12-1.13v-1.5a3.38 3.38 0 0 0-3.38-3.37H8.25M10.5 2.25H5.63c-.62 0-1.13.5-1.13 1.13v17.25c0 .62.51 1.12 1.13 1.12h12.75c.62 0 1.12-.5 1.12-1.12V11.25a9 9 0 0 0-9-9Z" />
+                    </svg>
+                  </div>
+                  <h3>Политика закупок ТОО «КАЭС»</h3>
+                </div>
+                <div class="proc-doc-actions">
+                  <a href="assets/docs/procurement/politika-zakupok.pdf" download class="proc-small-primary">Скачать</a>
+                  <a href="assets/docs/procurement/politika-zakupok.pdf" target="_blank" rel="noopener noreferrer"
+                    class="proc-small-outline">Открыть PDF</a>
+                </div>
+              </article>
+
+              <article class="proc-doc-item">
+                <div class="proc-doc-item__left">
+                  <div class="proc-doc-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <path
+                        d="M19.5 14.25v-2.63a3.38 3.38 0 0 0-3.38-3.37h-1.5a1.13 1.13 0 0 1-1.12-1.13v-1.5a3.38 3.38 0 0 0-3.38-3.37H8.25M10.5 2.25H5.63c-.62 0-1.13.5-1.13 1.13v17.25c0 .62.51 1.12 1.13 1.12h12.75c.62 0 1.12-.5 1.12-1.12V11.25a9 9 0 0 0-9-9Z" />
+                    </svg>
+                  </div>
+                  <h3>Правила закупок АО «Самрук-Казына»</h3>
+                </div>
+                <div class="proc-doc-actions">
+                  <a href="assets/docs/procurement/pravila-zakupok-sk.pdf" download
+                    class="proc-small-primary">Скачать</a>
+                  <a href="assets/docs/procurement/pravila-zakupok-sk.pdf" target="_blank" rel="noopener noreferrer"
+                    class="proc-small-outline">Открыть PDF</a>
+                </div>
+              </article>
+
+              <article class="proc-doc-item">
+                <div class="proc-doc-item__left">
+                  <div class="proc-doc-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <path
+                        d="M19.5 14.25v-2.63a3.38 3.38 0 0 0-3.38-3.37h-1.5a1.13 1.13 0 0 1-1.12-1.13v-1.5a3.38 3.38 0 0 0-3.38-3.37H8.25M10.5 2.25H5.63c-.62 0-1.13.5-1.13 1.13v17.25c0 .62.51 1.12 1.13 1.12h12.75c.62 0 1.12-.5 1.12-1.12V11.25a9 9 0 0 0-9-9Z" />
+                    </svg>
+                  </div>
+                  <h3>Годовой план закупок 2025</h3>
+                </div>
+                <div class="proc-doc-actions">
+                  <a href="assets/docs/procurement/plan-zakupok-2025.pdf" download
+                    class="proc-small-primary">Скачать</a>
+                  <a href="assets/docs/procurement/plan-zakupok-2025.pdf" target="_blank" rel="noopener noreferrer"
+                    class="proc-small-outline">Открыть PDF</a>
+                </div>
+              </article>
+
+              <article class="proc-doc-item">
+                <div class="proc-doc-item__left">
+                  <div class="proc-doc-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <path
+                        d="M19.5 14.25v-2.63a3.38 3.38 0 0 0-3.38-3.37h-1.5a1.13 1.13 0 0 1-1.12-1.13v-1.5a3.38 3.38 0 0 0-3.38-3.37H8.25M10.5 2.25H5.63c-.62 0-1.13.5-1.13 1.13v17.25c0 .62.51 1.12 1.13 1.12h12.75c.62 0 1.12-.5 1.12-1.12V11.25a9 9 0 0 0-9-9Z" />
+                    </svg>
+                  </div>
+                  <h3>Квалификационные требования к поставщикам</h3>
+                </div>
+                <div class="proc-doc-actions">
+                  <a href="assets/docs/procurement/kval-trebovaniya.pdf" download class="proc-small-primary">Скачать</a>
+                  <a href="assets/docs/procurement/kval-trebovaniya.pdf" target="_blank" rel="noopener noreferrer"
+                    class="proc-small-outline">Открыть PDF</a>
+                </div>
+              </article>
+            </div>
+            <!-- CMS LOOP: procurement documents end -->
+          </section>
         </div>
+      </div>
+    </section>
 
-        <div class="proc-portal-card">
+    <script>
+      (function () {
+        var tabs = ['policy', 'current', 'localization', 'documents'];
+        var aliases = { announcements: 'current' };
+
+        function activate(id, shouldUpdateHash) {
+          id = aliases[id] || id;
+          if (tabs.indexOf(id) === -1) id = 'policy';
+
+          tabs.forEach(function (t) {
+            var panel = document.getElementById('proc-' + t);
+            var btn = document.getElementById('proc-tab-' + t);
+            var isActive = t === id;
+
+            if (panel) {
+              panel.classList.toggle('active', isActive);
+              panel.hidden = !isActive;
+            }
+
+            if (btn) {
+              btn.classList.toggle('active', isActive);
+              btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+            }
+          });
+
+          if (shouldUpdateHash && window.history && window.history.replaceState) {
+            window.history.replaceState(null, '', '#' + id);
+          }
+        }
+
+        document.querySelectorAll('[data-proc]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            activate(this.getAttribute('data-proc'), true);
+          });
+        });
+
+        activate(window.location.hash.replace('#', '') || 'policy', false);
+      })();
+    </script>
+
+  </div><!-- /header-offset -->
+
+  <!-- CMS: footer -->
+  <footer class="site-footer">
+    <div class="site-footer__main">
+      <div class="site-footer__left">
+        <a href="index.html" class="site-footer__logo"><img src="assets/images/KNPP.png" alt="КАЭС" /></a>
+        <div class="site-footer__contact">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"
+            stroke-linecap="round">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
+            <circle cx="12" cy="9" r="2.5" />
+          </svg>
           <div>
-            <p class="proc-portal-card__title">Портал закупок АО «Самрук-Казына»</p>
-            <p>Все актуальные объявления, сроки и документация публикуются на официальном портале.</p>
-          </div>
-          <a href="https://zakup.sk.kz" target="_blank" rel="noopener noreferrer" class="proc-primary-btn">Портал закупок Самрук-Казына</a>
-        </div>
-      </section>
-
-      <section class="proc-panel" id="proc-current" role="tabpanel" aria-labelledby="proc-tab-current" hidden>
-        <div class="proc-heading">
-          <h2>Текущие закупки</h2>
-          <p>
-            Актуальные закупки публикуются на официальном портале АО «Самрук-Казына». Ниже представлены
-            примеры закупочных процедур для ознакомления.
-          </p>
-        </div>
-
-        <!-- CMS LOOP: current procurements start -->
-        <div class="procurement-list proc-current-list">
-          <article class="proc-current-item">
-            <div class="proc-current-item__main">
-              <div class="proc-current-item__badges">
-                <span class="proc-id-badge">КЗ-2025-001</span>
-                <span class="proc-status proc-status--accepting">Приём заявок</span>
-              </div>
-              <h3>Поставка оргтехники и расходных материалов</h3>
-              <div class="proc-current-item__meta">
-                <span>Опубликовано: 15.01.2025</span>
-                <span>Срок подачи: 15.02.2025</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="proc-current-item">
-            <div class="proc-current-item__main">
-              <div class="proc-current-item__badges">
-                <span class="proc-id-badge">КЗ-2025-002</span>
-                <span class="proc-status proc-status--review">На рассмотрении</span>
-              </div>
-              <h3>Услуги технического аудита и экспертизы</h3>
-              <div class="proc-current-item__meta">
-                <span>Опубликовано: 20.01.2025</span>
-                <span>Срок подачи: 20.03.2025</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="proc-current-item">
-            <div class="proc-current-item__main">
-              <div class="proc-current-item__badges">
-                <span class="proc-id-badge">КЗ-2025-003</span>
-                <span class="proc-status proc-status--done">Завершено</span>
-              </div>
-              <h3>Консультационные услуги в области ядерной безопасности</h3>
-              <div class="proc-current-item__meta">
-                <span>Опубликовано: 10.12.2024</span>
-                <span>Срок подачи: 10.01.2025</span>
-              </div>
-            </div>
-          </article>
-        </div>
-        <!-- CMS LOOP: current procurements end -->
-
-        <div class="proc-actions-row">
-          <a href="https://zakup.sk.kz" target="_blank" rel="noopener noreferrer" class="proc-primary-btn">Все закупки на портале</a>
-        </div>
-      </section>
-
-      <section class="proc-panel" id="proc-localization" role="tabpanel" aria-labelledby="proc-tab-localization" hidden>
-        <div class="proc-heading">
-          <h2>Локализация и отечественное участие</h2>
-          <p>
-            ТОО «КАЭС» активно поддерживает казахстанское содержание в закупках. Мы содействуем
-            развитию отечественных поставщиков и привлечению малого и среднего бизнеса Республики Казахстан.
-          </p>
-        </div>
-
-        <div class="proc-local-grid">
-          <article class="proc-local-card">
-            <h3>Казахстанское содержание</h3>
-            <p>Требования к доле местных поставщиков определяются в соответствии с законодательством РК. При равных условиях приоритет отдаётся отечественным производителям товаров и услуг.</p>
-          </article>
-          <article class="proc-local-card">
-            <h3>Поддержка МСБ</h3>
-            <p>Малый и средний бизнес Казахстана получает дополнительные возможности для участия в закупочных процедурах ТОО «КАЭС».</p>
-          </article>
-          <article class="proc-local-card">
-            <h3>Трансфер технологий</h3>
-            <p>Сотрудничество с иностранными партнёрами предусматривает передачу компетенций и технологий казахстанской стороне.</p>
-          </article>
-        </div>
-
-        <div class="proc-metrics-grid">
-          <article class="proc-metric-card">
-            <strong>30%+</strong>
-            <span>целевая доля казахстанского содержания</span>
-          </article>
-          <article class="proc-metric-card">
-            <strong>50+</strong>
-            <span>партнёров МСБ (план)</span>
-          </article>
-          <article class="proc-metric-card">
-            <strong>2025–2030</strong>
-            <span>горизонт программы локализации</span>
-          </article>
-        </div>
-      </section>
-
-      <section class="proc-panel" id="proc-documents" role="tabpanel" aria-labelledby="proc-tab-documents" hidden>
-        <div class="proc-heading">
-          <h2>Документы и отчётность</h2>
-          <p>
-            Ниже представлены ключевые нормативные документы, регулирующие закупочную деятельность ТОО «КАЭС».
-          </p>
-        </div>
-
-        <div class="proc-upload-placeholder">
-          <div class="proc-upload-placeholder__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5"/></svg>
-          </div>
-          <div>
-            <p>Документ будет загружен</p>
-            <span>Здесь появится загруженный документ после добавления</span>
+            <p>БЦ «Аура»</p>
+            <p>Проспект Мангилик Ел, 57а</p>
           </div>
         </div>
-
-        <!-- CMS LOOP: procurement documents start -->
-        <div class="proc-doc-list">
-          <article class="proc-doc-item">
-            <div class="proc-doc-item__left">
-              <div class="proc-doc-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 14.25v-2.63a3.38 3.38 0 0 0-3.38-3.37h-1.5a1.13 1.13 0 0 1-1.12-1.13v-1.5a3.38 3.38 0 0 0-3.38-3.37H8.25M10.5 2.25H5.63c-.62 0-1.13.5-1.13 1.13v17.25c0 .62.51 1.12 1.13 1.12h12.75c.62 0 1.12-.5 1.12-1.12V11.25a9 9 0 0 0-9-9Z"/></svg>
-              </div>
-              <h3>Политика закупок ТОО «КАЭС»</h3>
-            </div>
-            <div class="proc-doc-actions">
-              <a href="assets/docs/procurement/politika-zakupok.pdf" download class="proc-small-primary">Скачать</a>
-              <a href="assets/docs/procurement/politika-zakupok.pdf" target="_blank" rel="noopener noreferrer" class="proc-small-outline">Открыть PDF</a>
-            </div>
-          </article>
-
-          <article class="proc-doc-item">
-            <div class="proc-doc-item__left">
-              <div class="proc-doc-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 14.25v-2.63a3.38 3.38 0 0 0-3.38-3.37h-1.5a1.13 1.13 0 0 1-1.12-1.13v-1.5a3.38 3.38 0 0 0-3.38-3.37H8.25M10.5 2.25H5.63c-.62 0-1.13.5-1.13 1.13v17.25c0 .62.51 1.12 1.13 1.12h12.75c.62 0 1.12-.5 1.12-1.12V11.25a9 9 0 0 0-9-9Z"/></svg>
-              </div>
-              <h3>Правила закупок АО «Самрук-Казына»</h3>
-            </div>
-            <div class="proc-doc-actions">
-              <a href="assets/docs/procurement/pravila-zakupok-sk.pdf" download class="proc-small-primary">Скачать</a>
-              <a href="assets/docs/procurement/pravila-zakupok-sk.pdf" target="_blank" rel="noopener noreferrer" class="proc-small-outline">Открыть PDF</a>
-            </div>
-          </article>
-
-          <article class="proc-doc-item">
-            <div class="proc-doc-item__left">
-              <div class="proc-doc-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 14.25v-2.63a3.38 3.38 0 0 0-3.38-3.37h-1.5a1.13 1.13 0 0 1-1.12-1.13v-1.5a3.38 3.38 0 0 0-3.38-3.37H8.25M10.5 2.25H5.63c-.62 0-1.13.5-1.13 1.13v17.25c0 .62.51 1.12 1.13 1.12h12.75c.62 0 1.12-.5 1.12-1.12V11.25a9 9 0 0 0-9-9Z"/></svg>
-              </div>
-              <h3>Годовой план закупок 2025</h3>
-            </div>
-            <div class="proc-doc-actions">
-              <a href="assets/docs/procurement/plan-zakupok-2025.pdf" download class="proc-small-primary">Скачать</a>
-              <a href="assets/docs/procurement/plan-zakupok-2025.pdf" target="_blank" rel="noopener noreferrer" class="proc-small-outline">Открыть PDF</a>
-            </div>
-          </article>
-
-          <article class="proc-doc-item">
-            <div class="proc-doc-item__left">
-              <div class="proc-doc-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 14.25v-2.63a3.38 3.38 0 0 0-3.38-3.37h-1.5a1.13 1.13 0 0 1-1.12-1.13v-1.5a3.38 3.38 0 0 0-3.38-3.37H8.25M10.5 2.25H5.63c-.62 0-1.13.5-1.13 1.13v17.25c0 .62.51 1.12 1.13 1.12h12.75c.62 0 1.12-.5 1.12-1.12V11.25a9 9 0 0 0-9-9Z"/></svg>
-              </div>
-              <h3>Квалификационные требования к поставщикам</h3>
-            </div>
-            <div class="proc-doc-actions">
-              <a href="assets/docs/procurement/kval-trebovaniya.pdf" download class="proc-small-primary">Скачать</a>
-              <a href="assets/docs/procurement/kval-trebovaniya.pdf" target="_blank" rel="noopener noreferrer" class="proc-small-outline">Открыть PDF</a>
-            </div>
-          </article>
+        <div class="site-footer__contact">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"
+            stroke-linecap="round">
+            <rect x="2" y="4" width="20" height="16" rx="2" />
+            <path d="M2 7l10 7 10-7" />
+          </svg>
+          <a href="mailto:kense@knpp.kz">kense@knpp.kz</a>
         </div>
-        <!-- CMS LOOP: procurement documents end -->
-      </section>
-    </div>
-  </div>
-</section>
-
-<script>
-(function() {
-  var tabs = ['policy', 'current', 'localization', 'documents'];
-  var aliases = { announcements: 'current' };
-
-  function activate(id, shouldUpdateHash) {
-    id = aliases[id] || id;
-    if (tabs.indexOf(id) === -1) id = 'policy';
-
-    tabs.forEach(function(t) {
-      var panel = document.getElementById('proc-' + t);
-      var btn = document.getElementById('proc-tab-' + t);
-      var isActive = t === id;
-
-      if (panel) {
-        panel.classList.toggle('active', isActive);
-        panel.hidden = !isActive;
-      }
-
-      if (btn) {
-        btn.classList.toggle('active', isActive);
-        btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
-      }
-    });
-
-    if (shouldUpdateHash && window.history && window.history.replaceState) {
-      window.history.replaceState(null, '', '#' + id);
-    }
-  }
-
-  document.querySelectorAll('[data-proc]').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      activate(this.getAttribute('data-proc'), true);
-    });
-  });
-
-  activate(window.location.hash.replace('#', '') || 'policy', false);
-})();
-</script>
-
-</div><!-- /header-offset -->
-
-<!-- CMS: footer -->
-<footer class="site-footer">
-  <div class="site-footer__main">
-    <div class="site-footer__left">
-      <a href="index.html" class="site-footer__logo"><img src="assets/images/KNPP.png" alt="КАЭС" /></a>
-      <div class="site-footer__contact">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-        <div><p>БЦ «Аура»</p><p>Проспект Мангилик Ел, 57а</p></div>
+        <div class="site-footer__contact">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"
+            stroke-linecap="round">
+            <path
+              d="M22 16.92v3a2 2 0 01-2.18 2A19.86 19.86 0 013.09 4.18 2 2 0 015.09 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.09 9.91a16 16 0 006.99 7l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" />
+          </svg>
+          <span>+7 (7172) 24 84 50</span>
+        </div>
+        <div class="site-footer__map">
+          <iframe
+            src="https://yandex.ru/map-widget/v1/?ll=71.430564%2C51.128207&z=14&pt=71.430564%2C51.128207%2Cpm2rdm&lang=ru_RU"
+            title="Карта" allowfullscreen loading="lazy"></iframe>
+        </div>
       </div>
-      <div class="site-footer__contact">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
-        <a href="mailto:kense@knpp.kz">kense@knpp.kz</a>
-      </div>
-      <div class="site-footer__contact">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.86 19.86 0 013.09 4.18 2 2 0 015.09 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.09 9.91a16 16 0 006.99 7l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-        <span>+7 (7172) 24 84 50</span>
-      </div>
-      <div class="site-footer__map">
-        <iframe src="https://yandex.ru/map-widget/v1/?ll=71.430564%2C51.128207&z=14&pt=71.430564%2C51.128207%2Cpm2rdm&lang=ru_RU" title="Карта" allowfullscreen loading="lazy"></iframe>
+      <div class="site-footer__right">
+        <h2 class="site-footer__form-title">Не нашли то что нужно?</h2>
+        <p class="site-footer__form-sub">Свяжитесь с нами</p>
+        <div class="footer-success" id="footer-success">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(245,240,233,1)" stroke-width="1.5"
+            stroke-linecap="round" style="margin:0 auto 16px">
+            <path d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+            <polyline points="22 4 12 14.01 9 11.01" />
+          </svg>
+          <p>Спасибо! Ваша заявка отправлена.</p>
+          <p style="font-size:13px;color:rgba(217,203,194,0.80);margin-top:8px">Мы свяжемся с вами в ближайшее время.
+          </p>
+          <button id="footer-reset"
+            style="margin-top:24px;padding:8px 24px;border:1px solid rgba(255,255,255,0.40);border-radius:100px;color:var(--color-muted);font-size:14px;font-weight:300;cursor:pointer;background:none;font-family:inherit">Отправить
+            ещё</button>
+        </div>
+        <form class="footer-form" id="footer-form" novalidate>
+          <input type="text" class="footer-input" placeholder="Ваше имя" required aria-label="Имя" />
+          <input type="email" class="footer-input" placeholder="Email" required aria-label="Email" />
+          <input type="tel" class="footer-input" placeholder="Номер телефона" aria-label="Телефон" />
+          <textarea class="footer-textarea" rows="4" placeholder="Ваше сообщение" aria-label="Сообщение"></textarea>
+          <button type="submit" class="btn-accent" style="align-self:flex-start">Отправить заявку</button>
+        </form>
       </div>
     </div>
-    <div class="site-footer__right">
-      <h2 class="site-footer__form-title">Не нашли то что нужно?</h2>
-      <p class="site-footer__form-sub">Свяжитесь с нами</p>
-      <div class="footer-success" id="footer-success">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(245,240,233,1)" stroke-width="1.5" stroke-linecap="round" style="margin:0 auto 16px"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-        <p>Спасибо! Ваша заявка отправлена.</p>
-        <p style="font-size:13px;color:rgba(217,203,194,0.80);margin-top:8px">Мы свяжемся с вами в ближайшее время.</p>
-        <button id="footer-reset" style="margin-top:24px;padding:8px 24px;border:1px solid rgba(255,255,255,0.40);border-radius:100px;color:var(--color-muted);font-size:14px;font-weight:300;cursor:pointer;background:none;font-family:inherit">Отправить ещё</button>
-      </div>
-      <form class="footer-form" id="footer-form" novalidate>
-        <input type="text" class="footer-input" placeholder="Ваше имя" required aria-label="Имя" />
-        <input type="email" class="footer-input" placeholder="Email" required aria-label="Email" />
-        <input type="tel" class="footer-input" placeholder="Номер телефона" aria-label="Телефон" />
-        <textarea class="footer-textarea" rows="4" placeholder="Ваше сообщение" aria-label="Сообщение"></textarea>
-        <button type="submit" class="btn-accent" style="align-self:flex-start">Отправить заявку</button>
-      </form>
-    </div>
-  </div>
-  <div class="site-footer__bar">
-    <div class="site-footer__bar-inner">
-      <p class="site-footer__credit">Разработчик <a href="#">ТОО «BenchMark Consulting»</a></p>
-      <div class="footer-socials">
-        <span>Соц. сети:</span>
-        <a href="#" class="footer-social-btn" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
-        <a href="#" class="footer-social-btn" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg></a>
+    <div class="site-footer__bar">
+      <div class="site-footer__bar-inner">
+        <p class="site-footer__credit">Разработчик <a href="#">ТОО «BenchMark Consulting»</a></p>
+        <div class="footer-socials">
+          <span>Соц. сети:</span>
+          <a href="#" class="footer-social-btn" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24"
+              fill="currentColor">
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+            </svg></a>
+          <a href="#" class="footer-social-btn" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none" />
+            </svg></a>
+        </div>
       </div>
     </div>
-  </div>
-</footer>
-<!-- /CMS: footer -->
+  </footer>
+  <!-- /CMS: footer -->
 
-<script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
+
 </html>
