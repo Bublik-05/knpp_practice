@@ -10,41 +10,59 @@
 </head>
 <body>
 
-<!-- CMS: site header -->
+<!-- CMS: shared navbar + mega menu -->
 <header class="site-header" id="site-header">
-  <div class="site-header__inner">
+  <nav class="site-header__inner" aria-label="Основная навигация">
     <!-- LEFT: burger + logos -->
     <div class="site-header__logos">
-      <button class="header-burger" id="mega-menu-btn" aria-label="Открыть меню">
-        <svg class="icon-burger" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-        <svg class="icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      <button class="header-burger" id="mega-menu-btn" aria-label="Открыть меню" aria-expanded="false" type="button">
+        <svg class="icon-burger" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+        <svg class="icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
       </button>
+
       <div class="site-header__logo-wrap">
         <a href="index.html" class="site-header__logo" aria-label="КАЭС — на главную">
           <img src="assets/images/KNPP.png" alt="КАЭС" />
         </a>
-        <div class="site-header__tooltip"><span>ТОО «Казахстанские атомные электрические станции»</span></div>
+        <div class="site-header__tooltip">
+          <span>ТОО «Казахстанские атомные электрические станции»</span>
+        </div>
       </div>
+
       <div class="site-header__partner-logo-wrap">
-        <a href="https://www.gov.kz/memleket/entities/atom-energiyasy"
-           class="site-header__partner-logo" target="_blank" rel="noopener noreferrer"
-           aria-label="Агентство РК по атомной энергии">
+        <a
+          href="https://www.gov.kz/memleket/entities/atom-energiyasy"
+          class="site-header__partner-logo"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Агентство РК по атомной энергии"
+        >
           <img src="assets/images/partners/atom-agency.png" alt="Агентство РК по атомной энергии" />
         </a>
-        <div class="site-header__tooltip"><span>Агентство РК по атомной энергии</span></div>
+        <div class="site-header__tooltip">
+          <span>Агентство РК по атомной энергии</span>
+        </div>
       </div>
     </div>
 
-    <!-- CENTER: desktop nav links -->
-    <ul class="nav-menu" aria-label="Основная навигация">
+    <!-- CENTER: desktop nav -->
+    <ul class="nav-menu">
       <li class="nav-menu__item">
-        <a href="index.html" class="nav-menu__link">Главная</a>
+        <a href="index.html" class="nav-menu__link" data-nav-page="index">Главная</a>
       </li>
+
       <li class="nav-menu__item nav-menu__item--has-drop">
-        <a href="about.html" class="nav-menu__link">О КАЭС</a>
+        <a href="about.html" class="nav-menu__link" data-nav-page="about">О КАЭС</a>
         <div class="nav-dropdown">
           <div class="nav-dropdown__bridge"></div>
-          <div class="nav-dropdown__box">
+          <div class="nav-dropdown__box nav-dropdown__box--wide">
             <div class="nav-dropdown__top">
               <a href="about.html?section=about">О компании</a>
               <a href="about.html?section=leadership">Руководство</a>
@@ -54,14 +72,21 @@
               <a href="about.html?section=documents">Документы</a>
               <a href="about.html?section=development">План развития</a>
             </div>
+            <div class="nav-dropdown__side">
+              <a href="about.html?section=about">О ТОО "КАЭС"</a>
+              <a href="about.html?section=activities">Виды деятельности ТОО «КАЭС»</a>
+              <a href="about.html?section=additional">Дополнительная информация</a>
+              <a href="about.html?section=gallery">Галерея</a>
+            </div>
           </div>
         </div>
       </li>
+
       <li class="nav-menu__item nav-menu__item--has-drop">
-        <a href="atom.html" class="nav-menu__link">Об Атоме</a>
+        <a href="atom.html" class="nav-menu__link" data-nav-page="atom">Об Атоме</a>
         <div class="nav-dropdown">
           <div class="nav-dropdown__bridge"></div>
-          <div class="nav-dropdown__box">
+          <div class="nav-dropdown__box nav-dropdown__box--wide">
             <div class="nav-dropdown__top">
               <a href="atom.html?section=history">История</a>
               <a href="atom.html?section=operation">Как работает реактор</a>
@@ -75,8 +100,9 @@
           </div>
         </div>
       </li>
+
       <li class="nav-menu__item nav-menu__item--has-drop">
-        <a href="projects.html" class="nav-menu__link">Проекты</a>
+        <a href="projects.html" class="nav-menu__link" data-nav-page="projects">Проекты</a>
         <div class="nav-dropdown">
           <div class="nav-dropdown__bridge"></div>
           <div class="nav-dropdown__box">
@@ -87,8 +113,9 @@
           </div>
         </div>
       </li>
+
       <li class="nav-menu__item nav-menu__item--has-drop">
-        <a href="procurements.html" class="nav-menu__link">Закупки</a>
+        <a href="procurements.html" class="nav-menu__link" data-nav-page="procurements">Закупки</a>
         <div class="nav-dropdown">
           <div class="nav-dropdown__bridge"></div>
           <div class="nav-dropdown__box">
@@ -101,8 +128,9 @@
           </div>
         </div>
       </li>
+
       <li class="nav-menu__item nav-menu__item--has-drop">
-        <a href="news.html" class="nav-menu__link active">Пресс-центр</a>
+        <a href="news.html" class="nav-menu__link" data-nav-page="news">Пресс-центр</a>
         <div class="nav-dropdown">
           <div class="nav-dropdown__bridge"></div>
           <div class="nav-dropdown__box">
@@ -113,47 +141,63 @@
           </div>
         </div>
       </li>
+
       <li class="nav-menu__item">
-        <a href="vacancies.html" class="nav-menu__link">Вакансии</a>
+        <a href="vacancies.html" class="nav-menu__link" data-nav-page="vacancies">Вакансии</a>
       </li>
+
       <li class="nav-menu__item">
-        <a href="faq.html" class="nav-menu__link">FAQ</a>
+        <a href="faq.html" class="nav-menu__link" data-nav-page="faq">FAQ</a>
       </li>
+
       <li class="nav-menu__item">
-        <a href="contacts.html" class="nav-menu__link">Контакты</a>
+        <a href="contacts.html" class="nav-menu__link" data-nav-page="contacts">Контакты</a>
       </li>
     </ul>
 
-    <!-- RIGHT: search + lang + mobile burger -->
+    <!-- RIGHT -->
     <div class="header-search">
-      <button class="header-search__toggle" id="search-toggle" aria-label="Поиск">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+      <div class="header-search__desktop">
+        <div class="header-search__input-wrap" id="search-wrap">
+          <input type="search" class="header-search__input" id="search-input" placeholder="Поиск..." aria-label="Поиск по сайту" />
+        </div>
+        <button class="header-search__toggle" id="search-toggle" aria-label="Поиск" type="button">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+            <circle cx="11" cy="11" r="8" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          </svg>
+        </button>
+      </div>
+
+      <button class="header-lang" type="button">Рус</button>
+
+      <button class="header-mobile-burger" id="mobile-burger" aria-label="Меню" aria-expanded="false" type="button">
+        <svg class="mobile-icon-burger" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+        <svg class="mobile-icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
         </svg>
       </button>
-      <div class="header-search__input-wrap" id="search-wrap">
-        <input type="search" class="header-search__input" id="search-input" placeholder="Поиск…" aria-label="Поиск по сайту" />
-      </div>
-      <button class="header-lang">Рус</button>
-      <button class="header-mobile-burger" id="mobile-burger" aria-label="Меню" aria-expanded="false">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-      </button>
     </div>
+  </nav>
+
+  <!-- Mobile dropdown -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html" class="mobile-menu__link" data-nav-page="index">Главная</a>
+    <a href="about.html" class="mobile-menu__link" data-nav-page="about">О КАЭС</a>
+    <a href="atom.html" class="mobile-menu__link" data-nav-page="atom">Об Атоме</a>
+    <a href="projects.html" class="mobile-menu__link" data-nav-page="projects">Проекты</a>
+    <a href="procurements.html" class="mobile-menu__link" data-nav-page="procurements">Закупки</a>
+    <a href="news.html" class="mobile-menu__link" data-nav-page="news">Пресс-центр</a>
+    <a href="vacancies.html" class="mobile-menu__link" data-nav-page="vacancies">Вакансии</a>
+    <a href="faq.html" class="mobile-menu__link" data-nav-page="faq">FAQ</a>
+    <a href="contacts.html" class="mobile-menu__link" data-nav-page="contacts">Контакты</a>
   </div>
 </header>
-
-<!-- Mobile menu -->
-<div class="mobile-menu" id="mobile-menu">
-  <a href="index.html" class="mobile-menu__link">Главная</a>
-  <a href="about.html" class="mobile-menu__link">О КАЭС</a>
-  <a href="atom.html" class="mobile-menu__link">Об Атоме</a>
-  <a href="projects.html" class="mobile-menu__link">Проекты</a>
-  <a href="procurements.html" class="mobile-menu__link">Закупки</a>
-  <a href="news.html" class="mobile-menu__link">Пресс-центр</a>
-  <a href="vacancies.html" class="mobile-menu__link">Вакансии</a>
-  <a href="faq.html" class="mobile-menu__link">FAQ</a>
-  <a href="contacts.html" class="mobile-menu__link">Контакты</a>
-</div>
 
 <!-- Mega menu backdrop -->
 <div class="mega-menu-backdrop" id="mega-menu-backdrop"></div>
@@ -163,23 +207,42 @@
   <div class="mega-menu-panel__box">
     <div class="mega-menu-panel__inner">
       <div class="mega-menu-panel__socials">
-        <a href="#" class="social-circle" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
-        <a href="#" class="social-circle" aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="white" stroke="none"/></svg></a>
-        <a href="#" class="social-circle" aria-label="TikTok"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.3 6.3 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"/></svg></a>
+        <a href="#" class="social-circle" aria-label="Facebook">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+          </svg>
+        </a>
+        <a href="#" class="social-circle" aria-label="Instagram">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+            <circle cx="12" cy="12" r="4" />
+            <circle cx="17.5" cy="6.5" r="0.5" fill="white" stroke="none" />
+          </svg>
+        </a>
+        <a href="#" class="social-circle" aria-label="TikTok">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="white">
+            <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.3 6.3 0 00-.79-.05 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z" />
+          </svg>
+        </a>
       </div>
+
       <div class="mega-menu-panel__body">
         <div class="mega-menu-panel__head">
           <span>Все разделы сайта</span>
-          <button class="mega-menu-close" id="mega-menu-close">
+          <button class="mega-menu-close" id="mega-menu-close" type="button">
             Закрыть
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round">
-              <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
             </svg>
           </button>
         </div>
+
         <div class="mega-menu-columns">
           <div class="mega-menu-col">
-            <div class="mega-menu-col__head"><a href="about.html" class="mega-menu-col__title">О КАЭС</a></div>
+            <div class="mega-menu-col__head">
+              <a href="about.html" class="mega-menu-col__title" data-nav-page="about">О КАЭС</a>
+            </div>
             <ul class="mega-menu-col__links">
               <li><a href="about.html?section=about" class="mega-menu-col__sub">О компании</a></li>
               <li><a href="about.html?section=leadership" class="mega-menu-col__sub">Руководство</a></li>
@@ -190,8 +253,11 @@
               <li><a href="about.html?section=development" class="mega-menu-col__sub">План развития</a></li>
             </ul>
           </div>
+
           <div class="mega-menu-col">
-            <div class="mega-menu-col__head"><a href="atom.html" class="mega-menu-col__title">Об Атоме</a></div>
+            <div class="mega-menu-col__head">
+              <a href="atom.html" class="mega-menu-col__title" data-nav-page="atom">Об Атоме</a>
+            </div>
             <ul class="mega-menu-col__links">
               <li><a href="atom.html?section=history" class="mega-menu-col__sub">История</a></li>
               <li><a href="atom.html?section=operation" class="mega-menu-col__sub">Как работает атомный реактор</a></li>
@@ -203,15 +269,21 @@
               <li><a href="atom.html?section=multimedia" class="mega-menu-col__sub">Мультимедиа</a></li>
             </ul>
           </div>
+
           <div class="mega-menu-col">
-            <div class="mega-menu-col__head"><a href="projects.html" class="mega-menu-col__title">Проекты</a></div>
+            <div class="mega-menu-col__head">
+              <a href="projects.html" class="mega-menu-col__title" data-nav-page="projects">Проекты</a>
+            </div>
             <ul class="mega-menu-col__links">
               <li><a href="projects.html?tab=balkhash" class="mega-menu-col__sub">АЭС «Балхаш»</a></li>
               <li><a href="projects.html?tab=mainkum" class="mega-menu-col__sub">АЭС «Мойынкум»</a></li>
             </ul>
           </div>
+
           <div class="mega-menu-col">
-            <div class="mega-menu-col__head"><a href="procurements.html" class="mega-menu-col__title">Закупки</a></div>
+            <div class="mega-menu-col__head">
+              <a href="procurements.html" class="mega-menu-col__title" data-nav-page="procurements">Закупки</a>
+            </div>
             <ul class="mega-menu-col__links">
               <li><a href="procurements.html" class="mega-menu-col__sub">Политика закупок</a></li>
               <li><a href="procurements.html" class="mega-menu-col__sub">Текущие закупки</a></li>
@@ -219,53 +291,75 @@
               <li><a href="procurements.html" class="mega-menu-col__sub">Документы и отчётность</a></li>
             </ul>
           </div>
+
           <div class="mega-menu-col">
-            <div class="mega-menu-col__head"><a href="news.html" class="mega-menu-col__title">Пресс-центр</a></div>
+            <div class="mega-menu-col__head">
+              <a href="news.html" class="mega-menu-col__title" data-nav-page="news">Пресс-центр</a>
+            </div>
             <ul class="mega-menu-col__links">
-              <li><a href="news.html" class="mega-menu-col__sub">Новости</a></li>
-              <li><a href="international-cooperation.html" class="mega-menu-col__sub">Международное сотрудничество</a></li>
-              <li><a href="president-message.html" class="mega-menu-col__sub">Послание Президента</a></li>
               <li><a href="news.html" class="mega-menu-col__sub">Календарь событий</a></li>
               <li><a href="news.html" class="mega-menu-col__sub">Мультимедиа</a></li>
             </ul>
           </div>
+
           <div class="mega-menu-col">
-            <div class="mega-menu-col__head"><a href="vacancies.html" class="mega-menu-col__title">Вакансии</a></div>
+            <div class="mega-menu-col__head">
+              <a href="vacancies.html" class="mega-menu-col__title" data-nav-page="vacancies">Вакансии</a>
+            </div>
+          </div>
+
+          <div class="mega-menu-col">
+            <div class="mega-menu-col__head">
+              <a href="faq.html" class="mega-menu-col__title" data-nav-page="faq">FAQ</a>
+            </div>
             <ul class="mega-menu-col__links">
-              <li><a href="vacancies.html" class="mega-menu-col__sub">Все вакансии</a></li>
-              <li><a href="vacancies.html#stazhirovka" class="mega-menu-col__sub">Стажировка</a></li>
+              <li><a href="faq.html" class="mega-menu-col__sub">Часто задаваемые вопросы</a></li>
             </ul>
           </div>
+
           <div class="mega-menu-col">
-            <div class="mega-menu-col__head"><a href="faq.html" class="mega-menu-col__title">FAQ</a></div>
-            <ul class="mega-menu-col__links">
-              <li><a href="faq.html?section=general" class="mega-menu-col__sub">Об АЭС и атомной энергетике</a></li>
-              <li><a href="faq.html?section=project" class="mega-menu-col__sub">О проекте в Казахстане</a></li>
-              <li><a href="faq.html?section=cooperation" class="mega-menu-col__sub">Вакансии и сотрудничество</a></li>
-            </ul>
-          </div>
-          <div class="mega-menu-col">
-            <div class="mega-menu-col__head"><a href="contacts.html" class="mega-menu-col__title">Контакты</a></div>
+            <div class="mega-menu-col__head">
+              <a href="contacts.html" class="mega-menu-col__title" data-nav-page="contacts">Контакты</a>
+            </div>
             <ul class="mega-menu-col__links">
               <li><a href="contacts.html" class="mega-menu-col__sub">Связаться с нами</a></li>
             </ul>
           </div>
+
           <div class="mega-menu-col">
-            <div class="mega-menu-col__head"><a href="president-message.html" class="mega-menu-col__title">Послание президента</a></div>
+            <div class="mega-menu-col__head">
+              <a href="president-message.html" class="mega-menu-col__title" data-nav-page="president-message">Послание президента</a>
+            </div>
             <ul class="mega-menu-col__links">
               <li><a href="president-message.html" class="mega-menu-col__sub">Послание президента</a></li>
             </ul>
           </div>
         </div>
+
         <div class="mega-menu-socials-row">
-          <a href="#" class="social-circle" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
-          <a href="#" class="social-circle" aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="white" stroke="none"/></svg></a>
-          <a href="#" class="social-circle" aria-label="TikTok"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.3 6.3 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"/></svg></a>
+          <a href="#" class="social-circle" aria-label="Facebook">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+            </svg>
+          </a>
+          <a href="#" class="social-circle" aria-label="Instagram">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.5" cy="6.5" r="0.5" fill="white" stroke="none" />
+            </svg>
+          </a>
+          <a href="#" class="social-circle" aria-label="TikTok">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="white">
+              <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.3 6.3 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z" />
+            </svg>
+          </a>
         </div>
       </div>
     </div>
   </div>
 </div>
+<!-- /CMS: shared navbar + mega menu -->
 
 <div class="header-offset">
 <div class="news-page">

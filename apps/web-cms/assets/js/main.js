@@ -23,79 +23,112 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /* ─── ACTIVE NAV LINK ─── */
 function initActiveNavLink() {
-  // Match by filename (works for both server paths and local file:// URLs)
-  const currentFile = (window.location.pathname.split('/').pop() || 'index.html');
-  document.querySelectorAll('.nav-menu__link').forEach(function (link) {
+  const currentFile = window.location.pathname.split('/').pop() || 'index.html';
+
+  let currentPage = currentFile.replace('.html', '');
+
+  if (currentPage === '') currentPage = 'index';
+  if (currentPage === 'news-detail') currentPage = 'news';
+  if (currentPage === 'vacancy-category' || currentPage === 'vacancy-detail') {
+    currentPage = 'vacancies';
+  }
+
+  document.querySelectorAll('[data-nav-page], .nav-menu__link, .mobile-menu__link, .mega-menu-col__title').forEach(function (link) {
+    const dataPage = link.getAttribute('data-nav-page');
+
+    if (dataPage) {
+      link.classList.toggle('active', dataPage === currentPage);
+      return;
+    }
+
     const href = (link.getAttribute('href') || '').split('?')[0];
     const hrefFile = href.split('/').pop() || 'index.html';
-    if (hrefFile === currentFile) link.classList.add('active');
+    let hrefPage = hrefFile.replace('.html', '');
+
+    if (hrefPage === '') hrefPage = 'index';
+
+    link.classList.toggle('active', hrefPage === currentPage);
   });
 }
 
 /* ─── MOBILE MENU ─── */
 function initMobileMenu() {
-  // New id is mobile-burger (button.header-mobile-burger)
-  const burger     = document.getElementById('mobile-burger');
+  const burger = document.getElementById('mobile-burger');
   const mobileMenu = document.getElementById('mobile-menu');
+
   if (!burger || !mobileMenu) return;
 
+  function closeMobile() {
+    mobileMenu.classList.remove('open');
+    burger.classList.remove('is-open');
+    burger.setAttribute('aria-expanded', 'false');
+  }
+
+  function openMobile() {
+    mobileMenu.classList.add('open');
+    burger.classList.add('is-open');
+    burger.setAttribute('aria-expanded', 'true');
+  }
+
   burger.addEventListener('click', function () {
-    const isOpen = mobileMenu.classList.toggle('open');
-    burger.setAttribute('aria-expanded', String(isOpen));
-    // Toggle SVG path between hamburger ☰ and close ✕
-    const svg = burger.querySelector('svg');
-    if (svg) {
-      svg.innerHTML = isOpen
-        ? '<line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>'
-        : '<line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>';
-    }
+    const isOpen = mobileMenu.classList.contains('open');
+    isOpen ? closeMobile() : openMobile();
   });
 
-  // Close on link click
   mobileMenu.querySelectorAll('a').forEach(function (link) {
-    link.addEventListener('click', function () {
-      mobileMenu.classList.remove('open');
-      burger.setAttribute('aria-expanded', 'false');
-      const svg = burger.querySelector('svg');
-      if (svg) svg.innerHTML = '<line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>';
-    });
+    link.addEventListener('click', closeMobile);
   });
 }
 
 /* ─── MEGA MENU (Burger Drawer) ─── */
 function initMegaMenu() {
-  const megaBtn     = document.getElementById('mega-menu-btn');
-  const megaPanel   = document.getElementById('mega-menu-panel');
-  const megaBackdrop= document.getElementById('mega-menu-backdrop');
-  const megaClose   = document.getElementById('mega-menu-close');
+  const megaBtn = document.getElementById('mega-menu-btn');
+  const megaPanel = document.getElementById('mega-menu-panel');
+  const megaBackdrop = document.getElementById('mega-menu-backdrop');
+  const megaClose = document.getElementById('mega-menu-close');
+
   if (!megaBtn || !megaPanel) return;
 
   function openMega() {
     megaPanel.classList.add('open');
     if (megaBackdrop) megaBackdrop.classList.add('open');
-    // Toggle burger icon: hamburger → X  (matches Next.js megaOpen state)
+
     megaBtn.classList.add('is-open');
     megaBtn.setAttribute('aria-label', 'Закрыть меню');
+    megaBtn.setAttribute('aria-expanded', 'true');
+
     document.body.style.overflow = 'hidden';
   }
 
   function closeMega() {
     megaPanel.classList.remove('open');
     if (megaBackdrop) megaBackdrop.classList.remove('open');
-    // Restore burger icon: X → hamburger
+
     megaBtn.classList.remove('is-open');
     megaBtn.setAttribute('aria-label', 'Открыть меню');
+    megaBtn.setAttribute('aria-expanded', 'false');
+
     document.body.style.overflow = '';
   }
 
-  megaBtn.addEventListener('click', function () {
+  megaBtn.addEventListener('click', function (event) {
+    event.preventDefault();
+    event.stopPropagation();
+
     megaPanel.classList.contains('open') ? closeMega() : openMega();
   });
 
-  if (megaClose)    megaClose.addEventListener('click', closeMega);
-  if (megaBackdrop) megaBackdrop.addEventListener('click', closeMega);
+  if (megaClose) {
+    megaClose.addEventListener('click', function (event) {
+      event.preventDefault();
+      closeMega();
+    });
+  }
 
-  // Close on any mega-menu link click
+  if (megaBackdrop) {
+    megaBackdrop.addEventListener('click', closeMega);
+  }
+
   megaPanel.querySelectorAll('a').forEach(function (a) {
     a.addEventListener('click', closeMega);
   });
