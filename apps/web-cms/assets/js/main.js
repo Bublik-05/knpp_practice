@@ -1,8 +1,4 @@
-/**
- * KAES — CMS-Compatible Theme
- * main.js — Vanilla JavaScript interactivity
- * No React, No Next.js, No frameworks
- */
+
 
 document.addEventListener("DOMContentLoaded", function () {
   initMobileMenu();
@@ -25,29 +21,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /* ─── ACTIVE NAV LINK ─── */
 function initActiveNavLink() {
-  const path = window.location.pathname;
+  // Match by filename (works for both server paths and local file:// URLs)
+  const currentFile = (window.location.pathname.split('/').pop() || 'index.html');
   document.querySelectorAll('.nav-menu__link').forEach(function (link) {
-    const href = link.getAttribute('href') || '';
-    const base = href.split('?')[0];
-    if (base === '/' ? path === '/' : (path === base || path.startsWith(base + '/'))) {
-      link.classList.add('active');
-    }
+    const href = (link.getAttribute('href') || '').split('?')[0];
+    const hrefFile = href.split('/').pop() || 'index.html';
+    if (hrefFile === currentFile) link.classList.add('active');
   });
 }
 
 /* ─── MOBILE MENU ─── */
 function initMobileMenu() {
-  const burger = document.getElementById('mobile-burger');
+  // New id is mobile-burger (button.header-mobile-burger)
+  const burger     = document.getElementById('mobile-burger');
   const mobileMenu = document.getElementById('mobile-menu');
   if (!burger || !mobileMenu) return;
 
   burger.addEventListener('click', function () {
     const isOpen = mobileMenu.classList.toggle('open');
-    burger.setAttribute('aria-expanded', isOpen);
-    // Toggle icon
-    const icon = burger.querySelector('svg');
-    if (icon) {
-      icon.innerHTML = isOpen
+    burger.setAttribute('aria-expanded', String(isOpen));
+    // Toggle SVG path between hamburger ☰ and close ✕
+    const svg = burger.querySelector('svg');
+    if (svg) {
+      svg.innerHTML = isOpen
         ? '<line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>'
         : '<line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>';
     }
@@ -58,34 +54,49 @@ function initMobileMenu() {
     link.addEventListener('click', function () {
       mobileMenu.classList.remove('open');
       burger.setAttribute('aria-expanded', 'false');
+      const svg = burger.querySelector('svg');
+      if (svg) svg.innerHTML = '<line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>';
     });
   });
 }
 
 /* ─── MEGA MENU (Burger Drawer) ─── */
 function initMegaMenu() {
-  const megaBtn = document.getElementById('mega-menu-btn');
-  const megaPanel = document.getElementById('mega-menu-panel');
-  const megaBackdrop = document.getElementById('mega-menu-backdrop');
-  const megaClose = document.getElementById('mega-menu-close');
+  const megaBtn     = document.getElementById('mega-menu-btn');
+  const megaPanel   = document.getElementById('mega-menu-panel');
+  const megaBackdrop= document.getElementById('mega-menu-backdrop');
+  const megaClose   = document.getElementById('mega-menu-close');
   if (!megaBtn || !megaPanel) return;
 
   function openMega() {
     megaPanel.classList.add('open');
     if (megaBackdrop) megaBackdrop.classList.add('open');
+    // Toggle burger icon: hamburger → X  (matches Next.js megaOpen state)
+    megaBtn.classList.add('is-open');
+    megaBtn.setAttribute('aria-label', 'Закрыть меню');
+    document.body.style.overflow = 'hidden';
   }
 
   function closeMega() {
     megaPanel.classList.remove('open');
     if (megaBackdrop) megaBackdrop.classList.remove('open');
+    // Restore burger icon: X → hamburger
+    megaBtn.classList.remove('is-open');
+    megaBtn.setAttribute('aria-label', 'Открыть меню');
+    document.body.style.overflow = '';
   }
 
   megaBtn.addEventListener('click', function () {
     megaPanel.classList.contains('open') ? closeMega() : openMega();
   });
 
-  if (megaClose) megaClose.addEventListener('click', closeMega);
+  if (megaClose)    megaClose.addEventListener('click', closeMega);
   if (megaBackdrop) megaBackdrop.addEventListener('click', closeMega);
+
+  // Close on any mega-menu link click
+  megaPanel.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', closeMega);
+  });
 
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape') closeMega();
@@ -452,32 +463,95 @@ function initMapSection() {
 
 /* ─── EMISSIONS CALCULATOR ─── */
 function initEmissionsCalculator() {
-  const form = document.getElementById('calc-form');
-  if (!form) return;
+  var sourceBtns   = document.querySelectorAll('.source-btn');
+  var volumeInput  = document.getElementById('calc-volume');
+  var quickVolBtns = document.querySelectorAll('.quick-vol-btn');
+  var errorEl      = document.querySelector('.calc-error');
 
-  const consumptionInput = form.querySelector('[name="consumption"]');
-  const peopleInput = form.querySelector('[name="people"]');
-  const resultEl = document.getElementById('calc-result');
-  const savedEl = document.getElementById('calc-saved');
+  if (!sourceBtns.length || !volumeInput) return;
 
-  // CO2 grams per kWh — coal: ~820, nuclear: ~12
-  const CO2_COAL = 820;
-  const CO2_NUCLEAR = 12;
+  var SOURCES = {
+    coal:    { label: 'Уголь',            factor: 820 },
+    gas:     { label: 'Газ',              factor: 490 },
+    nuclear: { label: 'Атомная энергия',  factor: 12  },
+    solar:   { label: 'Солнечная энергия',factor: 40  },
+    wind:    { label: 'Ветровая энергия', factor: 8   }
+  };
+  var CAR_TONS = 4.5;
+  var selectedSource = 'coal';
 
-  function calculate() {
-    const consumption = parseFloat(consumptionInput?.value) || 0;
-    const people = parseInt(peopleInput?.value) || 1;
-    const total = consumption * people;
-    const coalCO2 = (total * CO2_COAL / 1000).toFixed(1); // kg
-    const nuclearCO2 = (total * CO2_NUCLEAR / 1000).toFixed(1);
-    const saved = (coalCO2 - nuclearCO2).toFixed(1);
-
-    if (resultEl) resultEl.textContent = coalCO2 + ' кг CO₂';
-    if (savedEl) savedEl.textContent = 'Экономия: ' + saved + ' кг CO₂';
+  function fmt(n, dec) {
+    return new Intl.NumberFormat('ru-RU', { maximumFractionDigits: dec || 0 }).format(n);
   }
 
-  if (consumptionInput) consumptionInput.addEventListener('input', calculate);
-  if (peopleInput) peopleInput.addEventListener('input', calculate);
+  function getInsight(srcId, emissionsTons, ratioToNuclear, carsEquivalent) {
+    if (srcId === 'nuclear') {
+      return 'При выбранном объеме атомная энергия формирует низкий уровень выбросов CO₂. Это один из самых экологичных вариантов генерации и значительно чище угля и газа.';
+    }
+    if (srcId === 'wind') {
+      return 'При выбранном объеме ветровая энергия показывает один из самых низких уровней выбросов CO₂. Это значительно экологичнее ископаемых источников и сопоставимо с лучшими низкоуглеродными решениями.';
+    }
+    if (srcId === 'solar') {
+      return 'При выбранном объеме солнечная энергия формирует сравнительно низкий уровень выбросов CO₂. Это заметно лучше угля и газа, хотя атомная и ветровая энергия дают ещё более низкий углеродный след.';
+    }
+    var label = SOURCES[srcId] ? SOURCES[srcId].label.toLowerCase() : srcId;
+    return 'При выбранном объеме генерации ' + label + ' формирует значительно более высокий уровень выбросов CO₂ по сравнению с низкоуглеродными источниками. Это сопоставимо примерно с ' + fmt(carsEquivalent) + ' автомобилями в год и в ' + fmt(ratioToNuclear, 1) + ' раз больше, чем атомная энергия.';
+  }
+
+  function calculate() {
+    var volume = parseFloat(volumeInput.value);
+
+    if (!volumeInput.value.trim() || isNaN(volume) || volume <= 0) {
+      if (errorEl) errorEl.classList.add('is-visible');
+      return;
+    }
+    if (errorEl) errorEl.classList.remove('is-visible');
+
+    var src = SOURCES[selectedSource] || SOURCES.coal;
+    var emissionsKg   = volume * src.factor;
+    var emissionsTons = emissionsKg / 1000;
+    var nuclearTons   = (volume * 12) / 1000;
+    var carsEquivalent = emissionsTons / CAR_TONS;
+    var ratioToNuclear = nuclearTons > 0 ? emissionsTons / nuclearTons : 0;
+    var diffTons       = emissionsTons - nuclearTons;
+
+    var resultVal  = document.getElementById('calc-result-value');
+    var resultSub  = document.getElementById('calc-result-sub');
+    var insightTxt = document.getElementById('calc-insight-text');
+    var statRatio  = document.getElementById('stat-ratio');
+    var statDiff   = document.getElementById('stat-diff');
+    var statCars   = document.getElementById('stat-cars');
+
+    if (resultVal)  resultVal.textContent  = fmt(emissionsTons) + ' т';
+    if (resultSub)  resultSub.textContent  = src.label + ' · ' + fmt(volume) + ' МВт·ч';
+    if (insightTxt) insightTxt.textContent = getInsight(selectedSource, emissionsTons, ratioToNuclear, carsEquivalent);
+    if (statRatio)  statRatio.textContent  = selectedSource === 'nuclear' ? '1×' : fmt(ratioToNuclear, 1) + '×';
+    if (statDiff)   statDiff.textContent   = fmt(diffTons) + ' т';
+    if (statCars)   statCars.textContent   = '≈ ' + fmt(carsEquivalent);
+  }
+
+  // Source button clicks
+  sourceBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      sourceBtns.forEach(function (b) { b.classList.remove('is-active'); });
+      btn.classList.add('is-active');
+      selectedSource = btn.dataset.source || 'coal';
+      calculate();
+    });
+  });
+
+  // Quick volume preset buttons
+  quickVolBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      volumeInput.value = btn.dataset.volume;
+      calculate();
+    });
+  });
+
+  // Live update on input
+  volumeInput.addEventListener('input', calculate);
+
+  // Initial render
   calculate();
 }
 

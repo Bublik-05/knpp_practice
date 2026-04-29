@@ -111,36 +111,104 @@
   user-select: none;
 }
 
-/* ── Page hero (inner pages) ── */
+/* ── Page hero (inner pages) — matches PageHero.tsx exactly ── */
+/* relative overflow-visible bg-[#1a2f6e] minHeight:140 */
 .page-hero {
-  background: var(--color-primary);
-  color: var(--color-text-light);
-  padding: 48px var(--px-section) 40px;
+  position: relative;
+  overflow: visible;
+  background: #1a2f6e;
+  min-height: 140px;
+  isolation: isolate;
 }
 
-.page-hero__breadcrumb {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 20px;
-  font-size: 13px;
-  color: rgba(245, 240, 233, 0.55);
+/* Grid texture: absolute inset-0 overflow-hidden opacity-10 */
+.page-hero__grid {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  opacity: 0.10;
+  background-image:
+    repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(255,255,255,.4) 39px, rgba(255,255,255,.4) 40px),
+    repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(255,255,255,.4) 39px, rgba(255,255,255,.4) 40px);
 }
-.page-hero__breadcrumb a         { transition: color 0.2s; }
-.page-hero__breadcrumb a:hover   { color: var(--color-accent); }
-.page-hero__breadcrumb-sep       { color: var(--color-accent); }
-.page-hero__breadcrumb-current   { color: var(--color-accent); }
 
+/* Atom decorations: absolute pointer-events-none select-none */
+.page-hero__atom {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+}
+/* First atom: right:16% top:-50px width:430 z-index:5 rotate(25deg) */
+.page-hero__atom--first {
+  right: 16%;
+  top: -50px;
+  width: 430px;
+  z-index: 5;
+  transform: rotate(25deg);
+}
+/* Second atom: right:0% top:-40px width:600 z-index:10 scaleX(-1) rotate(25deg) */
+.page-hero__atom--second {
+  right: 0%;
+  top: -40px;
+  width: 600px;
+  z-index: 10;
+  transform: scaleX(-1) rotate(25deg);
+}
+/* Gold glow behind each atom */
+.page-hero__atom-glow {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 38%;
+  height: 38%;
+  border-radius: 999px;
+  background: rgba(224, 197, 143, 0.30);
+  filter: blur(24px);
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+/* atom image */
+.page-hero__atom img {
+  position: relative;
+  z-index: 10;
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 25px 25px rgba(0,0,0,0.25));
+}
+
+/* Inner content: relative z-20 max-w-7xl mx-auto px-4 py-10 sm:px-6 lg:px-8 md:py-12 */
+.page-hero__inner {
+  position: relative;
+  z-index: 20;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 40px 16px;
+}
+@media (min-width: 640px)  { .page-hero__inner { padding-left: 24px; padding-right: 24px; } }
+@media (min-width: 768px)  { .page-hero__inner { padding-top: 48px; padding-bottom: 48px; } }
+@media (min-width: 1024px) { .page-hero__inner { padding-left: 32px; padding-right: 32px; } }
+
+/* Title: text-3xl md:text-4xl font-bold text-white */
 .page-hero__title {
-  font-size: clamp(2rem, 4vw, 3.5rem);
-  font-weight: 700;
+  margin: 0;
+  color: #ffffff;
+  font-size: 36px;
   line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
+@media (min-width: 768px) { .page-hero__title { font-size: 40px; } }
 
-.page-hero__subtitle {
-  margin-top: 12px;
-  font-size: 18px;
-  font-weight: 300;
-  color: rgba(245, 240, 233, 0.80);
-  max-width: 640px;
+/* Responsive atom sizing */
+@media (max-width: 900px) {
+  .page-hero__atom--first { right: 22%; width: 300px; top: -30px; }
+  .page-hero__atom--second { width: 420px; top: -25px; right: -120px; }
+}
+@media (max-width: 640px) {
+  .page-hero { min-height: 120px; }
+  .page-hero__inner { padding-top: 34px; padding-bottom: 34px; }
+  .page-hero__title { font-size: 30px; }
+  .page-hero__atom--first { display: none; }
+  .page-hero__atom--second { width: 320px; right: -150px; top: -18px; }
 }

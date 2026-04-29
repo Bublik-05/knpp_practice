@@ -72,7 +72,7 @@
 
 .about-dark__atom-bg {
   position: absolute; top: -160px; right: -160px;
-  width: 800px; height: 800px;
+  width: 800px; height: auto;
   opacity: 0.35; filter: blur(2px); pointer-events: none;
 }
 
@@ -136,8 +136,7 @@
 }
 .news-section__atom-bg {
   position: absolute; bottom: -40px; left: -300px;
-  width: 1000px; height: 1000px;
-  opacity: 0.15;
+  width: 1000px; height: auto;
   transform: scaleX(-1) rotate(-20deg);
   pointer-events: none;
 }

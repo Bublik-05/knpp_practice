@@ -31,7 +31,7 @@
 
   .about-dark__layout { flex-direction: column; }
   .about-dark__left { width: 100%; }
-  .about-dark__atom-bg { width: 400px; height: 400px; opacity: 0.20; }
+  .about-dark__atom-bg { width: 400px; height: auto; opacity: 0.20; }
 
   .value-cards { grid-template-columns: 1fr; }
 

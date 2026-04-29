@@ -6,63 +6,94 @@
   <title>Об Атоме — ТОО «КАЭС»</title>
   <link rel="stylesheet" href="assets/css/main.css" />
   <link rel="stylesheet" href="assets/css/responsive.css" />
+  <link rel="stylesheet" href="assets/css/pages/atom.css" />
 </head>
 <body>
 
 <!-- CMS: site header -->
 <header class="site-header" id="site-header">
   <div class="site-header__inner">
-    <!-- Logos: KNPP + atom-agency (matches apps/web Navbar) -->
     <div class="site-header__logos">
-      <!-- Mega-menu burger — left side like apps/web -->
-      <button class="header-burger" id="mega-menu-btn" aria-label="Все разделы" title="Все разделы">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
-        </svg>
+      <button class="header-burger" id="mega-menu-btn" aria-label="Открыть меню">
+        <svg class="icon-burger" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg class="icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </button>
-
-      <!-- KNPP logo -->
       <div class="site-header__logo-wrap">
-        <a href="index.html" class="site-header__logo" aria-label="КАЭС — на главную">
-          <img src="assets/images/KNPP.png" alt="КАЭС" />
-        </a>
-        <div class="site-header__tooltip">
-          <span>ТОО «Казахстанские атомные электрические станции»</span>
-        </div>
+        <a href="index.html" class="site-header__logo" aria-label="КАЭС — на главную"><img src="assets/images/KNPP.png" alt="КАЭС" /></a>
+        <div class="site-header__tooltip"><span>ТОО «Казахстанские атомные электрические станции»</span></div>
       </div>
-
-      <!-- Atom-agency logo -->
       <div class="site-header__partner-logo-wrap">
-        <a href="https://www.gov.kz/memleket/entities/atom-energiyasy"
-           class="site-header__partner-logo" target="_blank" rel="noopener noreferrer"
-           aria-label="Агентство РК по атомной энергии">
+        <a href="https://www.gov.kz/memleket/entities/atom-energiyasy" class="site-header__partner-logo" target="_blank" rel="noopener noreferrer" aria-label="Агентство РК по атомной энергии">
           <img src="assets/images/partners/atom-agency.png" alt="Агентство РК по атомной энергии" />
         </a>
-        <div class="site-header__tooltip">
-          <span>Агентство РК по атомной энергии</span>
-        </div>
+        <div class="site-header__tooltip"><span>Агентство РК по атомной энергии</span></div>
       </div>
     </div>
-    <nav class="nav-menu" aria-label="Основная навигация">
-      <a href="index.html" class="nav-menu__link">Главная</a>
-      <a href="about.html" class="nav-menu__link">О КАЭС</a>
-      <a href="atom.html" class="nav-menu__link active">Об Атоме</a>
-      <a href="projects.html" class="nav-menu__link">Проекты</a>
-      <a href="procurements.html" class="nav-menu__link">Закупки</a>
-      <a href="news.html" class="nav-menu__link">Пресс-центр</a>
-      <a href="vacancies.html" class="nav-menu__link">Вакансии</a>
-      <a href="faq.html" class="nav-menu__link">FAQ</a>
-      <a href="contacts.html" class="nav-menu__link">Контакты</a>
-    </nav>
+
+    <ul class="nav-menu" aria-label="Основная навигация">
+      <li class="nav-menu__item"><a href="index.html" class="nav-menu__link">Главная</a></li>
+      <li class="nav-menu__item nav-menu__item--has-drop">
+        <a href="about.html" class="nav-menu__link">О КАЭС</a>
+        <div class="nav-dropdown"><div class="nav-dropdown__bridge"></div><div class="nav-dropdown__box"><div class="nav-dropdown__top">
+          <a href="about.html?section=about">О компании</a>
+          <a href="about.html?section=leadership">Руководство</a>
+          <a href="about.html?section=governance">Корп. управление</a>
+          <a href="about.html?section=safety">Безопасность</a>
+          <a href="about.html?section=compliance">Комплаенс</a>
+          <a href="about.html?section=documents">Документы</a>
+          <a href="about.html?section=development">План развития</a>
+        </div></div></div>
+      </li>
+      <li class="nav-menu__item nav-menu__item--has-drop">
+        <a href="atom.html" class="nav-menu__link active">Об Атоме</a>
+        <div class="nav-dropdown"><div class="nav-dropdown__bridge"></div><div class="nav-dropdown__box"><div class="nav-dropdown__top">
+          <a href="atom.html?section=history">История</a>
+          <a href="atom.html?section=operation">Как работает реактор</a>
+          <a href="atom.html?section=types">Типы реакторов</a>
+          <a href="atom.html?section=safety">Безопасность</a>
+          <a href="atom.html?section=environment">Атомная энергия и экология</a>
+          <a href="atom.html?section=myths">Мифы и факты об АЭС</a>
+          <a href="atom.html?section=multimedia">Интерактив</a>
+        </div></div></div>
+      </li>
+      <li class="nav-menu__item nav-menu__item--has-drop">
+        <a href="projects.html" class="nav-menu__link">Проекты</a>
+        <div class="nav-dropdown"><div class="nav-dropdown__bridge"></div><div class="nav-dropdown__box"><div class="nav-dropdown__top">
+          <a href="projects.html?tab=balkhash">АЭС «Балхаш»</a>
+          <a href="projects.html?tab=mainkum">АЭС «Мойынкум»</a>
+        </div></div></div>
+      </li>
+      <li class="nav-menu__item nav-menu__item--has-drop">
+        <a href="procurements.html" class="nav-menu__link">Закупки</a>
+        <div class="nav-dropdown"><div class="nav-dropdown__bridge"></div><div class="nav-dropdown__box"><div class="nav-dropdown__top">
+          <a href="procurements.html">Политика закупок</a>
+          <a href="procurements.html">Текущие закупки</a>
+          <a href="procurements.html">Локализация</a>
+          <a href="procurements.html">Документы</a>
+        </div></div></div>
+      </li>
+      <li class="nav-menu__item nav-menu__item--has-drop">
+        <a href="news.html" class="nav-menu__link">Пресс-центр</a>
+        <div class="nav-dropdown"><div class="nav-dropdown__bridge"></div><div class="nav-dropdown__box"><div class="nav-dropdown__top">
+          <a href="news.html">Новости</a>
+          <a href="news.html">Календарь событий</a>
+          <a href="news.html">Мультимедиа</a>
+        </div></div></div>
+      </li>
+      <li class="nav-menu__item"><a href="vacancies.html" class="nav-menu__link">Вакансии</a></li>
+      <li class="nav-menu__item"><a href="faq.html" class="nav-menu__link">FAQ</a></li>
+      <li class="nav-menu__item"><a href="contacts.html" class="nav-menu__link">Контакты</a></li>
+    </ul>
+
     <div class="header-search">
       <button class="header-search__toggle" id="search-toggle" aria-label="Поиск">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       </button>
       <div class="header-search__input-wrap" id="search-wrap">
-        <input type="search" class="header-search__input" id="search-input" placeholder="Поиск…" />
+        <input type="search" class="header-search__input" id="search-input" placeholder="Поиск…" aria-label="Поиск по сайту" />
       </div>
       <button class="header-lang">Рус</button>
-      <button class="header-burger" id="mobile-burger" aria-label="Меню" style="display:none">
+      <button class="header-mobile-burger" id="mobile-burger" aria-label="Меню" aria-expanded="false">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </button>
     </div>
@@ -72,7 +103,7 @@
 <div class="mobile-menu" id="mobile-menu">
   <a href="index.html" class="mobile-menu__link">Главная</a>
   <a href="about.html" class="mobile-menu__link">О КАЭС</a>
-  <a href="atom.html" class="mobile-menu__link">Об Атоме</a>
+  <a href="atom.html" class="mobile-menu__link active">Об Атоме</a>
   <a href="projects.html" class="mobile-menu__link">Проекты</a>
   <a href="procurements.html" class="mobile-menu__link">Закупки</a>
   <a href="news.html" class="mobile-menu__link">Пресс-центр</a>
@@ -83,312 +114,1010 @@
 
 <div class="mega-menu-backdrop" id="mega-menu-backdrop"></div>
 <div class="mega-menu-panel" id="mega-menu-panel">
-  <div class="mega-menu-panel__inner">
-    <div class="mega-menu-panel__head">
-      <span>Все разделы сайта</span>
-      <button class="mega-menu-close" id="mega-menu-close">Закрыть <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
-    </div>
-    <div class="mega-menu-columns">
-      <div class="mega-menu-col"><a href="about.html" class="mega-menu-col__title">О КАЭС</a><div class="mega-menu-col__links"><a href="about.html?section=about" class="mega-menu-col__sub">О компании</a><a href="about.html?section=leadership" class="mega-menu-col__sub">Руководство</a><a href="about.html?section=governance" class="mega-menu-col__sub">Корпоративное управление</a><a href="about.html?section=safety" class="mega-menu-col__sub">Безопасность</a><a href="about.html?section=compliance" class="mega-menu-col__sub">Комплаенс</a><a href="about.html?section=documents" class="mega-menu-col__sub">Документы</a></div></div>
-      <div class="mega-menu-col"><a href="atom.html" class="mega-menu-col__title">Об Атоме</a><div class="mega-menu-col__links"><a href="atom.html?section=history" class="mega-menu-col__sub">История атомной энергетики</a><a href="atom.html?section=operation" class="mega-menu-col__sub">Как работает АЭС</a><a href="atom.html?section=types" class="mega-menu-col__sub">Типы реакторов</a><a href="atom.html?section=safety" class="mega-menu-col__sub">Безопасность</a><a href="atom.html?section=environment" class="mega-menu-col__sub">Экология</a><a href="atom.html?section=myths" class="mega-menu-col__sub">Мифы и факты</a></div></div>
-      <div class="mega-menu-col"><a href="projects.html" class="mega-menu-col__title">Проекты</a><div class="mega-menu-col__links"><a href="projects.html?tab=balkhash" class="mega-menu-col__sub">АЭС «Балхаш»</a><a href="projects.html?tab=mainkum" class="mega-menu-col__sub">АЭС «Мойынкум»</a></div></div>
-      <div class="mega-menu-col"><a href="procurements.html" class="mega-menu-col__title">Закупки</a><div class="mega-menu-col__links"><a href="procurements.html#policy" class="mega-menu-col__sub">Политика закупок</a><a href="procurements.html#announcements" class="mega-menu-col__sub">Объявления</a><a href="procurements.html#localization" class="mega-menu-col__sub">Локализация</a><a href="procurements.html#documents" class="mega-menu-col__sub">Документы</a></div></div>
-      <div class="mega-menu-col"><a href="news.html" class="mega-menu-col__title">Пресс-центр</a><div class="mega-menu-col__links"><a href="news.html" class="mega-menu-col__sub">Новости</a><a href="international-cooperation.html" class="mega-menu-col__sub">Международное сотрудничество</a><a href="president-message.html" class="mega-menu-col__sub">Послание Президента</a></div></div>
-      <div class="mega-menu-col"><a href="vacancies.html" class="mega-menu-col__title">Вакансии</a><div class="mega-menu-col__links"><a href="vacancies.html" class="mega-menu-col__sub">Все вакансии</a><a href="vacancies.html#stazhirovka" class="mega-menu-col__sub">Стажировка</a></div></div>
-      <div class="mega-menu-col"><a href="faq.html" class="mega-menu-col__title">FAQ</a><div class="mega-menu-col__links"><a href="faq.html?section=general" class="mega-menu-col__sub">Об АЭС и атомной энергетике</a><a href="faq.html?section=project" class="mega-menu-col__sub">О проекте в Казахстане</a><a href="faq.html?section=cooperation" class="mega-menu-col__sub">Вакансии и сотрудничество</a></div></div>
-      <div class="mega-menu-col"><a href="contacts.html" class="mega-menu-col__title">Контакты</a><div class="mega-menu-col__links"><a href="contacts.html" class="mega-menu-col__sub">Связаться с нами</a></div></div>
+  <div class="mega-menu-panel__box">
+    <div class="mega-menu-panel__inner">
+      <div class="mega-menu-panel__socials">
+        <a href="#" class="social-circle" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+        <a href="#" class="social-circle" aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="white" stroke="none"/></svg></a>
+        <a href="#" class="social-circle" aria-label="TikTok"><svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.3 6.3 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"/></svg></a>
+      </div>
+      <div class="mega-menu-panel__body">
+        <div class="mega-menu-panel__head">
+          <span>Все разделы сайта</span>
+          <button class="mega-menu-close" id="mega-menu-close">Закрыть
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+        <div class="mega-menu-columns">
+          <div class="mega-menu-col">
+            <div class="mega-menu-col__head"><a href="about.html" class="mega-menu-col__title">О КАЭС</a></div>
+            <ul class="mega-menu-col__links">
+              <li><a href="about.html?section=about" class="mega-menu-col__sub">О компании</a></li>
+              <li><a href="about.html?section=leadership" class="mega-menu-col__sub">Руководство</a></li>
+              <li><a href="about.html?section=governance" class="mega-menu-col__sub">Корпоративное управление</a></li>
+              <li><a href="about.html?section=safety" class="mega-menu-col__sub">Безопасность</a></li>
+              <li><a href="about.html?section=compliance" class="mega-menu-col__sub">Комплаенс</a></li>
+              <li><a href="about.html?section=documents" class="mega-menu-col__sub">Документы</a></li>
+              <li><a href="about.html?section=development" class="mega-menu-col__sub">План развития</a></li>
+            </ul>
+          </div>
+          <div class="mega-menu-col">
+            <div class="mega-menu-col__head"><a href="atom.html" class="mega-menu-col__title active">Об Атоме</a></div>
+            <ul class="mega-menu-col__links">
+              <li><a href="atom.html?section=history" class="mega-menu-col__sub">История</a></li>
+              <li><a href="atom.html?section=operation" class="mega-menu-col__sub">Как работает атомный реактор</a></li>
+              <li><a href="atom.html?section=types" class="mega-menu-col__sub">Типы реакторов</a></li>
+              <li><a href="atom.html?section=safety" class="mega-menu-col__sub">Безопасность</a></li>
+              <li><a href="atom.html?section=environment" class="mega-menu-col__sub">Атомная энергия и экология</a></li>
+              <li><a href="atom.html?section=myths" class="mega-menu-col__sub">Мифы и факты об АЭС</a></li>
+              <li><a href="atom.html?section=multimedia" class="mega-menu-col__sub">Интерактив</a></li>
+            </ul>
+          </div>
+          <div class="mega-menu-col">
+            <div class="mega-menu-col__head"><a href="projects.html" class="mega-menu-col__title">Проекты</a></div>
+            <ul class="mega-menu-col__links">
+              <li><a href="projects.html?tab=balkhash" class="mega-menu-col__sub">АЭС «Балхаш»</a></li>
+              <li><a href="projects.html?tab=mainkum" class="mega-menu-col__sub">АЭС «Мойынкум»</a></li>
+            </ul>
+          </div>
+          <div class="mega-menu-col">
+            <div class="mega-menu-col__head"><a href="procurements.html" class="mega-menu-col__title">Закупки</a></div>
+            <ul class="mega-menu-col__links">
+              <li><a href="procurements.html" class="mega-menu-col__sub">Политика закупок</a></li>
+              <li><a href="procurements.html" class="mega-menu-col__sub">Текущие закупки</a></li>
+              <li><a href="procurements.html" class="mega-menu-col__sub">Локализация</a></li>
+            </ul>
+          </div>
+          <div class="mega-menu-col">
+            <div class="mega-menu-col__head"><a href="news.html" class="mega-menu-col__title">Пресс-центр</a></div>
+            <ul class="mega-menu-col__links">
+              <li><a href="news.html" class="mega-menu-col__sub">Новости</a></li>
+              <li><a href="international-cooperation.html" class="mega-menu-col__sub">Международное сотрудничество</a></li>
+              <li><a href="president-message.html" class="mega-menu-col__sub">Послание Президента</a></li>
+            </ul>
+          </div>
+          <div class="mega-menu-col">
+            <div class="mega-menu-col__head"><a href="vacancies.html" class="mega-menu-col__title">Вакансии</a></div>
+            <ul class="mega-menu-col__links">
+              <li><a href="vacancies.html" class="mega-menu-col__sub">Все вакансии</a></li>
+              <li><a href="faq.html" class="mega-menu-col__sub">FAQ</a></li>
+              <li><a href="contacts.html" class="mega-menu-col__sub">Контакты</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="mega-menu-socials-row">
+          <a href="#" class="social-circle" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+          <a href="#" class="social-circle" aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/></svg></a>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-<div class="header-offset">
+<div class="header-offset"></div>
 
-<div class="about-layout">
-  <aside class="about-nav" id="atom-nav">
-    <nav>
-      <button class="about-nav__item active" data-section="history">История</button>
-      <button class="about-nav__item" data-section="operation">Как работает АЭС</button>
-      <button class="about-nav__item" data-section="types">Типы реакторов</button>
-      <button class="about-nav__item" data-section="safety">Безопасность</button>
-      <button class="about-nav__item" data-section="environment">Экология</button>
-      <button class="about-nav__item" data-section="myths">Мифы и факты</button>
-    </nav>
-  </aside>
-
-  <div class="about-content" id="atom-content-area">
-    <nav class="breadcrumb">
-      <a href="index.html" class="breadcrumb__link">Главная</a>
-      <span class="breadcrumb__sep">›</span>
-      <span class="breadcrumb__link">Об Атоме</span>
-      <span class="breadcrumb__sep">›</span>
-      <span class="breadcrumb__current" id="atom-breadcrumb-label">История</span>
-    </nav>
-
-    <!-- SECTION: history -->
-    <div class="about-section" id="atom-section-history" data-label="История">
-      <h1 class="section-title-lg">История атомной энергетики</h1>
-      <div class="content-block">
-        <p class="text-body">История мирного атома началась в 1942 году, когда в Чикаго заработал первый управляемый ядерный реактор. Первая промышленная АЭС была запущена в 1954 году в Обнинске (СССР) мощностью 5 МВт.</p>
-        <p class="text-body">С тех пор атомная энергетика прошла долгий путь развития. Сегодня в мире эксплуатируется более 440 ядерных энергетических реакторов в 30 странах, которые вырабатывают около 10% мировой электроэнергии.</p>
-        <p class="text-body">Казахстан обладает богатым опытом в ядерной сфере: на территории страны находится крупнейшее в мире месторождение урана, работают ведущие научные институты ядерной физики и действует Национальный ядерный центр.</p>
-
-        <div class="timeline" style="margin-top:40px">
-          <div class="timeline-item">
-            <div class="timeline-year">1942</div>
-            <div class="timeline-body"><strong>Первый ядерный реактор</strong><p>Чикагская поленница CP-1 — первый в мире управляемый ядерный реактор под руководством Энрико Ферми.</p></div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-year">1954</div>
-            <div class="timeline-body"><strong>Первая АЭС</strong><p>Обнинская АЭС (СССР) — первая в мире атомная электростанция, подключённая к электросети.</p></div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-year">1970–е</div>
-            <div class="timeline-body"><strong>Золотой век ядерной энергетики</strong><p>Активное строительство АЭС по всему миру, развитие технологий реакторов второго поколения.</p></div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-year">2000–е</div>
-            <div class="timeline-body"><strong>Ядерный ренессанс</strong><p>Возврат интереса к атомной энергетике как к чистому источнику электроэнергии в контексте борьбы с изменением климата.</p></div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-year">Сегодня</div>
-            <div class="timeline-body"><strong>Поколение III+</strong><p>Современные реакторы с пассивными системами безопасности, обеспечивающими автономную работу до 72 часов в аварийном режиме.</p></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- SECTION: operation -->
-    <div class="about-section" id="atom-section-operation" data-label="Как работает АЭС" style="display:none">
-      <h1 class="section-title-lg">Как работает АЭС</h1>
-      <div class="content-block">
-        <p class="text-body">Атомная электростанция превращает энергию ядерного деления в электричество. Принцип работы схож с тепловой электростанцией, однако вместо сжигания топлива используется управляемая цепная реакция деления урана.</p>
-        <div class="how-it-works" style="margin-top:32px">
-          <div class="how-step"><div class="how-step__num">1</div><div><h4>Ядерная реакция</h4><p>Нейтроны расщепляют атомы урана-235, выделяя огромное количество тепловой энергии.</p></div></div>
-          <div class="how-step"><div class="how-step__num">2</div><div><h4>Теплоноситель</h4><p>Вода под давлением нагревается в активной зоне реактора и передаёт тепло во второй контур.</p></div></div>
-          <div class="how-step"><div class="how-step__num">3</div><div><h4>Генерация пара</h4><p>Во втором контуре вода превращается в пар, который раскручивает турбину.</p></div></div>
-          <div class="how-step"><div class="how-step__num">4</div><div><h4>Выработка электроэнергии</h4><p>Турбина вращает генератор, который производит электроэнергию и подаёт её в сеть.</p></div></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- SECTION: types -->
-    <div class="about-section" id="atom-section-types" data-label="Типы реакторов" style="display:none">
-      <h1 class="section-title-lg">Типы реакторов</h1>
-      <div class="content-block">
-        <p class="text-body" style="margin-bottom:32px">Существует несколько основных технологий ядерных реакторов, каждая из которых имеет свои особенности по конструкции, безопасности и применению.</p>
-        <div class="reactor-cards">
-          <div class="reactor-card">
-            <img src="assets/images/vver-1200.png" alt="ВВЭР-1200" class="reactor-card__img" />
-            <div class="reactor-card__body">
-              <h3>ВВЭР-1200</h3>
-              <p class="text-body">Водо-водяной энергетический реактор поколения III+. Мощность 1200 МВт. Оснащён пассивными системами безопасности, срок службы — 60 лет.</p>
-              <ul class="reactor-specs">
-                <li>Мощность: 1200 МВт(э)</li>
-                <li>Поколение: III+</li>
-                <li>Срок службы: 60 лет</li>
-                <li>Замедлитель: вода</li>
-              </ul>
-            </div>
-          </div>
-          <div class="reactor-card">
-            <img src="assets/images/hpr1000.png" alt="HPR-1000" class="reactor-card__img" />
-            <div class="reactor-card__body">
-              <h3>HPR-1000 (Hualong One)</h3>
-              <p class="text-body">Китайский реактор поколения III+ мощностью 1000–1200 МВт с активными и пассивными системами безопасности.</p>
-              <ul class="reactor-specs">
-                <li>Мощность: 1000–1200 МВт(э)</li>
-                <li>Поколение: III+</li>
-                <li>Срок службы: 60 лет</li>
-                <li>Замедлитель: вода</li>
-              </ul>
-            </div>
-          </div>
-          <div class="reactor-card">
-            <img src="assets/images/smr.png" alt="SMR" class="reactor-card__img" />
-            <div class="reactor-card__body">
-              <h3>SMR — малые модульные реакторы</h3>
-              <p class="text-body">Реакторы нового поколения мощностью до 300 МВт. Компактные, серийно производимые, подходят для удалённых регионов с небольшой нагрузкой.</p>
-              <ul class="reactor-specs">
-                <li>Мощность: до 300 МВт(э)</li>
-                <li>Поколение: IV</li>
-                <li>Серийное производство</li>
-                <li>Модульная конструкция</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- SECTION: safety -->
-    <div class="about-section" id="atom-section-safety" data-label="Безопасность" style="display:none">
-      <h1 class="section-title-lg">Безопасность АЭС</h1>
-      <div class="content-block">
-        <p class="text-body">Современные АЭС являются одним из наиболее безопасных способов производства электроэнергии. Атомные станции поколения III+ проектируются с многоуровневыми барьерами и пассивными системами безопасности.</p>
-        <p class="text-body">Глубокоэшелонированная защита достигается за счёт сочетания нескольких последовательных и независимых уровней, которые должны отказать прежде, чем радиация сможет нанести ущерб. Активные и пассивные системы обеспечивают автономность до 72 часов при авариях.</p>
-        <div class="info-cards-grid" style="margin-top:32px">
-          <div class="info-card info-card--accent"><h4>Физический барьер 1</h4><p>Топливная матрица и оболочка твэлов предотвращают выход продуктов деления.</p></div>
-          <div class="info-card info-card--accent"><h4>Физический барьер 2</h4><p>Корпус реактора и первый контур под давлением.</p></div>
-          <div class="info-card info-card--accent"><h4>Физический барьер 3</h4><p>Герметичная оболочка (контейнмент) из армированного бетона.</p></div>
-          <div class="info-card info-card--accent"><h4>Зона отчуждения</h4><p>Санитарно-защитная зона вокруг АЭС как дополнительный уровень защиты.</p></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- SECTION: environment -->
-    <div class="about-section" id="atom-section-environment" data-label="Экология" style="display:none">
-      <h1 class="section-title-lg">Атомная энергетика и экология</h1>
-      <div class="content-block">
-        <p class="text-body">Атомные электростанции вырабатывают электроэнергию практически без выброса парниковых газов. По совокупным выбросам CO₂ на протяжении всего жизненного цикла ядерная энергия сопоставима с ветровой и значительно чище угля или природного газа.</p>
-        <div class="emissions-compare" style="margin-top:32px">
-          <h3 class="section-subtitle">Выбросы CO₂ по источникам электроэнергии</h3>
-          <div class="emissions-bars">
-            <div class="em-bar"><span class="em-bar__label">Уголь</span><div class="em-bar__track"><div class="em-bar__fill em-bar__fill--coal" style="width:100%"></div></div><span class="em-bar__val">820 г/кВт·ч</span></div>
-            <div class="em-bar"><span class="em-bar__label">Газ</span><div class="em-bar__track"><div class="em-bar__fill em-bar__fill--gas" style="width:60%"></div></div><span class="em-bar__val">490 г/кВт·ч</span></div>
-            <div class="em-bar"><span class="em-bar__label">Солнце</span><div class="em-bar__track"><div class="em-bar__fill em-bar__fill--solar" style="width:6%"></div></div><span class="em-bar__val">41 г/кВт·ч</span></div>
-            <div class="em-bar"><span class="em-bar__label">Ветер</span><div class="em-bar__track"><div class="em-bar__fill em-bar__fill--wind" style="width:2%"></div></div><span class="em-bar__val">11 г/кВт·ч</span></div>
-            <div class="em-bar"><span class="em-bar__label">Атом</span><div class="em-bar__track"><div class="em-bar__fill em-bar__fill--nuclear" style="width:1.5%"></div></div><span class="em-bar__val">12 г/кВт·ч</span></div>
-          </div>
-          <p class="text-muted" style="margin-top:12px;font-size:0.85rem">Источник: МГЭИК, 2022. Данные о жизненном цикле с учётом строительства, добычи топлива и утилизации.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- SECTION: myths -->
-    <div class="about-section" id="atom-section-myths" data-label="Мифы и факты" style="display:none">
-      <h1 class="section-title-lg">Мифы и факты об атомной энергетике</h1>
-      <div class="content-block">
-        <div class="myths-list">
-          <div class="myth-item">
-            <div class="myth-item__header">
-              <span class="myth-badge myth-badge--myth">Миф</span>
-              <h4>АЭС взрываются как атомная бомба</h4>
-            </div>
-            <div class="myth-item__fact">
-              <span class="myth-badge myth-badge--fact">Факт</span>
-              <p>Ядерная бомба и ядерный реактор — принципиально разные устройства. Реакторное топливо содержит 3–5% урана-235, тогда как оружейный уран обогащён до 90%+. Ядерный взрыв в реакторе физически невозможен.</p>
-            </div>
-          </div>
-          <div class="myth-item">
-            <div class="myth-item__header">
-              <span class="myth-badge myth-badge--myth">Миф</span>
-              <h4>АЭС опасно радиоактивны для окружающих</h4>
-            </div>
-            <div class="myth-item__fact">
-              <span class="myth-badge myth-badge--fact">Факт</span>
-              <p>Жители вблизи АЭС получают меньше радиации, чем при рентгене. Угольные электростанции выбрасывают в атмосферу больше естественных радиоактивных элементов, чем АЭС.</p>
-            </div>
-          </div>
-          <div class="myth-item">
-            <div class="myth-item__header">
-              <span class="myth-badge myth-badge--myth">Миф</span>
-              <h4>Ядерные отходы — неразрешимая проблема</h4>
-            </div>
-            <div class="myth-item__fact">
-              <span class="myth-badge myth-badge--fact">Факт</span>
-              <p>Всё отработавшее ядерное топливо, произведённое мировой атомной промышленностью за 60 лет, уместилось бы на площади футбольного поля высотой около 10 метров. Долгосрочное хранение в геологических репозиториях — хорошо изученная технология.</p>
-            </div>
-          </div>
-          <div class="myth-item">
-            <div class="myth-item__header">
-              <span class="myth-badge myth-badge--myth">Миф</span>
-              <h4>АЭС дороже альтернативных источников</h4>
-            </div>
-            <div class="myth-item__fact">
-              <span class="myth-badge myth-badge--fact">Факт</span>
-              <p>Высокая начальная стоимость компенсируется десятилетиями стабильной, дешёвой выработки. Ядерные электростанции обеспечивают наиболее предсказуемую стоимость электроэнергии на длинном горизонте — 60–80 лет.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
+<!-- ═══════════════════════════════════════════════════════════
+     ATOM PAGE
+     ════════════════════════════════════════════════════════ -->
+<div class="atom-page">
+  <!-- Background glow -->
+  <div class="background-glow">
+    <div class="background-glow__blob background-glow__blob--1"></div>
+    <div class="background-glow__blob background-glow__blob--2"></div>
+    <div class="background-glow__blob background-glow__blob--3"></div>
   </div>
-</div>
 
-<script>
-(function() {
-  var secs = ['history','operation','types','safety','environment','myths'];
-  var labels = {history:'История',operation:'Как работает АЭС',types:'Типы реакторов',safety:'Безопасность',environment:'Экология',myths:'Мифы и факты'};
-  function activate(id) {
-    secs.forEach(function(s) {
-      var p = document.getElementById('atom-section-' + s);
-      var b = document.querySelector('[data-section="' + s + '"]');
-      if (s === id) { if(p) p.style.display=''; if(b) b.classList.add('active'); }
-      else { if(p) p.style.display='none'; if(b) b.classList.remove('active'); }
-    });
-    var cr = document.getElementById('atom-breadcrumb-label');
-    if (cr) cr.textContent = labels[id] || id;
-  }
-  document.querySelectorAll('#atom-nav .about-nav__item').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      var id = this.dataset.section;
-      history.pushState(null,'','?section='+id);
-      activate(id);
-      var el = document.getElementById('atom-content-area');
-      if(el) window.scrollTo({top: el.getBoundingClientRect().top+window.scrollY-120, behavior:'smooth'});
-    });
-  });
-  var p = new URLSearchParams(window.location.search);
-  var s = p.get('section');
-  activate(secs.includes(s) ? s : 'history');
-})();
-</script>
+  <div class="atom-page__inner">
+    <div class="atom-layout">
 
-</div><!-- /header-offset -->
+      <!-- ── LEFT NAV (AtomNav) ─────────────────────────────── -->
+      <aside class="atom-nav">
+        <div class="atom-nav__sticky">
+          <div class="atom-nav__card">
+            <button class="atom-nav__btn active" data-section="history">
+              <span>История об атомной энергии</span>
+              <svg class="atom-nav__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+            </button>
+            <button class="atom-nav__btn" data-section="operation">
+              <span>Как работает атомный реактор</span>
+              <svg class="atom-nav__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+            </button>
+            <button class="atom-nav__btn" data-section="types">
+              <span>Типы реакторов</span>
+              <svg class="atom-nav__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+            </button>
+            <button class="atom-nav__btn" data-section="safety">
+              <span>Безопасность</span>
+              <svg class="atom-nav__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+            </button>
+            <button class="atom-nav__btn" data-section="environment">
+              <span>Атомная энергия и экология</span>
+              <svg class="atom-nav__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+            </button>
+            <button class="atom-nav__btn" data-section="myths">
+              <span>Мифы и факты об АЭС</span>
+              <svg class="atom-nav__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+            </button>
+            <button class="atom-nav__btn" data-section="multimedia">
+              <span>Интерактив</span>
+              <svg class="atom-nav__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+        </div>
+      </aside>
 
-<!-- CMS: footer -->
-<footer class="site-footer">
-  <div class="site-footer__main">
-    <div class="site-footer__left">
-      <a href="index.html" class="site-footer__logo"><img src="assets/images/KNPP.png" alt="КАЭС" /></a>
-      <div class="site-footer__contact">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-        <div><p>БЦ «Аура»</p><p>Проспект Мангилик Ел, 57а</p></div>
-      </div>
-      <div class="site-footer__contact">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
-        <a href="mailto:kense@knpp.kz">kense@knpp.kz</a>
-      </div>
-      <div class="site-footer__contact">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.86 19.86 0 013.09 4.18 2 2 0 015.09 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L9.09 9.91a16 16 0 006.99 7l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-        <span>+7 (7172) 24 84 50</span>
-      </div>
-      <div class="site-footer__map">
-        <iframe src="https://yandex.ru/map-widget/v1/?ll=71.430564%2C51.128207&z=14&pt=71.430564%2C51.128207%2Cpm2rdm&lang=ru_RU" title="Карта" allowfullscreen loading="lazy"></iframe>
-      </div>
-    </div>
-    <div class="site-footer__right">
-      <h2 class="site-footer__form-title">Не нашли то что нужно?</h2>
-      <p class="site-footer__form-sub">Свяжитесь с нами</p>
-      <div class="footer-success" id="footer-success">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="rgba(245,240,233,1)" stroke-width="1.5" stroke-linecap="round" style="margin:0 auto 16px"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-        <p>Спасибо! Ваша заявка отправлена.</p>
-        <p style="font-size:13px;color:rgba(217,203,194,0.80);margin-top:8px">Мы свяжемся с вами в ближайшее время.</p>
-        <button id="footer-reset" style="margin-top:24px;padding:8px 24px;border:1px solid rgba(255,255,255,0.40);border-radius:100px;color:var(--color-muted);font-size:14px;font-weight:300;cursor:pointer;background:none;font-family:inherit">Отправить ещё</button>
-      </div>
-      <form class="footer-form" id="footer-form" novalidate>
-        <input type="text" class="footer-input" placeholder="Ваше имя" required aria-label="Имя" />
-        <input type="email" class="footer-input" placeholder="Email" required aria-label="Email" />
-        <input type="tel" class="footer-input" placeholder="Номер телефона" aria-label="Телефон" />
-        <textarea class="footer-textarea" rows="4" placeholder="Ваше сообщение" aria-label="Сообщение"></textarea>
-        <button type="submit" class="btn-accent" style="align-self:flex-start">Отправить заявку</button>
-      </form>
-    </div>
-  </div>
-  <div class="site-footer__bar">
-    <div class="site-footer__bar-inner">
-      <p class="site-footer__credit">Разработчик <a href="#">ТОО «BenchMark Consulting»</a></p>
-      <div class="footer-socials">
-        <span>Соц. сети:</span>
-        <a href="#" class="footer-social-btn" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
-        <a href="#" class="footer-social-btn" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg></a>
-      </div>
-    </div>
-  </div>
-</footer>
-<!-- /CMS: footer -->
+      <!-- ── RIGHT CONTENT ──────────────────────────────────── -->
+      <div class="atom-content" id="atom-content-top">
+        <!-- Breadcrumb -->
+        <nav class="atom-breadcrumb" id="atom-breadcrumb" aria-label="Навигация">
+          <a href="atom.html">Об Атоме</a>
+          <span class="atom-breadcrumb__sep">›</span>
+          <span class="atom-breadcrumb__current" id="atom-breadcrumb-current">История об атомной энергии</span>
+        </nav>
+
+        <!-- Section title -->
+        <h1 class="atom-title" id="atom-section-title">История об атомной энергии</h1>
+
+        <!-- ════════════════════════════════════════════════
+             SECTION: HISTORY
+             ════════════════════════════════════════════ -->
+        <div id="section-history" class="atom-section active">
+          <p class="atom-lead">
+            Атомная отрасль Казахстана имеет долгую и насыщенную историю,
+            начавшуюся ещё в советский период и продолжающуюся по настоящее время.
+            Ниже представлен таймлайн ключевых этапов развития отрасли:
+            от первых урановых месторождений и исследовательских реакторов
+            до запуска современной программы атомной энергетики.
+          </p>
+
+          <div class="history-layout">
+            <!-- Left timeline -->
+            <div class="history-timeline" id="history-timeline">
+              <div class="history-timeline__line"></div>
+              <div class="history-timeline__pill" id="history-pill"></div>
+              <div class="history-timeline__rows" id="history-rows"></div>
+            </div>
+            <!-- Right content -->
+            <div class="history-content" id="history-content">
+              <div class="history-card" id="history-card"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ════════════════════════════════════════════════
+             SECTION: OPERATION
+             ════════════════════════════════════════════ -->
+        <div id="section-operation" class="atom-section">
+          <div class="atom-stack">
+            <p class="atom-text">
+              Атомный реактор — это установка, где происходит контролируемая цепная реакция деления урана.
+            </p>
+
+            <div class="operation-image">
+              <img src="assets/images/working_atom_reactor.png" alt="Атомный реактор" />
+            </div>
+
+            <div>
+              <h3 class="atom-subtitle">Как он работает:</h3>
+              <ol class="atom-ol">
+                <li>Топливо (урановые стержни) делится, выделяя тепло</li>
+                <li>Вода в реакторе нагревается и превращается в пар</li>
+                <li>Пар вращает турбину, соединённую с генератором, который вырабатывает электричество</li>
+                <li>После этого пар охлаждается и снова используется в цикле</li>
+                <li>Электричество через линии электропередач подаётся в город</li>
+              </ol>
+            </div>
+
+            <div class="atom-stack-sm">
+              <p class="atom-text-light">
+                Безопасность реактора обеспечивают многоуровневые системы защиты,
+                такие как двойная герметичная оболочка, комбинация пассивных и
+                активных систем защиты, включая систему охлаждения и аварийную остановку.
+              </p>
+              <p class="atom-text-light">
+                Скорость реакции регулируют специальные управляющие стержни — они поглощают избыточные нейтроны.
+              </p>
+              <p class="atom-text-light">
+                Принцип работы: атомная энергия превращается в тепло, а затем — в электричество.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ════════════════════════════════════════════════
+             SECTION: TYPES
+             ════════════════════════════════════════════ -->
+        <div id="section-types" class="atom-section">
+          <div class="atom-stack">
+            <h2 class="atom-heading-3">Типы реакторов, рассматриваемых для Казахстана</h2>
+            <p class="atom-text">
+              Ниже представлены основные типы реакторов, которые рассматриваются в
+              качестве возможных вариантов для строительства атомной электростанции в Казахстане.
+            </p>
+
+            <div class="reactor-tabs">
+              <button class="reactor-tab active" data-reactor="vver">ВВЭР-1200</button>
+              <button class="reactor-tab" data-reactor="hpr">HPR1000</button>
+              <button class="reactor-tab" data-reactor="mmr">ММР</button>
+            </div>
+
+            <!-- VVER panel -->
+            <div class="reactor-panel active" id="reactor-vver">
+              <div class="reactor-panel__grid">
+                <div>
+                  <h3 class="reactor-panel__title">Водо-водяной реактор (ВВЭР-1200, Россия)</h3>
+                  <div class="reactor-specs">
+                    <p><strong>Поколение:</strong> III+</p>
+                    <p><strong>Разработчик:</strong> Росатом (Россия)</p>
+                    <p><strong>Тепловая мощность:</strong> 3300 МВт(т)</p>
+                    <p><strong>Электрическая мощность:</strong> 1200 МВт(э)</p>
+                    <p><strong>Активная зона:</strong> 163 топливных сборок ТВС</p>
+                    <p><strong>Схема:</strong> четырехпетлевая</p>
+                    <p><strong>Топливный цикл:</strong> 12–18 месяцев (возможность продления)</p>
+                  </div>
+                  <p class="reactor-desc">
+                    ВВЭР сочетает активные и пассивные системы безопасности, обеспечивая устойчивую работу
+                    даже при потере внешнего электропитания. Конструкция соответствует международным
+                    стандартам МАГАТЭ для установок поколения III+.
+                  </p>
+                  <div class="reactor-deployed">
+                    <p><strong>Введён в эксплуатацию:</strong> Россия, Беларусь</p>
+                    <p><strong>Строится:</strong> Египет, Бангладеш, Венгрия, Китай</p>
+                  </div>
+                </div>
+                <div>
+                  <div class="reactor-image-box">
+                    <img src="assets/images/vver-1200.png" alt="ВВЭР-1200" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- HPR panel -->
+            <div class="reactor-panel" id="reactor-hpr">
+              <div class="reactor-panel__grid">
+                <div>
+                  <h3 class="reactor-panel__title">Водо-водяной реактор под давлением (HPR1000, Китай)</h3>
+                  <div class="reactor-specs">
+                    <p><strong>Поколение:</strong> III+</p>
+                    <p><strong>Разработчик:</strong> CNNC (Китай)</p>
+                    <p><strong>Тепловая мощность:</strong> 3050 МВт(т)</p>
+                    <p><strong>Электрическая мощность:</strong> 1200 МВт(э)</p>
+                    <p><strong>Активная зона:</strong> 177 топливных сборок CF3 (UO₂)</p>
+                    <p><strong>Схема:</strong> трёхпетлевая</p>
+                    <p><strong>Топливный цикл:</strong> 18 месяцев (возможность продления)</p>
+                  </div>
+                  <p class="reactor-desc">
+                    HPR1000 сочетает активные и пассивные системы безопасности, обеспечивая устойчивую работу
+                    даже при потере внешнего электропитания. Конструкция соответствует международным стандартам МАГАТЭ.
+                  </p>
+                  <div class="reactor-deployed">
+                    <p><strong>Введён в эксплуатацию:</strong></p>
+                    <ul>
+                      <li>Китай — Fuqing-5, Fuqing-6, Fangchenggang-3, Fangchenggang-4, Zhangzhou-1</li>
+                      <li>Пакистан — Karachi-2, Karachi-3</li>
+                    </ul>
+                  </div>
+                </div>
+                <div>
+                  <div class="reactor-image-box">
+                    <img src="assets/images/hpr1000.png" alt="HPR1000" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- MMR panel -->
+            <div class="reactor-panel" id="reactor-mmr">
+              <div class="reactor-panel__grid">
+                <div>
+                  <h3 class="reactor-panel__title">Малый модульный реактор</h3>
+                  <ul class="reactor-points">
+                    <li>Реакторы мощностью до 300 МВт по определению МАГАТЭ</li>
+                    <li>Отличаются модульной конструкцией, малой мощностью и высокой безопасностью</li>
+                    <li>Оснащены пассивными системами безопасности и имеют упрощённую конструкцию</li>
+                    <li>Первые ММР уже работают: плавучая АЭС «Академик Ломоносов» (Россия) и HTR-PM (Китай, 210 МВт)</li>
+                    <li>Рассматриваются как перспективное решение для удалённых и арктических регионов</li>
+                    <li>В настоящее время в разработке находится более 80 концепций ММР</li>
+                  </ul>
+                </div>
+                <div>
+                  <div class="reactor-image-box">
+                    <img src="assets/images/smr.png" alt="Малый модульный реактор" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ════════════════════════════════════════════════
+             SECTION: SAFETY
+             ════════════════════════════════════════════ -->
+        <div id="section-safety" class="atom-section">
+          <div class="atom-stack">
+            <h2 class="atom-heading-3">Безопасность современных АЭС: ядерная, радиационная и физическая защита</h2>
+
+            <div class="atom-stack-sm">
+              <p class="atom-text-light">
+                Современные атомные электростанции представляют собой высокотехнологичные объекты,
+                где безопасность является приоритетным принципом проектирования, строительства и эксплуатации.
+                Сегодня АЭС поколения III и III+ оснащены активными и пассивными системами безопасности,
+                множественными барьерами и системами мониторинга, минимизирующими риски ядерных и радиационных аварий.
+              </p>
+              <p class="atom-text-light">
+                Риск аварии не превышает 1:10 миллионов в год. Устойчивость современных проектов может достигать землетрясений до 9 баллов.
+              </p>
+              <p class="atom-text-light">
+                Согласно данным МАГАТЭ, риск серьёзных аварий на современных реакторах крайне низок и продолжает снижаться благодаря строгому регулированию и инновациям.
+              </p>
+            </div>
+
+            <div class="safety-list">
+              <div class="safety-item" data-safety-id="nuclear">
+                <button class="safety-item__btn">
+                  <div class="safety-item__left">
+                    <span class="safety-item__num">01</span>
+                    <h3 class="safety-item__title">Ядерная безопасность</h3>
+                  </div>
+                  <span class="safety-item__chevron">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+                  </span>
+                </button>
+                <div class="safety-item__body">
+                  <div class="safety-item__body-inner">
+                    <div class="safety-item__content">
+                      <p>Ядерная безопасность направлена на предотвращение аварий и контроль цепной реакции.
+                      Современные реакторы имеют до четырёх барьеров защиты: топливную матрицу,
+                      оболочку топлива, герметичный корпус реактора и защитную оболочку.
+                      Эти барьеры предотвращают утечку продуктов деления даже при потере электропитания или охлаждения.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="safety-item" data-safety-id="radiation">
+                <button class="safety-item__btn">
+                  <div class="safety-item__left">
+                    <span class="safety-item__num">02</span>
+                    <h3 class="safety-item__title">Радиационная безопасность</h3>
+                  </div>
+                  <span class="safety-item__chevron">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+                  </span>
+                </button>
+                <div class="safety-item__body">
+                  <div class="safety-item__body-inner">
+                    <div class="safety-item__content">
+                      <p>Радиационная безопасность направлена на минимизацию доз облучения для работников,
+                      населения и окружающей среды. Современные АЭС используют многоуровневый мониторинг:
+                      дозиметры в реальном времени, системы радиационного контроля на выходе и автоматизированные барьеры.</p>
+                      <p>Эффективная доза для персонала на АЭС не превышает 20 мЗв в год, а для населения — менее 1 мЗв/год сверх естественного фона.</p>
+                      <p>Глобально, по данным Всемирной ядерной ассоциации, радиационный фон от АЭС сопоставим
+                      с естественным фоном от космоса и почвы и ниже, чем от медицинских процедур или полётов на самолётах.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="safety-item" data-safety-id="physical">
+                <button class="safety-item__btn">
+                  <div class="safety-item__left">
+                    <span class="safety-item__num">03</span>
+                    <h3 class="safety-item__title">Ядерная физическая безопасность</h3>
+                  </div>
+                  <span class="safety-item__chevron">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+                  </span>
+                </button>
+                <div class="safety-item__body">
+                  <div class="safety-item__body-inner">
+                    <div class="safety-item__content">
+                      <p>Ядерная физическая безопасность охватывает меры против терроризма,
+                      кражи ядерных материалов и несанкционированного доступа к ним.
+                      В отличие от ядерной безопасности, которая направлена на предотвращение аварий,
+                      физическая безопасность ориентирована на угрозы, связанные с деятельностью человека.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="safety-item" data-safety-id="resilience">
+                <button class="safety-item__btn">
+                  <div class="safety-item__left">
+                    <span class="safety-item__num">04</span>
+                    <h3 class="safety-item__title">Устойчивость и международные стандарты</h3>
+                  </div>
+                  <span class="safety-item__chevron">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+                  </span>
+                </button>
+                <div class="safety-item__body">
+                  <div class="safety-item__body-inner">
+                    <div class="safety-item__content">
+                      <p>Современные проекты АЭС разрабатываются с учётом внешних воздействий,
+                      включая землетрясения, наводнения, потерю электроснабжения и другие экстремальные события.
+                      Заявленная устойчивость современных решений может достигать землетрясений до 9 баллов,
+                      при этом параметры защиты определяются отдельно для каждой площадки по результатам
+                      инженерных изысканий, национальных требований и международных стандартов.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="safety-item" data-safety-id="prospects">
+                <button class="safety-item__btn">
+                  <div class="safety-item__left">
+                    <span class="safety-item__num">05</span>
+                    <h3 class="safety-item__title">Перспективы и вызовы</h3>
+                  </div>
+                  <span class="safety-item__chevron">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+                  </span>
+                </button>
+                <div class="safety-item__body">
+                  <div class="safety-item__body-inner">
+                    <div class="safety-item__content">
+                      <p>Современные АЭС демонстрируют высокий уровень безопасности благодаря
+                      многоуровневым системам, строгому регулированию и непрерывному совершенствованию.
+                      Безопасность АЭС — это комбинация национальных норм, технологий, человеческого фактора
+                      и международных стандартов, обеспечивающая надёжную защиту без компромиссов
+                      для здоровья людей и окружающей среды.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ════════════════════════════════════════════════
+             SECTION: ENVIRONMENT
+             ════════════════════════════════════════════ -->
+        <div id="section-environment" class="atom-section">
+          <div class="env-stack">
+            <div class="env-intro">
+              <h2 class="atom-heading-3">Атомная энергия и экология</h2>
+              <p class="atom-text-light">Атомная энергия — один из самых экологически чистых источников электроэнергии.</p>
+            </div>
+
+            <ul class="atom-list">
+              <li>При выработке 1 кВт⋅ч атомная станция выделяет всего около 12 граммов CO₂,
+                  что в десятки раз меньше, чем угольные или газовые станции.</li>
+              <li>Одна АЭС мощностью 1000 МВт предотвращает выброс до 4 миллионов тонн CO₂ в год —
+                  это эквивалентно удалению с дорог около 1 миллиона автомобилей.</li>
+              <li>Такой эффект сопоставим с очисткой воздуха, которую обеспечивают 200 миллионов деревьев,
+                  или с сохранением сотен тысяч гектаров леса.</li>
+              <li>Развитие атомной энергетики помогает Казахстану сокращать углеродный след
+                  и защищать окружающую среду для будущих поколений.</li>
+            </ul>
+
+            <!-- CO2 Calculator -->
+            <div class="env-calculator">
+              <div>
+                <h3 class="env-calc-title">Онлайн-калькулятор выбросов CO₂</h3>
+                <p class="env-calc-desc">Сравните выбросы CO₂ при одинаковом объеме генерации для разных источников энергии.</p>
+              </div>
+
+              <div class="env-calc-grid">
+                <!-- Form -->
+                <div class="env-form-panel">
+                  <div>
+                    <label class="env-form-label" for="env-source">Источник энергии</label>
+                    <select id="env-source" class="env-form-select">
+                      <option value="coal">Уголь</option>
+                      <option value="gas">Газ</option>
+                      <option value="nuclear">Атомная энергия</option>
+                      <option value="solar">Солнечная энергия</option>
+                      <option value="wind">Ветровая энергия</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="env-form-label" for="env-volume">Объем электроэнергии, МВт·ч</label>
+                    <input id="env-volume" type="number" min="0" step="1" value="1000" placeholder="Например: 1000" class="env-form-input" />
+                  </div>
+                  <div id="env-error" class="env-form-error" style="display:none"></div>
+                  <div class="env-form-btns">
+                    <button class="env-btn-calc" id="env-calc-btn">Рассчитать</button>
+                    <button class="env-btn-reset" id="env-reset-btn">Сбросить</button>
+                  </div>
+                  <div class="env-note">
+                    <p>Расчет является ориентировочным и основан на усредненных коэффициентах выбросов.
+                       Фактические значения могут отличаться в зависимости от технологий и условий эксплуатации.</p>
+                  </div>
+                </div>
+
+                <!-- Results -->
+                <div class="env-results">
+                  <div class="env-result-main">
+                    <p class="env-result-label">Выбросы CO₂</p>
+                    <p class="env-result-value" id="env-result-value">820 т</p>
+                    <p class="env-result-sub" id="env-result-sub">Уголь · 1 000 МВт·ч</p>
+                  </div>
+
+                  <div class="env-insight">
+                    <h4>Пояснение</h4>
+                    <p id="env-insight-text">При выбранном объеме генерации уголь формирует значительно более высокий уровень выбросов CO₂ по сравнению с низкоуглеродными источниками.</p>
+                  </div>
+
+                  <div class="env-stats-grid">
+                    <div class="env-stat-card">
+                      <p class="label">Сравнение с атомной энергией</p>
+                      <p class="value" id="env-ratio">68,3×</p>
+                      <p class="note">Это во столько раз больше, чем у атомной энергии при том же объеме.</p>
+                    </div>
+                    <div class="env-stat-card">
+                      <p class="label">Эквивалент автомобилей</p>
+                      <p class="value" id="env-cars">≈ 182</p>
+                      <p class="note">Принято из расчета 4.5 тонны CO₂ на 1 автомобиль в год.</p>
+                    </div>
+                  </div>
+
+                  <div class="env-compare-card">
+                    <div class="env-compare-header">
+                      <h4>Сравнение по источникам</h4>
+                      <span id="env-compare-volume">при 1 000 МВт·ч</span>
+                    </div>
+                    <div class="env-compare-list" id="env-compare-list">
+                      <!-- filled by JS -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ════════════════════════════════════════════════
+             SECTION: MYTHS
+             ════════════════════════════════════════════ -->
+        <div id="section-myths" class="atom-section">
+          <div class="atom-stack">
+            <h2 class="atom-heading-3">Мифы и факты об АЭС</h2>
+            <p class="atom-text-light">Распространённые мифы об атомной энергетике и краткие факты, которые им противостоят.</p>
+
+            <div class="myths-list">
+              <div class="myth-card">
+                <p class="myth-card__myth">Миф: Рядом с АЭС жить опасно — она «фонит»</p>
+                <p class="myth-card__fact"><span class="myth-card__fact-label">Факт:</span> Доза радиации от станции минимальна и безопасна.</p>
+              </div>
+              <div class="myth-card">
+                <p class="myth-card__myth">Миф: АЭС может взорваться, как Чернобыль</p>
+                <p class="myth-card__fact"><span class="myth-card__fact-label">Факт:</span> Современные реакторы имеют многоуровневую защиту — автоматическое выключение, пассивное охлаждение, герметичный контайнмент. Риск аварии не превышает 1:10 миллионов в год.</p>
+              </div>
+              <div class="myth-card">
+                <p class="myth-card__myth">Миф: Радиация загрязняет продукты и воздух</p>
+                <p class="myth-card__fact"><span class="myth-card__fact-label">Факт:</span> Все выбросы и отходы находятся под строгим контролем, внешняя среда не получает загрязнений.</p>
+              </div>
+              <div class="myth-card">
+                <p class="myth-card__myth">Миф: Работать на АЭС вредно</p>
+                <p class="myth-card__fact"><span class="myth-card__fact-label">Факт:</span> Персонал защищён, уровень облучения значительно ниже международных норм.</p>
+              </div>
+              <div class="myth-card">
+                <p class="myth-card__myth">Миф: Любая радиация смертельна</p>
+                <p class="myth-card__fact"><span class="myth-card__fact-label">Факт:</span> Радиация — естественная часть природы. Малые дозы безопасны для человека.</p>
+              </div>
+              <div class="myth-card">
+                <p class="myth-card__myth">Миф: АЭС вредят экологии</p>
+                <p class="myth-card__fact"><span class="myth-card__fact-label">Факт:</span> Атомные станции не выбрасывают CO₂ и считаются экологически чистым источником энергии.</p>
+              </div>
+              <div class="myth-card">
+                <p class="myth-card__myth">Миф: АЭС может выйти из строя во время землетрясения и повлечь плохие последствия</p>
+                <p class="myth-card__fact"><span class="myth-card__fact-label">Факт:</span> Системы безопасности современных АЭС рассчитаны на землетрясения до 9 баллов и способны остановить реактор без угрозы для окружающей среды.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ════════════════════════════════════════════════
+             SECTION: MULTIMEDIA / QUIZ
+             ════════════════════════════════════════════ -->
+        <div id="section-multimedia" class="atom-section">
+          <div class="quiz-card">
+            <p class="quiz-label">Проверь свои знания</p>
+            <h2 class="quiz-card-title">Викторина об атомной энергетике</h2>
+
+            <!-- Quiz question view -->
+            <div id="quiz-question-view">
+              <div class="quiz-progress-row">
+                <span id="quiz-q-counter">Вопрос 1 из 7</span>
+                <span id="quiz-q-pct">0%</span>
+              </div>
+              <div class="quiz-progress-track">
+                <div class="quiz-progress-fill" id="quiz-progress-fill" style="width:0%"></div>
+              </div>
+              <div class="quiz-question-box">
+                <h4 class="quiz-question-text" id="quiz-question-text"></h4>
+                <div class="quiz-options" id="quiz-options"></div>
+              </div>
+            </div>
+
+            <!-- Quiz result view -->
+            <div id="quiz-result-view" style="display:none">
+              <div class="quiz-result-box">
+                <div class="quiz-score"><span id="quiz-score-num">0</span><span> / 7</span></div>
+                <p class="quiz-result-text" id="quiz-result-text"></p>
+                <div class="quiz-review" id="quiz-review"></div>
+                <button class="quiz-reset-btn" id="quiz-reset-btn">Пройти заново</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- .atom-content -->
+    </div><!-- .atom-layout -->
+  </div><!-- .atom-page__inner -->
+</div><!-- .atom-page -->
 
 <script src="assets/js/main.js"></script>
+<script>
+/* ============================================================
+   Atom page — inline JS
+   Handles: section nav, history timeline, reactor tabs,
+            safety accordion, CO2 calculator, quiz
+   ============================================================ */
+
+/* ─── Section switching ────────────────────────────────────── */
+var SECTION_LABELS = {
+  history:     'История об атомной энергии',
+  operation:   'Как работает атомный реактор',
+  types:       'Типы реакторов',
+  safety:      'Безопасность',
+  environment: 'Атомная энергия и экология',
+  myths:       'Мифы и факты об АЭС',
+  multimedia:  'Интерактив'
+};
+var VALID_SECTIONS = Object.keys(SECTION_LABELS);
+
+function activateSection(id) {
+  if (VALID_SECTIONS.indexOf(id) === -1) id = 'history';
+
+  // Nav buttons
+  document.querySelectorAll('.atom-nav__btn').forEach(function(btn) {
+    btn.classList.toggle('active', btn.dataset.section === id);
+  });
+
+  // Sections
+  document.querySelectorAll('.atom-section').forEach(function(sec) {
+    sec.classList.toggle('active', sec.id === 'section-' + id);
+  });
+
+  // Title + breadcrumb
+  var label = SECTION_LABELS[id] || '';
+  document.getElementById('atom-section-title').textContent = label;
+  document.getElementById('atom-breadcrumb-current').textContent = label;
+
+  // URL (without reload)
+  if (history.replaceState) {
+    var url = 'atom.html?section=' + id;
+    history.replaceState(null, '', url);
+  }
+
+  // Scroll to top of content
+  var top = document.getElementById('atom-content-top');
+  if (top) {
+    var y = top.getBoundingClientRect().top + window.scrollY - 300;
+    window.scrollTo({ top: Math.max(0, y), behavior: 'auto' });
+  }
+}
+
+// Nav button clicks
+document.querySelectorAll('.atom-nav__btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    activateSection(btn.dataset.section);
+  });
+});
+
+// Read ?section= param on load
+(function() {
+  var params = new URLSearchParams(window.location.search);
+  var sec = params.get('section');
+  activateSection(sec || 'history');
+})();
+
+/* ─── History Timeline ─────────────────────────────────────── */
+var HISTORY_DATA = [
+  { year: '1950–1956', title: 'Начало атомной эры', events: ['Обнаружено первое урановое месторождение — Кордай (Жамбылская обл.)','Создание Семипалатинск-21, научных лабораторий (г. Курчатов)','Старт промышленной добычи урана в КазССР'] },
+  { year: '1956–1959', title: 'Исследовательские реакторы и испытательные площадки', events: ['Начало работ по созданию исследовательских реакторов и испытательных площадок'] },
+  { year: '1960–1965', title: 'Рост промышленности и науки', events: ['Пуск и выход на проектную мощность реактора ИГР (импульсный графитовый реактор)','Разработка урановых бассейнов Шу-Сарысу','Создание урановой геологии как отрасли'] },
+  { year: '1966–1969', title: 'Расширение предприятий', events: ['Расширение предприятий, рост доли Казахстана в уране СССР'] },
+  { year: '1970–1972', title: 'Подземное выщелачивание', events: ['Развитие технологий подземного выщелачивания'] },
+  { year: '1973', title: 'Запуск БН-350', events: ['Запуск БН-350 в Актау — реактор для производства энергии и опреснения воды'] },
+  { year: '1972–1975', title: 'Исследовательский реактор ИВГ.1', events: ['Пуск исследовательского реактора ИВГ.1'] },
+  { year: '1974–1979', title: 'Расширение институтов и контроля', events: ['Рост добычи урана, расширение институтов','Создание систем радиационного контроля по добыче урана'] },
+  { year: '1980–1985', title: 'Крупный производитель урана', events: ['Казахстан — один из крупнейших производителей урана в СССР','Развитие реакторных исследовательских программ'] },
+  { year: '1986–1988', title: 'Радиационный контроль', events: ['Усиление радиационного контроля после Чернобыля','Исследования на Семипалатинском полигоне'] },
+  { year: '1989–1991', title: 'Закрытие Семипалатинского полигона', events: ['1989 г. — движение «Невада-Семей»','1990 г. — ограничение испытаний, подготовка к закрытию','1991 г. — 29 августа полигон закрыт окончательно'] },
+  { year: '1991–1992', title: 'Независимость и разоружение', events: ['Казахстан наследует 1410 ядерных стратегических зарядов','Принятие решения стать безъядерным государством'] },
+  { year: '1993', title: 'Присоединение к ДНЯО', events: ['Присоединение к Договору о нераспространении ядерного оружия (ДНЯО)'] },
+  { year: '1994', title: 'Программа «Нанна-Лугара»', events: ['Программа «Нанна-Лугара: безопасность и утилизация»'] },
+  { year: '1995', title: 'Вывоз ядерных зарядов', events: ['Полный вывоз ядерных стратегических зарядов в РФ'] },
+  { year: '1996', title: 'Реорганизация отрасли', events: ['Реорганизация урановой отрасли'] },
+  { year: '1997', title: 'Создание «Казатомпром»', events: ['Создание национальной атомной компании Казахстана «Казатомпром»'] },
+  { year: '1998–1999', title: 'Переходные годы и международные соглашения', events: ['Переходные годы перед масштабным внедрением технологии ISL — экологичный метод добычи урана','Первые международные соглашения'] },
+  { year: '2000', title: 'Рост добычи и топливный кластер', events: ['Рост добычи и создание топливного кластера','Казахстан выходит в мировые лидеры'] },
+  { year: '2001–2004', title: 'Геологоразведка и совместные предприятия', events: ['Новый этап геологоразведки и открытия урановых месторождений','Создание совместных уранодобывающих предприятий с международными корпорациями'] },
+  { year: '2005–2007', title: 'Масштабное расширение добычи', events: ['Масштабное расширение объёмов по добыче урана','ISL становится основной технологией добычи'] },
+  { year: '2008', title: 'Приближение к мировому лидерству', events: ['Казахстан приближается к 1 месту в мировой добыче урана'] },
+  { year: '2009', title: 'Мировой лидер по добыче урана', events: ['Казахстан становится мировым лидером по добыче урана'] },
+  { year: '2010', title: 'Переход к атомной энергетике', events: ['Международные проекты и переход к развитию атомной энергетики'] },
+  { year: '2011–2013', title: 'Модернизация и международное сотрудничество', events: ['Завершение ликвидации ядерных объектов наследия СССР','Модернизация исследовательских реакторов','Расширение международного сотрудничества'] },
+  { year: '2014', title: 'Создание ТОО «КАЭС»', events: ['Создание ТОО «Казахстанские атомные электрические станции» (КАЭС)'] },
+  { year: '2015–2017', title: 'Технологическое обновление', events: ['Технологическое обновление УМЗ, в том числе по таблеточному производству','В Усть-Каменогорске открылся первый в мире Банк низкообогащённого урана МАГАТЭ'] },
+  { year: '2018–2019', title: 'До 40% мирового урана', events: ['Казахстан производит до 40% мирового урана'] },
+  { year: '2020', title: 'Новая атомная программа', events: ['Новая атомная программа Казахстана'] },
+  { year: '2020–2021', title: 'Перезапуск программы АЭС', events: ['Обсуждение и перезапуск программы строительства первой АЭС','Оценка технологий Росатома, EDF, KHNP, CNNC','На УМЗ был запущен завод Ulba-FA по производству топливных сборок с использованием технологий Framatome'] },
+  { year: '2022', title: 'Выбор района строительства', events: ['Предварительный выбор района строительства АЭС — Улькен (оз. Балхаш)'] },
+  { year: '2023', title: 'Инициирование референдума', events: ['Инициирование проведения референдума о строительстве атомной электростанции'] },
+  { year: '2024', title: 'Референдум о строительстве АЭС', events: ['Референдум о строительстве АЭС — 71,12% проголосовали «за»','Казатомпром укрепляет статус мирового лидера'] },
+  { year: '2025', title: 'Практическая фаза проекта', events: ['18 марта — создано Агентство Республики Казахстан по атомной энергии','12 апреля — фактический запуск практической фазы проекта атомной энергетики Казахстана','14 июня — Росатом определён лидером международного консорциума','8 августа — начаты инженерные изыскания для выбора площадки первой АЭС','25 сентября — запуск конкурса на название будущей АЭС'] }
+];
+
+var ROW_H = 92;
+var CONTENT_OFFSET_Y = 8;
+var currentHistoryIdx = 0;
+
+function initHistory() {
+  var rows = document.getElementById('history-rows');
+  var pill = document.getElementById('history-pill');
+  var card = document.getElementById('history-card');
+  var contentEl = document.getElementById('history-content');
+  if (!rows) return;
+
+  // Set content height
+  contentEl.style.minHeight = (HISTORY_DATA.length * ROW_H) + 'px';
+
+  // Build year buttons
+  HISTORY_DATA.forEach(function(item, idx) {
+    var btn = document.createElement('button');
+    btn.className = 'history-year-btn' + (idx === 0 ? ' active' : '');
+    btn.style.height = ROW_H + 'px';
+    btn.innerHTML = '<span class="history-year-label">' + item.year + '</span>';
+    btn.addEventListener('click', function() { setHistoryActive(idx); });
+    rows.appendChild(btn);
+  });
+
+  setHistoryActive(0, true);
+}
+
+function setHistoryActive(idx, instant) {
+  currentHistoryIdx = idx;
+  var pill = document.getElementById('history-pill');
+  var card = document.getElementById('history-card');
+  var rows = document.getElementById('history-rows');
+  var item = HISTORY_DATA[idx];
+
+  // Move pill
+  pill.style.top = (idx * ROW_H + 6) + 'px';
+
+  // Update year button states
+  rows.querySelectorAll('.history-year-btn').forEach(function(btn, i) {
+    btn.classList.toggle('active', i === idx);
+  });
+
+  // Update card position
+  card.style.top = (idx * ROW_H + CONTENT_OFFSET_Y) + 'px';
+
+  // Animate card content
+  if (!instant) {
+    card.classList.remove('entering');
+    void card.offsetWidth; // reflow
+    card.classList.add('entering');
+  }
+
+  // Build card content
+  var eventsHtml = item.events.map(function(e) {
+    return '<li class="history-card__item"><span class="history-card__dot"></span><span class="history-card__text">' + e + '</span></li>';
+  }).join('');
+
+  card.innerHTML = '<p class="history-card__title">' + item.title + '</p>' +
+    '<ul class="history-card__list">' + eventsHtml + '</ul>';
+}
+
+/* ─── Reactor tabs ─────────────────────────────────────────── */
+function initReactorTabs() {
+  document.querySelectorAll('.reactor-tab').forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      var id = tab.dataset.reactor;
+      document.querySelectorAll('.reactor-tab').forEach(function(t) { t.classList.remove('active'); });
+      document.querySelectorAll('.reactor-panel').forEach(function(p) { p.classList.remove('active'); });
+      tab.classList.add('active');
+      var panel = document.getElementById('reactor-' + id);
+      if (panel) panel.classList.add('active');
+    });
+  });
+}
+
+/* ─── Safety accordion ─────────────────────────────────────── */
+function initSafetyAccordion() {
+  document.querySelectorAll('.safety-item').forEach(function(item) {
+    var btn = item.querySelector('.safety-item__btn');
+    if (!btn) return;
+    btn.addEventListener('click', function() {
+      var isOpen = item.classList.contains('open');
+      // Close all
+      document.querySelectorAll('.safety-item').forEach(function(si) { si.classList.remove('open'); });
+      // Toggle clicked
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+}
+
+/* ─── CO2 Calculator ───────────────────────────────────────── */
+var SOURCES = [
+  { id: 'coal',    label: 'Уголь',             factor: 820 },
+  { id: 'gas',     label: 'Газ',               factor: 490 },
+  { id: 'nuclear', label: 'Атомная энергия',   factor: 12  },
+  { id: 'solar',   label: 'Солнечная энергия', factor: 40  },
+  { id: 'wind',    label: 'Ветровая энергия',  factor: 8   }
+];
+var CAR_TONS = 4.5;
+
+function fmtNum(n, dec) {
+  return new Intl.NumberFormat('ru-RU', { maximumFractionDigits: dec || 0 }).format(n);
+}
+
+function getInsight(sourceId, emTons, ratio, cars) {
+  if (sourceId === 'nuclear') return 'При выбранном объеме атомная энергия формирует низкий уровень выбросов CO₂. Это один из самых экологичных вариантов генерации и значительно чище угля и газа.';
+  if (sourceId === 'wind') return 'При выбранном объеме ветровая энергия показывает один из самых низких уровней выбросов CO₂. Это значительно экологичнее ископаемых источников.';
+  if (sourceId === 'solar') return 'При выбранном объеме солнечная энергия формирует сравнительно низкий уровень выбросов CO₂. Хотя атомная и ветровая энергия дают ещё более низкий углеродный след.';
+  var src = SOURCES.find(function(s) { return s.id === sourceId; });
+  return 'При выбранном объеме генерации ' + (src ? src.label.toLowerCase() : '') + ' формирует значительно более высокий уровень выбросов CO₂. Это сопоставимо примерно с ' + fmtNum(cars) + ' автомобилями в год и в ' + fmtNum(ratio, 1) + ' раз больше, чем атомная энергия.';
+}
+
+function calcAndRender() {
+  var srcEl = document.getElementById('env-source');
+  var volEl = document.getElementById('env-volume');
+  var errEl = document.getElementById('env-error');
+  if (!srcEl) return;
+
+  var sourceId = srcEl.value;
+  var volume = parseFloat(volEl.value);
+
+  errEl.style.display = 'none';
+  if (!volEl.value.trim() || isNaN(volume) || volume <= 0) {
+    errEl.textContent = 'Введите корректный объем электроэнергии в МВт·ч.';
+    errEl.style.display = 'block';
+    return;
+  }
+
+  var source = SOURCES.find(function(s) { return s.id === sourceId; }) || SOURCES[0];
+  var emTons = volume * source.factor / 1000;
+  var cars = emTons / CAR_TONS;
+  var nucTons = volume * 12 / 1000;
+  var ratio = nucTons > 0 ? emTons / nucTons : 0;
+
+  document.getElementById('env-result-value').textContent = fmtNum(emTons) + ' т';
+  document.getElementById('env-result-sub').textContent = source.label + ' · ' + fmtNum(volume) + ' МВт·ч';
+  document.getElementById('env-insight-text').textContent = getInsight(sourceId, emTons, ratio, cars);
+  document.getElementById('env-ratio').textContent = sourceId === 'nuclear' ? '1×' : fmtNum(ratio, 1) + '×';
+  document.getElementById('env-cars').textContent = '≈ ' + fmtNum(cars);
+  document.getElementById('env-compare-volume').textContent = 'при ' + fmtNum(volume) + ' МВт·ч';
+
+  var maxTons = Math.max.apply(null, SOURCES.map(function(s) { return volume * s.factor / 1000; }));
+  var listEl = document.getElementById('env-compare-list');
+  listEl.innerHTML = SOURCES.map(function(s) {
+    var tons = volume * s.factor / 1000;
+    var pct = maxTons > 0 ? (tons / maxTons * 100) : 0;
+    var isActive = s.id === sourceId;
+    return '<div class="env-compare-row' + (isActive ? ' active' : '') + '">' +
+      '<div class="env-compare-row__top">' +
+        '<div><p class="env-compare-row__name">' + s.label + '</p><p class="env-compare-row__factor">' + s.factor + ' кг CO₂ / МВт·ч</p></div>' +
+        '<p class="env-compare-row__tons">' + fmtNum(tons) + ' т</p>' +
+      '</div>' +
+      '<div class="env-bar-track"><div class="env-bar-fill" style="width:' + pct + '%"></div></div>' +
+      '</div>';
+  }).join('');
+}
+
+function initCalc() {
+  var calcBtn = document.getElementById('env-calc-btn');
+  var resetBtn = document.getElementById('env-reset-btn');
+  if (!calcBtn) return;
+  calcBtn.addEventListener('click', calcAndRender);
+  resetBtn.addEventListener('click', function() {
+    document.getElementById('env-source').value = 'coal';
+    document.getElementById('env-volume').value = '1000';
+    document.getElementById('env-error').style.display = 'none';
+    calcAndRender();
+  });
+  calcAndRender();
+}
+
+/* ─── Quiz ─────────────────────────────────────────────────── */
+var QUIZ_QUESTIONS = [
+  { text: 'Что такое цепная ядерная реакция?', options: ['Реакция горения топлива','Реакция деления атомных ядер, при которой выделяются нейтроны, вызывающие новые деления','Реакция слияния двух ядер','Химическое окисление урана'], correct: 1 },
+  { text: 'Какой элемент чаще всего используется как топливо в ядерных реакторах?', options: ['Уран-235','Плутоний-239','Торий-232','Водород'], correct: 0 },
+  { text: 'Что такое ВВЭР?', options: ['Высокоэффективный водяной энергетический реактор','Вспомогательный водородный элемент реактора','Водо-водяной энергетический реактор','Ветровой воздушный энергетический резервуар'], correct: 2 },
+  { text: 'Какой процент мировой электроэнергии вырабатывается АЭС?', options: ['Около 5%','Около 10%','Около 25%','Около 50%'], correct: 1 },
+  { text: 'Что такое SMR?', options: ['Малый модульный реактор','Стационарный мощный реактор','Система мониторинга радиации','Спектральный метод расчёта'], correct: 0 },
+  { text: 'Казахстан занимает какое место в мире по добыче урана?', options: ['3-е место','5-е место','1-е место','2-е место'], correct: 2 },
+  { text: 'Что такое период полураспада?', options: ['Время полного распада вещества','Половина времени работы реактора','Время уменьшения мощности реактора вдвое','Время, за которое распадается половина атомов радиоактивного вещества'], correct: 3 }
+];
+
+var quizAnswers = [];
+var quizCurrentQ = 0;
+
+function quizResultText(score) {
+  if (score === 7) return 'Отлично! Вы эксперт в атомной энергетике';
+  if (score >= 5) return 'Хороший результат! Вы хорошо разбираетесь в теме';
+  if (score >= 3) return 'Неплохо! Есть куда стремиться';
+  return 'Стоит узнать больше об атомной энергетике';
+}
+
+function renderQuizQuestion() {
+  var q = QUIZ_QUESTIONS[quizCurrentQ];
+  var total = QUIZ_QUESTIONS.length;
+  var pct = Math.round(quizCurrentQ / total * 100);
+
+  document.getElementById('quiz-q-counter').textContent = 'Вопрос ' + (quizCurrentQ + 1) + ' из ' + total;
+  document.getElementById('quiz-q-pct').textContent = pct + '%';
+  document.getElementById('quiz-progress-fill').style.width = pct + '%';
+  document.getElementById('quiz-question-text').textContent = q.text;
+
+  var opts = document.getElementById('quiz-options');
+  opts.innerHTML = q.options.map(function(opt, j) {
+    return '<button class="quiz-opt-btn" data-idx="' + j + '">' +
+      '<span class="quiz-opt-letter">' + String.fromCharCode(65 + j) + '.</span>' + opt + '</button>';
+  }).join('');
+
+  opts.querySelectorAll('.quiz-opt-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var idx = parseInt(btn.dataset.idx);
+      quizAnswers.push(idx);
+      if (quizCurrentQ + 1 >= total) {
+        showQuizResult();
+      } else {
+        quizCurrentQ++;
+        renderQuizQuestion();
+      }
+    });
+  });
+}
+
+function showQuizResult() {
+  document.getElementById('quiz-question-view').style.display = 'none';
+  document.getElementById('quiz-result-view').style.display = 'block';
+  var score = quizAnswers.filter(function(a, i) { return a === QUIZ_QUESTIONS[i].correct; }).length;
+  document.getElementById('quiz-score-num').textContent = score;
+  document.getElementById('quiz-result-text').textContent = quizResultText(score);
+
+  var review = document.getElementById('quiz-review');
+  review.innerHTML = QUIZ_QUESTIONS.map(function(q, i) {
+    var userAns = quizAnswers[i];
+    var opts = q.options.map(function(opt, j) {
+      var cls = 'quiz-review-opt';
+      if (j === q.correct) cls += ' correct';
+      else if (j === userAns && userAns !== q.correct) cls += ' wrong';
+      var mark = j === q.correct ? '✓ ' : (j === userAns && userAns !== q.correct ? '✗ ' : '');
+      return '<div class="' + cls + '">' + mark + opt + '</div>';
+    }).join('');
+    return '<div class="quiz-review-item"><p class="quiz-review-q">' + (i+1) + '. ' + q.text + '</p><div class="quiz-review-opts">' + opts + '</div></div>';
+  }).join('');
+}
+
+function initQuiz() {
+  renderQuizQuestion();
+  var resetBtn = document.getElementById('quiz-reset-btn');
+  if (resetBtn) {
+    resetBtn.addEventListener('click', function() {
+      quizAnswers = [];
+      quizCurrentQ = 0;
+      document.getElementById('quiz-question-view').style.display = 'block';
+      document.getElementById('quiz-result-view').style.display = 'none';
+      renderQuizQuestion();
+    });
+  }
+}
+
+/* ─── Init all ─────────────────────────────────────────────── */
+document.addEventListener('DOMContentLoaded', function() {
+  initHistory();
+  initReactorTabs();
+  initSafetyAccordion();
+  initCalc();
+  initQuiz();
+});
+</script>
 </body>
 </html>
