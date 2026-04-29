@@ -1,14 +1,372 @@
 /* ============================================================
    KAES — President Message Page
-   pages/president-message.css
-   ============================================================ */
+   Blue hero like vacancies + original content cards
+============================================================ */
 
-.president-message-body {
-  display: grid; grid-template-columns: 1fr; gap: 48px;
+.president-message-page {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: #f0f0f0;
+  isolation: isolate;
 }
-@media (min-width: 1024px) { .president-message-body { grid-template-columns: 1fr 340px; } }
 
-.president-photo {
-  border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-heavy);
+/* HERO */
+
+.page-hero.president-message-hero {
+  position: relative;
+  min-height: 140px;
+  overflow: visible;
+  background: #1a2f6e;
 }
-.president-photo img { width: 100%; height: auto; display: block; }
+
+.president-message-hero__grid {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  opacity: 0.10;
+  background-image:
+    repeating-linear-gradient(0deg,
+      transparent,
+      transparent 39px,
+      rgba(255, 255, 255, 0.4) 39px,
+      rgba(255, 255, 255, 0.4) 40px),
+    repeating-linear-gradient(90deg,
+      transparent,
+      transparent 39px,
+      rgba(255, 255, 255, 0.4) 39px,
+      rgba(255, 255, 255, 0.4) 40px);
+}
+
+.president-message-hero__atom {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+}
+
+.president-message-hero__atom--first {
+  right: 16%;
+  top: -50px;
+  width: 430px;
+  z-index: 5;
+  transform: rotate(25deg);
+}
+
+.president-message-hero__atom--second {
+  right: 0;
+  top: -40px;
+  width: 600px;
+  z-index: 10;
+  transform: scaleX(-1) rotate(25deg);
+}
+
+.president-message-hero__atom-glow {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 38%;
+  height: 38%;
+  border-radius: 999px;
+  background: rgba(224, 197, 143, 0.30);
+  filter: blur(24px);
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.president-message-hero__atom img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.18));
+}
+
+.president-message-hero__inner {
+  position: relative;
+  z-index: 20;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 48px 24px;
+}
+
+.president-message-hero__title {
+  margin: 0;
+  color: #ffffff;
+  font-size: 36px;
+  line-height: 1.15;
+  font-weight: 700;
+}
+
+/* CONTENT */
+
+.president-message-content-section {
+  width: 100%;
+  background:
+    radial-gradient(circle at 10% 12%, rgba(224, 197, 143, 0.12), transparent 28%),
+    radial-gradient(circle at 88% 38%, rgba(30, 64, 128, 0.10), transparent 32%),
+    #f0f0f0;
+  padding: 40px 0 72px;
+}
+
+.president-message-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* BREADCRUMB */
+
+.president-message-breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  color: #374151;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.president-message-breadcrumb a {
+  color: #9ca3af;
+  text-decoration: none;
+  font-weight: 300;
+  transition: color 150ms ease;
+}
+
+.president-message-breadcrumb a:hover {
+  color: #1E4080;
+}
+
+.president-message-breadcrumb span:first-of-type {
+  color: #d1d5db;
+  user-select: none;
+}
+
+.president-message-breadcrumb span:last-of-type {
+  color: #374151;
+  font-weight: 500;
+}
+
+/* INTRO */
+
+.president-message-intro {
+  max-width: 900px;
+}
+
+.president-message-intro p {
+  margin: 0;
+  color: #5f6b7a;
+  font-size: 18px;
+  line-height: 1.75;
+  font-weight: 300;
+}
+
+/* MAIN CARDS */
+
+.president-message-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(320px, 0.7fr);
+  gap: 32px;
+}
+
+.president-message-card {
+  border: 1px solid #d9e2f2;
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 18px 45px rgba(17, 34, 80, 0.08);
+}
+
+.president-message-card--main {
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.president-message-card--status {
+  background: rgba(248, 251, 255, 0.96);
+}
+
+.president-message-card__title {
+  margin: 0 0 16px;
+  color: #111827;
+  font-size: 24px;
+  line-height: 1.25;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.president-message-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.president-message-card__content p {
+  margin: 0;
+  color: #5f6b7a;
+  font-size: 17px;
+  line-height: 1.75;
+  font-weight: 300;
+}
+
+.president-message-badge {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: #1E4080;
+  color: #ffffff;
+  padding: 9px 18px;
+  font-size: 14px;
+  line-height: 1;
+  font-weight: 700;
+  box-shadow: 0 12px 30px rgba(30, 64, 128, 0.18);
+}
+
+/* FUTURE */
+
+.president-message-future {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.president-message-future__head {
+  max-width: 860px;
+}
+
+.president-message-future__title {
+  margin: 0;
+  color: #111827;
+  font-size: 34px;
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+}
+
+.president-message-future__text {
+  margin: 8px 0 0;
+  color: #5f6b7a;
+  font-size: 18px;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.president-message-future__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 290px));
+  gap: 24px;
+}
+
+.president-message-small-card {
+  min-height: 116px;
+  border: 1px solid #d9e2f2;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.96);
+  padding: 24px;
+  box-shadow: 0 14px 38px rgba(17, 34, 80, 0.07);
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease;
+}
+
+.president-message-small-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(224, 197, 143, 0.95);
+  box-shadow: 0 20px 48px rgba(17, 34, 80, 0.12);
+}
+
+.president-message-small-card h3 {
+  margin: 0 0 12px;
+  color: #111827;
+  font-size: 20px;
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+.president-message-small-card p {
+  margin: 0;
+  color: #5f6b7a;
+  font-size: 16px;
+  line-height: 1.65;
+  font-weight: 300;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1199px) {
+  .president-message-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .president-message-future__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .president-message-hero__inner {
+    padding: 40px 20px;
+  }
+
+  .president-message-hero__title {
+    font-size: 32px;
+  }
+
+  .president-message-hero__atom--first {
+    right: 8%;
+    top: -22px;
+    width: 230px;
+  }
+
+  .president-message-hero__atom--second {
+    right: -25%;
+    top: -10px;
+    width: 330px;
+  }
+
+  .president-message-content-section {
+    padding: 32px 0 56px;
+  }
+
+  .president-message-container {
+    padding: 0 20px;
+    gap: 24px;
+  }
+
+  .president-message-card {
+    border-radius: 20px;
+    padding: 24px;
+  }
+
+  .president-message-intro p,
+  .president-message-card__content p,
+  .president-message-future__text {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+  .president-message-card__title {
+    font-size: 22px;
+  }
+
+  .president-message-future__title {
+    font-size: 28px;
+  }
+
+  .president-message-future__grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .president-message-small-card {
+    min-height: auto;
+    border-radius: 18px;
+    padding: 22px;
+  }
+}

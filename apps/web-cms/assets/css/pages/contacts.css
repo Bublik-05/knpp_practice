@@ -563,6 +563,9 @@
   width: 100%;
   background: #f0f0f0;
   padding: 40px 0 80px;
+  padding-top: 32px;
+  padding-bottom: 64px;
+  padding-top: 32px;
 }
 
 .contacts-container {
@@ -642,18 +645,29 @@
     width: 360px;
   }
 
-  .contacts-content-section {
-    padding-top: 32px;
-    padding-bottom: 64px;
-  }
-
   .contacts-container {
     padding-left: 16px;
     padding-right: 16px;
   }
 
   .contacts-breadcrumb {
-    margin-bottom: 28px;
     font-size: 13px;
+    margin-bottom: 24px;
   }
+}
+
+/* ─── Contacts spacing fix ───────────────────── */
+
+/* если где-то остался дополнительный отступ от прошлых версий */
+.contacts-info-section,
+.contacts-grid {
+  margin-top: 0;
+}
+
+/* карточки чуть ближе к breadcrumb */
+.contacts-grid,
+.contacts-info-grid,
+.contact-cards,
+.contacts-cards {
+  margin-top: 0;
 }
