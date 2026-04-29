@@ -174,36 +174,6 @@
   gap: 24px;
 }
 
-.vacancies-breadcrumb {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 4px;
-  color: #374151;
-  font-size: 14px;
-}
-
-.vacancies-breadcrumb a {
-  color: #9ca3af;
-  text-decoration: none;
-  font-weight: 300;
-  transition: color 150ms ease;
-}
-
-.vacancies-breadcrumb a:hover {
-  color: #1E4080;
-}
-
-.vacancies-breadcrumb span:first-of-type {
-  color: #d1d5db;
-  user-select: none;
-}
-
-.vacancies-breadcrumb span:last-of-type {
-  color: #374151;
-  font-weight: 500;
-}
-
 .qsamruk-section {
   background: #112250;
   border-radius: 8px;

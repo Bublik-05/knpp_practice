@@ -1,18 +1,39 @@
 /* ============================================================
-   KAES — Breadcrumb
+   KAES — Breadcrumb  (единый стиль для всех страниц)
    components/breadcrumb.css
    ============================================================ */
 
+/* ── Единый компонент: используется на всех страницах ── */
+.site-breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+.site-breadcrumb a {
+  color: #9ca3af;
+  font-weight: 300;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.site-breadcrumb a:hover        { color: #1E4080; }
+.site-breadcrumb__sep           { color: #d1d5db; user-select: none; }
+.site-breadcrumb__current       { color: #374151; font-weight: 500; }
+
+/* ── Legacy alias (проекты/закупки/plan используют .breadcrumb) ── */
 .breadcrumb {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 13px;
-  color: #9ca3af;
-  margin-bottom: 24px;
   flex-wrap: wrap;
+  gap: 4px;
+  font-size: 14px;
+  margin-bottom: 24px;
 }
-.breadcrumb a          { color: var(--color-primary-mid); transition: color 0.2s; }
-.breadcrumb a:hover    { color: var(--color-primary); }
-.breadcrumb__sep       { color: var(--color-accent); }
-.breadcrumb__current   { color: #374151; }
+.breadcrumb a,
+.breadcrumb__link       { color: #9ca3af; font-weight: 300; text-decoration: none; transition: color 0.15s; }
+.breadcrumb a:hover,
+.breadcrumb__link:hover { color: #1E4080; }
+.breadcrumb__sep        { color: #d1d5db; user-select: none; }
+.breadcrumb__current    { color: #374151; font-weight: 500; }

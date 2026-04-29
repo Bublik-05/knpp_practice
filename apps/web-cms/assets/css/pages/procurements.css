@@ -166,39 +166,6 @@
   margin: 0 auto;
 }
 
-/* ─── Breadcrumb ─── */
-
-.proc-breadcrumb {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 4px;
-  margin-bottom: 32px;
-  color: #374151;
-  font-size: 14px;
-}
-
-.proc-breadcrumb a {
-  color: #9ca3af;
-  text-decoration: none;
-  font-weight: 300;
-  transition: color 150ms ease;
-}
-
-.proc-breadcrumb a:hover {
-  color: #1E4080;
-}
-
-.proc-breadcrumb__sep {
-  color: #c7ccd5;
-  user-select: none;
-}
-
-.proc-breadcrumb span:last-child {
-  color: #374151;
-  font-weight: 500;
-}
-
 /* ─── Tabs ─── */
 
 .proc-tabs {

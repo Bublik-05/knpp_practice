@@ -216,37 +216,6 @@
   padding-right: 80px;
 }
 
-.faq-breadcrumb {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 4px;
-  margin-bottom: 24px;
-  color: #9ca3af;
-  font-size: 14px;
-}
-
-.faq-breadcrumb a {
-  color: #9ca3af;
-  text-decoration: none;
-  font-weight: 300;
-  transition: color 150ms ease;
-}
-
-.faq-breadcrumb a:hover {
-  color: #1E4080;
-}
-
-.faq-breadcrumb__sep {
-  color: #d1d5db;
-  user-select: none;
-}
-
-.faq-breadcrumb__current {
-  color: #374151;
-  font-weight: 500;
-}
-
 .faq-title {
   margin: 0 0 32px;
   color: #111827;

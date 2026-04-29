@@ -124,21 +124,6 @@
   padding-right: 80px;
 }
 
-/* Breadcrumb */
-.atom-breadcrumb {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 13px;
-  color: #6b7280;
-  margin-bottom: 24px;
-  flex-wrap: wrap;
-}
-.atom-breadcrumb a { color: #6b7280; text-decoration: none; }
-.atom-breadcrumb a:hover { color: #1E4080; text-decoration: underline; }
-.atom-breadcrumb__sep { color: #d1d5db; }
-.atom-breadcrumb__current { color: #374151; }
-
 /* Section title: text-5xl font-bold text-gray-900 mb-8 */
 .atom-title {
   font-size: 48px;

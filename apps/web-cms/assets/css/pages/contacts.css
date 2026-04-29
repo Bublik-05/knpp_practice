@@ -577,36 +577,6 @@
 }
 
 /* Breadcrumb */
-.contacts-breadcrumb {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 4px;
-  margin-bottom: 40px;
-  color: #374151;
-  font-size: 14px;
-}
-
-.contacts-breadcrumb a {
-  color: #9ca3af;
-  text-decoration: none;
-  font-weight: 300;
-  transition: color 150ms ease;
-}
-
-.contacts-breadcrumb a:hover {
-  color: #1E4080;
-}
-
-.contacts-breadcrumb span:first-of-type {
-  color: #d1d5db;
-  user-select: none;
-}
-
-.contacts-breadcrumb span:last-of-type {
-  color: #374151;
-  font-weight: 500;
-}
 
 /* Responsive */
 @media (max-width: 1024px) {
@@ -650,11 +620,7 @@
     padding-right: 16px;
   }
 
-  .contacts-breadcrumb {
-    font-size: 13px;
-    margin-bottom: 24px;
   }
-}
 
 /* ─── Contacts spacing fix ───────────────────── */
 

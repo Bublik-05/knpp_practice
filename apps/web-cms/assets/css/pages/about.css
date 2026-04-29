@@ -205,25 +205,6 @@
 @media (min-width: 768px)  { .about-content { padding: 0 40px; } }
 @media (min-width: 1024px) { .about-content { padding: 0 80px; } }
 
-/* ─── Breadcrumb ─────────────────────────────────────────────── */
-.about-breadcrumb {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 4px;
-  font-size: 14px;
-  margin-bottom: 24px;
-}
-.about-breadcrumb a {
-  color: #9ca3af;
-  font-weight: 300;
-  text-decoration: none;
-  transition: color 0.15s;
-}
-.about-breadcrumb a:hover { color: #1E4080; }
-.about-breadcrumb__sep   { color: #d1d5db; user-select: none; }
-.about-breadcrumb__current { color: #374151; font-weight: 500; }
-
 /* ─── Section Visibility ─────────────────────────────────────── */
 .about-section {
   display: none;
